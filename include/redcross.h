@@ -13,10 +13,11 @@
 // uncomment for debug output
 //#define DEBUG
 #include <esp_err.h>
+#include "DeviceManager.h"
+#include "DataServer.h"
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include "Arduino.h"
-#include "DeviceManager.h"
 #include "netcfg.h"
 #include <esp_log.h>
 #include <nvs_flash.h>
@@ -29,7 +30,11 @@
 //, NAME(USDist), NAME(GPS)
 //, USDist, GPS
 //, MAP(USDist), MAP(GPS)
+
 #define PERIF_NAMES MAP(GPS)
+
+
+DeviceManager<PERIF_NAMES>* manager;
 
 /*void scanI2C() {
   byte error, address; //variable for error and I2C address

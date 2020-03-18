@@ -14,7 +14,7 @@
 template<typename FP, FP(*rnd)(FP)>
 inline std::string to_string(FP fp, uint8_t precision = 2) {
   unsigned long scalar = pow(10, precision);
-  return std::to_string(rnd(fp * scalar) / scalar);
+  return String(rnd(fp * scalar) / scalar).c_str();
 }
 
 inline std::string to_string(float fp, uint8_t precision = 2) {

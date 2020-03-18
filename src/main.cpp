@@ -1,7 +1,7 @@
 #include "redcross.h"
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
 #include <esp_pthread.h>
-
-DeviceManager<PERIF_NAMES>* manager;
 
 
 void *arduinoTask(void *pvParameter) {
@@ -31,7 +31,6 @@ void *arduinoTask(void *pvParameter) {
 
 extern "C" void app_main() {
   initArduino();
-
   pthread_t arduino;
   esp_pthread_cfg_t cfg = esp_pthread_get_default_config();
   cfg.stack_size = 1024 * 4;

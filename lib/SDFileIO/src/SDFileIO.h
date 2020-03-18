@@ -17,6 +17,7 @@
 #include <sys/stat.h>
 #include <cstdio>
 #include <cstring>
+#include <functional>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -37,7 +38,6 @@ using namespace std;
  */
 class SDFileIO {
  private:
-  static SDFileIO* sdInst;
   /**
    * The name of the mount point on the vfs. All file names must be prepended
    * with this in order to be found.
@@ -59,28 +59,13 @@ class SDFileIO {
    * Whether the SD card is mounted and ready to perform IO operations.
    */
   bool ready;
+ public:
   /**
    * Explicit value constructor to specify the mount point of the SD card.
    *
    * @param prefix the SD card mount point
    */
   explicit SDFileIO(const char* prefix = "/sdcard");
-  /**
-   * Processes variadic template packs of file open modes such as in, out,
-   * append, binary, truncate, etc.
-   *
-   * @tparam mode the first specified open mode
-   * @tparam modes the rest of the open modes
-   * @return the bitwise OR of all specified open modes
-   */
-  template<const ios::openmode& mode, const ios::openmode& ... modes>
-  ios::openmode orModes();
- public:
-  static SDFileIO& instance() {
-    if (sdInst == nullptr)
-      sdInst = new SDFileIO();
-    return *sdInst;
-  }
   /**
    * Destructor. Unmounts the SD card and disables the driver since it's no
    * longer needed.
@@ -117,10 +102,10 @@ class SDFileIO {
    * @param fileOp the operations to perform on the opened file
    * @return whether all operations completed successfully
    */
-  template<typename FStream,
-      const ios::openmode& mode,
-      const ios::openmode& ... modes>
-  inline bool openFile(const char* fileName, bool(* fileOp)(FStream&));
+  template<class FStream>
+  inline bool openFile(const char* fileName,
+                       ios_base::openmode mode,
+                       std::function<bool(FStream&)>&& fileOp);
   /**
    * Writes the provided data to the file specified by file name. This method
    * truncates the entire file upon opening so the only data that will be in
@@ -131,7 +116,6 @@ class SDFileIO {
    * @param data the data to write
    * @return whether the data was successfully written
    */
-  template<const ios::openmode& ... modes>
   bool writeFile(const char* fileName, const vector<const char*>& data);
   /**
    * Writes the provided binary data to the file specified by file name. This
@@ -143,7 +127,6 @@ class SDFileIO {
    * @param data the data to write
    * @return whether the data was successfully written
    */
-  template<const ios::openmode... modes>
   bool writeBinFile(const char* fileName, const string& data);
   /**
    * Appends the provided data to the file specified by file name.
@@ -153,7 +136,6 @@ class SDFileIO {
    * @param data the data to append
    * @return whether the data was successfully written
    */
-  template<const ios::openmode... modes>
   bool appendFile(const char* fileName, const vector<const char*>& data);
   /**
    * Appends the provided binary data to the file specified by file name.
@@ -163,7 +145,6 @@ class SDFileIO {
    * @param data the data to write
    * @return whether the data was successfully written
    */
-  template<const ios::openmode... modes>
   bool appendBinFile(const char* fileName, const string& data);
   /**
    * Reads content from the specified file into the data parameter.
@@ -173,7 +154,6 @@ class SDFileIO {
    * @param data the destination
    * @return whether the data was successfully read
    */
-  template<const ios::openmode... modes>
   bool readFile(const char* fileName, string& data);
   /**
    * Reads binary content from the specified file into the data parameter.
@@ -183,7 +163,6 @@ class SDFileIO {
    * @param data the destination
    * @return whether the data was successfully read
    */
-  template<const ios::openmode... modes>
   bool readBinFile(const char* fileName, string& data);
 };
 

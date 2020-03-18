@@ -50,25 +50,17 @@ bool SDFileIO::mount() {
   return ready;
 }
 
-template<const ios_base::openmode& mode,
-    const ios_base::openmode& ... modes>
-ios::openmode SDFileIO::orModes() {
-  // without this, it won't compile
-  if (sizeof...(modes) == 0)
-    return mode;
-  // perform bitwise OR on all open modes
-  return mode | orModes<modes...>();
-}
-
 void SDFileIO::printCardInfo() {
   // prints SD info to standard out (not sure if this works with Arduino)
   sdmmc_card_print_info(stdout, card);
 }
 
-template<typename FStream, const ios_base::openmode& mode, const ios_base::openmode& ... modes>
-bool SDFileIO::openFile(const char* fileName, bool (* fileOp)(FStream&)) {
+template<class FStream>
+bool SDFileIO::openFile(const char* fileName,
+                        ios_base::openmode mode,
+                        std::function<bool(FStream&)>&& fileOp) {
   // creates a stream and opens the file
-  FStream file(absolute(fileName), orModes<mode, modes...>());
+  FStream file(absolute(fileName), mode);
   // if the file isn't open, there's nothing to do
   if (!file.is_open())
     return false;
@@ -79,12 +71,12 @@ bool SDFileIO::openFile(const char* fileName, bool (* fileOp)(FStream&)) {
   return res;
 }
 
-template<const ios_base::openmode... modes>
 bool SDFileIO::appendFile(const char* fileName,
                           const vector<const char*>& data) {
   // opens the file with out and append modes
-  return openFile<ofstream, ios::out, ios::app, modes...>(
-      fileName, [&data](ofstream& f) {
+  return openFile<ofstream>(
+      fileName, ios_base::out | ios_base::app,
+      [&data](ofstream& f) {
         // the data is a single row in a CSV, although multiple rows can be
         // added manually
         for (const char* col : data) {
@@ -99,18 +91,17 @@ bool SDFileIO::appendFile(const char* fileName,
       });
 }
 
-template<const ios_base::openmode... modes>
 bool SDFileIO::appendBinFile(const char* fileName, const string& data) {
   // opens the file with out, truncate and binary modes
-  return openFile<ofstream, ios::out, ios::app, ios::binary, modes...>(
-      fileName, [&data](ofstream& f) {
+  return openFile<ofstream>(
+      fileName, ios_base::out | ios_base::app | ios_base::binary,
+      [&data](ofstream& f) {
         // write the binary data without formatting or character encoding
         f.write(data.c_str(), data.length());
         return true;
       });
 }
 
-template<const ios_base::openmode... modes>
 bool SDFileIO::readFile(const char* fileName, string& data) {
   // clear in case the passed reference is being reused (may change later)
   if (data.size() > 0)
@@ -118,8 +109,9 @@ bool SDFileIO::readFile(const char* fileName, string& data) {
   // opens the file for reading starting at the end
   // slightly inefficient, but there doesn't seem to be any other way to
   // check file size
-  return openFile<ifstream, ios::in, ios::ate, modes...>(
-      fileName, [&data](ifstream& f) {
+  return openFile<ifstream>(
+      fileName, ios_base::in | ios_base::ate,
+      [&data](ifstream& f) {
         // reserve space for the entire file so it doesn't reallocate
         // multiple times while reading
         data.reserve(f.tellg());
@@ -134,7 +126,6 @@ bool SDFileIO::readFile(const char* fileName, string& data) {
       });
 }
 
-template<const ios_base::openmode... modes>
 bool SDFileIO::readBinFile(const char* fileName, string& data) {
   // clear in case the passed reference is being reused (may change later)
   if (data.size() > 0)
@@ -142,8 +133,9 @@ bool SDFileIO::readBinFile(const char* fileName, string& data) {
   // opens the file for reading starting at the end
   // slightly inefficient, but there doesn't seem to be a better way to
   // check file size
-  return openFile<ifstream, ios::in, ios::ate, ios::binary, modes...>(
-      fileName, [&data](ifstream& f) {
+  return openFile<ifstream>(
+      fileName, ios_base::in | ios_base::ate | ios_base::binary,
+      [&data](ifstream& f) {
         // create a temporary buffer to hold binary data
         streamsize size = f.tellg();
         char* buf = new char[size];
@@ -159,12 +151,12 @@ bool SDFileIO::readBinFile(const char* fileName, string& data) {
       });
 }
 
-template<const ios_base::openmode& ... modes>
 bool SDFileIO::writeFile(const char* fileName,
                          const vector<const char*>& data) {
   // opens the file with out and truncate modes
-  return openFile<ofstream, ios::out, ios::trunc, modes...>(
-      fileName, [&data](ofstream& f) {
+  return openFile<ofstream>(
+      fileName, ios_base::out | ios_base::trunc,
+      [&data](ofstream& f) {
         // the data is a single row in a CSV, although multiple rows can be
         // added manually
         for (const char* col : data) {
@@ -179,11 +171,11 @@ bool SDFileIO::writeFile(const char* fileName,
       });
 }
 
-template<const ios_base::openmode... modes>
 bool SDFileIO::writeBinFile(const char* fileName, const string& data) {
   // opens the file with out, truncate and binary modes
-  return openFile<ofstream, ios::out, ios::trunc, ios::binary, modes...>(
-      fileName, [&data](ofstream& f) {
+  return openFile<ofstream>(
+      fileName, ios_base::out | ios_base::trunc | ios_base::binary,
+      [&data](ofstream& f) {
         // write the binary data without formatting or character encoding
         f.write(data.c_str(), data.length());
         return true;
