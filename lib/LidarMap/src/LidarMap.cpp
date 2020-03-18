@@ -1,27 +1,38 @@
 //
-// Created by tim on 2/9/20.
+// Created by tim on 2/25/20.
 //
 
 #include "LidarMap.h"
 
-double LidarMap::getDistance(int count) {
-  double distance = 0;
+namespace perif {
+LidarMap::LidarMap(uint8_t address)
+	: I2CSensor("LidarMap", address),
+	  lidar(),
+	  distance(0.0) {
+}
+
+bool LidarMap::begin() {
+  bool res = I2CSensor::begin();
+  lidar.configure(0, address);
+  return res;
+}
+
+double LidarMap::getDistance(uint8_t count) {
+  double data = 0;
   bool biasCorrect = count == 1;
   for (int i = 0; i < count; ++i)
-    distance += lidar.distance(biasCorrect || i == count-1);
-  distance /= count;
+	data += lidar.distance(biasCorrect || i == count - 1);
+  data /= count;
   // Lidar distance is consistently ~10 cm off, so fix it.
-  distance -= distance < 10 ? distance : 10;
-  return distance;
+  data -= 10;
+  return max(0.0, data);
 }
 
-String LidarMap::name() {
-  return "Lidar";
+void LidarMap::updateData() {
+  distance = getDistance(100);
 }
 
-double LidarMap::getData() {
-  return getDistance(100);
+void LidarMap::representData() {
+  data["distance"] = distance;
 }
-String LidarMap::dataAsString(const double &data) {
-  return String(data);
 }

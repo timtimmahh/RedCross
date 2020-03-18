@@ -5,48 +5,37 @@
 #ifndef REDCROSS_LIB_LIDARMAP_H
 #define REDCROSS_LIB_LIDARMAP_H
 
-#include <Sensor.h>
+#include "peripheral/I2CSensor.hpp"
+#include <cstdint>
 #include <LIDARLite.h>
 
-/**
- * Wrapper around the Garmin LIDAR-Lite library.
- */
-class LidarMap : public Sensor<double> {
-private:
-  LIDARLite lidar;
-
+namespace perif {
   /**
-   * Gets the distance (in cm) count times and returns the average.
+   * Wrapper around the Garmin LIDAR-Lite library.
    */
-  double getDistance(int count = 1);
-public:
-  /**
-   * Constructor for Lidar. Sets up Lidar immediately.
-   */
-  LidarMap() : lidar() {
-    lidar.reset();
-    delay(1000);
-    lidar.begin();
-  }
-  /**
-   * The name of this sensor.
-   *
-   * @return the sensor name
-   */
-  String name() override;
-  /**
-   * Obtains distance data in centimeters.
-   *
-   * @return distance in centimeters
-   */
-  double getData() override;
-  /**
-   * Converts distance data to a String
-   *
-   * @param data distance data
-   * @return String representation of distance
-   */
-  String dataAsString(const double &data) override;
-};
-
+  class LidarMap : public I2CSensor0 {
+  private:
+	LIDARLite lidar;
+	// the distance in cm
+	double distance;
+	bool begin() override;
+	/**
+	 * Obtains distance data in centimeters.
+	 */
+	void updateData() override;
+	/**
+	 * Converts distance data to a String.
+	 */
+	void representData() override;
+  public:
+	/**
+	 * Constructor for Lidar. Sets up Lidar immediately.
+	 */
+	explicit LidarMap(uint8_t address = 0x62);
+	/**
+	 * Gets the distance (in cm) count times and returns the average.
+	 */
+	double getDistance(uint8_t count = 1);
+  };
+}
 #endif //REDCROSS_LIB_LIDARMAP_H

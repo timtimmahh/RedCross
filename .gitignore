@@ -33,9 +33,11 @@
 
 compile_commands.json
 .idea
+.vscode
 cmake-build-*
 .ccls
 .gcc-flags.json
 .clang_complete
 .pio
 build
+.broken/

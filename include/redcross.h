@@ -1,58 +1,70 @@
-//
-// Created by tim on 2/9/20.
-//
-
+/**
+ * @file redcross.h
+ *
+ * @brief RedCross global includes.
+ *
+ * @author Timothy Logan <logantc@dukes.jmu.edu>
+ */
 #ifndef REDCROSS_INCLUDE_REDCROSS_H
 #define REDCROSS_INCLUDE_REDCROSS_H
 
-#include "Arduino.h"
-
 // DEBUG flag set to enable logging (defining before including Arduino.h fails
 // to compile. See https://github.com/esp8266/Arduino/issues/3806
-#define DEBUG
-#include "DebugUtils.h"
-// ESP32 global configurations
-#ifdef ARDUINO_ARCH_ESP32
-#include <WiFi.h>
-#include <ESPmDNS.h>
-#include <WebServer.h>
+// uncomment for debug output
+//#define DEBUG
+#include <esp_err.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include "Arduino.h"
+#include "DeviceManager.h"
+#include "netcfg.h"
+#include <esp_log.h>
+#include <nvs_flash.h>
 
-#define BAUD        115200
 
-// WiFi AP credentials
-// specify your WiFi SSID and password to connect to the Internet
-#define SSID        "................."
-#define PASSWORD    "................."
-// Web server port number (80 for default HTTP browser connections)
-#define SERVER_PORT 80
+#define MAP(Perif) perif::Perif
+#define NAME(perif) #perif
+#define NAMED NAME(LidarMap)
+#define ACTIVATED LidarMap
+//, NAME(USDist), NAME(GPS)
+//, USDist, GPS
+//, MAP(USDist), MAP(GPS)
+#define PERIF_NAMES MAP(GPS)
 
-/**
- * Sets up WiFi with the default SSID and password.
- */
-void setupWiFi() {
+/*void scanI2C() {
+  byte error, address; //variable for error and I2C address
+  int nDevices;
 
-  Serial.println(String("Connecting to '") + SSID + "'");
+  Serial.println("Scanning...");
 
-  // establish connection to WiFi access point
-  WiFiClass::mode(WIFI_STA);
-  WiFi.begin(SSID, PASSWORD);
+  nDevices = 0;
+  for (address = 1; address < 127; address++) {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
 
-  // wait until connection is established
-  while (WiFiClass::status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+    if (error == 0) {
+      Serial.print("I2C device found at address 0x");
+      if (address < 16)
+        Serial.print("0");
+      Serial.print(address, HEX);
+      Serial.println("  !");
+      nDevices++;
+    } else if (error == 4) {
+      Serial.print("Unknown error at address 0x");
+      if (address < 16)
+        Serial.print("0");
+      Serial.println(address, HEX);
+    }
   }
-  Serial.println("");
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done\n");
 
-  Serial.println("WiFi Connected.");
-  Serial.print("Server location: ");
-  Serial.println(WiFi.localIP());
-  if (MDNS.begin("esp32"))
-    Serial.println("MDNS responder started");
-}
-
-#elif ARDUINO_AVR_UNO
-#define BAUD 9600
-#endif
+  delay(5000); // wait 5 seconds for the next I2C scan
+}*/
 
 #endif //REDCROSS_INCLUDE_REDCROSS_H
