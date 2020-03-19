@@ -51,11 +51,11 @@ void AccelGyro::updateData() {
 }
 
 void AccelGyro::representData() {
-  PerifBase::data["ax"] = data[0];
-  PerifBase::data["ay"] = data[1];
-  PerifBase::data["az"] = data[2];
-  PerifBase::data["gx"] = data[3];
-  PerifBase::data["gy"] = data[4];
-  PerifBase::data["gz"] = data[5];
+  PerifBase::data["ax"] = to_string(data[0]);
+  PerifBase::data["ay"] = to_string(data[1]);
+  PerifBase::data["az"] = to_string(data[2]);
+  PerifBase::data["gx"] = to_string(data[3]);
+  PerifBase::data["gy"] = to_string(data[4]);
+  PerifBase::data["gz"] = to_string(data[5]);
 }
 }

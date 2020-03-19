@@ -31,7 +31,7 @@
 //, USDist, GPS
 //, MAP(USDist), MAP(GPS)
 
-#define PERIF_NAMES MAP(GPS)
+#define PERIF_NAMES MAP(LidarMap)
 
 
 DeviceManager<PERIF_NAMES>* manager;

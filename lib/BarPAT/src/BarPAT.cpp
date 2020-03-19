@@ -30,6 +30,6 @@ void perif::BarPAT::updateData() {
 }
 
 void perif::BarPAT::representData() {
-  data["pressure"] = pressure;
-  data["temp"] = temp;
+  data["pressure"] = to_string(pressure, 2);
+  data["temp"] = to_string(temp, 2);
 }

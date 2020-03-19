@@ -18,7 +18,7 @@
 
 using namespace std;
 
-using DevMap = std::map<const char*, std::string>;
+using DevMap = std::map<std::string, std::string>;
 
 namespace perif {
 
@@ -36,7 +36,7 @@ class PerifBase {
    * Hooks registered to this peripheral so observers can be notified of any
    * necessary changes.
    */
-  list<void(*)(DevMap&)> hooks;
+  list<function<void(DevMap&)>> hooks;
   /**
    * Explicit Value Constructor.
    *
@@ -57,7 +57,7 @@ class PerifBase {
    *
    * @param hook the observer function
    */
-  void registerHook(void(*hook)(DevMap&)) {
+  void registerHook(function<void(DevMap&)>&& hook) {
 	hooks.push_back(hook);
   }
 };

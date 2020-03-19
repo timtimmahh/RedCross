@@ -35,7 +35,7 @@ void USDist::updateData() {
 }
 
 void USDist::representData() {
-  data["distance"] = distance;
+  data["distance"] = to_string(distance, 2);
 }
 
 // an implementation using esp-idf APIs

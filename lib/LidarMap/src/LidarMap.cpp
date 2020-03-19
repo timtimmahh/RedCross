@@ -33,6 +33,6 @@ void LidarMap::updateData() {
 }
 
 void LidarMap::representData() {
-  data["distance"] = distance;
+  data["distance"] = to_string(distance, 2);
 }
 }

@@ -29,7 +29,7 @@ void *arduinoTask(void *pvParameter) {
   }
 }
 
-extern "C" void app_main() {
+extern "C" void app_main(void) {
   initArduino();
   pthread_t arduino;
   esp_pthread_cfg_t cfg = esp_pthread_get_default_config();

@@ -28,7 +28,7 @@
 #define PIN_CLK  GPIO_NUM_14
 #define PIN_CS   GPIO_NUM_13
 
-#define absolute(fName) (prefix + fName)
+#define absolute(fName) (prefix + "/" + fName)
 
 using namespace std;
 
@@ -77,7 +77,7 @@ class SDFileIO {
    * @param fileName the name of the file
    * @return whether the file exists
    */
-  bool exists(const char* fileName);
+  bool exists(const string& fileName);
   bool isReady();
   /**
    * Mounts the SD card and virtual file systems to be accessed.
@@ -103,7 +103,7 @@ class SDFileIO {
    * @return whether all operations completed successfully
    */
   template<class FStream>
-  inline bool openFile(const char* fileName,
+  inline bool openFile(const string& fileName,
                        ios_base::openmode mode,
                        std::function<bool(FStream&)>&& fileOp);
   /**
@@ -116,7 +116,7 @@ class SDFileIO {
    * @param data the data to write
    * @return whether the data was successfully written
    */
-  bool writeFile(const char* fileName, const vector<const char*>& data);
+  bool writeFile(const string& fileName, const vector<string>& data);
   /**
    * Writes the provided binary data to the file specified by file name. This
    * method truncates the entire file upon opening so the only data that will
@@ -127,7 +127,7 @@ class SDFileIO {
    * @param data the data to write
    * @return whether the data was successfully written
    */
-  bool writeBinFile(const char* fileName, const string& data);
+  bool writeBinFile(const string& fileName, const string& data);
   /**
    * Appends the provided data to the file specified by file name.
    *
@@ -136,7 +136,7 @@ class SDFileIO {
    * @param data the data to append
    * @return whether the data was successfully written
    */
-  bool appendFile(const char* fileName, const vector<const char*>& data);
+  bool appendFile(const string& fileName, const vector<string>& data);
   /**
    * Appends the provided binary data to the file specified by file name.
    *
@@ -145,7 +145,7 @@ class SDFileIO {
    * @param data the data to write
    * @return whether the data was successfully written
    */
-  bool appendBinFile(const char* fileName, const string& data);
+  bool appendBinFile(const string& fileName, const string& data);
   /**
    * Reads content from the specified file into the data parameter.
    *
@@ -154,7 +154,7 @@ class SDFileIO {
    * @param data the destination
    * @return whether the data was successfully read
    */
-  bool readFile(const char* fileName, string& data);
+  bool readFile(const string& fileName, string& data);
   /**
    * Reads binary content from the specified file into the data parameter.
    *
@@ -163,7 +163,7 @@ class SDFileIO {
    * @param data the destination
    * @return whether the data was successfully read
    */
-  bool readBinFile(const char* fileName, string& data);
+  bool readBinFile(const string& fileName, string& data);
 };
 
 #endif // REDCROSS_LIB_IO_SRC_SDFILEIO_H_

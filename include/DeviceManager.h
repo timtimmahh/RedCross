@@ -25,14 +25,12 @@
 using namespace std;
 using namespace perif;
 
-
-SDFileIO* sdFile;
-
 template<class... Sensors>
 class DeviceManager {
  private:
   // Use pointers to manually manage storage
   array<Perif*, sizeof...(Sensors)> devices;
+  SDFileIO sdFile;
 //  DataServer server;
 
   /**
@@ -42,23 +40,21 @@ class DeviceManager {
    * @param senses the created sensors
    */
   template<class Sensor, class... Others>
-  explicit DeviceManager(Sensor* sensor, Others*... senses)
-      : devices{sensor, senses...} { init(); }
+  explicit DeviceManager(Sensor* sensor, Others* ... senses)
+      : devices{sensor, senses...}, sdFile() { init(); }
 
   void init() {
-    sdFile = new SDFileIO();
-  if (sdFile->mount())
-    sdFile->printCardInfo();
-  else
-    Serial.println("SD not ready!");
+    if (sdFile.mount())
+      sdFile.printCardInfo();
+    else
+      Serial.println("SD not ready!");
     hookSensors();
   }
  public:
   /**
    * Default constructor that creates sensor instances.
    */
-  DeviceManager()
-      : devices{new Sensors()...} { init(); }
+  DeviceManager() : DeviceManager(new Sensors()...) {}
 
   /**
    * Clear sensors from memory. This should only be called when the device is
@@ -67,32 +63,6 @@ class DeviceManager {
   ~DeviceManager() {
     for (auto item : devices)
       delete dynamic_cast<PerifBase*>(item);
-  }
-
-  static void devHook(DevMap& data) {
-  // if a path to the server is available, send it there instead
-  if (sdFile->isReady()) {
-    vector<const char*> v;
-    const char* fName = (data["name"] + ".csv").c_str();
-    if (!sdFile->exists(fName)) {
-      for (auto d : data)
-        v.push_back(d.first);
-      sdFile->writeFile(fName, v);
-    }
-    v.clear();
-    for (auto d : data)
-      v.push_back(d.second.c_str());
-    sdFile->appendFile(fName, v);
-    string fileContent;
-    sdFile->readFile(fName, fileContent);
-    Serial.println(fileContent.c_str());
-  } else {
-    for (auto d : data) {
-      Serial.print(d.first);
-      Serial.print(": ");
-      Serial.println(d.second.c_str());
-    }
-  }
   }
 
   /**
@@ -104,7 +74,33 @@ class DeviceManager {
   void hookSensors() {
     for (Perif* item : devices) {
       item->begin();
-      item->registerHook(devHook);
+      item->registerHook([this](DevMap& data) {
+// if a path to the server is available, send it there instead
+        if (sdFile.isReady()) {
+          vector<string> v;
+          v.reserve(data.size());
+          const string& fName(data["name"] + ".csv");
+          if (!sdFile.exists(fName)) {
+            for (auto d : data)
+              v.push_back(d.first);
+            sdFile.writeFile(fName, v);
+          }
+          v.clear();
+          for (auto d : data)
+            v.push_back(d.second);
+          if (sdFile.appendFile(fName, v)) Serial.print("Appended to: ");
+          else Serial.print("Failed to append to: ");
+          Serial.println(fName.c_str());
+          string fileContent;
+          sdFile.readFile(fName, fileContent);
+          Serial.println(fileContent.c_str());
+        }
+        for (auto d : data) {
+          Serial.print(d.first.c_str());
+          Serial.print(": ");
+          Serial.println(d.second.c_str());
+        }
+      });
     }
   }
 

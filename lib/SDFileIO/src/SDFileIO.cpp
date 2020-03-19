@@ -24,7 +24,7 @@ SDFileIO::~SDFileIO() {
   esp_vfs_fat_sdmmc_unmount();
 }
 
-bool SDFileIO::exists(const char* fileName) {
+bool SDFileIO::exists(const string& fileName) {
   // obtains detailed file info, but this only cares if it found anything
   struct stat st;
   return stat(absolute(fileName).c_str(), &st) == 0;
@@ -56,7 +56,7 @@ void SDFileIO::printCardInfo() {
 }
 
 template<class FStream>
-bool SDFileIO::openFile(const char* fileName,
+bool SDFileIO::openFile(const string& fileName,
                         ios_base::openmode mode,
                         std::function<bool(FStream&)>&& fileOp) {
   // creates a stream and opens the file
@@ -71,27 +71,26 @@ bool SDFileIO::openFile(const char* fileName,
   return res;
 }
 
-bool SDFileIO::appendFile(const char* fileName,
-                          const vector<const char*>& data) {
+bool SDFileIO::appendFile(const string& fileName,
+                          const vector<string>& data) {
   // opens the file with out and append modes
   return openFile<ofstream>(
       fileName, ios_base::out | ios_base::app,
       [&data](ofstream& f) {
         // the data is a single row in a CSV, although multiple rows can be
         // added manually
-        for (const char* col : data) {
+        for (const string& col : data) {
           // ensure the ofstream is good
-          if (f.bad() || f.fail()) return false;
-          f << col << ",";
+          if (!f) break;
+          f << col << ',';
         }
         // create a new line for the next row
-        if (!f.bad() && !f.fail())
-          f << endl;
+        if (f) f << endl;
         return true;
       });
 }
 
-bool SDFileIO::appendBinFile(const char* fileName, const string& data) {
+bool SDFileIO::appendBinFile(const string& fileName, const string& data) {
   // opens the file with out, truncate and binary modes
   return openFile<ofstream>(
       fileName, ios_base::out | ios_base::app | ios_base::binary,
@@ -102,7 +101,7 @@ bool SDFileIO::appendBinFile(const char* fileName, const string& data) {
       });
 }
 
-bool SDFileIO::readFile(const char* fileName, string& data) {
+bool SDFileIO::readFile(const string& fileName, string& data) {
   // clear in case the passed reference is being reused (may change later)
   if (data.size() > 0)
     data.clear();
@@ -116,17 +115,18 @@ bool SDFileIO::readFile(const char* fileName, string& data) {
         // multiple times while reading
         data.reserve(f.tellg());
         // move the get pointer to the beginning
-        f.seekg(0);
+        f.seekg(0, ios::beg);
 
         // append everything to the data reference
-        while (f.good())
-          data += f.get();
+        string line;
+        while (getline(f, line))
+          data.append(line + '\n');
 
         return true;
       });
 }
 
-bool SDFileIO::readBinFile(const char* fileName, string& data) {
+bool SDFileIO::readBinFile(const string& fileName, string& data) {
   // clear in case the passed reference is being reused (may change later)
   if (data.size() > 0)
     data.clear();
@@ -151,27 +151,26 @@ bool SDFileIO::readBinFile(const char* fileName, string& data) {
       });
 }
 
-bool SDFileIO::writeFile(const char* fileName,
-                         const vector<const char*>& data) {
+bool SDFileIO::writeFile(const string& fileName,
+                         const vector<string>& data) {
   // opens the file with out and truncate modes
   return openFile<ofstream>(
       fileName, ios_base::out | ios_base::trunc,
       [&data](ofstream& f) {
         // the data is a single row in a CSV, although multiple rows can be
         // added manually
-        for (const char* col : data) {
+        for (const string& col : data) {
           // ensure the ofstream is good
-          if (f.bad() || f.fail()) return false;
+          if (!f) break;
           f << col << ",";
         }
         // create a new line for the next row
-        if (!f.bad() && !f.fail())
-          f << endl;
+        if (f) f << endl;
         return true;
       });
 }
 
-bool SDFileIO::writeBinFile(const char* fileName, const string& data) {
+bool SDFileIO::writeBinFile(const string& fileName, const string& data) {
   // opens the file with out, truncate and binary modes
   return openFile<ofstream>(
       fileName, ios_base::out | ios_base::trunc | ios_base::binary,
