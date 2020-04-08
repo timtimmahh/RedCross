@@ -10,6 +10,8 @@
 
 #include <esp_event.h>
 #include <esp_wifi.h>
+#include <esp_netif.h>
+#include "utils.h"
 
 enum class WiFiMode {
   STA = 1, AP = 2
@@ -18,18 +20,24 @@ enum class WiFiMode {
 // WiFi AP credentials
 // specify your WiFi SSID and password to connect to the Internet
 // Web server port number (80 for default HTTP browser connections)
-#define SSID        "Timothys-Fedora"
-#define PASSWORD    "UHDUNNO12"
+#define SSID        "You Can't Connect"
+#define PASSWORD    "unlessIwantU2"
+
+#define event(id, ...) \
+case id: \
+  LOG(#id); \
+  CONCAT2(LINE, COUNT(__VA_ARGS__))(__VA_ARGS__) \
+  break
 
 class WiFi {
  private:
   WiFiMode mode;
-  bool connected = false;
   void config_connection();
   static void config_connection_ap();
   static void config_connection_sta();
  public:
-  WiFi();
+  bool connected = false;
+  explicit WiFi(WiFiMode mode = WiFiMode::STA);
   virtual ~WiFi();
 
   static void wifi_event_handler(void *arg,
@@ -43,27 +51,24 @@ static inline void wifi_event(WiFi &wifi,
 							  int32_t event_id,
 							  void *event_data) {
   switch (event_id) {
-	case WIFI_EVENT_STA_START: esp_wifi_connect();
-	  break;
-	case WIFI_EVENT_STA_CONNECTED:
-
-	  break;
-	case WIFI_EVENT_STA_DISCONNECTED:
-	  /* This is a workaround as ESP32 WiFi libs don't currently
-		 auto-reassociate. */
-	  esp_wifi_connect();
-	  break;
-	case WIFI_EVENT_STA_AUTHMODE_CHANGE:break;
-	case WIFI_EVENT_STA_WPS_ER_SUCCESS:
-	case WIFI_EVENT_STA_WPS_ER_FAILED:
-	case WIFI_EVENT_STA_WPS_ER_TIMEOUT:
-	case WIFI_EVENT_STA_WPS_ER_PIN:
-	case WIFI_EVENT_STA_WPS_ER_PBC_OVERLAP: break;
-	case WIFI_EVENT_AP_START:break;
-	case WIFI_EVENT_AP_STOP:break;
-	case WIFI_EVENT_AP_STACONNECTED:break;
-	case WIFI_EVENT_AP_STADISCONNECTED:break;
-	case WIFI_EVENT_AP_PROBEREQRECVED:break;
+	event(WIFI_EVENT_STA_START, esp_wifi_connect());
+	event(WIFI_EVENT_STA_CONNECTED, wifi.connected = true);
+	event(WIFI_EVENT_STA_DISCONNECTED,
+	/* This is a workaround as ESP32 WiFi libs don't currently
+	 * auto-reassociate. */
+		  wifi.connected = false,
+		  esp_wifi_connect());
+	event(WIFI_EVENT_STA_AUTHMODE_CHANGE);
+	event(WIFI_EVENT_STA_WPS_ER_SUCCESS);
+	event(WIFI_EVENT_STA_WPS_ER_FAILED);
+	event(WIFI_EVENT_STA_WPS_ER_TIMEOUT);
+	event(WIFI_EVENT_STA_WPS_ER_PIN);
+	event(WIFI_EVENT_STA_WPS_ER_PBC_OVERLAP);
+	event(WIFI_EVENT_AP_START);
+	event(WIFI_EVENT_AP_STOP);
+	event(WIFI_EVENT_AP_STACONNECTED);
+	event(WIFI_EVENT_AP_STADISCONNECTED);
+	event(WIFI_EVENT_AP_PROBEREQRECVED);
 	default: break;
   }
 }
@@ -72,11 +77,11 @@ static inline void ip_event(WiFi &wifi,
 							int32_t event_id,
 							void *event_data) {
   switch (event_id) {
-	case IP_EVENT_STA_GOT_IP:
-	case IP_EVENT_STA_LOST_IP:break;
-	case IP_EVENT_AP_STAIPASSIGNED:break;
-	case IP_EVENT_GOT_IP6:break;
-	case IP_EVENT_ETH_GOT_IP: break;
+	event(IP_EVENT_STA_GOT_IP);
+	event(IP_EVENT_STA_LOST_IP);
+	event(IP_EVENT_AP_STAIPASSIGNED);
+	event(IP_EVENT_GOT_IP6);
+	event(IP_EVENT_ETH_GOT_IP);
 	default: break;
   }
 }

@@ -25,7 +25,7 @@ namespace perif {
 /**
  * Wrapper around the Garmin LIDAR-Lite library.
  */
-class LidarMap : public I2CPerif {
+class LidarMap : public I2CPerif<> {
  private:
   template<int v1, int v2, int v3>
   bool configure();

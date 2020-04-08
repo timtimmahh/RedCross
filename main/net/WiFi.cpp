@@ -13,15 +13,15 @@ void WiFi::wifi_event_handler(void *arg,
 							  esp_event_base_t event_base,
 							  int32_t event_id,
 							  void *event_data) {
-  auto *wifi = reinterpret_cast<WiFi *>(arg);
+  WiFi *wifi = static_cast<WiFi *>(arg);
   if (event_base == WIFI_EVENT)
 	wifi_event(*wifi, event_id, event_data);
   else if (event_base == IP_EVENT)
 	ip_event(*wifi, event_id, event_data);
 }
-WiFi::WiFi()
-	: mode(WiFiMode::STA), connected(false) {
-  tcpip_adapter_init();
+WiFi::WiFi(WiFiMode mode)
+	: mode(mode), connected(false) {
+  esp_netif_init();
   esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID,
 							 WiFi::wifi_event_handler, this);
   esp_event_handler_register(IP_EVENT, ESP_EVENT_ANY_ID,
@@ -51,7 +51,7 @@ void WiFi::config_connection_ap() {
   copy_min_to_buffer(PASSWORD, wifi_config.ap.password);
   wifi_config.ap.authmode = WIFI_AUTH_WPA2_PSK;
   wifi_config.ap.max_connection = 4;
-  log("Setting WiFi configuration SSID ", SSID, "...");
+  LOG("Setting WiFi configuration SSID ", SSID, "...");
   esp_wifi_set_mode(WIFI_MODE_AP);
   esp_wifi_set_config(WIFI_IF_AP, &wifi_config);
 }
@@ -66,7 +66,7 @@ void WiFi::config_connection_sta() {
   wifi_config.sta.bssid_set = false;
   wifi_config.sta.channel = 0;
   wifi_config.sta.listen_interval = 0;
-  log("Setting WiFi configuration SSID ", SSID, "...");
+  LOG("Setting WiFi configuration SSID ", SSID, "...");
   esp_wifi_set_mode(WIFI_MODE_STA);
   esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
 }

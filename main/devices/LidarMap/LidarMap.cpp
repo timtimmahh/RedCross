@@ -9,7 +9,7 @@
 
 namespace perif {
 LidarMap::LidarMap(uint8_t address)
-	: I2CPerif("LidarMap", address),
+	: I2CPerif("WaterLevel", address),
 	  distance(0.0) {
 }
 
@@ -23,13 +23,12 @@ double LidarMap::measure(bool biasCorrection) {
 double LidarMap::getDistance(uint8_t count) {
   double data = 0;
 
-  for (int i = 0; i < count - 1; ++i)
+  for (int i = 0; i < count; ++i)
 	data += measure(false);
-  data += measure(true);
 
   data /= count;
   // Lidar distance is consistently ~10 cm off, so fix it.
-  data -= 10;
+  data -= 8.5;
   return max(0.0, data);
 }
 

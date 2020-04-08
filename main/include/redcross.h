@@ -12,7 +12,7 @@
 // to compile. See https://github.com/esp8266/Arduino/issues/3806
 // uncomment for debug output
 //#define DEBUG
-#include <esp_err.h>
+#include "ErrorLog.hpp"
 #include <nvs_flash.h>
 #include "utils.h"
 
@@ -26,7 +26,5 @@
 #define MAP(Perif) perif::Perif
 
 #define PERIF_NAMES MAP(LidarMap)
-
-DeviceManager<PERIF_NAMES> *manager;
 
 #endif //REDCROSS_INCLUDE_REDCROSS_H

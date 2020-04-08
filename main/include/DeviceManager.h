@@ -46,9 +46,9 @@ class DeviceManager {
 
   void init() {
     if (sdFile.mount())
-      sdFile.printCardInfo();
-    else
-	  log("SD not mounted");
+	  sdFile.printCardInfo();
+	else
+	  LOG("SD not mounted");
     hookSensors();
   }
  public:
@@ -56,8 +56,7 @@ class DeviceManager {
    * Default constructor that creates sensor instances.
    */
   DeviceManager()
-	  : devices{new Sensors()...},
-		sdFile() { init(); }
+	  : DeviceManager(new Sensors()...) {}
 
   /**
    * Clear sensors from memory. This should only be called when the device is
@@ -91,19 +90,22 @@ class DeviceManager {
 				sdFile.writeFile(fName, v);
 			  }
 			  v.clear();
-			  for (auto d : data)
-				v.push_back(d.second);
+			  stringstream keys;
+			  stringstream values;
+			  for (auto i = data.rbegin(); i != data.rend(); ++i) {
+				v.insert(v.begin(), i->second);
+				keys << i->first << (*i == *data.begin() ? "\n" : ",");
+				values << i->second << (*i == *data.begin() ? "\n" : ",");
+			  }
 			  sdFile.appendFile(fName, v);
+			  LOG("\n", keys.str(), values.str());
 
-			  string fileContent;
-			  sdFile.readFile(fName, fileContent);
-			  log(fileContent);
 			} else {
 			  std::stringstream ss;
 			  for (auto d : data) {
 				ss << d.first << ": " << d.second;
 			  }
-			  log(ss.str());
+			  LOG(ss.str());
 			}
 		  });
 	}
@@ -114,11 +116,11 @@ class DeviceManager {
    */
   void logSensors() {
 	std::stringstream ss;
-    for (Perif* item : devices) {
+	for (Perif *item : devices) {
 	  ss << "Perif: " << item->data["name"] << " connected? ";
 	  ss << (item->isConnected() ? "yes" : "no") << std::endl;
 	}
-	log(ss.str());
+	LOG(ss.str());
   }
 
   void update() {

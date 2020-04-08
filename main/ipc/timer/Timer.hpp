@@ -39,7 +39,7 @@ class Timer {
 	latest = esp_timer_get_time();
   }
 
-  uint64_t getLatestUpdate() {
+  uint64_t getLatestUpdate() const {
 	return latest;
   }
 

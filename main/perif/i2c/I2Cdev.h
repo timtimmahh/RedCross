@@ -35,17 +35,8 @@ THE SOFTWARE.
 #define _I2CDEV_H_
 
 #include <mutex>
+#include <driver/gpio.h>
 #include <driver/i2c.h>
-
-#define I2C_SDA_PORT gpioPortA
-#define I2C_SDA_PIN 0
-#define I2C_SDA_MODE gpioModeWiredAnd
-#define I2C_SDA_DOUT 1
-
-#define I2C_SCL_PORT gpioPortA
-#define I2C_SCL_PIN 1
-#define I2C_SCL_MODE gpioModeWiredAnd
-#define I2C_SCL_DOUT 1
 
 /**
  * Default timeout value for read operations.
@@ -54,23 +45,13 @@ THE SOFTWARE.
 
 using namespace std;
 
-/**
- * Mutexes for each i2c bus port.
- */
-static mutex portLocks[I2C_NUM_MAX];
-static i2c_config_t configs[I2C_NUM_MAX];
-static bool initializedPorts[I2C_NUM_MAX] = {false, false};
-static uint8_t portRefs[I2C_NUM_MAX] = {0, 0};
-
 class I2Cdev {
- private:
-  bool initialized;
-  mutex &portLock;
  protected:
-  i2c_port_t port;
+  const i2c_port_t port;
+  bool initialized;
   bool initialize(gpio_num_t sda, gpio_num_t scl,
 				  bool sdaPullUp = false, bool sclPullUp = false,
-				  uint32_t frequency = 100000);
+				  uint32_t frequency = 100000UL);
   int8_t readByte_(uint8_t devAddr, uint8_t regAddr, uint8_t *data,
 				   uint16_t timeout = I2CDEV_DEFAULT_READ_TIMEOUT);
   int8_t readBytes_(uint8_t devAddr, uint8_t regAddr,
@@ -80,7 +61,7 @@ class I2Cdev {
   bool writeBytes_(uint8_t devAddr, uint8_t regAddr,
 				   uint8_t length, uint8_t *data);
  public:
-  explicit I2Cdev(i2c_port_t port);
+  explicit I2Cdev(const i2c_port_t port);
   ~I2Cdev();
 //  void enable(bool isEnabled);
   void SelectRegister(uint8_t dev, uint8_t reg);

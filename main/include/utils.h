@@ -16,29 +16,50 @@
 
 using namespace std;
 
-template<typename StrType>
-void log(StrType str) {
-  stringstream ss;
-  ss << str;
-  ESP_LOGI(__FILE__, "%s", ss.str().c_str());
+#define ELEVENTH_ARGUMENT(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, ...) a11
+#define COUNT(...) ELEVENTH_ARGUMENT(dummy, ## __VA_ARGS__, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+#define CONCAT(a, b) a ## b
+#define CONCAT2(a, b) CONCAT(a, b)
+
+#define LINE0()
+#define LINE(op) op;
+#define LINE1(op) LINE(op)
+#define LINE2(op, op1) LINE(op) LINE(op1)
+#define LINE3(op, op1, op2) LINE2(op, op1) LINE(op2)
+
+#define LOG(msgs...) log(fileToTag(__FILE__), msgs)
+
+inline string fileToTag(const char *file) {
+  string tagStr = file;
+  unsigned index = tagStr.find_last_of('/');
+  if (index != string::npos)
+	tagStr = tagStr.substr(index + 1);
+  return tagStr;
 }
 
 template<typename StrType>
-void apnd(stringstream &ss, StrType str) {
-  ss << str;
-  ESP_LOGI(__FILE__, "%s", ss.str().c_str());
-}
-
-template<typename StrType, typename... StrTypes>
-void apnd(stringstream &ss, StrType str, StrTypes... msgs) {
-  ss << str;
-  apnd(ss, msgs...);
-}
-
-template<typename StrType, typename... StrTypes>
-void log(StrType str, StrTypes... msg) {
+void log(const string &tag, StrType str) {
   stringstream ss;
-  apnd(ss, str, msg...);
+  ss << str;
+  ESP_LOGI(tag.c_str(), "%s", ss.str().c_str());
+}
+
+template<typename StrType>
+void apnd(const string &tag, stringstream &ss, StrType str) {
+  ss << str;
+  ESP_LOGI(tag.c_str(), "%s", ss.str().c_str());
+}
+
+template<typename StrType, typename... StrTypes>
+void apnd(const string &tag, stringstream &ss, StrType str, StrTypes... msgs) {
+  ss << str;
+  apnd(tag, ss, msgs...);
+}
+
+template<typename StrType, typename... StrTypes>
+void log(const string &tag, StrType str, StrTypes... msg) {
+  stringstream ss;
+  apnd(tag, ss, str, msg...);
 }
 
 /**
@@ -71,7 +92,8 @@ void copy_min_to_buffer(string &&source, T (&target)[size]) {
 template<typename FP, FP(*rnd)(FP)>
 inline std::string to_string(FP fp, uint8_t precision = 2) {
   unsigned long scalar = pow(10, precision);
-  return std::to_string(rnd(fp * scalar) / scalar);
+  string val = std::to_string(rnd(fp * scalar) / scalar);
+  return val.substr(0, val.find('.') + precision + 1);
 }
 
 /**

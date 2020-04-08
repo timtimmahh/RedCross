@@ -43,7 +43,7 @@ using namespace std::chrono;
  * A barometric pressure/temperature sensor.
  * TODO add altitude for upgraded mpl3115A2 sensor
  */
-class BarPAT : public I2CPerif {
+class BarPAT : public I2CPerif<> {
  private:
   float coeffs[4];
 //  Adafruit_MPL115A2 mpl;

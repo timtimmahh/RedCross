@@ -20,7 +20,7 @@ namespace perif {
 /**
  * Accelerometer and gyroscope wrapper around MPU6050 library by Jeff Rowberg.
  */
-class AccelGyro : public I2CPerif {
+class AccelGyro : public I2CPerif<> {
  private:
   MPU6050 mpu;
   int16_t data[6];

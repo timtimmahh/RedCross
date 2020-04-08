@@ -31,34 +31,28 @@ THE SOFTWARE.
 ===============================================
 */
 
-#include <esp_log.h>
-#include <esp_err.h>
+#include "ErrorLog.hpp"
+#include "i2c_data.h"
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include "sdkconfig.h"
 
 #include "I2Cdev.h"
 
-#define I2C_NUM I2C_NUM_0
-
-#undef ESP_ERROR_CHECK
-#define ESP_ERROR_CHECK(x)   do { esp_err_t rc = (x); if (rc != ESP_OK) { ESP_LOGE("err", "esp_err_t = %d", rc); /*assert(0 && #x);*/} } while(0);
-
 /**
  * Default constructor.
  */
-I2Cdev::I2Cdev(i2c_port_t port)
-	: initialized(false),
-	  portLock(portLocks[port]),
-	  port(port) {
-  portRefs[port]++;
+I2Cdev::I2Cdev(const i2c_port_t port)
+	: port((static_cast<unsigned>(port) | 1u) == 1u ? port : I2C_NUM_0),
+	  initialized(false) {
+  i2c::portRefs[this->port]++;
 }
 
 I2Cdev::~I2Cdev() {
-  portRefs[port]--;
-  if (portRefs[port] == 0) {
-	initializedPorts[port] = false;
-	configs[port] = {};
+  i2c::portRefs[port]--;
+  if (i2c::portRefs[port] == 0) {
+	i2c::initializedPorts[port] = false;
+	i2c::configs[port] = {};
 	i2c_driver_delete(port);
   }
 }
@@ -68,27 +62,28 @@ I2Cdev::~I2Cdev() {
  */
 bool I2Cdev::initialize(gpio_num_t sda, gpio_num_t scl,
 						bool sdaPullUp, bool sclPullUp, uint32_t frequency) {
-  lock_guard<mutex> lock(portLock);
-  if (initializedPorts[port]) {
-	if (sda != configs[port].sda_io_num
-		|| scl != configs[port].scl_io_num
-		|| sdaPullUp != configs[port].sda_pullup_en
-		|| sclPullUp != configs[port].scl_pullup_en) {
-	  configs[port].sda_io_num = sda;
-	  configs[port].scl_io_num = scl;
-	  configs[port].sda_pullup_en = sdaPullUp ? GPIO_PULLUP_ENABLE
-											  : GPIO_PULLUP_DISABLE;
-	  configs[port].scl_pullup_en = sclPullUp ? GPIO_PULLUP_ENABLE
-											  : GPIO_PULLUP_DISABLE;
-	  initialized = i2c_set_pin(port,
-								configs[port].sda_io_num,
-								configs[port].scl_io_num,
-								configs[port].sda_pullup_en,
-								configs[port].scl_pullup_en,
-								I2C_MODE_MASTER) == ESP_OK;
-	}
+  lock_guard<mutex> lock(i2c::portLocks[port]);
+  ErrorHandler<> check("I2Cdev");
+  if (i2c::initializedPorts[port]) {
+	if (sda != i2c::configs[port].sda_io_num
+		|| scl != i2c::configs[port].scl_io_num
+		|| sdaPullUp != i2c::configs[port].sda_pullup_en
+		|| sclPullUp != i2c::configs[port].scl_pullup_en) {
+	  i2c::configs[port].sda_io_num = sda;
+	  i2c::configs[port].scl_io_num = scl;
+	  i2c::configs[port].sda_pullup_en = sdaPullUp ? GPIO_PULLUP_ENABLE
+												   : GPIO_PULLUP_DISABLE;
+	  i2c::configs[port].scl_pullup_en = sclPullUp ? GPIO_PULLUP_ENABLE
+												   : GPIO_PULLUP_DISABLE;
+	  initialized = check(i2c_set_pin, "I2C set pin", port,
+						  static_cast<int>(i2c::configs[port].sda_io_num),
+						  static_cast<int>(i2c::configs[port].scl_io_num),
+						  i2c::configs[port].sda_pullup_en,
+						  i2c::configs[port].scl_pullup_en,
+						  I2C_MODE_MASTER).runCheck();
+	} else initialized = true;
   } else {
-	i2c_config_t &config = configs[port];
+	i2c_config_t &config = i2c::configs[port];
 	config.mode = I2C_MODE_MASTER;
 	config.sda_io_num = static_cast<gpio_num_t>(sda);
 	config.sda_pullup_en = sdaPullUp ? GPIO_PULLUP_ENABLE
@@ -97,19 +92,17 @@ bool I2Cdev::initialize(gpio_num_t sda, gpio_num_t scl,
 	config.scl_pullup_en = sclPullUp ? GPIO_PULLUP_ENABLE
 									 : GPIO_PULLUP_DISABLE;
 	config.master.clk_speed = frequency;
-	initialized = i2c_param_config(port, &configs[port]) == ESP_OK
-		&& i2c_driver_install(port, configs[port].mode, 0, 0, 0) == ESP_OK;
+	const i2c_config_t *conf = &config;
+	initialized =
+		check(i2c_param_config, "I2C Param Config", port, conf)
+			(i2c_driver_install, "I2C Driver Install",
+			 port, I2C_MODE_MASTER, static_cast<size_t>(0),
+			 static_cast<size_t>(0), 0).runCheck();
   }
-  initializedPorts[port] = initialized;
+  i2c::initializedPorts[port] = initialized;
   return initialized;
 }
 
-/** Enable or disable I2C
- * @param isEnabled true = enable, false = disable
- */
-//void I2Cdev::enable(bool isEnabled) {
-//
-//}
 /** Read a single bit from an 8-bit device register.
  * @param devAddr I2C slave device address
  * @param regAddr Register regAddr to read from
@@ -123,7 +116,7 @@ int8_t I2Cdev::readBit(uint8_t devAddr,
 					   uint8_t bitNum,
 					   uint8_t *data,
 					   uint16_t timeout) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   uint8_t b;
   uint8_t count = readByte_(devAddr, regAddr, &b, timeout);
   *data = b & (1u << bitNum);
@@ -145,7 +138,7 @@ int8_t I2Cdev::readBits(uint8_t devAddr,
 						uint8_t length,
 						uint8_t *data,
 						uint16_t timeout) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   // 01101001 read byte
   // 76543210 bit numbers
   //    xxx   args: bitStart=4, length=3
@@ -178,7 +171,7 @@ int8_t I2Cdev::readByte(uint8_t devAddr,
 						uint8_t regAddr,
 						uint8_t *data,
 						uint16_t timeout) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   return readBytes_(devAddr, regAddr, 1, data, timeout);
 }
 
@@ -189,25 +182,39 @@ int8_t I2Cdev::readBytes_(uint8_t devAddr,
 						  uint16_t timeout) {
   i2c_cmd_handle_t cmd;
   SelectRegister(devAddr, regAddr);
+  ErrorHandler<> check("I2Cdev");
 
   cmd = i2c_cmd_link_create();
-  ESP_ERROR_CHECK(i2c_master_start(cmd))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd,
-										static_cast<uint8_t>(devAddr << 1u)
-											| I2C_MASTER_READ,
-										1))
+  check(i2c_master_start, "I2C Start", cmd)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd,
+	   static_cast<uint8_t>(static_cast<uint8_t>(
+		   devAddr << 1u) | I2C_MASTER_READ
+	   ), true);
+//  ESP_ERROR_CHECK(i2c_master_start(cmd))
+//  ESP_ERROR_CHECK(i2c_master_write_byte(cmd,
+//										static_cast<uint8_t>(devAddr << 1u)
+//											| I2C_MASTER_READ,
+//										1))
 
   if (length > 1)
-	ESP_ERROR_CHECK(i2c_master_read(cmd, data, length - 1, I2C_MASTER_ACK))
+	check(i2c_master_read, "I2C Read", cmd, data,
+		  static_cast<size_t>(length - 1),
+		  I2C_MASTER_ACK);
+//  ESP_ERROR_CHECK(i2c_master_read(cmd, data, length - 1, I2C_MASTER_ACK))
 
-  ESP_ERROR_CHECK(i2c_master_read_byte(cmd,
-									   data + length - 1,
-									   I2C_MASTER_NACK))
+  check(i2c_master_read_byte, "I2C Read Byte",
+		cmd, data + length - 1, I2C_MASTER_NACK);
+//  ESP_ERROR_CHECK(i2c_master_read_byte(cmd,
+//									   data + length - 1,
+//									   I2C_MASTER_NACK))
 
-  ESP_ERROR_CHECK(i2c_master_stop(cmd))
-  ESP_ERROR_CHECK(i2c_master_cmd_begin(I2C_NUM,
-									   cmd,
-									   1000 / portTICK_PERIOD_MS))
+  check(i2c_master_stop, "I2C Stop", cmd)
+	  (i2c_master_cmd_begin, "I2C CMD Begin", port, cmd,
+	   1000 / portTICK_PERIOD_MS);
+//  ESP_ERROR_CHECK(i2c_master_cmd_begin(port,
+//									   cmd,
+//									   1000 / portTICK_PERIOD_MS))
+  check.runCheck();
   i2c_cmd_link_delete(cmd);
 
   return length;
@@ -226,7 +233,7 @@ int8_t I2Cdev::readBytes(uint8_t devAddr,
 						 uint8_t length,
 						 uint8_t *data,
 						 uint16_t timeout) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   return readBytes_(devAddr, regAddr, length, data, timeout);
 }
 
@@ -242,7 +249,7 @@ int8_t I2Cdev::readWord(uint8_t devAddr,
 						uint8_t regAddr,
 						uint16_t *data,
 						uint16_t timeout) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   uint8_t msb[2] = {0, 0};
   readBytes_(devAddr, regAddr, 2, msb);
   *data = (static_cast<uint16_t>(msb[0] << 8u) | msb[1]);
@@ -253,15 +260,17 @@ void I2Cdev::SelectRegister(uint8_t dev, uint8_t reg) {
   i2c_cmd_handle_t cmd;
 
   cmd = i2c_cmd_link_create();
-  ESP_ERROR_CHECK(i2c_master_start(cmd))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd,
-										static_cast<uint8_t>(dev << 1u)
-											| I2C_MASTER_WRITE, 1))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd, reg, 1))
-  ESP_ERROR_CHECK(i2c_master_stop(cmd))
-  ESP_ERROR_CHECK(i2c_master_cmd_begin(I2C_NUM,
-									   cmd,
-									   1000 / portTICK_PERIOD_MS))
+  ErrorHandler<>("I2Cdev")
+	  (i2c_master_start, "I2C Start", cmd)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd,
+	   static_cast<uint8_t>(static_cast<uint8_t>(dev << 1u)
+		   | I2C_MASTER_WRITE),
+	   true)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd, reg, true)
+	  (i2c_master_stop, "I2C Stop", cmd)
+	  (i2c_master_cmd_begin, "I2C Begin", port, cmd,
+	   1000 / portTICK_PERIOD_MS)
+	  .runCheck();
   i2c_cmd_link_delete(cmd);
 }
 
@@ -276,7 +285,7 @@ bool I2Cdev::writeBit(uint8_t devAddr,
 					  uint8_t regAddr,
 					  uint8_t bitNum,
 					  uint8_t data) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   uint8_t b;
   readByte_(devAddr, regAddr, &b);
   b = (data != 0) ? (b | (1u << bitNum)) : (b & ~(1u << bitNum));
@@ -296,7 +305,7 @@ bool I2Cdev::writeBits(uint8_t devAddr,
 					   uint8_t bitStart,
 					   uint8_t length,
 					   uint8_t data) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   //      010 value to write
   // 76543210 bit numbers
   //    xxx   args: bitStart=4, length=3
@@ -324,17 +333,16 @@ bool I2Cdev::writeByte_(uint8_t devAddr, uint8_t regAddr, uint8_t data) {
   i2c_cmd_handle_t cmd;
 
   cmd = i2c_cmd_link_create();
-  ESP_ERROR_CHECK(i2c_master_start(cmd))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd,
-										static_cast<uint8_t>(devAddr << 1u)
-											| I2C_MASTER_WRITE,
-										1))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd, regAddr, 1))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd, data, 1))
-  ESP_ERROR_CHECK(i2c_master_stop(cmd))
-  ESP_ERROR_CHECK(i2c_master_cmd_begin(I2C_NUM,
-									   cmd,
-									   1000 / portTICK_PERIOD_MS))
+  ErrorHandler<>("I2Cdev")
+	  (i2c_master_start, "I2C Start", cmd)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd, static_cast<uint8_t>(
+		   static_cast<uint8_t>(devAddr << 1u) | I2C_MASTER_WRITE),
+	   true)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd, regAddr, true)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd, data, true)
+	  (i2c_master_stop, "I2C Stop", cmd)
+	  (i2c_master_cmd_begin, "I2C Begin", port, cmd, 1000 / portTICK_PERIOD_MS)
+	  .runCheck();
   i2c_cmd_link_delete(cmd);
 
   return true;
@@ -347,7 +355,7 @@ bool I2Cdev::writeByte_(uint8_t devAddr, uint8_t regAddr, uint8_t data) {
  * @return Status of operation (true = success)
  */
 bool I2Cdev::writeByte(uint8_t devAddr, uint8_t regAddr, uint8_t data) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   return writeByte_(devAddr, regAddr, data);
 }
 
@@ -358,18 +366,18 @@ bool I2Cdev::writeBytes_(uint8_t devAddr,
   i2c_cmd_handle_t cmd;
 
   cmd = i2c_cmd_link_create();
-  ESP_ERROR_CHECK(i2c_master_start(cmd))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd,
-										static_cast<uint8_t>(devAddr << 1u)
-											| I2C_MASTER_WRITE,
-										1))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd, regAddr, 1))
-  ESP_ERROR_CHECK(i2c_master_write(cmd, data, length - 1, 0))
-  ESP_ERROR_CHECK(i2c_master_write_byte(cmd, data[length - 1], 1))
-  ESP_ERROR_CHECK(i2c_master_stop(cmd))
-  ESP_ERROR_CHECK(i2c_master_cmd_begin(I2C_NUM,
-									   cmd,
-									   1000 / portTICK_PERIOD_MS))
+  ErrorHandler<>("I2Cdev")
+	  (i2c_master_start, "I2C Start", cmd)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd, static_cast<uint8_t>(
+		  static_cast<uint8_t>(devAddr << 1u) | I2C_MASTER_WRITE), true)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd, regAddr, true)
+	  (i2c_master_write, "I2C Write", cmd, data,
+	   static_cast<size_t>(length - 1), false)
+	  (i2c_master_write_byte, "I2C Write Byte", cmd, data[length - 1], true)
+	  (i2c_master_stop, "I2C Stop", cmd)
+	  (i2c_master_cmd_begin, "I2C CMD Begin",
+	   port, cmd, 1000 / portTICK_PERIOD_MS)
+	  .runCheck();
   i2c_cmd_link_delete(cmd);
   return true;
 }
@@ -385,15 +393,16 @@ bool I2Cdev::writeBytes(uint8_t devAddr,
 						uint8_t regAddr,
 						uint8_t length,
 						uint8_t *data) {
-  lock_guard<mutex> lock(portLock);
+  lock_guard<mutex> lock(i2c::portLocks[port]);
   return writeBytes_(devAddr, regAddr, length, data);
 }
 
 bool I2Cdev::writeWord(uint8_t devAddr, uint8_t regAddr, uint16_t data) {
-  lock_guard<mutex> lock(portLock);
-  uint8_t data1[] = {(uint8_t)(data >> 8), (uint8_t)(data & 0xff)};
-  uint8_t data2[] = {(uint8_t)(data & 0xff), (uint8_t)(data >> 8)};
+  lock_guard<mutex> lock(i2c::portLocks[port]);
+  uint8_t data1[] = {(uint8_t)(data >> 8u), (uint8_t)(data & 0xffu)};
+  uint8_t data2[] = {(uint8_t)(data & 0xffu), (uint8_t)(data >> 8u)};
   writeBytes_(devAddr, regAddr, 2, data1);
+  writeBytes_(devAddr, regAddr, 2, data2);
   return true;
 }
 
