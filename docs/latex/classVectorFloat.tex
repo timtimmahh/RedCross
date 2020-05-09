@@ -1,0 +1,224 @@
+\hypertarget{classVectorFloat}{}\section{Vector\+Float Class Reference}
+\label{classVectorFloat}\index{VectorFloat@{VectorFloat}}
+
+
+{\ttfamily \#include $<$helper\+\_\+3dmath.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVectorFloat_a8b54ec5c117ca7101cff478b3cfaa0cc}{Vector\+Float}} ()
+\item 
+\mbox{\hyperlink{classVectorFloat_a3b12ed03e28bded4316275882433e5aa}{Vector\+Float}} (float nx, float ny, float nz)
+\item 
+float \mbox{\hyperlink{classVectorFloat_abe0c3954d8da8829a053125df1ce63d5}{get\+Magnitude}} ()
+\item 
+void \mbox{\hyperlink{classVectorFloat_a112eaf8758a6f51b96ed1ccb71700495}{normalize}} ()
+\item 
+\mbox{\hyperlink{classVectorFloat}{Vector\+Float}} \mbox{\hyperlink{classVectorFloat_aacb5e7ca59563c47dd066d8b1264ec4b}{get\+Normalized}} ()
+\item 
+void \mbox{\hyperlink{classVectorFloat_afef0e6d631fb1eb67b6913e90730aa9e}{rotate}} (\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$q)
+\item 
+\mbox{\hyperlink{classVectorFloat}{Vector\+Float}} \mbox{\hyperlink{classVectorFloat_ab4093d50e98baf0d98b437a2b3ee7c2e}{get\+Rotated}} (\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$q)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}}
+\item 
+float \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}}
+\item 
+float \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 167 of file helper\+\_\+3dmath.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVectorFloat_a8b54ec5c117ca7101cff478b3cfaa0cc}\label{classVectorFloat_a8b54ec5c117ca7101cff478b3cfaa0cc}} 
+\index{VectorFloat@{VectorFloat}!VectorFloat@{VectorFloat}}
+\index{VectorFloat@{VectorFloat}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{VectorFloat()}{VectorFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vector\+Float\+::\+Vector\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 173 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{173                 \{}
+\DoxyCodeLine{174     \mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}} = 0;}
+\DoxyCodeLine{175     \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}} = 0;}
+\DoxyCodeLine{176     \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}} = 0;}
+\DoxyCodeLine{177   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorFloat_a3b12ed03e28bded4316275882433e5aa}\label{classVectorFloat_a3b12ed03e28bded4316275882433e5aa}} 
+\index{VectorFloat@{VectorFloat}!VectorFloat@{VectorFloat}}
+\index{VectorFloat@{VectorFloat}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{VectorFloat()}{VectorFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Float\+::\+Vector\+Float (\begin{DoxyParamCaption}\item[{float}]{nx,  }\item[{float}]{ny,  }\item[{float}]{nz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 179 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{179                                             \{}
+\DoxyCodeLine{180     \mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}} = nx;}
+\DoxyCodeLine{181     \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}} = ny;}
+\DoxyCodeLine{182     \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}} = nz;}
+\DoxyCodeLine{183   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVectorFloat_abe0c3954d8da8829a053125df1ce63d5}\label{classVectorFloat_abe0c3954d8da8829a053125df1ce63d5}} 
+\index{VectorFloat@{VectorFloat}!getMagnitude@{getMagnitude}}
+\index{getMagnitude@{getMagnitude}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{getMagnitude()}{getMagnitude()}}
+{\footnotesize\ttfamily float Vector\+Float\+::get\+Magnitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 185 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185                        \{}
+\DoxyCodeLine{186     \textcolor{keywordflow}{return} sqrt(\mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}} * \mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}} + \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}} * \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}} + \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}} * \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}});}
+\DoxyCodeLine{187   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorFloat_aacb5e7ca59563c47dd066d8b1264ec4b}\label{classVectorFloat_aacb5e7ca59563c47dd066d8b1264ec4b}} 
+\index{VectorFloat@{VectorFloat}!getNormalized@{getNormalized}}
+\index{getNormalized@{getNormalized}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{getNormalized()}{getNormalized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVectorFloat}{Vector\+Float}} Vector\+Float\+::get\+Normalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 196 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{196                               \{}
+\DoxyCodeLine{197     \mbox{\hyperlink{classVectorFloat}{VectorFloat}} r(\mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}}, \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}}, \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}});}
+\DoxyCodeLine{198     r.normalize();}
+\DoxyCodeLine{199     \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{200   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorFloat_ab4093d50e98baf0d98b437a2b3ee7c2e}\label{classVectorFloat_ab4093d50e98baf0d98b437a2b3ee7c2e}} 
+\index{VectorFloat@{VectorFloat}!getRotated@{getRotated}}
+\index{getRotated@{getRotated}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{getRotated()}{getRotated()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVectorFloat}{Vector\+Float}} Vector\+Float\+::get\+Rotated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 217 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{217                                         \{}
+\DoxyCodeLine{218     \mbox{\hyperlink{classVectorFloat}{VectorFloat}} r(\mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}}, \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}}, \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}});}
+\DoxyCodeLine{219     r.rotate(q);}
+\DoxyCodeLine{220     \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{221   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorFloat_a112eaf8758a6f51b96ed1ccb71700495}\label{classVectorFloat_a112eaf8758a6f51b96ed1ccb71700495}} 
+\index{VectorFloat@{VectorFloat}!normalize@{normalize}}
+\index{normalize@{normalize}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Vector\+Float\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 189 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189                    \{}
+\DoxyCodeLine{190     \textcolor{keywordtype}{float} m = \mbox{\hyperlink{classVectorFloat_abe0c3954d8da8829a053125df1ce63d5}{getMagnitude}}();}
+\DoxyCodeLine{191     \mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}} /= m;}
+\DoxyCodeLine{192     \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}} /= m;}
+\DoxyCodeLine{193     \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}} /= m;}
+\DoxyCodeLine{194   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorFloat_afef0e6d631fb1eb67b6913e90730aa9e}\label{classVectorFloat_afef0e6d631fb1eb67b6913e90730aa9e}} 
+\index{VectorFloat@{VectorFloat}!rotate@{rotate}}
+\index{rotate@{rotate}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Vector\+Float\+::rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 202 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{202                              \{}
+\DoxyCodeLine{203     \mbox{\hyperlink{classQuaternion}{Quaternion}} p(0, \mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}}, \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}}, \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}});}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     \textcolor{comment}{// quaternion multiplication: q * p, stored back in p}}
+\DoxyCodeLine{206     p = q->\mbox{\hyperlink{classQuaternion_a3ff8405ed92a3ca16de656e6c83b4028}{getProduct}}(p);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \textcolor{comment}{// quaternion multiplication: p * conj(q), stored back in p}}
+\DoxyCodeLine{209     p = p.\mbox{\hyperlink{classQuaternion_a3ff8405ed92a3ca16de656e6c83b4028}{getProduct}}(q->\mbox{\hyperlink{classQuaternion_a079a5673188a8a7d608e8495de0dd119}{getConjugate}}());}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{comment}{// p quaternion is now [0, x', y', z']}}
+\DoxyCodeLine{212     \mbox{\hyperlink{classVectorFloat_a2d8e5159f045ca977769d168af75320c}{x}} = p.x;}
+\DoxyCodeLine{213     \mbox{\hyperlink{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}{y}} = p.y;}
+\DoxyCodeLine{214     \mbox{\hyperlink{classVectorFloat_a54b8e4234e3b48e106d090570755f107}{z}} = p.z;}
+\DoxyCodeLine{215   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classVectorFloat_a2d8e5159f045ca977769d168af75320c}\label{classVectorFloat_a2d8e5159f045ca977769d168af75320c}} 
+\index{VectorFloat@{VectorFloat}!x@{x}}
+\index{x@{x}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily float Vector\+Float\+::x}
+
+
+
+Definition at line 169 of file helper\+\_\+3dmath.\+h.
+
+\mbox{\Hypertarget{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}\label{classVectorFloat_a4affe2a9de97600b3d8df98586679e14}} 
+\index{VectorFloat@{VectorFloat}!y@{y}}
+\index{y@{y}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily float Vector\+Float\+::y}
+
+
+
+Definition at line 170 of file helper\+\_\+3dmath.\+h.
+
+\mbox{\Hypertarget{classVectorFloat_a54b8e4234e3b48e106d090570755f107}\label{classVectorFloat_a54b8e4234e3b48e106d090570755f107}} 
+\index{VectorFloat@{VectorFloat}!z@{z}}
+\index{z@{z}!VectorFloat@{VectorFloat}}
+\subsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily float Vector\+Float\+::z}
+
+
+
+Definition at line 171 of file helper\+\_\+3dmath.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/devices/\+Accel\+Gyro/\mbox{\hyperlink{helper__3dmath_8h}{helper\+\_\+3dmath.\+h}}\end{DoxyCompactItemize}

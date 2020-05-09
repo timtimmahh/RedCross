@@ -1,0 +1,510 @@
+\hypertarget{classSDFileIO}{}\section{S\+D\+File\+IO Class Reference}
+\label{classSDFileIO}\index{SDFileIO@{SDFileIO}}
+
+
+{\ttfamily \#include $<$S\+D\+File\+I\+O.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSDFileIO_aa278dc1e8f9e39a520b47c748fbfc254}{S\+D\+File\+IO}} (const char $\ast$prefix=\char`\"{}/sdcard\char`\"{})
+\item 
+\mbox{\hyperlink{classSDFileIO_a452951a64afa18614880d15e75b717db}{$\sim$\+S\+D\+File\+IO}} ()
+\item 
+bool \mbox{\hyperlink{classSDFileIO_a53a15061cca1e7a272fd606b88d43a2e}{exists}} (const string \&file\+Name)
+\item 
+bool \mbox{\hyperlink{classSDFileIO_a7d46ac6a2a1e9de575035bcd5f7b485a}{is\+Ready}} ()
+\item 
+bool \mbox{\hyperlink{classSDFileIO_af7e34f9012374dc9411cafa8a3ff4e50}{mount}} ()
+\item 
+void \mbox{\hyperlink{classSDFileIO_a7a2340367a4b95c94884be058ca0d063}{print\+Card\+Info}} ()
+\item 
+{\footnotesize template$<$class F\+Stream $>$ }\\bool \mbox{\hyperlink{classSDFileIO_a09eb67cb5d96201deaaefe38d04f17f3}{open\+File}} (const string \&file\+Name, ios\+\_\+base\+::openmode mode, std\+::function$<$ bool(F\+Stream \&)$>$ \&\&file\+Op)
+\item 
+bool \mbox{\hyperlink{classSDFileIO_a87a48c4dfedceff48a209e951f299ee9}{write\+File}} (const string \&file\+Name, const vector$<$ string $>$ \&data)
+\item 
+bool \mbox{\hyperlink{classSDFileIO_a03ad22388a4c6f3f8265dbc204947cfd}{write\+Bin\+File}} (const string \&file\+Name, const string \&data)
+\item 
+bool \mbox{\hyperlink{classSDFileIO_ab01f1777f4670c9cd4c04a0b3c6c2867}{append\+File}} (const string \&file\+Name, const vector$<$ string $>$ \&data)
+\item 
+bool \mbox{\hyperlink{classSDFileIO_ad03e7421e12132dea157e3e3844233a1}{append\+Bin\+File}} (const string \&file\+Name, const string \&data)
+\item 
+bool \mbox{\hyperlink{classSDFileIO_a572558952919c50968f9b0063220be6b}{read\+File}} (const string \&file\+Name, string \&data)
+\item 
+bool \mbox{\hyperlink{classSDFileIO_a5a06abe7718fa74b84fadad7650bfdad}{read\+Bin\+File}} (const string \&file\+Name, string \&data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A utility for safely operating on an SD card asynchronously over the S\+PI interface. 
+
+Definition at line 41 of file S\+D\+File\+I\+O.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSDFileIO_aa278dc1e8f9e39a520b47c748fbfc254}\label{classSDFileIO_aa278dc1e8f9e39a520b47c748fbfc254}} 
+\index{SDFileIO@{SDFileIO}!SDFileIO@{SDFileIO}}
+\index{SDFileIO@{SDFileIO}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{SDFileIO()}{SDFileIO()}}
+{\footnotesize\ttfamily S\+D\+File\+I\+O\+::\+S\+D\+File\+IO (\begin{DoxyParamCaption}\item[{const char $\ast$}]{prefix = {\ttfamily \char`\"{}/sdcard\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Explicit value constructor to specify the mount point of the SD card.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & the SD card mount point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71       : prefix(prefix),}
+\DoxyCodeLine{72         host(SDSPI\_HOST\_DEFAULT()),}
+\DoxyCodeLine{73         slot\_config(SDSPI\_SLOT\_CONFIG\_DEFAULT()),}
+\DoxyCodeLine{74         card(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{75         ready(\textcolor{keyword}{false}) \{}
+\DoxyCodeLine{76     \textcolor{comment}{// set the SD card SPI pins}}
+\DoxyCodeLine{77     slot\_config.gpio\_miso = \mbox{\hyperlink{SDFileIO_8hpp_a46bdd417480dec5cb9cf196af3c7489c}{PIN\_MISO}};}
+\DoxyCodeLine{78     slot\_config.gpio\_mosi = \mbox{\hyperlink{SDFileIO_8hpp_abaeddda4b992af7165ed898ab8b2b4ac}{PIN\_MOSI}};}
+\DoxyCodeLine{79     slot\_config.gpio\_sck = \mbox{\hyperlink{SDFileIO_8hpp_a29e4cd8304fdcdd2e715189dfaaf31c2}{PIN\_CLK}};}
+\DoxyCodeLine{80     slot\_config.gpio\_cs = \mbox{\hyperlink{SDFileIO_8hpp_afa592f8fcb7a301edfe97aa121fd28ce}{PIN\_CS}};}
+\DoxyCodeLine{81   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a452951a64afa18614880d15e75b717db}\label{classSDFileIO_a452951a64afa18614880d15e75b717db}} 
+\index{SDFileIO@{SDFileIO}!````~SDFileIO@{$\sim$SDFileIO}}
+\index{````~SDFileIO@{$\sim$SDFileIO}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{$\sim$SDFileIO()}{~SDFileIO()}}
+{\footnotesize\ttfamily S\+D\+File\+I\+O\+::$\sim$\+S\+D\+File\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor. Unmounts the SD card and disables the driver since it\textquotesingle{}s no longer needed. 
+
+Definition at line 86 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86               \{}
+\DoxyCodeLine{87     \textcolor{comment}{// unmount SD card and disable vfs driver}}
+\DoxyCodeLine{88     esp\_vfs\_fat\_sdmmc\_unmount();}
+\DoxyCodeLine{89   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSDFileIO_ad03e7421e12132dea157e3e3844233a1}\label{classSDFileIO_ad03e7421e12132dea157e3e3844233a1}} 
+\index{SDFileIO@{SDFileIO}!appendBinFile@{appendBinFile}}
+\index{appendBinFile@{appendBinFile}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{appendBinFile()}{appendBinFile()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::append\+Bin\+File (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{const string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Appends the provided binary data to the file specified by file name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+{\em data} & the data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the data was successfully written 
+\end{DoxyReturn}
+
+
+Definition at line 239 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{239                                                                  \{}
+\DoxyCodeLine{240     \textcolor{comment}{// opens the file with out, truncate and binary modes}}
+\DoxyCodeLine{241     \textcolor{keywordflow}{return} openFile<ofstream>(}
+\DoxyCodeLine{242         fileName, ios\_base::out | ios\_base::app | ios\_base::binary,}
+\DoxyCodeLine{243         [\&data](ofstream \&f) \{}
+\DoxyCodeLine{244           \textcolor{comment}{// write the binary data without formatting or character encoding}}
+\DoxyCodeLine{245           f.write(data.c\_str(), data.length());}
+\DoxyCodeLine{246           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{247         \});}
+\DoxyCodeLine{248   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_ab01f1777f4670c9cd4c04a0b3c6c2867}\label{classSDFileIO_ab01f1777f4670c9cd4c04a0b3c6c2867}} 
+\index{SDFileIO@{SDFileIO}!appendFile@{appendFile}}
+\index{appendFile@{appendFile}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{appendFile()}{appendFile()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::append\+File (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{const vector$<$ string $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Appends the provided data to the file specified by file name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+{\em data} & the data to append \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the data was successfully written 
+\end{DoxyReturn}
+
+
+Definition at line 215 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{215                                                                       \{}
+\DoxyCodeLine{216     \textcolor{comment}{// opens the file with out and append modes}}
+\DoxyCodeLine{217     \textcolor{keywordflow}{return} openFile<ofstream>(}
+\DoxyCodeLine{218         fileName, ios\_base::out | ios\_base::app,}
+\DoxyCodeLine{219         [\&data](ofstream \&f) \{}
+\DoxyCodeLine{220           \textcolor{comment}{// the data is a single row in a CSV, although multiple rows can be}}
+\DoxyCodeLine{221           \textcolor{comment}{// added manually}}
+\DoxyCodeLine{222           \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&col : data) \{}
+\DoxyCodeLine{223             \textcolor{comment}{// ensure the ofstream is good}}
+\DoxyCodeLine{224             \textcolor{keywordflow}{if} (!f) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{225             f << col << \textcolor{charliteral}{','};}
+\DoxyCodeLine{226           \}}
+\DoxyCodeLine{227           \textcolor{comment}{// create a new line for the next row}}
+\DoxyCodeLine{228           \textcolor{keywordflow}{if} (f) f << endl;}
+\DoxyCodeLine{229           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{230         \});}
+\DoxyCodeLine{231   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a53a15061cca1e7a272fd606b88d43a2e}\label{classSDFileIO_a53a15061cca1e7a272fd606b88d43a2e}} 
+\index{SDFileIO@{SDFileIO}!exists@{exists}}
+\index{exists@{exists}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::exists (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if the specified file exists on the SD card.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the file exists 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96                                       \{}
+\DoxyCodeLine{97     \textcolor{comment}{// obtains detailed file info, but this only cares if it found anything}}
+\DoxyCodeLine{98     \textcolor{keyword}{struct }stat st;}
+\DoxyCodeLine{99     \textcolor{keywordflow}{return} stat(\mbox{\hyperlink{SDFileIO_8hpp_aac40f1408cb073b2eaa91ad212707b98}{absolute}}(fileName).c\_str(), \&st) == 0;}
+\DoxyCodeLine{100   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a7d46ac6a2a1e9de575035bcd5f7b485a}\label{classSDFileIO_a7d46ac6a2a1e9de575035bcd5f7b485a}} 
+\index{SDFileIO@{SDFileIO}!isReady@{isReady}}
+\index{isReady@{isReady}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{isReady()}{isReady()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::is\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether the SD card is initialized and ready for file IO.
+
+\begin{DoxyReturn}{Returns}
+the ready state of this SD card 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106                  \{}
+\DoxyCodeLine{107     \textcolor{keywordflow}{return} ready;}
+\DoxyCodeLine{108   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_af7e34f9012374dc9411cafa8a3ff4e50}\label{classSDFileIO_af7e34f9012374dc9411cafa8a3ff4e50}} 
+\index{SDFileIO@{SDFileIO}!mount@{mount}}
+\index{mount@{mount}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{mount()}{mount()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::mount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Mounts the SD card and virtual file systems to be accessed.
+
+\begin{DoxyReturn}{Returns}
+whether mount succeeded 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114                \{}
+\DoxyCodeLine{115     \textcolor{comment}{// set up the mount configuration}}
+\DoxyCodeLine{116     \textcolor{comment}{// TODO allow more mount customization}}
+\DoxyCodeLine{117     esp\_vfs\_fat\_sdmmc\_mount\_config\_t mntCfg = \{}
+\DoxyCodeLine{118         .format\_if\_mount\_failed = \textcolor{keyword}{true},}
+\DoxyCodeLine{119         .max\_files = 10,}
+\DoxyCodeLine{120         .allocation\_unit\_size = 16 * 1024}
+\DoxyCodeLine{121     \};}
+\DoxyCodeLine{122     \textcolor{comment}{// mount the SD card and obtain its information}}
+\DoxyCodeLine{123     ready = (esp\_vfs\_fat\_sdmmc\_mount(}
+\DoxyCodeLine{124         prefix.c\_str(),}
+\DoxyCodeLine{125         \&host, \&slot\_config,}
+\DoxyCodeLine{126         \&mntCfg, \&card) == ESP\_OK);}
+\DoxyCodeLine{127     \textcolor{keywordflow}{return} ready;}
+\DoxyCodeLine{128   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a09eb67cb5d96201deaaefe38d04f17f3}\label{classSDFileIO_a09eb67cb5d96201deaaefe38d04f17f3}} 
+\index{SDFileIO@{SDFileIO}!openFile@{openFile}}
+\index{openFile@{openFile}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{openFile()}{openFile()}}
+{\footnotesize\ttfamily template$<$class F\+Stream $>$ \\
+bool S\+D\+File\+I\+O\+::open\+File (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{ios\+\_\+base\+::openmode}]{mode,  }\item[{std\+::function$<$ bool(F\+Stream \&)$>$ \&\&}]{file\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Opens a file with the specified file name and modes, then executes the provided operations on the file. After all operations are complete, the file gets closed safely to ensure all operations are synced with the virtual file system.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em F\+Stream} & the type of stream for the file \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+{\em mode} & the first open mode \\
+\hline
+{\em file\+Op} & the operations to perform on the opened file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether all operations completed successfully 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{151                                                               \{}
+\DoxyCodeLine{152     \textcolor{comment}{// creates a stream and opens the file}}
+\DoxyCodeLine{153     FStream file(\mbox{\hyperlink{SDFileIO_8hpp_aac40f1408cb073b2eaa91ad212707b98}{absolute}}(fileName), mode);}
+\DoxyCodeLine{154     \textcolor{comment}{// if the file isn't open, there's nothing to do}}
+\DoxyCodeLine{155     \textcolor{keywordflow}{if} (!file.is\_open())}
+\DoxyCodeLine{156       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{157     \textcolor{comment}{// perform the file operations}}
+\DoxyCodeLine{158     \textcolor{keywordtype}{bool} res = fileOp(file);}
+\DoxyCodeLine{159     \textcolor{comment}{// close the file to sync any modifications}}
+\DoxyCodeLine{160     file.close();}
+\DoxyCodeLine{161     \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{162   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a7a2340367a4b95c94884be058ca0d063}\label{classSDFileIO_a7a2340367a4b95c94884be058ca0d063}} 
+\index{SDFileIO@{SDFileIO}!printCardInfo@{printCardInfo}}
+\index{printCardInfo@{printCardInfo}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{printCardInfo()}{printCardInfo()}}
+{\footnotesize\ttfamily void S\+D\+File\+I\+O\+::print\+Card\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints information about the SD card. 
+
+Definition at line 132 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{132                        \{}
+\DoxyCodeLine{133     \textcolor{comment}{// prints SD info to standard out}}
+\DoxyCodeLine{134     sdmmc\_card\_print\_info(stdout, card);}
+\DoxyCodeLine{135   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a5a06abe7718fa74b84fadad7650bfdad}\label{classSDFileIO_a5a06abe7718fa74b84fadad7650bfdad}} 
+\index{SDFileIO@{SDFileIO}!readBinFile@{readBinFile}}
+\index{readBinFile@{readBinFile}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{readBinFile()}{readBinFile()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::read\+Bin\+File (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reads binary content from the specified file into the data parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+{\em data} & the destination \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the data was successfully read 
+\end{DoxyReturn}
+
+
+Definition at line 287 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{287                                                          \{}
+\DoxyCodeLine{288     \textcolor{comment}{// clear in case the passed reference is being reused (may change later)}}
+\DoxyCodeLine{289     \textcolor{keywordflow}{if} (data.size() > 0)}
+\DoxyCodeLine{290       data.clear();}
+\DoxyCodeLine{291     \textcolor{comment}{// opens the file for reading starting at the end}}
+\DoxyCodeLine{292     \textcolor{comment}{// slightly inefficient, but there doesn't seem to be a better way to}}
+\DoxyCodeLine{293     \textcolor{comment}{// check file size}}
+\DoxyCodeLine{294     \textcolor{keywordflow}{return} openFile<ifstream>(}
+\DoxyCodeLine{295         fileName, ios\_base::in | ios\_base::ate | ios\_base::binary,}
+\DoxyCodeLine{296         [\&data](ifstream \&f) \{}
+\DoxyCodeLine{297           \textcolor{comment}{// create a temporary buffer to hold binary data}}
+\DoxyCodeLine{298           streamsize size = f.tellg();}
+\DoxyCodeLine{299           \textcolor{keywordtype}{char} *buf = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[size];}
+\DoxyCodeLine{300           \textcolor{comment}{// move the get pointer to the beginning}}
+\DoxyCodeLine{301           f.seekg(0);}
+\DoxyCodeLine{302           \textcolor{comment}{// read the binary data without formatting or character encoding}}
+\DoxyCodeLine{303           f.read(buf, size);}
+\DoxyCodeLine{304           \textcolor{comment}{// copy's the content from the buffer}}
+\DoxyCodeLine{305           data = buf;}
+\DoxyCodeLine{306           \textcolor{comment}{// memory leaks are bad}}
+\DoxyCodeLine{307           \textcolor{keyword}{delete}[] buf;}
+\DoxyCodeLine{308           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{309         \});}
+\DoxyCodeLine{310   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a572558952919c50968f9b0063220be6b}\label{classSDFileIO_a572558952919c50968f9b0063220be6b}} 
+\index{SDFileIO@{SDFileIO}!readFile@{readFile}}
+\index{readFile@{readFile}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::read\+File (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reads content from the specified file into the data parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+{\em data} & the destination \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the data was successfully read 
+\end{DoxyReturn}
+
+
+Definition at line 256 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{256                                                       \{}
+\DoxyCodeLine{257     \textcolor{comment}{// clear in case the passed reference is being reused (may change later)}}
+\DoxyCodeLine{258     \textcolor{keywordflow}{if} (data.size() > 0)}
+\DoxyCodeLine{259       data.clear();}
+\DoxyCodeLine{260     \textcolor{comment}{// opens the file for reading starting at the end}}
+\DoxyCodeLine{261     \textcolor{comment}{// slightly inefficient, but there doesn't seem to be any other way to}}
+\DoxyCodeLine{262     \textcolor{comment}{// check file size}}
+\DoxyCodeLine{263     \textcolor{keywordflow}{return} openFile<ifstream>(}
+\DoxyCodeLine{264         fileName, ios\_base::in | ios\_base::ate,}
+\DoxyCodeLine{265         [\&data](ifstream \&f) \{}
+\DoxyCodeLine{266           \textcolor{comment}{// reserve space for the entire file so it doesn't reallocate}}
+\DoxyCodeLine{267           \textcolor{comment}{// multiple times while reading}}
+\DoxyCodeLine{268           data.reserve(f.tellg());}
+\DoxyCodeLine{269           \textcolor{comment}{// move the get pointer to the beginning}}
+\DoxyCodeLine{270           f.seekg(0, ios::beg);}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272           \textcolor{comment}{// append everything to the data reference}}
+\DoxyCodeLine{273           \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{274           \textcolor{keywordflow}{while} (getline(f, line))}
+\DoxyCodeLine{275             data.append(line + \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{278         \});}
+\DoxyCodeLine{279   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a03ad22388a4c6f3f8265dbc204947cfd}\label{classSDFileIO_a03ad22388a4c6f3f8265dbc204947cfd}} 
+\index{SDFileIO@{SDFileIO}!writeBinFile@{writeBinFile}}
+\index{writeBinFile@{writeBinFile}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{writeBinFile()}{writeBinFile()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::write\+Bin\+File (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{const string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes the provided binary data to the file specified by file name. This method truncates the entire file upon opening so the only data that will be in the file is what was passed as a parameter here.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+{\em data} & the data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the data was successfully written 
+\end{DoxyReturn}
+
+
+Definition at line 198 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{198                                                                 \{}
+\DoxyCodeLine{199     \textcolor{comment}{// opens the file with out, truncate and binary modes}}
+\DoxyCodeLine{200     \textcolor{keywordflow}{return} openFile<ofstream>(}
+\DoxyCodeLine{201         fileName, ios\_base::out | ios\_base::trunc | ios\_base::binary,}
+\DoxyCodeLine{202         [\&data](ofstream \&f) \{}
+\DoxyCodeLine{203           \textcolor{comment}{// write the binary data without formatting or character encoding}}
+\DoxyCodeLine{204           f.write(data.c\_str(), data.length());}
+\DoxyCodeLine{205           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{206         \});}
+\DoxyCodeLine{207   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSDFileIO_a87a48c4dfedceff48a209e951f299ee9}\label{classSDFileIO_a87a48c4dfedceff48a209e951f299ee9}} 
+\index{SDFileIO@{SDFileIO}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!SDFileIO@{SDFileIO}}
+\subsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily bool S\+D\+File\+I\+O\+::write\+File (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{const vector$<$ string $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes the provided data to the file specified by file name. This method truncates the entire file upon opening so the only data that will be in the file is what was passed as a parameter here.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file \\
+\hline
+{\em data} & the data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the data was successfully written 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file S\+D\+File\+I\+O.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{172                                                                      \{}
+\DoxyCodeLine{173     \textcolor{comment}{// opens the file with out and truncate modes}}
+\DoxyCodeLine{174     \textcolor{keywordflow}{return} openFile<ofstream>(}
+\DoxyCodeLine{175         fileName, ios\_base::out | ios\_base::trunc,}
+\DoxyCodeLine{176         [\&data](ofstream \&f) \{}
+\DoxyCodeLine{177           \textcolor{comment}{// the data is a single row in a CSV, although multiple rows can be}}
+\DoxyCodeLine{178           \textcolor{comment}{// added manually}}
+\DoxyCodeLine{179           \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&col : data) \{}
+\DoxyCodeLine{180             \textcolor{comment}{// ensure the ofstream is good}}
+\DoxyCodeLine{181             \textcolor{keywordflow}{if} (!f) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{182             f << col << \textcolor{stringliteral}{","};}
+\DoxyCodeLine{183           \}}
+\DoxyCodeLine{184           \textcolor{comment}{// create a new line for the next row}}
+\DoxyCodeLine{185           \textcolor{keywordflow}{if} (f) f << endl;}
+\DoxyCodeLine{186           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{187         \});}
+\DoxyCodeLine{188   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/fs/\mbox{\hyperlink{SDFileIO_8hpp}{S\+D\+File\+I\+O.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="cppEspI2C_8hpp" kind="file" language="C++">
+    <compoundname>cppEspI2C.hpp</compoundname>
+    <includes local="no">driver/i2c.h</includes>
+    <includes local="no">functional</includes>
+    <incdepgraph>
+      <node id="706">
+        <label>functional</label>
+      </node>
+      <node id="704">
+        <label>main/perif/i2c/cppEspI2C.hpp</label>
+        <link refid="cppEspI2C_8hpp"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+      </node>
+      <node id="705">
+        <label>driver/i2c.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="cppEspI2C_8hpp_1a5ba520ee90ad4c690c3d95c1502168fd" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>esp_err_t(*)(Args...)</type>
+        <definition>using idfFunc =  esp_err_t(*)(Args...)</definition>
+        <argsstring></argsstring>
+        <name>idfFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/i2c/cppEspI2C.hpp" line="15" column="1" bodyfile="main/perif/i2c/cppEspI2C.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>cppEspI2C class definition. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/perif/i2c/cppEspI2C.hpp"/>
+  </compounddef>
+</doxygen>

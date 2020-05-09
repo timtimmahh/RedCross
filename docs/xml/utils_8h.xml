@@ -1,0 +1,997 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="utils_8h" kind="file" language="C++">
+    <compoundname>utils.h</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">string</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">esp_log.h</includes>
+    <includedby refid="ErrorLog_8hpp" local="yes">main/include/ErrorLog.hpp</includedby>
+    <includedby refid="redcross_8h" local="yes">main/include/redcross.h</includedby>
+    <includedby refid="WiFi_8hpp" local="yes">main/net/WiFi.hpp</includedby>
+    <includedby refid="WiFi_8cpp" local="yes">main/net/WiFi.cpp</includedby>
+    <includedby refid="Perif_8hpp" local="yes">main/perif/Perif.hpp</includedby>
+    <incdepgraph>
+      <node id="473">
+        <label>cmath</label>
+      </node>
+      <node id="474">
+        <label>string</label>
+      </node>
+      <node id="471">
+        <label>main/include/utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="472" relation="include">
+        </childnode>
+        <childnode refid="473" relation="include">
+        </childnode>
+        <childnode refid="474" relation="include">
+        </childnode>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+      </node>
+      <node id="476">
+        <label>esp_log.h</label>
+      </node>
+      <node id="475">
+        <label>sstream</label>
+      </node>
+      <node id="472">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="481">
+        <label>main/perif/i2c/I2Cdev.cpp</label>
+        <link refid="I2Cdev_8cpp"/>
+      </node>
+      <node id="489">
+        <label>main/perif/I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="490" relation="include">
+        </childnode>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+      </node>
+      <node id="492">
+        <label>main/devices/BarPAT/BarPAT.h</label>
+        <link refid="BarPAT_8h"/>
+        <childnode refid="493" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+      <node id="498">
+        <label>main/devices/GPS/GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="499" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+      <node id="491">
+        <label>main/devices/AccelGyro/AccelGyro.cpp</label>
+        <link refid="AccelGyro_8cpp"/>
+      </node>
+      <node id="477">
+        <label>main/include/utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+      </node>
+      <node id="479">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="480" relation="include">
+        </childnode>
+      </node>
+      <node id="485">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+      <node id="493">
+        <label>main/devices/BarPAT/BarPAT.cpp</label>
+        <link refid="BarPAT_8cpp"/>
+      </node>
+      <node id="480">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="497">
+        <label>main/perif/UARTPerif.hpp</label>
+        <link refid="UARTPerif_8hpp"/>
+        <childnode refid="498" relation="include">
+        </childnode>
+      </node>
+      <node id="482">
+        <label>main/net/WiFi.hpp</label>
+        <link refid="WiFi_8hpp"/>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+      </node>
+      <node id="495">
+        <label>main/devices/LidarMap/LidarMap.cpp</label>
+        <link refid="LidarMap_8cpp"/>
+      </node>
+      <node id="496">
+        <label>main/perif/SPIPerif.hpp</label>
+        <link refid="SPIPerif_8hpp"/>
+      </node>
+      <node id="487">
+        <label>main/devices/USDist/USDist.h</label>
+        <link refid="USDist_8h"/>
+        <childnode refid="488" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+      <node id="499">
+        <label>main/devices/GPS/GPS.cpp</label>
+        <link refid="GPS_8cpp"/>
+      </node>
+      <node id="490">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="491" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+      <node id="488">
+        <label>main/devices/USDist/USDist.cpp</label>
+        <link refid="USDist_8cpp"/>
+      </node>
+      <node id="484">
+        <label>main/perif/Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="496" relation="include">
+        </childnode>
+        <childnode refid="497" relation="include">
+        </childnode>
+      </node>
+      <node id="486">
+        <label>main/perif/GPIOPerif.hpp</label>
+        <link refid="GPIOPerif_8hpp"/>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="483">
+        <label>main/net/WiFi.cpp</label>
+        <link refid="WiFi_8cpp"/>
+      </node>
+      <node id="478">
+        <label>main/include/ErrorLog.hpp</label>
+        <link refid="ErrorLog_8hpp"/>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+      </node>
+      <node id="494">
+        <label>main/devices/LidarMap/LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="495" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="utils_8h_1a9e6fd2af2925e96973f905c5b5014526" prot="public" static="no">
+        <name>ELEVENTH_ARGUMENT</name>
+        <param><defname>a1</defname></param>
+        <param><defname>a2</defname></param>
+        <param><defname>a3</defname></param>
+        <param><defname>a4</defname></param>
+        <param><defname>a5</defname></param>
+        <param><defname>a6</defname></param>
+        <param><defname>a7</defname></param>
+        <param><defname>a8</defname></param>
+        <param><defname>a9</defname></param>
+        <param><defname>a10</defname></param>
+        <param><defname>a11</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>a11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="21" column="9" bodyfile="main/include/utils.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1adbcb2cf49651bf55398702c8e57b13fd" prot="public" static="no">
+        <name>COUNT</name>
+        <param><defname>...</defname></param>
+        <initializer><ref refid="utils_8h_1a9e6fd2af2925e96973f905c5b5014526" kindref="member">ELEVENTH_ARGUMENT</ref>(dummy, ## __VA_ARGS__, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="22" column="9" bodyfile="main/include/utils.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1a88fa737059e67b4b17ec980e5877361e" prot="public" static="no">
+        <name>CONCAT</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>a ## b</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="23" column="9" bodyfile="main/include/utils.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1a2fef427b1927dac8bf612d1384f00503" prot="public" static="no">
+        <name>CONCAT2</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer><ref refid="utils_8h_1a88fa737059e67b4b17ec980e5877361e" kindref="member">CONCAT</ref>(a, b)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="24" column="9" bodyfile="main/include/utils.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1ac837e5332151b10488c58cd995005ed4" prot="public" static="no">
+        <name>LINE0</name>
+        <param></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="26" column="9" bodyfile="main/include/utils.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1a4c3a5815caa5aa34729cd1182b1b569d" prot="public" static="no">
+        <name>LINE</name>
+        <param><defname>op</defname></param>
+        <initializer>op;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="27" column="9" bodyfile="main/include/utils.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1a4af0d610f150738a6f6de59745a07d85" prot="public" static="no">
+        <name>LINE1</name>
+        <param><defname>op</defname></param>
+        <initializer><ref refid="utils_8h_1a4c3a5815caa5aa34729cd1182b1b569d" kindref="member">LINE</ref>(op)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="28" column="9" bodyfile="main/include/utils.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1a0aaa52de4fcb9a27d0b7e3dc25107800" prot="public" static="no">
+        <name>LINE2</name>
+        <param><defname>op</defname></param>
+        <param><defname>op1</defname></param>
+        <initializer><ref refid="utils_8h_1a4c3a5815caa5aa34729cd1182b1b569d" kindref="member">LINE</ref>(op) <ref refid="utils_8h_1a4c3a5815caa5aa34729cd1182b1b569d" kindref="member">LINE</ref>(op1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="29" column="9" bodyfile="main/include/utils.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1a71fadebbe7640d5b4ddbeb9fd77de4bf" prot="public" static="no">
+        <name>LINE3</name>
+        <param><defname>op</defname></param>
+        <param><defname>op1</defname></param>
+        <param><defname>op2</defname></param>
+        <initializer><ref refid="utils_8h_1a0aaa52de4fcb9a27d0b7e3dc25107800" kindref="member">LINE2</ref>(op, op1) <ref refid="utils_8h_1a4c3a5815caa5aa34729cd1182b1b569d" kindref="member">LINE</ref>(op2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="30" column="9" bodyfile="main/include/utils.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="utils_8h_1a854650de4931c643ca2d928b6432e1ca" prot="public" static="no">
+        <name>LOG</name>
+        <param><defname>msgs...</defname></param>
+        <initializer><ref refid="utils_8h_1aa4140258737129d60d081916d28e2f98" kindref="member">log</ref>(<ref refid="utils_8h_1a32a530f565c9b2457739ef5f001e1a8b" kindref="member">fileToTag</ref>(__FILE__), msgs)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="32" column="9" bodyfile="main/include/utils.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="utils_8h_1a32a530f565c9b2457739ef5f001e1a8b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string fileToTag</definition>
+        <argsstring>(const char *file)</argsstring>
+        <name>fileToTag</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts a file path to its basename.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a file path </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the file&apos;s basename </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="40" column="1" bodyfile="main/include/utils.h" bodystart="40" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a8cde36b3513dd1caa4961bf3ebcddc91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename StrType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void log</definition>
+        <argsstring>(const string &amp;tag, StrType str)</argsstring>
+        <name>log</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>StrType</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Logs a message with the specified tag.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>StrType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of string (C-style or C++ string) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the tag for this message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message to log </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="56" column="1" bodyfile="main/include/utils.h" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a911f0cfea1873a83d2ebfe250791cc1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename StrType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void apnd</definition>
+        <argsstring>(const string &amp;tag, stringstream &amp;ss, StrType str)</argsstring>
+        <name>apnd</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>stringstream &amp;</type>
+          <declname>ss</declname>
+        </param>
+        <param>
+          <type>StrType</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Logs a message with the specified tag.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>StrType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of string (C-style or C++ string) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the tag for this message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string stream to combine strings into </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message to log </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="71" column="1" bodyfile="main/include/utils.h" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a341b9dae607f39e879b115da1ee69ba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename StrType</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>StrTypes</declname>
+            <defname>StrTypes</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void apnd</definition>
+        <argsstring>(const string &amp;tag, stringstream &amp;ss, StrType str, StrTypes... msgs)</argsstring>
+        <name>apnd</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>stringstream &amp;</type>
+          <declname>ss</declname>
+        </param>
+        <param>
+          <type>StrType</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>StrTypes...</type>
+          <declname>msgs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Logs all messages with the specified tag as a single message.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>StrType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of string (C-style or C++ string) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>StrTypes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of any additional strings </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the tag for this message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string stream to combine strings into </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message to log </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional messages to log </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="87" column="1" bodyfile="main/include/utils.h" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1aa4140258737129d60d081916d28e2f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename StrType</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>StrTypes</declname>
+            <defname>StrTypes</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void log</definition>
+        <argsstring>(const string &amp;tag, StrType str, StrTypes... msgs)</argsstring>
+        <name>log</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>StrType</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>StrTypes...</type>
+          <declname>msgs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Logs all messages with the specified tag as a single message.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>StrType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of string (C-style or C++ string) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>StrTypes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of any additional strings </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the tag for this message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message to log </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional messages to log </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="104" column="1" bodyfile="main/include/utils.h" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1aae161b96fc3e78ea8d14d3612225d3a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename InputIt</type>
+          </param>
+          <param>
+            <type>typename SourceLen</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>size_t</type>
+            <declname>size</declname>
+            <defname>size</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void copy_min_to_buffer</definition>
+        <argsstring>(InputIt source, SourceLen source_length, T(&amp;target)[size])</argsstring>
+        <name>copy_min_to_buffer</name>
+        <param>
+          <type>InputIt</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>SourceLen</type>
+          <declname>source_length</declname>
+        </param>
+        <param>
+          <type>T(&amp;)</type>
+          <declname>target</declname>
+          <array>[size]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copies at min(SourceLen, size) bytes from source to target buffer.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InputIt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input iterator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SourceLen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output iterator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of source </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>source_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="121" column="1" bodyfile="main/include/utils.h" bodystart="121" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a8788755a89b4eb94070cf88e499fba73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>size_t</type>
+            <declname>size</declname>
+            <defname>size</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void copy_min_to_buffer</definition>
+        <argsstring>(string &amp;&amp;source, T(&amp;target)[size])</argsstring>
+        <name>copy_min_to_buffer</name>
+        <param>
+          <type>string &amp;&amp;</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>T(&amp;)</type>
+          <declname>target</declname>
+          <array>[size]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copies at min(SourceLen, size) bytes from source to target buffer.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of bytes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input source </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="136" column="1" bodyfile="main/include/utils.h" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1ae56d9a10880d08c61ebabe4ded495845" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FP</type>
+          </param>
+          <param>
+            <type>FP(*)(FP)</type>
+            <declname>rnd</declname>
+            <defname>rnd</defname>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string to_string</definition>
+        <argsstring>(FP fp, uint8_t precision=2)</argsstring>
+        <name>to_string</name>
+        <param>
+          <type>FP</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>precision</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper to create a string representation of a floating point number with a certain number of decimal point precision.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>FP</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of floating point number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the rounding function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the floating point number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of decimal points </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a string representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="152" column="1" bodyfile="main/include/utils.h" bodystart="152" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1ae6761f6fda6658d4e5e9cd4c9b971fc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string to_string</definition>
+        <argsstring>(float fp, uint8_t precision=2)</argsstring>
+        <name>to_string</name>
+        <param>
+          <type>float</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>precision</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper to convert a float to a string with a certain number of decimal points.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decimal points </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the string representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="166" column="1" bodyfile="main/include/utils.h" bodystart="166" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a59afb5bd54104e2fb655d601627d6b8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string to_string</definition>
+        <argsstring>(double fp, uint8_t precision=2)</argsstring>
+        <name>to_string</name>
+        <param>
+          <type>double</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>precision</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper to convert a double to a string with a certain number of decimal points.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decimal points </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the string representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/utils.h" line="178" column="1" bodyfile="main/include/utils.h" bodystart="178" bodyend="180"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Global utilities. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/include/utils.h"/>
+  </compounddef>
+</doxygen>

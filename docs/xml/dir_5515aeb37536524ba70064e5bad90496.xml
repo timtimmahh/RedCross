@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_5515aeb37536524ba70064e5bad90496" kind="dir">
+    <compoundname>main/perif</compoundname>
+    <innerdir refid="dir_4baf240b03da655657c2fd5774184b9a">main/perif/i2c</innerdir>
+    <innerfile refid="GPIOPerif_8hpp">GPIOPerif.hpp</innerfile>
+    <innerfile refid="I2CPerif_8hpp">I2CPerif.hpp</innerfile>
+    <innerfile refid="Perif_8hpp">Perif.hpp</innerfile>
+    <innerfile refid="SPIPerif_8hpp">SPIPerif.hpp</innerfile>
+    <innerfile refid="UARTPerif_8hpp">UARTPerif.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/perif/"/>
+  </compounddef>
+</doxygen>

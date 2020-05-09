@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="App_8hpp" kind="file" language="C++">
+    <compoundname>App.hpp</compoundname>
+    <includes local="no">freertos/FreeRTOS.h</includes>
+    <includes local="no">freertos/task.h</includes>
+    <includes local="no">freertos/queue.h</includes>
+    <includes local="no">esp_pthread.h</includes>
+    <includes local="no">chrono</includes>
+    <includedby refid="redcross_8h" local="yes">main/include/redcross.h</includedby>
+    <incdepgraph>
+      <node id="324">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="327">
+        <label>esp_pthread.h</label>
+      </node>
+      <node id="326">
+        <label>freertos/queue.h</label>
+      </node>
+      <node id="323">
+        <label>main/include/App.hpp</label>
+        <link refid="App_8hpp"/>
+        <childnode refid="324" relation="include">
+        </childnode>
+        <childnode refid="325" relation="include">
+        </childnode>
+        <childnode refid="326" relation="include">
+        </childnode>
+        <childnode refid="327" relation="include">
+        </childnode>
+        <childnode refid="328" relation="include">
+        </childnode>
+      </node>
+      <node id="328">
+        <label>chrono</label>
+      </node>
+      <node id="325">
+        <label>freertos/task.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="330">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="331" relation="include">
+        </childnode>
+      </node>
+      <node id="331">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="329">
+        <label>main/include/App.hpp</label>
+        <link refid="App_8hpp"/>
+        <childnode refid="330" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classApp" prot="public">App</innerclass>
+    <briefdescription>
+<para><ref refid="classApp" kindref="compound">App</ref> class definition. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/include/App.hpp"/>
+  </compounddef>
+</doxygen>

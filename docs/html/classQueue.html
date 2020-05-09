@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Queue class | Red Cross</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">Red Cross</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-template">template&lt;typename Tp&gt;</div>
+          Queue <span class="m-thin">class</span>
+        </h1>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">Tp</td>
+              <td>the queue data type</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>A thread-safe queue implementation.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a71a0de9bb1e4bf3f36f3ed033398eeff" class="m-doc">Queue</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a9c828c8a0b58c579eaa0279b9ebfe2f1" class="m-doc">Queue</a>(</span><span class="m-doc-wrap">int maxSize) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af332726c4f0882923eb8c1466d6f7b2c" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a87514f47ccd19ce0ae845503d7627c5d" class="m-doc">size</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a481598ed9c07d23c00ce3648c148415d" class="m-doc">length</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a01d580b06f7fc95a3b8292b598405507" class="m-doc">push</a>(</span><span class="m-doc-wrap">const Tp&amp; value) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a372de387e3016b225798697ac2c18401" class="m-doc">push</a>(</span><span class="m-doc-wrap">Tp&amp;&amp; value) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aac66ef3af1e47ec1ccd3dea60e40fd7c" class="m-doc">pop</a>(</span><span class="m-doc-wrap">Tp&amp; target) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a0fdf9ec322669edbd88225b370587cf7" class="m-doc">wait_pop</a>(</span><span class="m-doc-wrap">Tp&amp; target)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a919fd45266827995c68caedde29e0962" class="m-doc">pop_if</a>(</span><span class="m-doc-wrap">function&lt;bool(const Tp&amp;front)&gt;&amp;&amp; predicate) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a71a0de9bb1e4bf3f36f3ed033398eeff"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71a0de9bb1e4bf3f36f3ed033398eeff" class="m-doc-self">Queue</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+<p>Creates an empty instance of this queue.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9c828c8a0b58c579eaa0279b9ebfe2f1"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9c828c8a0b58c579eaa0279b9ebfe2f1" class="m-doc-self">Queue</a>(</span><span class="m-doc-wrap">int maxSize) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">maxSize</td>
+                  <td>the queue&#x27;s capacity</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Creates an instance of this queue with a maximum capacity.</p>
+          </div></section>
+          <section class="m-doc-details" id="af332726c4f0882923eb8c1466d6f7b2c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af332726c4f0882923eb8c1466d6f7b2c" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if this queue is empty</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Whether this queue is empty.</p>
+          </div></section>
+          <section class="m-doc-details" id="a87514f47ccd19ce0ae845503d7627c5d"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">int Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87514f47ccd19ce0ae845503d7627c5d" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>the current size</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns the current size of this queue.</p>
+          </div></section>
+          <section class="m-doc-details" id="a481598ed9c07d23c00ce3648c148415d"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">int Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a481598ed9c07d23c00ce3648c148415d" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>the capacity</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns the queue capacity.</p>
+          </div></section>
+          <section class="m-doc-details" id="a01d580b06f7fc95a3b8292b598405507"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a01d580b06f7fc95a3b8292b598405507" class="m-doc-self">push</a>(</span><span class="m-doc-wrap">const Tp&amp; value)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>the value to insert</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>whether insertion succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Pushes a value reference onto this queue and notifies any waiters.</p>
+          </div></section>
+          <section class="m-doc-details" id="a372de387e3016b225798697ac2c18401"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a372de387e3016b225798697ac2c18401" class="m-doc-self">push</a>(</span><span class="m-doc-wrap">Tp&amp;&amp; value)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>the value to insert</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>whether insertion succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Pushes an rvalue reference onto this queue and notifies any waiters.</p>
+          </div></section>
+          <section class="m-doc-details" id="aac66ef3af1e47ec1ccd3dea60e40fd7c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac66ef3af1e47ec1ccd3dea60e40fd7c" class="m-doc-self">pop</a>(</span><span class="m-doc-wrap">Tp&amp; target)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">target</td>
+                  <td>a reference to receive the popped value</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>whether the operation succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Pops an item from this queue and returns it through the target.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0fdf9ec322669edbd88225b370587cf7"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0fdf9ec322669edbd88225b370587cf7" class="m-doc-self">wait_pop</a>(</span><span class="m-doc-wrap">Tp&amp; target)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">target</td>
+                  <td>a reference to receive the popped value</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Waits for an indefinite amount of time for another thread to insert an item into this queue.</p>
+          </div></section>
+          <section class="m-doc-details" id="a919fd45266827995c68caedde29e0962"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Tp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool Queue&lt;Tp&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a919fd45266827995c68caedde29e0962" class="m-doc-self">pop_if</a>(</span><span class="m-doc-wrap">function&lt;bool(const Tp&amp;front)&gt;&amp;&amp; predicate)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">predicate</td>
+                  <td>the function to test</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>whether the operation succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Pops an item if the predicate function succeeds determines it should.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Red Cross. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="I2Cdev_8h" kind="file" language="C++">
+    <compoundname>I2Cdev.h</compoundname>
+    <includes local="no">mutex</includes>
+    <includes local="no">driver/gpio.h</includes>
+    <includes local="no">driver/i2c.h</includes>
+    <includedby refid="MPU6050_8h" local="yes">main/devices/AccelGyro/MPU6050.h</includedby>
+    <includedby refid="MPU6050__6Axis__MotionApps20_8h" local="yes">main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h</includedby>
+    <includedby refid="MPU6050__9Axis__MotionApps41_8h" local="yes">main/devices/AccelGyro/MPU6050_9Axis_MotionApps41.h</includedby>
+    <includedby refid="I2Cdev_8cpp" local="yes">main/perif/i2c/I2Cdev.cpp</includedby>
+    <includedby refid="I2CPerif_8hpp" local="yes">main/perif/I2CPerif.hpp</includedby>
+    <incdepgraph>
+      <node id="736">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="734">
+        <label>main/perif/i2c/I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="735" relation="include">
+        </childnode>
+        <childnode refid="736" relation="include">
+        </childnode>
+        <childnode refid="737" relation="include">
+        </childnode>
+      </node>
+      <node id="737">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="735">
+        <label>mutex</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="748">
+        <label>main/perif/i2c/I2Cdev.cpp</label>
+        <link refid="I2Cdev_8cpp"/>
+      </node>
+      <node id="746">
+        <label>main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h</label>
+        <link refid="MPU6050__6Axis__MotionApps20_8h"/>
+      </node>
+      <node id="745">
+        <label>main/devices/AccelGyro/MPU6050.cpp</label>
+        <link refid="MPU6050_8cpp"/>
+      </node>
+      <node id="749">
+        <label>main/perif/I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="740" relation="include">
+        </childnode>
+        <childnode refid="750" relation="include">
+        </childnode>
+        <childnode refid="752" relation="include">
+        </childnode>
+      </node>
+      <node id="750">
+        <label>main/devices/BarPAT/BarPAT.h</label>
+        <link refid="BarPAT_8h"/>
+        <childnode refid="751" relation="include">
+        </childnode>
+        <childnode refid="742" relation="include">
+        </childnode>
+      </node>
+      <node id="741">
+        <label>main/devices/AccelGyro/AccelGyro.cpp</label>
+        <link refid="AccelGyro_8cpp"/>
+      </node>
+      <node id="743">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="744" relation="include">
+        </childnode>
+      </node>
+      <node id="742">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="743" relation="include">
+        </childnode>
+      </node>
+      <node id="751">
+        <label>main/devices/BarPAT/BarPAT.cpp</label>
+        <link refid="BarPAT_8cpp"/>
+      </node>
+      <node id="744">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="747">
+        <label>main/devices/AccelGyro/MPU6050_9Axis_MotionApps41.h</label>
+        <link refid="MPU6050__9Axis__MotionApps41_8h"/>
+      </node>
+      <node id="753">
+        <label>main/devices/LidarMap/LidarMap.cpp</label>
+        <link refid="LidarMap_8cpp"/>
+      </node>
+      <node id="738">
+        <label>main/perif/i2c/I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="739" relation="include">
+        </childnode>
+        <childnode refid="746" relation="include">
+        </childnode>
+        <childnode refid="747" relation="include">
+        </childnode>
+        <childnode refid="748" relation="include">
+        </childnode>
+        <childnode refid="749" relation="include">
+        </childnode>
+      </node>
+      <node id="739">
+        <label>main/devices/AccelGyro/MPU6050.h</label>
+        <link refid="MPU6050_8h"/>
+        <childnode refid="740" relation="include">
+        </childnode>
+        <childnode refid="745" relation="include">
+        </childnode>
+        <childnode refid="746" relation="include">
+        </childnode>
+        <childnode refid="747" relation="include">
+        </childnode>
+      </node>
+      <node id="740">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="741" relation="include">
+        </childnode>
+        <childnode refid="742" relation="include">
+        </childnode>
+      </node>
+      <node id="752">
+        <label>main/devices/LidarMap/LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="753" relation="include">
+        </childnode>
+        <childnode refid="742" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classI2Cdev" prot="public">I2Cdev</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="I2Cdev_8h_1ad9726bb02451bb8f59d3d2729e4cd20e" prot="public" static="no">
+        <name>I2CDEV_DEFAULT_READ_TIMEOUT</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default timeout value for read operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/i2c/I2Cdev.h" line="51" column="9" bodyfile="main/perif/i2c/I2Cdev.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>I2C device driver. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/perif/i2c/I2Cdev.h"/>
+  </compounddef>
+</doxygen>

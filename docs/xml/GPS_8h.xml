@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="GPS_8h" kind="file" language="C++">
+    <compoundname>GPS.h</compoundname>
+    <includes refid="UARTPerif_8hpp" local="yes">UARTPerif.hpp</includes>
+    <includes local="no">string</includes>
+    <includedby refid="GPS_8cpp" local="yes">main/devices/GPS/GPS.cpp</includedby>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <incdepgraph>
+      <node id="198">
+        <label>list</label>
+      </node>
+      <node id="196">
+        <label>functional</label>
+      </node>
+      <node id="195">
+        <label>cstdint</label>
+      </node>
+      <node id="192">
+        <label>main/devices/GPS/GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+      </node>
+      <node id="204">
+        <label>cmath</label>
+      </node>
+      <node id="199">
+        <label>string</label>
+      </node>
+      <node id="197">
+        <label>map</label>
+      </node>
+      <node id="202">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+      </node>
+      <node id="201">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="193">
+        <label>UARTPerif.hpp</label>
+        <link refid="UARTPerif_8hpp"/>
+        <childnode refid="194" relation="include">
+        </childnode>
+      </node>
+      <node id="206">
+        <label>esp_log.h</label>
+      </node>
+      <node id="205">
+        <label>sstream</label>
+      </node>
+      <node id="194">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="195" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+      </node>
+      <node id="203">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="207">
+        <label>main/devices/GPS/GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="211" relation="include">
+        </childnode>
+      </node>
+      <node id="209">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="210" relation="include">
+        </childnode>
+      </node>
+      <node id="211">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="208">
+        <label>main/devices/GPS/GPS.cpp</label>
+        <link refid="GPS_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1GPS" prot="public">perif::GPS</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+    <briefdescription>
+<para>GPS class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/GPS/GPS.h"/>
+  </compounddef>
+</doxygen>

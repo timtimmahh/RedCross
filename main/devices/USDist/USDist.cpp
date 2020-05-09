@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/USDist/
+ *
  * @file USDist.cpp
  *
  * @brief USDist class definition.

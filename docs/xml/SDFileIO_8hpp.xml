@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="SDFileIO_8hpp" kind="file" language="C++">
+    <compoundname>SDFileIO.hpp</compoundname>
+    <includes local="no">esp_vfs_fat.h</includes>
+    <includes local="no">driver/sdspi_host.h</includes>
+    <includes local="no">sdmmc_cmd.h</includes>
+    <includes local="no">sys/unistd.h</includes>
+    <includes local="no">sys/stat.h</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <incdepgraph>
+      <node id="311">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="314">
+        <label>functional</label>
+      </node>
+      <node id="306">
+        <label>main/fs/SDFileIO.hpp</label>
+        <link refid="SDFileIO_8hpp"/>
+        <childnode refid="307" relation="include">
+        </childnode>
+        <childnode refid="308" relation="include">
+        </childnode>
+        <childnode refid="309" relation="include">
+        </childnode>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="311" relation="include">
+        </childnode>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+        <childnode refid="317" relation="include">
+        </childnode>
+        <childnode refid="318" relation="include">
+        </childnode>
+      </node>
+      <node id="317">
+        <label>string</label>
+      </node>
+      <node id="310">
+        <label>sys/unistd.h</label>
+      </node>
+      <node id="316">
+        <label>fstream</label>
+      </node>
+      <node id="308">
+        <label>driver/sdspi_host.h</label>
+      </node>
+      <node id="312">
+        <label>cstdio</label>
+      </node>
+      <node id="307">
+        <label>esp_vfs_fat.h</label>
+      </node>
+      <node id="318">
+        <label>vector</label>
+      </node>
+      <node id="315">
+        <label>iostream</label>
+      </node>
+      <node id="309">
+        <label>sdmmc_cmd.h</label>
+      </node>
+      <node id="313">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="319">
+        <label>main/fs/SDFileIO.hpp</label>
+        <link refid="SDFileIO_8hpp"/>
+        <childnode refid="320" relation="include">
+        </childnode>
+      </node>
+      <node id="321">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="322" relation="include">
+        </childnode>
+      </node>
+      <node id="320">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="321" relation="include">
+        </childnode>
+      </node>
+      <node id="322">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classSDFileIO" prot="public">SDFileIO</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="SDFileIO_8hpp_1a46bdd417480dec5cb9cf196af3c7489c" prot="public" static="no">
+        <name>PIN_MISO</name>
+        <initializer>GPIO_NUM_2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="28" column="9" bodyfile="main/fs/SDFileIO.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="SDFileIO_8hpp_1abaeddda4b992af7165ed898ab8b2b4ac" prot="public" static="no">
+        <name>PIN_MOSI</name>
+        <initializer>GPIO_NUM_15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="29" column="9" bodyfile="main/fs/SDFileIO.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="SDFileIO_8hpp_1a29e4cd8304fdcdd2e715189dfaaf31c2" prot="public" static="no">
+        <name>PIN_CLK</name>
+        <initializer>GPIO_NUM_14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="30" column="9" bodyfile="main/fs/SDFileIO.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="SDFileIO_8hpp_1afa592f8fcb7a301edfe97aa121fd28ce" prot="public" static="no">
+        <name>PIN_CS</name>
+        <initializer>GPIO_NUM_13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="31" column="9" bodyfile="main/fs/SDFileIO.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="SDFileIO_8hpp_1aac40f1408cb073b2eaa91ad212707b98" prot="public" static="no">
+        <name>absolute</name>
+        <param><defname>fName</defname></param>
+        <initializer>(prefix + &quot;/&quot; + fName)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="33" column="9" bodyfile="main/fs/SDFileIO.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classSDFileIO" kindref="compound">SDFileIO</ref> class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This work complies with the JMU honor code.</para>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/fs/SDFileIO.hpp"/>
+  </compounddef>
+</doxygen>

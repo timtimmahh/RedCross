@@ -1,0 +1,142 @@
+\hypertarget{classErrorHandler}{}\section{Error\+Handler$<$ valid $>$ Class Template Reference}
+\label{classErrorHandler}\index{ErrorHandler$<$ valid $>$@{ErrorHandler$<$ valid $>$}}
+
+
+{\ttfamily \#include $<$Error\+Log.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classErrorHandler_a2fb21215e61a07ab1ef590ec98629039}{run\+Check}} ()
+\item 
+\mbox{\hyperlink{classErrorHandler_a1496a1ea2a04ad3333ceb74b7e3948c8}{Error\+Handler}} (string \&\&caller, const char $\ast$global\+Label=nullptr)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{classErrorHandler}{Error\+Handler}}$<$ valid $>$ \& \mbox{\hyperlink{classErrorHandler_a0be34c542953af71ff23efa474ddd2bb}{operator()}} (esp\+\_\+err\+\_\+t esp\+Func(Args...), string label, Args... args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Err\+::\+Flag valid = Err\+::\+Err\+OK$>$\newline
+class Error\+Handler$<$ valid $>$}
+
+Performs error checking on C-\/style E\+SP operations.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em valid} & valid error flags \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 101 of file Error\+Log.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classErrorHandler_a1496a1ea2a04ad3333ceb74b7e3948c8}\label{classErrorHandler_a1496a1ea2a04ad3333ceb74b7e3948c8}} 
+\index{ErrorHandler$<$ valid $>$@{ErrorHandler$<$ valid $>$}!ErrorHandler@{ErrorHandler}}
+\index{ErrorHandler@{ErrorHandler}!ErrorHandler$<$ valid $>$@{ErrorHandler$<$ valid $>$}}
+\subsubsection{\texorpdfstring{ErrorHandler()}{ErrorHandler()}}
+{\footnotesize\ttfamily template$<$Err\+::\+Flag valid = Err\+::\+Err\+OK$>$ \\
+\mbox{\hyperlink{classErrorHandler}{Error\+Handler}}$<$ valid $>$\+::\mbox{\hyperlink{classErrorHandler}{Error\+Handler}} (\begin{DoxyParamCaption}\item[{string \&\&}]{caller,  }\item[{const char $\ast$}]{global\+Label = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Creates an instance this handler to perform E\+SP operations safely.
+
+
+\begin{DoxyParams}{Parameters}
+{\em caller} & the calling function (for debugging) \\
+\hline
+{\em global\+Label} & a default label to use if a function doesn\textquotesingle{}t have one \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{160       : espFuncs(), callerName(caller), gLabel(globalLabel) \{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classErrorHandler_a0be34c542953af71ff23efa474ddd2bb}\label{classErrorHandler_a0be34c542953af71ff23efa474ddd2bb}} 
+\index{ErrorHandler$<$ valid $>$@{ErrorHandler$<$ valid $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!ErrorHandler$<$ valid $>$@{ErrorHandler$<$ valid $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$Err\+::\+Flag valid = Err\+::\+Err\+OK$>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{classErrorHandler}{Error\+Handler}}$<$valid$>$\& \mbox{\hyperlink{classErrorHandler}{Error\+Handler}}$<$ valid $>$\+::operator() (\begin{DoxyParamCaption}\item[{esp\+\_\+err\+\_\+t }]{esp\+FuncArgs...,  }\item[{string}]{label,  }\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function call operator to pass an E\+SP function, it\textquotesingle{}s name and any arguments.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & the E\+SP function args \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em esp\+Func} & the E\+SP function \\
+\hline
+{\em label} & the function label (for debugging) \\
+\hline
+{\em args} & the E\+SP function argument values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this handler for call chaining 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{174                                                 \{}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     espFuncs.push\_back(}
+\DoxyCodeLine{177         make\_pair(label, [\&espFunc, args...]() \{}
+\DoxyCodeLine{178           return espFunc(args...);}
+\DoxyCodeLine{179         \}));}
+\DoxyCodeLine{180     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{181   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classErrorHandler_a2fb21215e61a07ab1ef590ec98629039}\label{classErrorHandler_a2fb21215e61a07ab1ef590ec98629039}} 
+\index{ErrorHandler$<$ valid $>$@{ErrorHandler$<$ valid $>$}!runCheck@{runCheck}}
+\index{runCheck@{runCheck}!ErrorHandler$<$ valid $>$@{ErrorHandler$<$ valid $>$}}
+\subsubsection{\texorpdfstring{runCheck()}{runCheck()}}
+{\footnotesize\ttfamily template$<$Err\+::\+Flag valid = Err\+::\+Err\+OK$>$ \\
+bool \mbox{\hyperlink{classErrorHandler}{Error\+Handler}}$<$ valid $>$\+::run\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs the operations and ensures all have valid results.
+
+\begin{DoxyReturn}{Returns}
+whether all functions ran successfully 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108                   \{}
+\DoxyCodeLine{109     \textcolor{keywordtype}{size\_t} passed = 0;}
+\DoxyCodeLine{110     \textcolor{keywordtype}{unsigned} size = espFuncs.size();}
+\DoxyCodeLine{111     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&espFunc : espFuncs) \{}
+\DoxyCodeLine{112       \textcolor{keywordflow}{if} (logE(espFunc.first, \mbox{\hyperlink{classErr}{Err}}(espFunc.second(), valid)))}
+\DoxyCodeLine{113         passed++;}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115     espFuncs.clear();}
+\DoxyCodeLine{116     ranCheck = \textcolor{keyword}{true};}
+\DoxyCodeLine{117     \textcolor{keywordflow}{return} passed == size;}
+\DoxyCodeLine{118   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/include/\mbox{\hyperlink{ErrorLog_8hpp}{Error\+Log.\+hpp}}\end{DoxyCompactItemize}

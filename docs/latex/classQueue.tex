@@ -1,0 +1,336 @@
+\hypertarget{classQueue}{}\section{Queue$<$ Tp $>$ Class Template Reference}
+\label{classQueue}\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+
+
+{\ttfamily \#include $<$Queue.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQueue_a71a0de9bb1e4bf3f36f3ed033398eeff}{Queue}} ()
+\item 
+\mbox{\hyperlink{classQueue_a9c828c8a0b58c579eaa0279b9ebfe2f1}{Queue}} (int max\+Size)
+\item 
+bool \mbox{\hyperlink{classQueue_af332726c4f0882923eb8c1466d6f7b2c}{empty}} ()
+\item 
+int \mbox{\hyperlink{classQueue_a87514f47ccd19ce0ae845503d7627c5d}{size}} ()
+\item 
+int \mbox{\hyperlink{classQueue_a481598ed9c07d23c00ce3648c148415d}{length}} () const
+\item 
+bool \mbox{\hyperlink{classQueue_a01d580b06f7fc95a3b8292b598405507}{push}} (const Tp \&value)
+\item 
+bool \mbox{\hyperlink{classQueue_a372de387e3016b225798697ac2c18401}{push}} (Tp \&\&value)
+\item 
+bool \mbox{\hyperlink{classQueue_aac66ef3af1e47ec1ccd3dea60e40fd7c}{pop}} (Tp \&target)
+\item 
+void \mbox{\hyperlink{classQueue_a0fdf9ec322669edbd88225b370587cf7}{wait\+\_\+pop}} (Tp \&target)
+\item 
+bool \mbox{\hyperlink{classQueue_a919fd45266827995c68caedde29e0962}{pop\+\_\+if}} (function$<$ bool(const Tp \&front)$>$ \&\&predicate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Tp$>$\newline
+class Queue$<$ Tp $>$}
+
+A thread-\/safe queue implementation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Tp} & the queue data type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 25 of file Queue.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQueue_a71a0de9bb1e4bf3f36f3ed033398eeff}\label{classQueue_a71a0de9bb1e4bf3f36f3ed033398eeff}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!Queue@{Queue}}
+\index{Queue@{Queue}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{Queue()}{Queue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+\mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::\mbox{\hyperlink{classQueue}{Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an empty instance of this queue. 
+
+Definition at line 47 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48       : maxSize(-1),}
+\DoxyCodeLine{49         items(),}
+\DoxyCodeLine{50         mtx(),}
+\DoxyCodeLine{51         cond() \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_a9c828c8a0b58c579eaa0279b9ebfe2f1}\label{classQueue_a9c828c8a0b58c579eaa0279b9ebfe2f1}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!Queue@{Queue}}
+\index{Queue@{Queue}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{Queue()}{Queue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+\mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::\mbox{\hyperlink{classQueue}{Queue}} (\begin{DoxyParamCaption}\item[{int}]{max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Creates an instance of this queue with a maximum capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Size} & the queue\textquotesingle{}s capacity \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58       : maxSize(maxSize),}
+\DoxyCodeLine{59         items(),}
+\DoxyCodeLine{60         mtx(),}
+\DoxyCodeLine{61         cond() \{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classQueue_af332726c4f0882923eb8c1466d6f7b2c}\label{classQueue_af332726c4f0882923eb8c1466d6f7b2c}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!empty@{empty}}
+\index{empty@{empty}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether this queue is empty.
+
+\begin{DoxyReturn}{Returns}
+true if this queue is empty 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67                \{}
+\DoxyCodeLine{68     \textcolor{keywordflow}{return} \mbox{\hyperlink{classQueue_a87514f47ccd19ce0ae845503d7627c5d}{size}}() == 0;}
+\DoxyCodeLine{69   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_a481598ed9c07d23c00ce3648c148415d}\label{classQueue_a481598ed9c07d23c00ce3648c148415d}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!length@{length}}
+\index{length@{length}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+int \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the queue capacity.
+
+\begin{DoxyReturn}{Returns}
+the capacity 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                      \{}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} maxSize;}
+\DoxyCodeLine{88   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_aac66ef3af1e47ec1ccd3dea60e40fd7c}\label{classQueue_aac66ef3af1e47ec1ccd3dea60e40fd7c}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!pop@{pop}}
+\index{pop@{pop}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::pop (\begin{DoxyParamCaption}\item[{Tp \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pops an item from this queue and returns it through the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & a reference to receive the popped value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the operation succeeded 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{128                        \{}
+\DoxyCodeLine{129     lock\_guard<mutex> lock(mtx);}
+\DoxyCodeLine{130     \textcolor{keywordflow}{if} (items.size > 0) \{}
+\DoxyCodeLine{131       target = items.front();}
+\DoxyCodeLine{132       items.erase(items.begin());}
+\DoxyCodeLine{133       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{136   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_a919fd45266827995c68caedde29e0962}\label{classQueue_a919fd45266827995c68caedde29e0962}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!pop\_if@{pop\_if}}
+\index{pop\_if@{pop\_if}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{pop\_if()}{pop\_if()}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::pop\+\_\+if (\begin{DoxyParamCaption}\item[{function$<$ bool(const Tp \&front)$>$ \&\&}]{predicate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pops an item if the predicate function succeeds determines it should.
+
+
+\begin{DoxyParams}{Parameters}
+{\em predicate} & the function to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the operation succeeded 
+\end{DoxyReturn}
+
+
+Definition at line 159 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{159                                                            \{}
+\DoxyCodeLine{160     lock\_guard<mutex> lck(mtx);}
+\DoxyCodeLine{161     \textcolor{keywordflow}{if} (!items.empty() \&\& predicate(items.front()))}
+\DoxyCodeLine{162       items.erase(items.begin());}
+\DoxyCodeLine{163     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{164     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{165   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_a01d580b06f7fc95a3b8292b598405507}\label{classQueue_a01d580b06f7fc95a3b8292b598405507}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!push@{push}}
+\index{push@{push}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::push (\begin{DoxyParamCaption}\item[{const Tp \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pushes a value reference onto this queue and notifies any waiters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether insertion succeeded 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96                              \{}
+\DoxyCodeLine{97     lock\_guard<mutex> lock(mtx);}
+\DoxyCodeLine{98     \textcolor{keywordflow}{if} (items.size() < maxSize) \{}
+\DoxyCodeLine{99       items.emplace\_back(value);}
+\DoxyCodeLine{100       cond.notify\_one();}
+\DoxyCodeLine{101       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{102     \}}
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{104   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_a372de387e3016b225798697ac2c18401}\label{classQueue_a372de387e3016b225798697ac2c18401}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!push@{push}}
+\index{push@{push}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::push (\begin{DoxyParamCaption}\item[{Tp \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pushes an rvalue reference onto this queue and notifies any waiters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether insertion succeeded 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                         \{}
+\DoxyCodeLine{113     lock\_guard<mutex> lck(mtx);}
+\DoxyCodeLine{114     \textcolor{keywordflow}{if} (items.size() < maxSize) \{}
+\DoxyCodeLine{115       items.emplace\_back(move(value));}
+\DoxyCodeLine{116       cond.notify\_one();}
+\DoxyCodeLine{117       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{120   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_a87514f47ccd19ce0ae845503d7627c5d}\label{classQueue_a87514f47ccd19ce0ae845503d7627c5d}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!size@{size}}
+\index{size@{size}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+int \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current size of this queue.
+
+\begin{DoxyReturn}{Returns}
+the current size 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76              \{}
+\DoxyCodeLine{77     lock\_guard<mutex> lock(mtx);}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} static\_cast<int>(items.size());}
+\DoxyCodeLine{79   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQueue_a0fdf9ec322669edbd88225b370587cf7}\label{classQueue_a0fdf9ec322669edbd88225b370587cf7}} 
+\index{Queue$<$ Tp $>$@{Queue$<$ Tp $>$}!wait\_pop@{wait\_pop}}
+\index{wait\_pop@{wait\_pop}!Queue$<$ Tp $>$@{Queue$<$ Tp $>$}}
+\subsubsection{\texorpdfstring{wait\_pop()}{wait\_pop()}}
+{\footnotesize\ttfamily template$<$typename Tp$>$ \\
+void \mbox{\hyperlink{classQueue}{Queue}}$<$ Tp $>$\+::wait\+\_\+pop (\begin{DoxyParamCaption}\item[{Tp \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Waits for an indefinite amount of time for another thread to insert an item into this queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & a reference to receive the popped value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 144 of file Queue.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144                             \{}
+\DoxyCodeLine{145     lock\_guard<mutex> lock(mtx);}
+\DoxyCodeLine{146     \textcolor{keywordflow}{while} (items.empty())}
+\DoxyCodeLine{147       cond.wait(lock);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     target = items.front();}
+\DoxyCodeLine{150     items.erase(items.begin());}
+\DoxyCodeLine{151   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/ipc/\mbox{\hyperlink{Queue_8hpp}{Queue.\+hpp}}\end{DoxyCompactItemize}

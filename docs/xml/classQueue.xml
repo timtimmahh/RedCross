@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classQueue" kind="class" language="C++" prot="public">
+    <compoundname>Queue</compoundname>
+    <includes refid="Queue_8hpp" local="no">Queue.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>Tp</declname>
+        <defname>Tp</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQueue_1a5d11cdc4c5dbba530bf03c00d9321ae6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Queue&lt; Tp &gt;::maxSize</definition>
+        <argsstring></argsstring>
+        <name>maxSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The maximum size of the queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="30" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQueue_1a71e625729d9a74cbed44550f696a3a75" prot="private" static="no" mutable="no">
+        <type>list&lt; Tp &gt;</type>
+        <definition>list&lt;Tp&gt; Queue&lt; Tp &gt;::items</definition>
+        <argsstring></argsstring>
+        <name>items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The container this queue wraps around. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="34" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQueue_1aa82b1d77dc403100549dea34d6b33fe5" prot="private" static="no" mutable="no">
+        <type>mutex</type>
+        <definition>mutex Queue&lt; Tp &gt;::mtx</definition>
+        <argsstring></argsstring>
+        <name>mtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This queue&apos;s mutex. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="38" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQueue_1a5a2fa6d4c412717612e80ee3360f1f29" prot="private" static="no" mutable="no">
+        <type>condition_variable_any</type>
+        <definition>condition_variable_any Queue&lt; Tp &gt;::cond</definition>
+        <argsstring></argsstring>
+        <name>cond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A condition variable for asynchronous operations on this queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="42" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQueue_1a71a0de9bb1e4bf3f36f3ed033398eeff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Queue&lt; Tp &gt;::Queue</definition>
+        <argsstring>()</argsstring>
+        <name>Queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an empty instance of this queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="47" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1a9c828c8a0b58c579eaa0279b9ebfe2f1" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Queue&lt; Tp &gt;::Queue</definition>
+        <argsstring>(int maxSize)</argsstring>
+        <name>Queue</name>
+        <param>
+          <type>int</type>
+          <declname>maxSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an instance of this queue with a maximum capacity.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the queue&apos;s capacity </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="57" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1af332726c4f0882923eb8c1466d6f7b2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Queue&lt; Tp &gt;::empty</definition>
+        <argsstring>()</argsstring>
+        <name>empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether this queue is empty.</para>
+<para><simplesect kind="return"><para>true if this queue is empty </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="67" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1a87514f47ccd19ce0ae845503d7627c5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Queue&lt; Tp &gt;::size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the current size of this queue.</para>
+<para><simplesect kind="return"><para>the current size </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="76" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1a481598ed9c07d23c00ce3648c148415d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Queue&lt; Tp &gt;::length</definition>
+        <argsstring>() const</argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the queue capacity.</para>
+<para><simplesect kind="return"><para>the capacity </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="86" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1a01d580b06f7fc95a3b8292b598405507" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Queue&lt; Tp &gt;::push</definition>
+        <argsstring>(const Tp &amp;value)</argsstring>
+        <name>push</name>
+        <param>
+          <type>const Tp &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pushes a value reference onto this queue and notifies any waiters.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether insertion succeeded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="96" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="96" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1a372de387e3016b225798697ac2c18401" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Queue&lt; Tp &gt;::push</definition>
+        <argsstring>(Tp &amp;&amp;value)</argsstring>
+        <name>push</name>
+        <param>
+          <type>Tp &amp;&amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pushes an rvalue reference onto this queue and notifies any waiters.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether insertion succeeded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="112" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="112" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1aac66ef3af1e47ec1ccd3dea60e40fd7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Queue&lt; Tp &gt;::pop</definition>
+        <argsstring>(Tp &amp;target)</argsstring>
+        <name>pop</name>
+        <param>
+          <type>Tp &amp;</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pops an item from this queue and returns it through the target.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a reference to receive the popped value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the operation succeeded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="128" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="128" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1a0fdf9ec322669edbd88225b370587cf7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Queue&lt; Tp &gt;::wait_pop</definition>
+        <argsstring>(Tp &amp;target)</argsstring>
+        <name>wait_pop</name>
+        <param>
+          <type>Tp &amp;</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits for an indefinite amount of time for another thread to insert an item into this queue.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a reference to receive the popped value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="144" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="144" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classQueue_1a919fd45266827995c68caedde29e0962" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Queue&lt; Tp &gt;::pop_if</definition>
+        <argsstring>(function&lt; bool(const Tp &amp;front)&gt; &amp;&amp;predicate)</argsstring>
+        <name>pop_if</name>
+        <param>
+          <type>function&lt; bool(const Tp &amp;front)&gt; &amp;&amp;</type>
+          <declname>predicate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pops an item if the predicate function succeeds determines it should.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>predicate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the function to test </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the operation succeeded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Queue.hpp" line="159" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="159" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A thread-safe queue implementation.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the queue data type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="main/ipc/Queue.hpp" line="25" column="1" bodyfile="main/ipc/Queue.hpp" bodystart="25" bodyend="167"/>
+    <listofallmembers>
+      <member refid="classQueue_1a5a2fa6d4c412717612e80ee3360f1f29" prot="private" virt="non-virtual"><scope>Queue</scope><name>cond</name></member>
+      <member refid="classQueue_1af332726c4f0882923eb8c1466d6f7b2c" prot="public" virt="non-virtual"><scope>Queue</scope><name>empty</name></member>
+      <member refid="classQueue_1a71e625729d9a74cbed44550f696a3a75" prot="private" virt="non-virtual"><scope>Queue</scope><name>items</name></member>
+      <member refid="classQueue_1a481598ed9c07d23c00ce3648c148415d" prot="public" virt="non-virtual"><scope>Queue</scope><name>length</name></member>
+      <member refid="classQueue_1a5d11cdc4c5dbba530bf03c00d9321ae6" prot="private" virt="non-virtual"><scope>Queue</scope><name>maxSize</name></member>
+      <member refid="classQueue_1aa82b1d77dc403100549dea34d6b33fe5" prot="private" virt="non-virtual"><scope>Queue</scope><name>mtx</name></member>
+      <member refid="classQueue_1aac66ef3af1e47ec1ccd3dea60e40fd7c" prot="public" virt="non-virtual"><scope>Queue</scope><name>pop</name></member>
+      <member refid="classQueue_1a919fd45266827995c68caedde29e0962" prot="public" virt="non-virtual"><scope>Queue</scope><name>pop_if</name></member>
+      <member refid="classQueue_1a01d580b06f7fc95a3b8292b598405507" prot="public" virt="non-virtual"><scope>Queue</scope><name>push</name></member>
+      <member refid="classQueue_1a372de387e3016b225798697ac2c18401" prot="public" virt="non-virtual"><scope>Queue</scope><name>push</name></member>
+      <member refid="classQueue_1a71a0de9bb1e4bf3f36f3ed033398eeff" prot="public" virt="non-virtual"><scope>Queue</scope><name>Queue</name></member>
+      <member refid="classQueue_1a9c828c8a0b58c579eaa0279b9ebfe2f1" prot="public" virt="non-virtual"><scope>Queue</scope><name>Queue</name></member>
+      <member refid="classQueue_1a87514f47ccd19ce0ae845503d7627c5d" prot="public" virt="non-virtual"><scope>Queue</scope><name>size</name></member>
+      <member refid="classQueue_1a0fdf9ec322669edbd88225b370587cf7" prot="public" virt="non-virtual"><scope>Queue</scope><name>wait_pop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

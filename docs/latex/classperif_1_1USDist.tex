@@ -1,0 +1,332 @@
+\hypertarget{classperif_1_1USDist}{}\section{perif\+::U\+S\+Dist Class Reference}
+\label{classperif_1_1USDist}\index{perif::USDist@{perif::USDist}}
+
+
+{\ttfamily \#include $<$U\+S\+Dist.\+h$>$}
+
+Inheritance diagram for perif\+::U\+S\+Dist\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classperif_1_1USDist}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classperif_1_1USDist_a56e837dd1ef2de47ae628f56f241ad04}{U\+S\+Dist}} (uint8\+\_\+t trig\+Pin=\mbox{\hyperlink{USDist_8h_a8eab89acd7dcb0e77e7b00d1749022a6}{T\+R\+I\+G\+\_\+\+P\+IN}}, uint8\+\_\+t echo\+Pin=\mbox{\hyperlink{USDist_8h_acea96cea4a13b6cb38e57a86788adf90}{E\+C\+H\+O\+\_\+\+P\+IN}})
+\item 
+bool \mbox{\hyperlink{classperif_1_1USDist_a0920535901e083c9832dcde3639ab569}{begin}} () override
+\item 
+bool \mbox{\hyperlink{classperif_1_1GPIOPerif_ae7c93b409fd4d4d49f9f8eddae612b3e}{is\+Connected}} () override
+\item 
+bool \mbox{\hyperlink{classperif_1_1GPIOPerif_a4edf4acd2bcdbe870efb96f8dcd7940a}{set\+Pin}} (uint8\+\_\+t pin, gpio\+\_\+mode\+\_\+t mode=G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+O\+U\+T\+P\+UT, bool pull\+Up=false, bool pull\+Down=false)
+\item 
+bool \mbox{\hyperlink{classperif_1_1GPIOPerif_a9e1f4a1d4aa01d0bc01d9a371a52dd5c}{set\+Intr\+Pin}} (uint8\+\_\+t pin, gpio\+Func \&\&handler, uint8\+\_\+t isr\+Flags=0, gpio\+\_\+int\+\_\+type\+\_\+t intr\+Type=G\+P\+I\+O\+\_\+\+I\+N\+T\+R\+\_\+\+A\+N\+Y\+E\+D\+GE, gpio\+\_\+mode\+\_\+t mode=G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+\_\+\+I\+N\+P\+U\+T\+\_\+\+O\+U\+T\+P\+UT, bool pull\+Up=false, bool pull\+Down=false)
+\item 
+void \mbox{\hyperlink{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}{update}} ()
+\item 
+void \mbox{\hyperlink{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}{register\+Hook}} (function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&hook)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}}
+\item 
+list$<$ function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ $>$ \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \& \mbox{\hyperlink{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}{get\+Timer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ultrasonic distance sensor peripheral. Tested on H\+C-\/\+S\+R04 
+
+Definition at line 35 of file U\+S\+Dist.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classperif_1_1USDist_a56e837dd1ef2de47ae628f56f241ad04}\label{classperif_1_1USDist_a56e837dd1ef2de47ae628f56f241ad04}} 
+\index{perif::USDist@{perif::USDist}!USDist@{USDist}}
+\index{USDist@{USDist}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{USDist()}{USDist()}}
+{\footnotesize\ttfamily perif\+::\+U\+S\+Dist\+::\+U\+S\+Dist (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{trig\+Pin = {\ttfamily \mbox{\hyperlink{USDist_8h_a8eab89acd7dcb0e77e7b00d1749022a6}{T\+R\+I\+G\+\_\+\+P\+IN}}},  }\item[{uint8\+\_\+t}]{echo\+Pin = {\ttfamily \mbox{\hyperlink{USDist_8h_acea96cea4a13b6cb38e57a86788adf90}{E\+C\+H\+O\+\_\+\+P\+IN}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Explicit value constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trig\+Pin} & the G\+P\+IO trigger pin \\
+\hline
+{\em echo\+Pin} & the G\+P\+IO echo pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file U\+S\+Dist.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31     : \mbox{\hyperlink{classperif_1_1GPIOPerif_a8a96ad56b51e9c46115bb8320e1c268d}{GPIOPerif}}(\textcolor{stringliteral}{"USDist"}),}
+\DoxyCodeLine{32       trigPin(trigPin),}
+\DoxyCodeLine{33       echoPin(echoPin),}
+\DoxyCodeLine{34       distance(0.0) \{}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classperif_1_1USDist_a0920535901e083c9832dcde3639ab569}\label{classperif_1_1USDist_a0920535901e083c9832dcde3639ab569}} 
+\index{perif::USDist@{perif::USDist}!begin@{begin}}
+\index{begin@{begin}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool perif\+::\+U\+S\+Dist\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Performs initialization of a peripheral. Necessary to avoid initialization in the constructor which causes many side effects.
+
+\begin{DoxyReturn}{Returns}
+whether the peripheral initialization succeeded 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classperif_1_1Perif_ae7f1d1a4e9cd2343d51abc4ee21000cf}{perif\+::\+Perif}}.
+
+
+
+Definition at line 37 of file U\+S\+Dist.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37                    \{}
+\DoxyCodeLine{38   \mbox{\hyperlink{classperif_1_1GPIOPerif_a4edf4acd2bcdbe870efb96f8dcd7940a}{setPin}}(trigPin, GPIO\_MODE\_OUTPUT);}
+\DoxyCodeLine{39   \mbox{\hyperlink{classperif_1_1GPIOPerif_a4edf4acd2bcdbe870efb96f8dcd7940a}{setPin}}(echoPin, GPIO\_MODE\_INPUT);}
+\DoxyCodeLine{40   gpio\_set\_level(static\_cast<gpio\_num\_t>(trigPin), 0);}
+\DoxyCodeLine{41   \textcolor{keywordflow}{return} \mbox{\hyperlink{classperif_1_1GPIOPerif_a3e94e58e8441b85256567c193164ea69}{GPIOPerif::begin}}();}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}\label{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}} 
+\index{perif::USDist@{perif::USDist}!getTimer@{getTimer}}
+\index{getTimer@{getTimer}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{getTimer()}{getTimer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}}\& perif\+::\+Perif\+::get\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+Obtains a reference to this peripheral\textquotesingle{}s timer.
+
+\begin{DoxyReturn}{Returns}
+a timer reference 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1GPIOPerif_ae7c93b409fd4d4d49f9f8eddae612b3e}\label{classperif_1_1GPIOPerif_ae7c93b409fd4d4d49f9f8eddae612b3e}} 
+\index{perif::USDist@{perif::USDist}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily bool perif\+::\+G\+P\+I\+O\+Perif\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Returns whether the sensor is connected or not.
+
+\begin{DoxyReturn}{Returns}
+if the sensor is connected 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classperif_1_1Perif_ab9a17fad04e595f3ac0c78b9d3be4c9e}{perif\+::\+Perif}}.
+
+
+
+Definition at line 86 of file G\+P\+I\+O\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                               \{}
+\DoxyCodeLine{87     \textcolor{comment}{// no way to tell if GPIO is connected or not}}
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{89   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}\label{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}} 
+\index{perif::USDist@{perif::USDist}!registerHook@{registerHook}}
+\index{registerHook@{registerHook}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{registerHook()}{registerHook()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+Base\+::register\+Hook (\begin{DoxyParamCaption}\item[{function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&}]{hook }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Registers a hook for obtaining sensor data on update in Json format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hook} & the observer function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                     \{}
+\DoxyCodeLine{64     \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}.push\_back(hook);}
+\DoxyCodeLine{65   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1GPIOPerif_a9e1f4a1d4aa01d0bc01d9a371a52dd5c}\label{classperif_1_1GPIOPerif_a9e1f4a1d4aa01d0bc01d9a371a52dd5c}} 
+\index{perif::USDist@{perif::USDist}!setIntrPin@{setIntrPin}}
+\index{setIntrPin@{setIntrPin}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{setIntrPin()}{setIntrPin()}}
+{\footnotesize\ttfamily bool perif\+::\+G\+P\+I\+O\+Perif\+::set\+Intr\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin,  }\item[{gpio\+Func \&\&}]{handler,  }\item[{uint8\+\_\+t}]{isr\+Flags = {\ttfamily 0},  }\item[{gpio\+\_\+int\+\_\+type\+\_\+t}]{intr\+Type = {\ttfamily GPIO\+\_\+INTR\+\_\+ANYEDGE},  }\item[{gpio\+\_\+mode\+\_\+t}]{mode = {\ttfamily GPIO\+\_\+MODE\+\_\+INPUT\+\_\+OUTPUT},  }\item[{bool}]{pull\+Up = {\ttfamily false},  }\item[{bool}]{pull\+Down = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Specify a pin to use as an interrupt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & the pin number \\
+\hline
+{\em handler} & the interrupt handler \\
+\hline
+{\em isr\+Flags} & any interrupt configuration flags \\
+\hline
+{\em intr\+Type} & the interrupt type \\
+\hline
+{\em mode} & the G\+P\+IO pin mode \\
+\hline
+{\em pull\+Up} & whether the pin is a pullup \\
+\hline
+{\em pull\+Down} & whether the pin is a pulldown \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the interrupt pin was setup successfully 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file G\+P\+I\+O\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123                                          \{}
+\DoxyCodeLine{124     \textcolor{keywordflow}{if} (intrType >= GPIO\_INTR\_MAX)}
+\DoxyCodeLine{125       intrType = GPIO\_INTR\_ANYEDGE;}
+\DoxyCodeLine{126     \textcolor{keywordflow}{if} (\_setPin(pin, mode, pullUp, pullDown, intrType)) \{}
+\DoxyCodeLine{127       esp\_err\_t err = gpio\_install\_isr\_service(isrFlags);}
+\DoxyCodeLine{128       \textcolor{keywordflow}{if} (err == ESP\_OK || err == ESP\_ERR\_INVALID\_STATE) \{}
+\DoxyCodeLine{129         isrHandlers[pin] = move(handler);}
+\DoxyCodeLine{130         \textcolor{keywordflow}{return} gpio\_isr\_handler\_add(static\_cast<gpio\_num\_t>(pin),}
+\DoxyCodeLine{131                                     isrHandler,}
+\DoxyCodeLine{132                                     reinterpret\_cast<void *>(pin)) == ESP\_OK;}
+\DoxyCodeLine{133       \}}
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{136   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1GPIOPerif_a4edf4acd2bcdbe870efb96f8dcd7940a}\label{classperif_1_1GPIOPerif_a4edf4acd2bcdbe870efb96f8dcd7940a}} 
+\index{perif::USDist@{perif::USDist}!setPin@{setPin}}
+\index{setPin@{setPin}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{setPin()}{setPin()}}
+{\footnotesize\ttfamily bool perif\+::\+G\+P\+I\+O\+Perif\+::set\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin,  }\item[{gpio\+\_\+mode\+\_\+t}]{mode = {\ttfamily GPIO\+\_\+MODE\+\_\+INPUT\+\_\+OUTPUT},  }\item[{bool}]{pull\+Up = {\ttfamily false},  }\item[{bool}]{pull\+Down = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Sets up a pin for G\+P\+IO operations with interrupts disabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & the G\+P\+IO pin number \\
+\hline
+{\em mode} & the G\+P\+IO pin mode \\
+\hline
+{\em pull\+Up} & whether the pin is a pullup \\
+\hline
+{\em pull\+Down} & whether the pin is a pulldown \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the pin was setup successfully 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file G\+P\+I\+O\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102                                      \{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} \_setPin(pin, mode, pullUp, pullDown);}
+\DoxyCodeLine{104   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}\label{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}} 
+\index{perif::USDist@{perif::USDist}!update@{update}}
+\index{update@{update}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Performs a manual update of peripheral data and notifies observers. 
+
+Definition at line 130 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{130                 \{}
+\DoxyCodeLine{131     \textcolor{comment}{// performs a manual data retrieval}}
+\DoxyCodeLine{132     \mbox{\hyperlink{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}{updateData}}();}
+\DoxyCodeLine{133     \textcolor{comment}{// update the data mapping so hooks can process it}}
+\DoxyCodeLine{134     \mbox{\hyperlink{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}{representData}}();}
+\DoxyCodeLine{135     \textcolor{comment}{// notify all observers}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& hook : \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}})}
+\DoxyCodeLine{137       hook(\mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}});}
+\DoxyCodeLine{138   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}\label{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}} 
+\index{perif::USDist@{perif::USDist}!data@{data}}
+\index{data@{data}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} perif\+::\+Perif\+Base\+::data\hspace{0.3cm}{\ttfamily [inherited]}}
+
+The key-\/value mapping of peripheral data. 
+
+Definition at line 37 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}\label{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}} 
+\index{perif::USDist@{perif::USDist}!hooks@{hooks}}
+\index{hooks@{hooks}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{hooks}{hooks}}
+{\footnotesize\ttfamily list$<$function$<$void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}}\&)$>$ $>$ perif\+::\+Perif\+Base\+::hooks\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Hooks registered to this peripheral so observers can be notified of any necessary changes. 
+
+Definition at line 42 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}\label{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}} 
+\index{perif::USDist@{perif::USDist}!timer@{timer}}
+\index{timer@{timer}!perif::USDist@{perif::USDist}}
+\subsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}} perif\+::\+Perif\+::timer\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+A timer for managing peripheral updates. 
+
+Definition at line 78 of file Perif.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/devices/\+U\+S\+Dist/\mbox{\hyperlink{USDist_8h}{U\+S\+Dist.\+h}}\item 
+main/devices/\+U\+S\+Dist/\mbox{\hyperlink{USDist_8cpp}{U\+S\+Dist.\+cpp}}\end{DoxyCompactItemize}

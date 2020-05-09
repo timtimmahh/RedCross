@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_5c982d53a68cdbcd421152b4020263a9" kind="dir">
+    <compoundname>main</compoundname>
+    <innerdir refid="dir_ac71980bfdedfaf66599381cfa5fc4df">main/devices</innerdir>
+    <innerdir refid="dir_afe09f07e305d6193ad9e769badba152">main/fs</innerdir>
+    <innerdir refid="dir_bad007344d42f4b5340fab5412b591e5">main/include</innerdir>
+    <innerdir refid="dir_65d139fdf27ed00ac1926688f46f94b5">main/ipc</innerdir>
+    <innerdir refid="dir_e6fce18fa6c544a38c44469ec51fef69">main/net</innerdir>
+    <innerdir refid="dir_5515aeb37536524ba70064e5bad90496">main/perif</innerdir>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/"/>
+  </compounddef>
+</doxygen>

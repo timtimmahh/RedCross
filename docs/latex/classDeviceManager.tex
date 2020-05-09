@@ -1,0 +1,176 @@
+\hypertarget{classDeviceManager}{}\section{Device\+Manager$<$ Sensors $>$ Class Template Reference}
+\label{classDeviceManager}\index{DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}}
+
+
+{\ttfamily \#include $<$Device\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDeviceManager_ac7804420230626193b647f3744d80d7f}{Device\+Manager}} ()
+\item 
+\mbox{\hyperlink{classDeviceManager_a750e88a618d6625436094c53ff9f22a8}{$\sim$\+Device\+Manager}} ()
+\item 
+void \mbox{\hyperlink{classDeviceManager_a73b4335c01ea2cea4981fec5f46d3406}{hook\+Sensors}} ()
+\item 
+void \mbox{\hyperlink{classDeviceManager_a171961019173e8ac7f6cb2a9a264aac0}{log\+Sensors}} ()
+\item 
+void \mbox{\hyperlink{classDeviceManager_a09e0614a93d32e8087d3dca0dc4e705e}{update}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class... Sensors$>$\newline
+class Device\+Manager$<$ Sensors $>$}
+
+The device manager for handling necessary sensor peripherals.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Sensors} & the sensor types to manage \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 37 of file Device\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDeviceManager_ac7804420230626193b647f3744d80d7f}\label{classDeviceManager_ac7804420230626193b647f3744d80d7f}} 
+\index{DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}!DeviceManager@{DeviceManager}}
+\index{DeviceManager@{DeviceManager}!DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}}
+\subsubsection{\texorpdfstring{DeviceManager()}{DeviceManager()}}
+{\footnotesize\ttfamily template$<$class... Sensors$>$ \\
+\mbox{\hyperlink{classDeviceManager}{Device\+Manager}}$<$ Sensors $>$\+::\mbox{\hyperlink{classDeviceManager}{Device\+Manager}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor that creates sensor instances. 
+
+Definition at line 75 of file Device\+Manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76       : \mbox{\hyperlink{classDeviceManager_ac7804420230626193b647f3744d80d7f}{DeviceManager}}(\textcolor{keyword}{new} Sensors()...) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDeviceManager_a750e88a618d6625436094c53ff9f22a8}\label{classDeviceManager_a750e88a618d6625436094c53ff9f22a8}} 
+\index{DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}!````~DeviceManager@{$\sim$DeviceManager}}
+\index{````~DeviceManager@{$\sim$DeviceManager}!DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}}
+\subsubsection{\texorpdfstring{$\sim$DeviceManager()}{~DeviceManager()}}
+{\footnotesize\ttfamily template$<$class... Sensors$>$ \\
+\mbox{\hyperlink{classDeviceManager}{Device\+Manager}}$<$ Sensors $>$\+::$\sim$\mbox{\hyperlink{classDeviceManager}{Device\+Manager}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear sensors from memory. This should only be called when the device is powering down or going to deep sleep. 
+
+Definition at line 82 of file Device\+Manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                    \{}
+\DoxyCodeLine{83     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} item : devices)}
+\DoxyCodeLine{84       \textcolor{keyword}{delete} dynamic\_cast<PerifBase*>(item);}
+\DoxyCodeLine{85   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDeviceManager_a73b4335c01ea2cea4981fec5f46d3406}\label{classDeviceManager_a73b4335c01ea2cea4981fec5f46d3406}} 
+\index{DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}!hookSensors@{hookSensors}}
+\index{hookSensors@{hookSensors}!DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}}
+\subsubsection{\texorpdfstring{hookSensors()}{hookSensors()}}
+{\footnotesize\ttfamily template$<$class... Sensors$>$ \\
+void \mbox{\hyperlink{classDeviceManager}{Device\+Manager}}$<$ Sensors $>$\+::hook\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Registers hooks to the enabled sensors so when sensor data updates, it can be saved to the SD card or sent to a remote server. The remote server is the preferred location, but will fallback to the SD card so the data can be sent when a connection is available. 
+
+Definition at line 93 of file Device\+Manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93                      \{}
+\DoxyCodeLine{94     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classperif_1_1Perif}{Perif}}* item : devices) \{}
+\DoxyCodeLine{95       item->begin();}
+\DoxyCodeLine{96       \textcolor{comment}{// TODO - change to event loop}}
+\DoxyCodeLine{97       \textcolor{comment}{//      - add network database/aws iot}}
+\DoxyCodeLine{98       item->registerHook(}
+\DoxyCodeLine{99           [\textcolor{keyword}{this}](\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{DevMap}} \&data) \{}
+\DoxyCodeLine{100             \textcolor{keywordflow}{if} (sdFile.\mbox{\hyperlink{classSDFileIO_a7d46ac6a2a1e9de575035bcd5f7b485a}{isReady}}()) \{}
+\DoxyCodeLine{101               vector<string> v;}
+\DoxyCodeLine{102               v.reserve(data.size());}
+\DoxyCodeLine{103               \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&fName(data[\textcolor{stringliteral}{"name"}] + \textcolor{stringliteral}{".csv"});}
+\DoxyCodeLine{104               \textcolor{keywordflow}{if} (!sdFile.\mbox{\hyperlink{classSDFileIO_a53a15061cca1e7a272fd606b88d43a2e}{exists}}(fName)) \{}
+\DoxyCodeLine{105                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} d : data)}
+\DoxyCodeLine{106                   v.push\_back(d.first);}
+\DoxyCodeLine{107                 sdFile.\mbox{\hyperlink{classSDFileIO_a87a48c4dfedceff48a209e951f299ee9}{writeFile}}(fName, v);}
+\DoxyCodeLine{108               \}}
+\DoxyCodeLine{109               v.clear();}
+\DoxyCodeLine{110               stringstream keys;}
+\DoxyCodeLine{111               stringstream values;}
+\DoxyCodeLine{112               \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = data.rbegin(); i != data.rend(); ++i) \{}
+\DoxyCodeLine{113                 v.insert(v.begin(), i->second);}
+\DoxyCodeLine{114                 keys << i->first << (*i == *data.begin() ? \textcolor{stringliteral}{"\(\backslash\)n"} : \textcolor{stringliteral}{","});}
+\DoxyCodeLine{115                 values << i->second << (*i == *data.begin() ? \textcolor{stringliteral}{"\(\backslash\)n"} : \textcolor{stringliteral}{","});}
+\DoxyCodeLine{116               \}}
+\DoxyCodeLine{117               sdFile.\mbox{\hyperlink{classSDFileIO_ab01f1777f4670c9cd4c04a0b3c6c2867}{appendFile}}(fName, v);}
+\DoxyCodeLine{118               \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(\textcolor{stringliteral}{"\(\backslash\)n"}, keys.str(), values.str());}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{121               std::stringstream ss;}
+\DoxyCodeLine{122               \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} d : data) \{}
+\DoxyCodeLine{123                 ss << d.first << \textcolor{stringliteral}{": "} << d.second;}
+\DoxyCodeLine{124               \}}
+\DoxyCodeLine{125               \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(ss.str());}
+\DoxyCodeLine{126             \}}
+\DoxyCodeLine{127           \});}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDeviceManager_a171961019173e8ac7f6cb2a9a264aac0}\label{classDeviceManager_a171961019173e8ac7f6cb2a9a264aac0}} 
+\index{DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}!logSensors@{logSensors}}
+\index{logSensors@{logSensors}!DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}}
+\subsubsection{\texorpdfstring{logSensors()}{logSensors()}}
+{\footnotesize\ttfamily template$<$class... Sensors$>$ \\
+void \mbox{\hyperlink{classDeviceManager}{Device\+Manager}}$<$ Sensors $>$\+::log\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Logs sensor information over serial. 
+
+Definition at line 134 of file Device\+Manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134                     \{}
+\DoxyCodeLine{135     std::stringstream ss;}
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classperif_1_1Perif}{Perif}} *item : devices) \{}
+\DoxyCodeLine{137       ss << \textcolor{stringliteral}{"Perif: "} << item->data[\textcolor{stringliteral}{"name"}] << \textcolor{stringliteral}{" connected? "};}
+\DoxyCodeLine{138       ss << (item->isConnected() ? \textcolor{stringliteral}{"yes"} : \textcolor{stringliteral}{"no"}) << std::endl;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140     \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(ss.str());}
+\DoxyCodeLine{141   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDeviceManager_a09e0614a93d32e8087d3dca0dc4e705e}\label{classDeviceManager_a09e0614a93d32e8087d3dca0dc4e705e}} 
+\index{DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}!update@{update}}
+\index{update@{update}!DeviceManager$<$ Sensors $>$@{DeviceManager$<$ Sensors $>$}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class... Sensors$>$ \\
+void \mbox{\hyperlink{classDeviceManager}{Device\+Manager}}$<$ Sensors $>$\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Perform updates on all active devices. 
+
+Definition at line 146 of file Device\+Manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{146                 \{}
+\DoxyCodeLine{147     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classperif_1_1Perif}{Perif}}* item : devices)}
+\DoxyCodeLine{148       item->update();}
+\DoxyCodeLine{149   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/include/\mbox{\hyperlink{DeviceManager_8h}{Device\+Manager.\+h}}\end{DoxyCompactItemize}

@@ -29,7 +29,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ===============================================
 */
-
+/**
+ * @dir main/devices/AccelGyro/
+ *
+ * @file MPU6050_9Axis_MotionApps41.h
+ *
+ * @brief MPU6050 I2C device class, 9-axis MotionApps 4.1 implementation
+ */
 #ifndef _MPU6050_9AXIS_MOTIONAPPS41_H_
 #define _MPU6050_9AXIS_MOTIONAPPS41_H_
 

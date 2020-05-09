@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DataServer class | Red Cross</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">Red Cross</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          DataServer <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="DataServer_8h.html">&lt;main/net/DataServer.h&gt;</a></div>
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Creates a WebServer on ESP32 to display perif data.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a66cf82f11a9dfeb2e4d7c2cd9f1febdc" class="m-doc">DataServer</a>(</span><span class="m-doc-wrap">int port) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a7652c5c4c0db565342ea40e031b55f87" class="m-doc">wifiConnected</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8574790df14c97bc7b42eb52214ca76f" class="m-doc">remoteAvailable</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1bae1311f782108d515fe1127029dd2f" class="m-doc">handleClient</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a52ae55f6a58aa563e49501ae6ba8fab8" class="m-doc">registerSensor</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class S, class... SensorTypes&gt;</div>
+              <span class="m-doc-wrap-bumper">void <a href="#a8b63f295c845c91db3aad45a9ab9b86a" class="m-doc">registerSensor</a>(</span><span class="m-doc-wrap">S sensor,
+              SensorTypes... sT)</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a66cf82f11a9dfeb2e4d7c2cd9f1febdc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> DataServer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a66cf82f11a9dfeb2e4d7c2cd9f1febdc" class="m-doc-self">DataServer</a>(</span><span class="m-doc-wrap">int port) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">port</td>
+                  <td>the WebServer port number (default is 80 for browser use)</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Creates and sets up the WebServer with the specified port and sensors.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7652c5c4c0db565342ea40e031b55f87"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void DataServer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7652c5c4c0db565342ea40e031b55f87" class="m-doc-self">wifiConnected</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+<p>Callback when <a href="classWiFi.html" class="m-doc">WiFi</a> is connected.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8574790df14c97bc7b42eb52214ca76f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool DataServer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8574790df14c97bc7b42eb52214ca76f" class="m-doc-self">remoteAvailable</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>whether a remote is available</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns whether a remote device is available on the network.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1bae1311f782108d515fe1127029dd2f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void DataServer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1bae1311f782108d515fe1127029dd2f" class="m-doc-self">handleClient</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+<p>Wrapper so Arduino loop() function can handle client connections without exposing the entire WebServer.</p>
+          </div></section>
+          <section class="m-doc-details" id="a52ae55f6a58aa563e49501ae6ba8fab8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void DataServer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52ae55f6a58aa563e49501ae6ba8fab8" class="m-doc-self">registerSensor</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+<p>Variadic template termination function. Adds the not found page for bad URLs.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8b63f295c845c91db3aad45a9ab9b86a"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class S, class... SensorTypes&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void DataServer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b63f295c845c91db3aad45a9ab9b86a" class="m-doc-self">registerSensor</a>(</span><span class="m-doc-wrap">S sensor,
+              SensorTypes... sT)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">S</td>
+                  <td>the data type for a perif</td>
+                </tr>
+                <tr>
+                  <td>SensorTypes</td>
+                  <td>the sensors types to register</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>sensor</td>
+                  <td>the first perif to register</td>
+                </tr>
+                <tr>
+                  <td>sT</td>
+                  <td>the rest of the sensors to register</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Adds all specified sensors to the WebServer.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Red Cross. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

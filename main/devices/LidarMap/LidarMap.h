@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/LidarMap/
+ *
  * @file LidarMap.h
  *
  * @brief LidarMap class declaration.
@@ -27,13 +29,26 @@ namespace perif {
  */
 class LidarMap : public I2CPerif<> {
  private:
+  /**
+   * Configures Lidar sensor with preset configurations.
+   *
+   * @tparam v1 first data value
+   * @tparam v2 second data value
+   * @tparam v3 third data value
+   * @return whether configuration succeeded
+   */
   template<int v1, int v2, int v3>
   bool configure();
-  // the distance in cm
+  /**
+   * The distance in cm.
+   */
   double distance;
  protected:
   bool begin() override;
  private:
+  /**
+   * Reset the lidar sensor to configuration defaults.
+   */
   void reset();
   /**
    * Obtains distance data in centimeters.
@@ -52,6 +67,12 @@ class LidarMap : public I2CPerif<> {
    * Gets the distance (in cm) count times and returns the average.
    */
   double getDistance(uint8_t count = 1);
+  /**
+   * Performs lidar distance measurement and bias correction.
+   *
+   * @param biasCorrection whether to perform bias correction (can be slow)
+   * @return the measured distance
+   */
   double measure(bool biasCorrection);
 };
 }

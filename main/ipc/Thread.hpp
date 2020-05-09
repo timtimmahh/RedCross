@@ -1,4 +1,6 @@
 /**
+ * @dir main/ipc/
+ *
  * @file Thread.hpp
  *
  * @brief Thread class declaration.
@@ -27,12 +29,33 @@ using namespace std;
  */
 class Thread {
  private:
+  /**
+   * The name of this thread task.
+   */
   const string taskName;
+  /**
+   * The actual std::thread behind this.
+   */
   thread _thread;
+  /**
+   * The stack size of the thread.
+   */
   const uint32_t stackSize;
+  /**
+   * The thread priority.
+   */
   const uint32_t priority;
+  /**
+   * Which CPU to run on. (PRO, APP, or both)
+   */
   const int affinity;
+  /**
+   * Whether this thread should be attached to its calling thread.
+   */
   const bool attached;
+  /**
+   * Whether this thread has started.
+   */
   atomic_bool started{false};
 //  mutex startMutex{};
 //  condition_variable startCond{};
@@ -58,6 +81,9 @@ class Thread {
 	}
   }
  protected:
+  /**
+   * Performs any initialization once the new thread starts running.
+   */
   virtual void init() {}
   /**
    * Performs a task in a loop.
@@ -68,11 +94,11 @@ class Thread {
    * Initializes a thread with the initialization function, task name, stack
    * size, priority, and core to pin to.
    *
-   * @param init the initialization function
    * @param taskName the task name
    * @param stackSize the stack size
    * @param priority the priority
    * @param appCore the core to pin to
+   * @param attach if this thread should attach to caller
    */
   explicit Thread(string taskName = CONFIG_PTHREAD_TASK_NAME_DEFAULT,
 				  uint32_t stackSize = CONFIG_MAIN_TASK_STACK_SIZE,

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_65d139fdf27ed00ac1926688f46f94b5" kind="dir">
+    <compoundname>main/ipc</compoundname>
+    <innerdir refid="dir_06ba831397ca3b5b3a9120dfd93ef619">main/ipc/timer</innerdir>
+    <innerfile refid="Event_8hpp">Event.hpp</innerfile>
+    <innerfile refid="Queue_8hpp">Queue.hpp</innerfile>
+    <innerfile refid="Thread_8hpp">Thread.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/ipc/"/>
+  </compounddef>
+</doxygen>

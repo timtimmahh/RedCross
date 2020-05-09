@@ -1,0 +1,281 @@
+\hypertarget{classperif_1_1GPS}{}\section{perif\+::G\+PS Class Reference}
+\label{classperif_1_1GPS}\index{perif::GPS@{perif::GPS}}
+
+
+{\ttfamily \#include $<$G\+P\+S.\+h$>$}
+
+Inheritance diagram for perif\+::G\+PS\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classperif_1_1GPS}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classperif_1_1GPS_aa853a974f31d5d7cfa22c86ebd57a03a}{G\+PS}} (uint8\+\_\+t update\+Interval=2)
+\item 
+bool \mbox{\hyperlink{classperif_1_1GPS_add9ec977f37224c9f2e87c5a932a55bd}{begin}} () override
+\item 
+bool \mbox{\hyperlink{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}{is\+Connected}} () override
+\item 
+void \mbox{\hyperlink{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}{update}} ()
+\item 
+void \mbox{\hyperlink{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}{register\+Hook}} (function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&hook)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}}
+\item 
+list$<$ function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ $>$ \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \& \mbox{\hyperlink{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}{get\+Timer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}{tx\+Pin}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}{rx\+Pin}}
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \mbox{\hyperlink{classperif_1_1GPS}{G\+PS}} peripheral. Tested on Adafruit\textquotesingle{}s Ultimate \mbox{\hyperlink{classperif_1_1GPS}{G\+PS}} breakout. 
+
+Definition at line 22 of file G\+P\+S.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classperif_1_1GPS_aa853a974f31d5d7cfa22c86ebd57a03a}\label{classperif_1_1GPS_aa853a974f31d5d7cfa22c86ebd57a03a}} 
+\index{perif::GPS@{perif::GPS}!GPS@{GPS}}
+\index{GPS@{GPS}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{GPS()}{GPS()}}
+{\footnotesize\ttfamily perif\+::\+G\+P\+S\+::\+G\+PS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{update\+Interval = {\ttfamily 2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Explicit value constructor for a \mbox{\hyperlink{classperif_1_1GPS}{G\+PS}} sensor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em update\+Interval} & the update interval in seconds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file G\+P\+S.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14     : \mbox{\hyperlink{classperif_1_1UARTPerif_a51d653db806b884f36cc0e9136355e3b}{UARTPerif}}(\textcolor{stringliteral}{"GPS"}),}
+\DoxyCodeLine{15       updateInterval(updateInterval) \{}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classperif_1_1GPS_add9ec977f37224c9f2e87c5a932a55bd}\label{classperif_1_1GPS_add9ec977f37224c9f2e87c5a932a55bd}} 
+\index{perif::GPS@{perif::GPS}!begin@{begin}}
+\index{begin@{begin}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool perif\+::\+G\+P\+S\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Performs initialization of a peripheral. Necessary to avoid initialization in the constructor which causes many side effects.
+
+\begin{DoxyReturn}{Returns}
+whether the peripheral initialization succeeded 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classperif_1_1Perif_ae7f1d1a4e9cd2343d51abc4ee21000cf}{perif\+::\+Perif}}.
+
+
+
+Definition at line 18 of file G\+P\+S.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                 \{}
+\DoxyCodeLine{19 \textcolor{comment}{//  bool res = gps.begin(9600);}}
+\DoxyCodeLine{20 \textcolor{comment}{//  gps.sendCommand(PMTK\_SET\_NMEA\_OUTPUT\_RMCGGA);}}
+\DoxyCodeLine{21 \textcolor{comment}{//  gps.sendCommand(PMTK\_SET\_NMEA\_UPDATE\_100\_MILLIHERTZ);}}
+\DoxyCodeLine{22 \textcolor{comment}{//  gps.sendCommand(PGCMD\_ANTENNA);}}
+\DoxyCodeLine{23 \textcolor{comment}{//  delay(1000);}}
+\DoxyCodeLine{24 \textcolor{comment}{//  gps.println(PMTK\_Q\_RELEASE);}}
+\DoxyCodeLine{25 \textcolor{comment}{//  return res;}}
+\DoxyCodeLine{26   \textcolor{keywordflow}{return} \mbox{\hyperlink{classperif_1_1UARTPerif_ac060109ead3a8910fabe57304afe1dbb}{UARTPerif::begin}}();}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}\label{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}} 
+\index{perif::GPS@{perif::GPS}!getTimer@{getTimer}}
+\index{getTimer@{getTimer}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{getTimer()}{getTimer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}}\& perif\+::\+Perif\+::get\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+Obtains a reference to this peripheral\textquotesingle{}s timer.
+
+\begin{DoxyReturn}{Returns}
+a timer reference 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}\label{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}} 
+\index{perif::GPS@{perif::GPS}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily bool perif\+::\+U\+A\+R\+T\+Perif\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Returns whether the sensor is connected or not.
+
+\begin{DoxyReturn}{Returns}
+if the sensor is connected 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classperif_1_1Perif_ab9a17fad04e595f3ac0c78b9d3be4c9e}{perif\+::\+Perif}}.
+
+
+
+Definition at line 82 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                               \{}
+\DoxyCodeLine{83 \textcolor{comment}{//  return MySerial.available() || MySerial.availableForWrite();}}
+\DoxyCodeLine{84     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{85   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}\label{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}} 
+\index{perif::GPS@{perif::GPS}!registerHook@{registerHook}}
+\index{registerHook@{registerHook}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{registerHook()}{registerHook()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+Base\+::register\+Hook (\begin{DoxyParamCaption}\item[{function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&}]{hook }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Registers a hook for obtaining sensor data on update in Json format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hook} & the observer function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                     \{}
+\DoxyCodeLine{64     \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}.push\_back(hook);}
+\DoxyCodeLine{65   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}\label{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}} 
+\index{perif::GPS@{perif::GPS}!update@{update}}
+\index{update@{update}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Performs a manual update of peripheral data and notifies observers. 
+
+Definition at line 130 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{130                 \{}
+\DoxyCodeLine{131     \textcolor{comment}{// performs a manual data retrieval}}
+\DoxyCodeLine{132     \mbox{\hyperlink{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}{updateData}}();}
+\DoxyCodeLine{133     \textcolor{comment}{// update the data mapping so hooks can process it}}
+\DoxyCodeLine{134     \mbox{\hyperlink{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}{representData}}();}
+\DoxyCodeLine{135     \textcolor{comment}{// notify all observers}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& hook : \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}})}
+\DoxyCodeLine{137       hook(\mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}});}
+\DoxyCodeLine{138   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}\label{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}} 
+\index{perif::GPS@{perif::GPS}!baud@{baud}}
+\index{baud@{baud}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{baud}{baud}}
+{\footnotesize\ttfamily int perif\+::\+U\+A\+R\+T\+Perif\+::baud\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+The baud rate. 
+
+Definition at line 37 of file U\+A\+R\+T\+Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}\label{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}} 
+\index{perif::GPS@{perif::GPS}!data@{data}}
+\index{data@{data}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} perif\+::\+Perif\+Base\+::data\hspace{0.3cm}{\ttfamily [inherited]}}
+
+The key-\/value mapping of peripheral data. 
+
+Definition at line 37 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}\label{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}} 
+\index{perif::GPS@{perif::GPS}!hooks@{hooks}}
+\index{hooks@{hooks}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{hooks}{hooks}}
+{\footnotesize\ttfamily list$<$function$<$void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}}\&)$>$ $>$ perif\+::\+Perif\+Base\+::hooks\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Hooks registered to this peripheral so observers can be notified of any necessary changes. 
+
+Definition at line 42 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}\label{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}} 
+\index{perif::GPS@{perif::GPS}!rxPin@{rxPin}}
+\index{rxPin@{rxPin}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{rxPin}{rxPin}}
+{\footnotesize\ttfamily uint8\+\_\+t perif\+::\+U\+A\+R\+T\+Perif\+::rx\+Pin\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+The receive G\+P\+IO pins. 
+
+Definition at line 45 of file U\+A\+R\+T\+Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}\label{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}} 
+\index{perif::GPS@{perif::GPS}!timer@{timer}}
+\index{timer@{timer}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}} perif\+::\+Perif\+::timer\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+A timer for managing peripheral updates. 
+
+Definition at line 78 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}\label{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}} 
+\index{perif::GPS@{perif::GPS}!txPin@{txPin}}
+\index{txPin@{txPin}!perif::GPS@{perif::GPS}}
+\subsubsection{\texorpdfstring{txPin}{txPin}}
+{\footnotesize\ttfamily uint8\+\_\+t perif\+::\+U\+A\+R\+T\+Perif\+::tx\+Pin\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+The transmit G\+P\+IO pins. 
+
+Definition at line 41 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/devices/\+G\+P\+S/\mbox{\hyperlink{GPS_8h}{G\+P\+S.\+h}}\item 
+main/devices/\+G\+P\+S/\mbox{\hyperlink{GPS_8cpp}{G\+P\+S.\+cpp}}\end{DoxyCompactItemize}

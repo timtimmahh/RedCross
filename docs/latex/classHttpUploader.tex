@@ -1,0 +1,82 @@
+\hypertarget{classHttpUploader}{}\section{Http\+Uploader Class Reference}
+\label{classHttpUploader}\index{HttpUploader@{HttpUploader}}
+
+
+{\ttfamily \#include $<$Http\+Uploader.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHttpUploader_ae324f02fb96a992a6fc93c1fcf077f78}{Http\+Uploader}} (\mbox{\hyperlink{classQueue}{Queue}}$<$ string $>$ \&data)
+\item 
+list$<$ \mbox{\hyperlink{structresponse}{response}} $>$ \mbox{\hyperlink{classHttpUploader_ad97b880d70d66d826b832d1273a73ab1}{upload}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Performs uploading to a remote receiver. This is thread-\/safe and can send data packets whenever data is available, or it can send sequences as a batch request. 
+
+Definition at line 46 of file Http\+Uploader.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHttpUploader_ae324f02fb96a992a6fc93c1fcf077f78}\label{classHttpUploader_ae324f02fb96a992a6fc93c1fcf077f78}} 
+\index{HttpUploader@{HttpUploader}!HttpUploader@{HttpUploader}}
+\index{HttpUploader@{HttpUploader}!HttpUploader@{HttpUploader}}
+\subsubsection{\texorpdfstring{HttpUploader()}{HttpUploader()}}
+{\footnotesize\ttfamily Http\+Uploader\+::\+Http\+Uploader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQueue}{Queue}}$<$ string $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates an H\+T\+TP uploader with a thread-\/safe data queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the data queue to use \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Http\+Uploader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13     : data(data) \{}
+\DoxyCodeLine{14   config.url = \mbox{\hyperlink{HttpUploader_8h_a78620e5064b532f529e73e0cba2e195a}{SERVER\_URL}};}
+\DoxyCodeLine{15   config.method = HTTP\_METHOD\_POST;}
+\DoxyCodeLine{16   config.timeout\_ms = 5000;}
+\DoxyCodeLine{17   config.is\_async = \textcolor{keyword}{false};}
+\DoxyCodeLine{18 \textcolor{comment}{//  config.event\_handler = \_http\_event\_handler;}}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHttpUploader_ad97b880d70d66d826b832d1273a73ab1}\label{classHttpUploader_ad97b880d70d66d826b832d1273a73ab1}} 
+\index{HttpUploader@{HttpUploader}!upload@{upload}}
+\index{upload@{upload}!HttpUploader@{HttpUploader}}
+\subsubsection{\texorpdfstring{upload()}{upload()}}
+{\footnotesize\ttfamily list$<$ \mbox{\hyperlink{structresponse}{response}} $>$ Http\+Uploader\+::upload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Uploads a all data from the queue.
+
+\begin{DoxyReturn}{Returns}
+the H\+T\+TP responses 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Http\+Uploader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                                     \{}
+\DoxyCodeLine{56   \textcolor{keywordflow}{return} batchRequest();}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/net/server/\mbox{\hyperlink{HttpUploader_8h}{Http\+Uploader.\+h}}\item 
+main/net/server/\mbox{\hyperlink{HttpUploader_8cpp}{Http\+Uploader.\+cpp}}\end{DoxyCompactItemize}

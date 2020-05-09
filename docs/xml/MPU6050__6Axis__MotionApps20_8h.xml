@@ -1,0 +1,619 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="MPU6050__6Axis__MotionApps20_8h" kind="file" language="C++">
+    <compoundname>MPU6050_6Axis_MotionApps20.h</compoundname>
+    <includes refid="I2Cdev_8h" local="yes">I2Cdev.h</includes>
+    <includes local="no">freertos/FreeRTOS.h</includes>
+    <includes local="no">freertos/task.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="yes">sdkconfig.h</includes>
+    <includes refid="MPU6050_8h" local="yes">MPU6050.h</includes>
+    <includes local="no">inttypes.h</includes>
+    <incdepgraph>
+      <node id="100">
+        <label>main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h</label>
+        <link refid="MPU6050__6Axis__MotionApps20_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>helper_3dmath.h</label>
+        <link refid="helper__3dmath_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="105">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="112">
+        <label>stdint.h</label>
+      </node>
+      <node id="107">
+        <label>string.h</label>
+      </node>
+      <node id="108">
+        <label>sdkconfig.h</label>
+      </node>
+      <node id="101">
+        <label>I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>MPU6050.h</label>
+        <link refid="MPU6050_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>math.h</label>
+      </node>
+      <node id="104">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="102">
+        <label>mutex</label>
+      </node>
+      <node id="106">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="113">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a06bd8b84df78d293374ba9bc8324e5e7" prot="public" static="no">
+        <name>MPU6050_INCLUDE_DMP_MOTIONAPPS20</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="50" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a3e19ec020621f8b99268a81a85d29f57" prot="public" static="no">
+        <name>__PGMSPACE_H_</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="61" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a75acaba9e781937468d0911423bc0c35" prot="public" static="no">
+        <name>PROGMEM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="64" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a963f816fc88a5d8479c285ed4c630229" prot="public" static="no">
+        <name>PGM_P</name>
+        <initializer>const char *</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="65" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a73809107539df84eaf01f6a4dea4fbff" prot="public" static="no">
+        <name>PSTR</name>
+        <param><defname>str</defname></param>
+        <initializer>(str)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="66" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a203d5b93e4077aa273c7013964a31f9e" prot="public" static="no">
+        <name>F</name>
+        <param><defname>x</defname></param>
+        <initializer>x</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="67" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1ae74941b597bdd8ffb5c35f45b636946b" prot="public" static="no">
+        <name>strcpy_P</name>
+        <param><defname>dest</defname></param>
+        <param><defname>src</defname></param>
+        <initializer>strcpy((dest), (src))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="79" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a2ca9304dda7dc2472812baa9e9ede965" prot="public" static="no">
+        <name>strcat_P</name>
+        <param><defname>dest</defname></param>
+        <param><defname>src</defname></param>
+        <initializer>strcat((dest), (src))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="80" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1abbb2cd396dde2d1575948bb16ce2853a" prot="public" static="no">
+        <name>strcmp_P</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>strcmp((a), (b))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="81" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a48c60b057902adf805797f183286728d" prot="public" static="no">
+        <name>pgm_read_byte</name>
+        <param><defname>addr</defname></param>
+        <initializer>(*(const unsigned char *)(addr))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="83" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a910fb5f01313d339d3b835d45e1e5ad0" prot="public" static="no">
+        <name>pgm_read_word</name>
+        <param><defname>addr</defname></param>
+        <initializer>(*(const unsigned short *)(addr))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="84" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a73cf3e57e32321cb193b3cc4b041cc6c" prot="public" static="no">
+        <name>pgm_read_dword</name>
+        <param><defname>addr</defname></param>
+        <initializer>(*(const unsigned long *)(addr))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="85" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a334426a3824fc08cee3a557ded696128" prot="public" static="no">
+        <name>pgm_read_float</name>
+        <param><defname>addr</defname></param>
+        <initializer>(*(const float *)(addr))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="86" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1ad2b71a6faa0583b51569b531a443cb0a" prot="public" static="no">
+        <name>pgm_read_byte_near</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a48c60b057902adf805797f183286728d" kindref="member">pgm_read_byte</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="88" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a515a845ea5139d8cf1c7f09ad6dad243" prot="public" static="no">
+        <name>pgm_read_word_near</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a910fb5f01313d339d3b835d45e1e5ad0" kindref="member">pgm_read_word</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="89" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a27619bf0e01033f6049a11a6d5d754f3" prot="public" static="no">
+        <name>pgm_read_dword_near</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a73cf3e57e32321cb193b3cc4b041cc6c" kindref="member">pgm_read_dword</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="90" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a93b33ee6ceaf1dd3ebcfa6f4c96f8b27" prot="public" static="no">
+        <name>pgm_read_float_near</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a334426a3824fc08cee3a557ded696128" kindref="member">pgm_read_float</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="91" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a96c2bf865e6b08ed5f881ad25f5d47d4" prot="public" static="no">
+        <name>pgm_read_byte_far</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a48c60b057902adf805797f183286728d" kindref="member">pgm_read_byte</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="92" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a3aaf70e2e58f5749ccbcd36032b1d1b3" prot="public" static="no">
+        <name>pgm_read_word_far</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a910fb5f01313d339d3b835d45e1e5ad0" kindref="member">pgm_read_word</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="93" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a2829b030e67c660d451045dd1ee6b1e9" prot="public" static="no">
+        <name>pgm_read_dword_far</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a73cf3e57e32321cb193b3cc4b041cc6c" kindref="member">pgm_read_dword</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="94" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1ac9201560d03a0cfa240d0421a22c74d1" prot="public" static="no">
+        <name>pgm_read_float_far</name>
+        <param><defname>addr</defname></param>
+        <initializer><ref refid="MPU6050__9Axis__MotionApps41_8h_1a334426a3824fc08cee3a557ded696128" kindref="member">pgm_read_float</ref>(addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="95" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1ad72dbcf6d0153db1b8d8a58001feed83" prot="public" static="no">
+        <name>DEBUG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="113" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a9075d93e0ab26ccd6e059fa06aa4e3de" prot="public" static="no">
+        <name>HEX</name>
+        <initializer>&quot;f&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="115" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1af6551f0b4c3964c3128f808e7bf987c7" prot="public" static="no">
+        <name>DEBUG_PRINT</name>
+        <param><defname>x</defname></param>
+        <initializer>printf(&quot;%d&quot;, x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="116" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a40c71ee610c953dd0e914ece23dde8a5" prot="public" static="no">
+        <name>DEBUG_PRINTF</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <initializer>Serial.print(x, y)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="117" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a8e30ff0704664fcb13dabf0c4dc5c8f5" prot="public" static="no">
+        <name>DEBUG_PRINTLN</name>
+        <param><defname>x</defname></param>
+        <initializer>printf(&quot;%s\n&quot;, x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="118" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1ad1937eefa9a7b6d3c9034dd9e62ab114" prot="public" static="no">
+        <name>DEBUG_PRINTLNF</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <initializer>printf(&quot;%#06x%s\n&quot;, x, y)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="119" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1a46b28dbcdbf39e66ec0ecc073a7345d4" prot="public" static="no">
+        <name>MPU6050_DMP_CODE_SIZE</name>
+        <initializer>1929</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="127" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1afa62d211d77172f56da13321845e8410" prot="public" static="no">
+        <name>MPU6050_DMP_CONFIG_SIZE</name>
+        <initializer>192</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="128" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MPU6050__6Axis__MotionApps20_8h_1aef1d5979e111bf2da69c882ac9d5c704" prot="public" static="no">
+        <name>MPU6050_DMP_UPDATES_SIZE</name>
+        <initializer>47</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="129" column="9" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a132cade895232da163e344f296267817" prot="public" static="no">
+        <type>void</type>
+        <definition>typedef void prog_void</definition>
+        <argsstring></argsstring>
+        <name>prog_void</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="69" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a8c58c1a4bc98cdbf19a2a070cf889524" prot="public" static="no">
+        <type>char</type>
+        <definition>typedef char prog_char</definition>
+        <argsstring></argsstring>
+        <name>prog_char</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="70" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a5c79ab4508e17a83c5d89c787cbd6774" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char prog_uchar</definition>
+        <argsstring></argsstring>
+        <name>prog_uchar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="71" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1ae2aefb42a042fa5cb20e06f7fcfa327e" prot="public" static="no">
+        <type>int8_t</type>
+        <definition>typedef int8_t prog_int8_t</definition>
+        <argsstring></argsstring>
+        <name>prog_int8_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="72" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a1292f2f164a1997206e9cf714f2372fe" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t prog_uint8_t</definition>
+        <argsstring></argsstring>
+        <name>prog_uint8_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="73" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a8a3c5c6e2c14ced6f6bb5c68ffc70082" prot="public" static="no">
+        <type>int16_t</type>
+        <definition>typedef int16_t prog_int16_t</definition>
+        <argsstring></argsstring>
+        <name>prog_int16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="74" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a05ca2f20b55933ad782917161d54287d" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t prog_uint16_t</definition>
+        <argsstring></argsstring>
+        <name>prog_uint16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="75" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a9d67538d7ddfd038ce8b0068d03dd679" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t prog_int32_t</definition>
+        <argsstring></argsstring>
+        <name>prog_int32_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="76" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MPU6050__6Axis__MotionApps20_8h_1a0756e93e3e7d572f24952cbd8e35b158" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t prog_uint32_t</definition>
+        <argsstring></argsstring>
+        <name>prog_uint32_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="77" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="MPU6050__6Axis__MotionApps20_8h_1a5661b3605bb4f654dccc59e0f78af217" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE]</definition>
+        <argsstring>[MPU6050_DMP_CODE_SIZE]</argsstring>
+        <name>dmpMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="144" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="MPU6050__6Axis__MotionApps20_8h_1aa6c49eb4db51b7ce65858ca6d40241cd" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char dmpConfig</definition>
+        <argsstring>[MPU6050_DMP_CONFIG_SIZE]</argsstring>
+        <name>dmpConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="404" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="404" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="MPU6050__6Axis__MotionApps20_8h_1a153be4fcef39766264aec3c3fbc12928" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char dmpUpdates</definition>
+        <argsstring>[MPU6050_DMP_UPDATES_SIZE]</argsstring>
+        <name>dmpUpdates</name>
+        <initializer>= {
+	0x01, 0xB2, 0x02, 0xFF, 0xFF,
+	0x01, 0x90, 0x04, 0x09, 0x23, 0xA1, 0x35,
+	0x01, 0x6A, 0x02, 0x06, 0x00,
+	0x01, 0x60, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+	0x00, 0x60, 0x04, 0x40, 0x00, 0x00, 0x00,
+	0x01, 0x62, 0x02, 0x00, 0x00,
+	0x00, 0x60, 0x04, 0x00, 0x40, 0x00, 0x00
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" line="460" column="1" bodyfile="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classMPU6050" kindref="compound">MPU6050</ref> I2C device class, 6-axis MotionApps 2.0 implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h"/>
+  </compounddef>
+</doxygen>

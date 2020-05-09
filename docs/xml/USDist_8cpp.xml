@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="USDist_8cpp" kind="file" language="C++">
+    <compoundname>USDist.cpp</compoundname>
+    <includes refid="USDist_8h" local="yes">USDist.h</includes>
+    <incdepgraph>
+      <node id="269">
+        <label>list</label>
+      </node>
+      <node id="263">
+        <label>functional</label>
+      </node>
+      <node id="267">
+        <label>cstdint</label>
+      </node>
+      <node id="265">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="259">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="275">
+        <label>cmath</label>
+      </node>
+      <node id="270">
+        <label>string</label>
+      </node>
+      <node id="268">
+        <label>map</label>
+      </node>
+      <node id="273">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+      </node>
+      <node id="272">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="260">
+        <label>freertos/queue.h</label>
+      </node>
+      <node id="277">
+        <label>esp_log.h</label>
+      </node>
+      <node id="258">
+        <label>USDist.h</label>
+        <link refid="USDist_8h"/>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+      </node>
+      <node id="264">
+        <label>array</label>
+      </node>
+      <node id="276">
+        <label>sstream</label>
+      </node>
+      <node id="278">
+        <label>freertos/portmacro.h</label>
+      </node>
+      <node id="257">
+        <label>main/devices/USDist/USDist.cpp</label>
+        <link refid="USDist_8cpp"/>
+        <childnode refid="258" relation="include">
+        </childnode>
+      </node>
+      <node id="266">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="273" relation="include">
+        </childnode>
+      </node>
+      <node id="262">
+        <label>GPIOPerif.hpp</label>
+        <link refid="GPIOPerif_8hpp"/>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="264" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+        <childnode refid="266" relation="include">
+        </childnode>
+      </node>
+      <node id="271">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="272" relation="include">
+        </childnode>
+      </node>
+      <node id="261">
+        <label>thread</label>
+      </node>
+      <node id="274">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="USDist_8cpp_1a554a057a6ae89a7e1a296bd2084d6ab7" prot="public" static="no">
+        <name>TRIGGER_LOW_DELAY</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="14" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8cpp_1aa6c7f14fb7b0419ac4f7ef1464f6ec36" prot="public" static="no">
+        <name>TRIGGER_HIGH_DELAY</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="15" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8cpp_1a733f0d1225f97d8acbd3388e0c0d320f" prot="public" static="no">
+        <name>PING_TIMEOUT</name>
+        <initializer>6000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="16" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8cpp_1acf72f416bc52cff1c75d7d7bb4cfbde4" prot="public" static="no">
+        <name>ROUNDTRIP</name>
+        <initializer>58</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="17" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8cpp_1a94dd15401a1de72b5e5cf498bc29bd23" prot="public" static="no">
+        <name>check_timeout</name>
+        <param><defname>len</defname></param>
+        <initializer>if (timer.elapsedTime() &gt;= (len)) \
+    <ref refid="USDist_8cpp_1ac9af8102edc35380cf74867be412d5f2" kindref="member">RETURN_CRITICAL</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="21" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8cpp_1a763ffd798508592c5092ac77daa5a659" prot="public" static="no">
+        <name>CHECK</name>
+        <param><defname>x</defname></param>
+        <initializer>x == ESP_OK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="24" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8cpp_1a5a8df5d9d70802651d76cca48c0fc728" prot="public" static="no">
+        <name>NCHECK</name>
+        <param><defname>x</defname></param>
+        <initializer>if (x != ESP_OK) <ref refid="USDist_8cpp_1ac9af8102edc35380cf74867be412d5f2" kindref="member">RETURN_CRITICAL</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="25" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8cpp_1ac9af8102edc35380cf74867be412d5f2" prot="public" static="no">
+        <name>RETURN_CRITICAL</name>
+        <param><defname>RES</defname></param>
+        <initializer>{ \
+    portEXIT_CRITICAL(&amp;mux); \
+    return RES; \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="26" column="9" bodyfile="main/devices/USDist/USDist.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>USDist class definition. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/USDist/USDist.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/BarPAT/
+ *
  * @file BarPAT.cpp
  *
  * @brief BarPAT class definition.

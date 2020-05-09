@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classVectorInt16" kind="class" language="C++" prot="public">
+    <compoundname>VectorInt16</compoundname>
+    <includes refid="helper__3dmath_8h" local="no">helper_3dmath.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classVectorInt16_1a648435b4c99e9da9c95549ac344beaec" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t VectorInt16::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="102" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classVectorInt16_1a5d340e1f1bcbc064e5084ca609a6a6a3" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t VectorInt16::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="103" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classVectorInt16_1af1b5c4c297bdd32751ab4519480b919f" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t VectorInt16::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="104" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classVectorInt16_1a314bffb747999af26026f734c43d61a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>VectorInt16::VectorInt16</definition>
+        <argsstring>()</argsstring>
+        <name>VectorInt16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="106" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="106" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorInt16_1acce45f37b3f90df1d5aff6edbf12f02b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>VectorInt16::VectorInt16</definition>
+        <argsstring>(int16_t nx, int16_t ny, int16_t nz)</argsstring>
+        <name>VectorInt16</name>
+        <param>
+          <type>int16_t</type>
+          <declname>nx</declname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>ny</declname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>nz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="112" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="112" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorInt16_1aeb8087ac5732450bc18ac944a16d0694" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float VectorInt16::getMagnitude</definition>
+        <argsstring>()</argsstring>
+        <name>getMagnitude</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="118" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorInt16_1aefdadb30fbc20b564bbbf0b1a885e349" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorInt16::normalize</definition>
+        <argsstring>()</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="122" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="122" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorInt16_1a1f2c17ac660f1e90a095f9e7914200c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classVectorInt16" kindref="compound">VectorInt16</ref></type>
+        <definition>VectorInt16 VectorInt16::getNormalized</definition>
+        <argsstring>()</argsstring>
+        <name>getNormalized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="129" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="129" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorInt16_1ac7bf149db0a2b66d7683b87ebeb2dfc5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorInt16::rotate</definition>
+        <argsstring>(Quaternion *q)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref> *</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="135" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="135" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorInt16_1a9e1d9f4553b069bf353e807f130a285b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classVectorInt16" kindref="compound">VectorInt16</ref></type>
+        <definition>VectorInt16 VectorInt16::getRotated</definition>
+        <argsstring>(Quaternion *q)</argsstring>
+        <name>getRotated</name>
+        <param>
+          <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref> *</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="160" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="160" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/helper_3dmath.h" line="100" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="100" bodyend="165"/>
+    <listofallmembers>
+      <member refid="classVectorInt16_1aeb8087ac5732450bc18ac944a16d0694" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>getMagnitude</name></member>
+      <member refid="classVectorInt16_1a1f2c17ac660f1e90a095f9e7914200c5" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>getNormalized</name></member>
+      <member refid="classVectorInt16_1a9e1d9f4553b069bf353e807f130a285b" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>getRotated</name></member>
+      <member refid="classVectorInt16_1aefdadb30fbc20b564bbbf0b1a885e349" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>normalize</name></member>
+      <member refid="classVectorInt16_1ac7bf149db0a2b66d7683b87ebeb2dfc5" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>rotate</name></member>
+      <member refid="classVectorInt16_1a314bffb747999af26026f734c43d61a2" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>VectorInt16</name></member>
+      <member refid="classVectorInt16_1acce45f37b3f90df1d5aff6edbf12f02b" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>VectorInt16</name></member>
+      <member refid="classVectorInt16_1a648435b4c99e9da9c95549ac344beaec" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>x</name></member>
+      <member refid="classVectorInt16_1a5d340e1f1bcbc064e5084ca609a6a6a3" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>y</name></member>
+      <member refid="classVectorInt16_1af1b5c4c297bdd32751ab4519480b919f" prot="public" virt="non-virtual"><scope>VectorInt16</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

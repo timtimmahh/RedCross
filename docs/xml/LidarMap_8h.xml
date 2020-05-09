@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="LidarMap_8h" kind="file" language="C++">
+    <compoundname>LidarMap.h</compoundname>
+    <includes refid="I2CPerif_8hpp" local="yes">I2CPerif.hpp</includes>
+    <includes local="no">cstdint</includes>
+    <includedby refid="LidarMap_8cpp" local="yes">main/devices/LidarMap/LidarMap.cpp</includedby>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <incdepgraph>
+      <node id="243">
+        <label>list</label>
+      </node>
+      <node id="241">
+        <label>functional</label>
+      </node>
+      <node id="234">
+        <label>I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="235" relation="include">
+        </childnode>
+        <childnode refid="239" relation="include">
+        </childnode>
+      </node>
+      <node id="240">
+        <label>cstdint</label>
+      </node>
+      <node id="237">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="249">
+        <label>cmath</label>
+      </node>
+      <node id="244">
+        <label>string</label>
+      </node>
+      <node id="242">
+        <label>map</label>
+      </node>
+      <node id="247">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="249" relation="include">
+        </childnode>
+        <childnode refid="244" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+      </node>
+      <node id="246">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="251">
+        <label>esp_log.h</label>
+      </node>
+      <node id="235">
+        <label>i2c/I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="237" relation="include">
+        </childnode>
+        <childnode refid="238" relation="include">
+        </childnode>
+      </node>
+      <node id="250">
+        <label>sstream</label>
+      </node>
+      <node id="238">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="239">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="240" relation="include">
+        </childnode>
+        <childnode refid="241" relation="include">
+        </childnode>
+        <childnode refid="242" relation="include">
+        </childnode>
+        <childnode refid="243" relation="include">
+        </childnode>
+        <childnode refid="244" relation="include">
+        </childnode>
+        <childnode refid="245" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+      </node>
+      <node id="245">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+      </node>
+      <node id="236">
+        <label>mutex</label>
+      </node>
+      <node id="248">
+        <label>algorithm</label>
+      </node>
+      <node id="233">
+        <label>main/devices/LidarMap/LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="234" relation="include">
+        </childnode>
+        <childnode refid="240" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="255">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="256" relation="include">
+        </childnode>
+      </node>
+      <node id="254">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="255" relation="include">
+        </childnode>
+      </node>
+      <node id="256">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="253">
+        <label>main/devices/LidarMap/LidarMap.cpp</label>
+        <link refid="LidarMap_8cpp"/>
+      </node>
+      <node id="252">
+        <label>main/devices/LidarMap/LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="253" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1LidarMap" prot="public">perif::LidarMap</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="LidarMap_8h_1abe39d6a8d29b163a040e5bd394fdb872" prot="public" static="no">
+        <name>conf</name>
+        <param><defname>v1</defname></param>
+        <param><defname>v2</defname></param>
+        <param><defname>v3</defname></param>
+        <initializer>configure&lt;v1, v2, v3&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="16" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="LidarMap_8h_1a523dc5c0205c9358de563b74699891cb" prot="public" static="no">
+        <name>conf0</name>
+        <initializer><ref refid="LidarMap_8h_1abe39d6a8d29b163a040e5bd394fdb872" kindref="member">conf</ref>(0x80, 0x08, 0x00)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="17" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="LidarMap_8h_1a4a463253e76a763e45c32b05c7f83cd1" prot="public" static="no">
+        <name>conf1</name>
+        <initializer><ref refid="LidarMap_8h_1abe39d6a8d29b163a040e5bd394fdb872" kindref="member">conf</ref>(0x1d, 0x08, 0x00)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="18" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="LidarMap_8h_1adac80cb4b60662e6e1a50c67fc644f9a" prot="public" static="no">
+        <name>conf2</name>
+        <initializer><ref refid="LidarMap_8h_1abe39d6a8d29b163a040e5bd394fdb872" kindref="member">conf</ref>(0x80, 0x00, 0x00)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="19" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="LidarMap_8h_1ad7d3aff619122c61d35b4437a51f8370" prot="public" static="no">
+        <name>conf3</name>
+        <initializer><ref refid="LidarMap_8h_1abe39d6a8d29b163a040e5bd394fdb872" kindref="member">conf</ref>(0xff, 0x08, 0x00)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="20" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="LidarMap_8h_1a93193010e14f384aa928887d6bec1c01" prot="public" static="no">
+        <name>conf4</name>
+        <initializer><ref refid="LidarMap_8h_1abe39d6a8d29b163a040e5bd394fdb872" kindref="member">conf</ref>(0x80, 0x08, 0x80)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="21" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="LidarMap_8h_1a57c8e0f98e2d78321381eabde31b960b" prot="public" static="no">
+        <name>conf5</name>
+        <initializer><ref refid="LidarMap_8h_1abe39d6a8d29b163a040e5bd394fdb872" kindref="member">conf</ref>(0x80, 0x08, 0xb0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="22" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="LidarMap_8h_1a11dc297c6b35cba19b5441618ebd4062" prot="public" static="no">
+        <name>doConfig</name>
+        <param></param>
+        <initializer><ref refid="LidarMap_8h_1a523dc5c0205c9358de563b74699891cb" kindref="member">conf0</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/LidarMap/LidarMap.h" line="24" column="9" bodyfile="main/devices/LidarMap/LidarMap.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>LidarMap class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/LidarMap/LidarMap.h"/>
+  </compounddef>
+</doxygen>

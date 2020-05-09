@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="I2CPerif_8hpp" kind="file" language="C++">
+    <compoundname>I2CPerif.hpp</compoundname>
+    <includes refid="I2Cdev_8h" local="yes">i2c/I2Cdev.h</includes>
+    <includes refid="Perif_8hpp" local="yes">Perif.hpp</includes>
+    <includedby refid="AccelGyro_8h" local="yes">main/devices/AccelGyro/AccelGyro.h</includedby>
+    <includedby refid="BarPAT_8h" local="yes">main/devices/BarPAT/BarPAT.h</includedby>
+    <includedby refid="LidarMap_8h" local="yes">main/devices/LidarMap/LidarMap.h</includedby>
+    <incdepgraph>
+      <node id="763">
+        <label>list</label>
+      </node>
+      <node id="761">
+        <label>functional</label>
+      </node>
+      <node id="754">
+        <label>main/perif/I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="755" relation="include">
+        </childnode>
+        <childnode refid="759" relation="include">
+        </childnode>
+      </node>
+      <node id="760">
+        <label>cstdint</label>
+      </node>
+      <node id="757">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="769">
+        <label>cmath</label>
+      </node>
+      <node id="764">
+        <label>string</label>
+      </node>
+      <node id="762">
+        <label>map</label>
+      </node>
+      <node id="767">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="768" relation="include">
+        </childnode>
+        <childnode refid="769" relation="include">
+        </childnode>
+        <childnode refid="764" relation="include">
+        </childnode>
+        <childnode refid="770" relation="include">
+        </childnode>
+        <childnode refid="771" relation="include">
+        </childnode>
+      </node>
+      <node id="766">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="771">
+        <label>esp_log.h</label>
+      </node>
+      <node id="755">
+        <label>i2c/I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="756" relation="include">
+        </childnode>
+        <childnode refid="757" relation="include">
+        </childnode>
+        <childnode refid="758" relation="include">
+        </childnode>
+      </node>
+      <node id="770">
+        <label>sstream</label>
+      </node>
+      <node id="758">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="759">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="760" relation="include">
+        </childnode>
+        <childnode refid="761" relation="include">
+        </childnode>
+        <childnode refid="762" relation="include">
+        </childnode>
+        <childnode refid="763" relation="include">
+        </childnode>
+        <childnode refid="764" relation="include">
+        </childnode>
+        <childnode refid="765" relation="include">
+        </childnode>
+        <childnode refid="767" relation="include">
+        </childnode>
+      </node>
+      <node id="765">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="766" relation="include">
+        </childnode>
+      </node>
+      <node id="756">
+        <label>mutex</label>
+      </node>
+      <node id="768">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="772">
+        <label>main/perif/I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="773" relation="include">
+        </childnode>
+        <childnode refid="778" relation="include">
+        </childnode>
+        <childnode refid="780" relation="include">
+        </childnode>
+      </node>
+      <node id="778">
+        <label>main/devices/BarPAT/BarPAT.h</label>
+        <link refid="BarPAT_8h"/>
+        <childnode refid="779" relation="include">
+        </childnode>
+        <childnode refid="775" relation="include">
+        </childnode>
+      </node>
+      <node id="774">
+        <label>main/devices/AccelGyro/AccelGyro.cpp</label>
+        <link refid="AccelGyro_8cpp"/>
+      </node>
+      <node id="776">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="777" relation="include">
+        </childnode>
+      </node>
+      <node id="775">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="776" relation="include">
+        </childnode>
+      </node>
+      <node id="779">
+        <label>main/devices/BarPAT/BarPAT.cpp</label>
+        <link refid="BarPAT_8cpp"/>
+      </node>
+      <node id="777">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="781">
+        <label>main/devices/LidarMap/LidarMap.cpp</label>
+        <link refid="LidarMap_8cpp"/>
+      </node>
+      <node id="773">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="774" relation="include">
+        </childnode>
+        <childnode refid="775" relation="include">
+        </childnode>
+      </node>
+      <node id="780">
+        <label>main/devices/LidarMap/LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="781" relation="include">
+        </childnode>
+        <childnode refid="775" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1I2CPerif" prot="public">perif::I2CPerif</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="I2CPerif_8hpp_1a053c1ed1742f3f8d1124701a2eb6899b" prot="public" static="no">
+        <name>PORT0_SDA</name>
+        <initializer>GPIO_NUM_21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default SDA pin for bus 0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/I2CPerif.hpp" line="25" column="9" bodyfile="main/perif/I2CPerif.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="I2CPerif_8hpp_1ab72406cd2268a86edff06e079ea91543" prot="public" static="no">
+        <name>PORT0_SCL</name>
+        <initializer>GPIO_NUM_22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default SCL pin for bus 0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/I2CPerif.hpp" line="29" column="9" bodyfile="main/perif/I2CPerif.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="I2CPerif_8hpp_1a61d1cba9ae8630159d7bf4158f7374e0" prot="public" static="no">
+        <name>PORT1_SDA</name>
+        <initializer>GPIO_NUM_33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default SDA pin for bus 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/I2CPerif.hpp" line="33" column="9" bodyfile="main/perif/I2CPerif.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="I2CPerif_8hpp_1ac7343a7cb9d6f4444df2c31882019437" prot="public" static="no">
+        <name>PORT1_SCL</name>
+        <initializer>GPIO_NUM_32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default SCL pin for bus 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/I2CPerif.hpp" line="37" column="9" bodyfile="main/perif/I2CPerif.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>I2CPerif class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/perif/I2CPerif.hpp"/>
+  </compounddef>
+</doxygen>

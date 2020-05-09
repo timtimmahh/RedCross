@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="MPU6050_8cpp" kind="file" language="C++">
+    <compoundname>MPU6050.cpp</compoundname>
+    <includes refid="MPU6050_8h" local="yes">MPU6050.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="72">
+        <label>main/devices/AccelGyro/MPU6050.cpp</label>
+        <link refid="MPU6050_8cpp"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>helper_3dmath.h</label>
+        <link refid="helper__3dmath_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="76">
+        <label>stdint.h</label>
+      </node>
+      <node id="81">
+        <label>string.h</label>
+      </node>
+      <node id="77">
+        <label>I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>MPU6050.h</label>
+        <link refid="MPU6050_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>math.h</label>
+      </node>
+      <node id="80">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="78">
+        <label>mutex</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="MPU6050_8cpp_1ad4a5ae6760ae60ffc730f60541657628" prot="public" static="no">
+        <name>I2C_NUM</name>
+        <initializer>I2C_NUM_0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050.cpp" line="46" column="9" bodyfile="main/devices/AccelGyro/MPU6050.cpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="MPU6050_8cpp_1a2f74937e7a5585cf42247c051032c313" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float map</definition>
+        <argsstring>(float val, float I_Min, float I_Max, float O_Min, float O_Max)</argsstring>
+        <name>map</name>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>I_Min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>I_Max</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>O_Min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>O_Max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>calibration<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>I_Min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>I_Max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>O_Min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>O_Max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/MPU6050.cpp" line="3833" column="1" bodyfile="main/devices/AccelGyro/MPU6050.cpp" bodystart="3833" bodyend="3835"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classMPU6050" kindref="compound">MPU6050</ref> I2C device class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/MPU6050.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,4 +1,6 @@
 /**
+ * @dir main/net/server/
+ *
  * @file HttpUploader.cpp
  *
  * @brief HttpUploader class definition.

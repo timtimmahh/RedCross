@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="HttpUploader_8cpp" kind="file" language="C++">
+    <compoundname>HttpUploader.cpp</compoundname>
+    <includes refid="HttpUploader_8h" local="yes">HttpUploader.h</includes>
+    <incdepgraph>
+      <node id="638">
+        <label>list</label>
+      </node>
+      <node id="637">
+        <label>functional</label>
+      </node>
+      <node id="636">
+        <label>HttpUploader.h</label>
+        <link refid="HttpUploader_8h"/>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+        <childnode refid="642" relation="include">
+        </childnode>
+        <childnode refid="643" relation="include">
+        </childnode>
+      </node>
+      <node id="635">
+        <label>main/net/server/HttpUploader.cpp</label>
+        <link refid="HttpUploader_8cpp"/>
+        <childnode refid="636" relation="include">
+        </childnode>
+      </node>
+      <node id="642">
+        <label>esp_system.h</label>
+      </node>
+      <node id="641">
+        <label>condition_variable</label>
+      </node>
+      <node id="643">
+        <label>esp_http_client.h</label>
+      </node>
+      <node id="640">
+        <label>mutex</label>
+      </node>
+      <node id="639">
+        <label>Queue.hpp</label>
+        <link refid="Queue_8hpp"/>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="641" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para><ref refid="classHttpUploader" kindref="compound">HttpUploader</ref> class definition. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/net/server/HttpUploader.cpp"/>
+  </compounddef>
+</doxygen>

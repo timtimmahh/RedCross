@@ -1,7 +1,9 @@
 /**
+ * @dir main/devices/AccelGyro/
+ *
  * @file AccelGyro.h
  *
- * @brief AccelGyro class declaration.
+ * @brief Accelerometer and gyroscope wrapper around MPU6050 library by Jeff Rowberg.
  *
  * @author Timothy Logan <logantc@dukes.jmu.edu>
  */
@@ -17,13 +19,21 @@ namespace perif {
 
 #define US_DELAY    3150
 
-/**
- * Accelerometer and gyroscope wrapper around MPU6050 library by Jeff Rowberg.
- */
 class AccelGyro : public I2CPerif<> {
  private:
+  /**
+   * MPU6050 instance.
+   */
   MPU6050 mpu;
+  /**
+   * Accelerometer and gyroscope data.
+   * Acceleration = [0, 1, 2]
+   * Gyroscope = [3, 4, 5]
+   */
   int16_t data[6];
+  /**
+   * Most recent data update. (prevents updating too soon)
+   */
   unsigned long lastUpdate;
   /**
    * Gets both acceleration and rotation data. (Magnetometer WIP).
@@ -34,8 +44,7 @@ class AccelGyro : public I2CPerif<> {
   /**
    * Constructor with sda and scl pins.
    *
-   * @param sdaPin the sda pin
-   * @param sclPin the scl pin
+   * @param address the I2C device address
    */
   explicit AccelGyro(uint8_t address = 0x68);
   bool begin() override;

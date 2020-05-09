@@ -1,0 +1,180 @@
+\hypertarget{classApp}{}\section{App Class Reference}
+\label{classApp}\index{App@{App}}
+
+
+{\ttfamily \#include $<$App.\+hpp$>$}
+
+Inheritance diagram for App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classApp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classApp_acb8cbf3e285b91d0170ffe87df5989c5}{App}} ()
+\item 
+\mbox{\hyperlink{classApp_a34f1f253b1cef5f4ecbac66eaf6964ec}{$\sim$\+App}} ()
+\item 
+void \mbox{\hyperlink{classThread_a1f53ee62bd30a7924186ef26150ce262}{start}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classApp_a72d6ce9cfb7966c9e61de5e2ecae16ce}{init}} () override
+\item 
+void \mbox{\hyperlink{classApp_a743d0b0456b0557e1659ea950e6f17cd}{loop}} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main app, only one instance of this can run. Initializes \mbox{\hyperlink{classWiFi}{Wi\+Fi}}, SD card, and non-\/volatile flash on startup. It then sets up threads for sensors to be handled on interrupts or at a timer interval. 
+
+Definition at line 25 of file App.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classApp_acb8cbf3e285b91d0170ffe87df5989c5}\label{classApp_acb8cbf3e285b91d0170ffe87df5989c5}} 
+\index{App@{App}!App@{App}}
+\index{App@{App}!App@{App}}
+\subsubsection{\texorpdfstring{App()}{App()}}
+{\footnotesize\ttfamily App\+::\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates the application and initializes resources such as event loops. 
+
+Definition at line 61 of file App.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62       : \mbox{\hyperlink{classThread_ab01de64e2e0ee9418b344036d4600cd3}{Thread}}(\textcolor{stringliteral}{"app"}, CONFIG\_MAIN\_TASK\_STACK\_SIZE, 1, -1, \textcolor{keyword}{true}),}
+\DoxyCodeLine{63         nvsAvailable(initNVS()),}
+\DoxyCodeLine{64         wifi(),}
+\DoxyCodeLine{65         manager(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{66     esp\_event\_loop\_create\_default();}
+\DoxyCodeLine{67   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classApp_a34f1f253b1cef5f4ecbac66eaf6964ec}\label{classApp_a34f1f253b1cef5f4ecbac66eaf6964ec}} 
+\index{App@{App}!````~App@{$\sim$App}}
+\index{````~App@{$\sim$App}!App@{App}}
+\subsubsection{\texorpdfstring{$\sim$App()}{~App()}}
+{\footnotesize\ttfamily App\+::$\sim$\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Frees allocated resources on shutdown or sleep. 
+
+Definition at line 71 of file App.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71          \{}
+\DoxyCodeLine{72     \textcolor{keyword}{delete} manager;}
+\DoxyCodeLine{73     nvs\_flash\_erase();}
+\DoxyCodeLine{74     esp\_event\_loop\_delete\_default();}
+\DoxyCodeLine{75   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classApp_a72d6ce9cfb7966c9e61de5e2ecae16ce}\label{classApp_a72d6ce9cfb7966c9e61de5e2ecae16ce}} 
+\index{App@{App}!init@{init}}
+\index{init@{init}!App@{App}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void App\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Initialize the app to run on the main thread. 
+
+Reimplemented from \mbox{\hyperlink{classThread_a47884e3db0706dede4379b68e6d845b6}{Thread}}.
+
+
+
+Definition at line 80 of file App.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80                        \{}
+\DoxyCodeLine{81     \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(\textcolor{stringliteral}{"ESP32 Start"});}
+\DoxyCodeLine{82     this\_thread::sleep\_for(sleep\_time);}
+\DoxyCodeLine{83     \textcolor{comment}{// ESP32 pins need to be pulled down before connecting some peripherals}}
+\DoxyCodeLine{84     manager = \textcolor{keyword}{new} \mbox{\hyperlink{classDeviceManager}{DeviceManager<PERIF\_NAMES>}}();}
+\DoxyCodeLine{85     \textcolor{comment}{// connect to the network or make the device available}}
+\DoxyCodeLine{86     wifi.\mbox{\hyperlink{classWiFi_a14ed13a3074adbfe7c2dc986b17ffa0a}{connect}}();}
+\DoxyCodeLine{87     \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(\textcolor{stringliteral}{"Initialization complete"});}
+\DoxyCodeLine{88   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classApp_a743d0b0456b0557e1659ea950e6f17cd}\label{classApp_a743d0b0456b0557e1659ea950e6f17cd}} 
+\index{App@{App}!loop@{loop}}
+\index{loop@{loop}!App@{App}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void App\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Perform any necessary updates. (Most are through interrupts) 
+
+Reimplemented from \mbox{\hyperlink{classThread_ab1a2613851db5be41e35aaf3d7dd6ab1}{Thread}}.
+
+
+
+Definition at line 92 of file App.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                        \{}
+\DoxyCodeLine{93     \textcolor{comment}{// TODO change to asynchronous event}}
+\DoxyCodeLine{94     manager->\mbox{\hyperlink{classDeviceManager_a09e0614a93d32e8087d3dca0dc4e705e}{update}}();}
+\DoxyCodeLine{95     this\_thread::sleep\_for(sleep\_time);}
+\DoxyCodeLine{96   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classThread_a1f53ee62bd30a7924186ef26150ce262}\label{classThread_a1f53ee62bd30a7924186ef26150ce262}} 
+\index{App@{App}!start@{start}}
+\index{start@{start}!App@{App}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Thread\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Start the thread and wait until it has started and initialized. 
+
+Definition at line 117 of file Thread.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{117                \{}
+\DoxyCodeLine{118     \textcolor{comment}{// prevent starting multiple times}}
+\DoxyCodeLine{119     \textcolor{keywordflow}{if} (started \&\& !attached)}
+\DoxyCodeLine{120       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keywordflow}{if} (attached) exec();}
+\DoxyCodeLine{123     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{124 \textcolor{comment}{//  unique\_lock<mutex> startGuard(startMutex);}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126       \textcolor{comment}{// setup the esp pthread configuration for this thread}}
+\DoxyCodeLine{127       esp\_pthread\_cfg\_t cfg = esp\_pthread\_get\_default\_config();}
+\DoxyCodeLine{128       cfg.stack\_size = stackSize;}
+\DoxyCodeLine{129       cfg.prio = priority;}
+\DoxyCodeLine{130       cfg.thread\_name = taskName.c\_str();}
+\DoxyCodeLine{131       cfg.pin\_to\_core = affinity;}
+\DoxyCodeLine{132       esp\_pthread\_set\_cfg(\&cfg);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134       \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136         \textcolor{comment}{// create the actual thread}}
+\DoxyCodeLine{137         \_thread = thread([\textcolor{keyword}{this}]() \{ exec(); \});}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{comment}{// wait until the thread has started successfully}}
+\DoxyCodeLine{140 \textcolor{comment}{//    startCond.wait(startGuard, [this]() \{}}
+\DoxyCodeLine{141 \textcolor{comment}{//      return started.load();}}
+\DoxyCodeLine{142 \textcolor{comment}{//    \});}}
+\DoxyCodeLine{143       \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} runtime\_error \&e) \{}
+\DoxyCodeLine{144         \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(\textcolor{stringliteral}{"Exception caught: "}, e.what());}
+\DoxyCodeLine{145       \}}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/include/\mbox{\hyperlink{App_8hpp}{App.\+hpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/LidarMap/
+ *
  * @file LidarMap.cpp
  *
  * @brief LidarMap class definition.

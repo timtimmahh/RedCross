@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="WiFi_8cpp" kind="file" language="C++">
+    <compoundname>WiFi.cpp</compoundname>
+    <includes local="no">cstring</includes>
+    <includes refid="WiFi_8hpp" local="yes">WiFi.hpp</includes>
+    <includes refid="utils_8h" local="yes">utils.h</includes>
+    <incdepgraph>
+      <node id="663">
+        <label>cmath</label>
+      </node>
+      <node id="664">
+        <label>string</label>
+      </node>
+      <node id="661">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="662" relation="include">
+        </childnode>
+        <childnode refid="663" relation="include">
+        </childnode>
+        <childnode refid="664" relation="include">
+        </childnode>
+        <childnode refid="665" relation="include">
+        </childnode>
+        <childnode refid="666" relation="include">
+        </childnode>
+      </node>
+      <node id="660">
+        <label>esp_netif.h</label>
+      </node>
+      <node id="659">
+        <label>esp_wifi.h</label>
+      </node>
+      <node id="666">
+        <label>esp_log.h</label>
+      </node>
+      <node id="657">
+        <label>WiFi.hpp</label>
+        <link refid="WiFi_8hpp"/>
+        <childnode refid="658" relation="include">
+        </childnode>
+        <childnode refid="659" relation="include">
+        </childnode>
+        <childnode refid="660" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+      </node>
+      <node id="665">
+        <label>sstream</label>
+      </node>
+      <node id="655">
+        <label>main/net/WiFi.cpp</label>
+        <link refid="WiFi_8cpp"/>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="657" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+      </node>
+      <node id="658">
+        <label>esp_event.h</label>
+      </node>
+      <node id="662">
+        <label>algorithm</label>
+      </node>
+      <node id="656">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para><ref refid="classWiFi" kindref="compound">WiFi</ref> class definition. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/net/WiFi.cpp"/>
+  </compounddef>
+</doxygen>

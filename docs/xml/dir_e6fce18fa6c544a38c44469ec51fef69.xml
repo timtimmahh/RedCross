@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_e6fce18fa6c544a38c44469ec51fef69" kind="dir">
+    <compoundname>main/net</compoundname>
+    <innerdir refid="dir_ab999e2221d1569dc696ba38217b3359">main/net/server</innerdir>
+    <innerfile refid="DataServer_8h">DataServer.h</innerfile>
+    <innerfile refid="WiFi_8cpp">WiFi.cpp</innerfile>
+    <innerfile refid="WiFi_8hpp">WiFi.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/net/"/>
+  </compounddef>
+</doxygen>

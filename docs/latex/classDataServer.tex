@@ -1,0 +1,200 @@
+\hypertarget{classDataServer}{}\section{Data\+Server Class Reference}
+\label{classDataServer}\index{DataServer@{DataServer}}
+
+
+{\ttfamily \#include $<$Data\+Server.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataServer_a66cf82f11a9dfeb2e4d7c2cd9f1febdc}{Data\+Server}} (int port)
+\item 
+void \mbox{\hyperlink{classDataServer_a7652c5c4c0db565342ea40e031b55f87}{wifi\+Connected}} ()
+\item 
+bool \mbox{\hyperlink{classDataServer_a8574790df14c97bc7b42eb52214ca76f}{remote\+Available}} ()
+\item 
+void \mbox{\hyperlink{classDataServer_a1bae1311f782108d515fe1127029dd2f}{handle\+Client}} ()
+\item 
+void \mbox{\hyperlink{classDataServer_a52ae55f6a58aa563e49501ae6ba8fab8}{register\+Sensor}} ()
+\item 
+{\footnotesize template$<$class S , class... Sensor\+Types$>$ }\\void \mbox{\hyperlink{classDataServer_a8b63f295c845c91db3aad45a9ab9b86a}{register\+Sensor}} (S sensor, Sensor\+Types... sT)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Creates a Web\+Server on E\+S\+P32 to display perif data. 
+
+Definition at line 21 of file Data\+Server.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataServer_a66cf82f11a9dfeb2e4d7c2cd9f1febdc}\label{classDataServer_a66cf82f11a9dfeb2e4d7c2cd9f1febdc}} 
+\index{DataServer@{DataServer}!DataServer@{DataServer}}
+\index{DataServer@{DataServer}!DataServer@{DataServer}}
+\subsubsection{\texorpdfstring{DataServer()}{DataServer()}}
+{\footnotesize\ttfamily Data\+Server\+::\+Data\+Server (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Creates and sets up the Web\+Server with the specified port and sensors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & the Web\+Server port number (default is 80 for browser use) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file Data\+Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{// add root page}}
+\DoxyCodeLine{38     \textcolor{comment}{// Handles connections to the root of the web server.}}
+\DoxyCodeLine{39 \textcolor{comment}{//  server.on("/index", [](AsyncWebServerRequest *req) \{}}
+\DoxyCodeLine{40 \textcolor{comment}{//    req->send(SPIFFS, "/index.html", "text/html");}}
+\DoxyCodeLine{41 \textcolor{comment}{//  \});}}
+\DoxyCodeLine{42   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataServer_a1bae1311f782108d515fe1127029dd2f}\label{classDataServer_a1bae1311f782108d515fe1127029dd2f}} 
+\index{DataServer@{DataServer}!handleClient@{handleClient}}
+\index{handleClient@{handleClient}!DataServer@{DataServer}}
+\subsubsection{\texorpdfstring{handleClient()}{handleClient()}}
+{\footnotesize\ttfamily void Data\+Server\+::handle\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Wrapper so Arduino loop() function can handle client connections without exposing the entire Web\+Server. 
+
+Definition at line 66 of file Data\+Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                       \{}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{//  server.handleClient();}}
+\DoxyCodeLine{69   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDataServer_a52ae55f6a58aa563e49501ae6ba8fab8}\label{classDataServer_a52ae55f6a58aa563e49501ae6ba8fab8}} 
+\index{DataServer@{DataServer}!registerSensor@{registerSensor}}
+\index{registerSensor@{registerSensor}!DataServer@{DataServer}}
+\subsubsection{\texorpdfstring{registerSensor()}{registerSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Data\+Server\+::register\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Variadic template termination function. Adds the not found page for bad U\+R\+Ls. 
+
+Definition at line 75 of file Data\+Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75                         \{}
+\DoxyCodeLine{76 \textcolor{comment}{//  server.onNotFound([](AsyncWebServerRequest *req) \{ req->send(400); \});}}
+\DoxyCodeLine{77     \textcolor{comment}{// Handles connections to an unknown path.}}
+\DoxyCodeLine{78 \textcolor{comment}{//      [\&]() -> void \{}}
+\DoxyCodeLine{79 \textcolor{comment}{//        String message =}}
+\DoxyCodeLine{80 \textcolor{comment}{//            String("File Not Found\(\backslash\)n\(\backslash\)n") + "URI: " + server.uri() +}}
+\DoxyCodeLine{81 \textcolor{comment}{//                "\(\backslash\)nMethod: " + ((server.method() == HTTP\_GET) ? "GET" : "POST") +}}
+\DoxyCodeLine{82 \textcolor{comment}{//                "\(\backslash\)nArguments: " + server.args() + "\(\backslash\)n";}}
+\DoxyCodeLine{83 \textcolor{comment}{//}}
+\DoxyCodeLine{84 \textcolor{comment}{//        for (uint8\_t i = 0; i < (uint8\_t)server.args(); ++i)}}
+\DoxyCodeLine{85 \textcolor{comment}{//          message += " " + server.argName(i) + ": " + server.arg(i) + "\(\backslash\)n";}}
+\DoxyCodeLine{86 \textcolor{comment}{//}}
+\DoxyCodeLine{87 \textcolor{comment}{//        server.send(404, "text/plain", message);}}
+\DoxyCodeLine{88 \textcolor{comment}{//      \});}}
+\DoxyCodeLine{89   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDataServer_a8b63f295c845c91db3aad45a9ab9b86a}\label{classDataServer_a8b63f295c845c91db3aad45a9ab9b86a}} 
+\index{DataServer@{DataServer}!registerSensor@{registerSensor}}
+\index{registerSensor@{registerSensor}!DataServer@{DataServer}}
+\subsubsection{\texorpdfstring{registerSensor()}{registerSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class S , class... Sensor\+Types$>$ \\
+void Data\+Server\+::register\+Sensor (\begin{DoxyParamCaption}\item[{S}]{sensor,  }\item[{Sensor\+Types...}]{sT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds all specified sensors to the Web\+Server.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em S} & the data type for a perif \\
+\hline
+{\em Sensor\+Types} & the sensors types to register \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & the first perif to register \\
+\hline
+{\em sT} & the rest of the sensors to register \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file Data\+Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100                                                    \{}
+\DoxyCodeLine{101 \textcolor{comment}{//  Serial.print("Adding perif: ");}}
+\DoxyCodeLine{102 \textcolor{comment}{//  Serial.println(sensor->name);}}
+\DoxyCodeLine{103 \textcolor{comment}{//  server.on((String("/read") + sensor->name).c\_str(),}}
+\DoxyCodeLine{104 \textcolor{comment}{//            [\&](AsyncWebServerRequest *req) -> void \{}}
+\DoxyCodeLine{105 \textcolor{comment}{//              sensor->as\_json(sensor->getData());}}
+\DoxyCodeLine{106 \textcolor{comment}{//              String content;}}
+\DoxyCodeLine{107 \textcolor{comment}{//              serializeJson(data, content);}}
+\DoxyCodeLine{108 \textcolor{comment}{//              LOG\_D("ESP - Data for " + sensor->name + ": " + content);}}
+\DoxyCodeLine{109 \textcolor{comment}{//              server.send(200, "text/plain", content);}}
+\DoxyCodeLine{110 \textcolor{comment}{//            \});}}
+\DoxyCodeLine{111 \textcolor{comment}{//  registerSensor(sT...);}}
+\DoxyCodeLine{112   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDataServer_a8574790df14c97bc7b42eb52214ca76f}\label{classDataServer_a8574790df14c97bc7b42eb52214ca76f}} 
+\index{DataServer@{DataServer}!remoteAvailable@{remoteAvailable}}
+\index{remoteAvailable@{remoteAvailable}!DataServer@{DataServer}}
+\subsubsection{\texorpdfstring{remoteAvailable()}{remoteAvailable()}}
+{\footnotesize\ttfamily bool Data\+Server\+::remote\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether a remote device is available on the network.
+
+\begin{DoxyReturn}{Returns}
+whether a remote is available 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file Data\+Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                          \{}
+\DoxyCodeLine{58 \textcolor{comment}{//    return ws.enabled() \&\& ws.count() > 0;}}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{60   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDataServer_a7652c5c4c0db565342ea40e031b55f87}\label{classDataServer_a7652c5c4c0db565342ea40e031b55f87}} 
+\index{DataServer@{DataServer}!wifiConnected@{wifiConnected}}
+\index{wifiConnected@{wifiConnected}!DataServer@{DataServer}}
+\subsubsection{\texorpdfstring{wifiConnected()}{wifiConnected()}}
+{\footnotesize\ttfamily void Data\+Server\+::wifi\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Callback when \mbox{\hyperlink{classWiFi}{Wi\+Fi}} is connected. 
+
+Definition at line 47 of file Data\+Server.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47                        \{}
+\DoxyCodeLine{48 \textcolor{comment}{//  server.begin();}}
+\DoxyCodeLine{49 \textcolor{comment}{//  Serial.println("HTTP server started.");}}
+\DoxyCodeLine{50   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/net/\mbox{\hyperlink{DataServer_8h}{Data\+Server.\+h}}\end{DoxyCompactItemize}

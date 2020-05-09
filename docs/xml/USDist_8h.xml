@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="USDist_8h" kind="file" language="C++">
+    <compoundname>USDist.h</compoundname>
+    <includes local="no">freertos/FreeRTOS.h</includes>
+    <includes local="no">freertos/queue.h</includes>
+    <includes local="no">thread</includes>
+    <includes refid="GPIOPerif_8hpp" local="yes">GPIOPerif.hpp</includes>
+    <includes local="no">driver/gpio.h</includes>
+    <includes local="no">freertos/portmacro.h</includes>
+    <includedby refid="USDist_8cpp" local="yes">main/devices/USDist/USDist.cpp</includedby>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <incdepgraph>
+      <node id="291">
+        <label>list</label>
+      </node>
+      <node id="285">
+        <label>functional</label>
+      </node>
+      <node id="289">
+        <label>cstdint</label>
+      </node>
+      <node id="287">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="281">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="297">
+        <label>cmath</label>
+      </node>
+      <node id="292">
+        <label>string</label>
+      </node>
+      <node id="290">
+        <label>map</label>
+      </node>
+      <node id="295">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+        <childnode refid="299" relation="include">
+        </childnode>
+      </node>
+      <node id="294">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="282">
+        <label>freertos/queue.h</label>
+      </node>
+      <node id="299">
+        <label>esp_log.h</label>
+      </node>
+      <node id="280">
+        <label>main/devices/USDist/USDist.h</label>
+        <link refid="USDist_8h"/>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="300" relation="include">
+        </childnode>
+      </node>
+      <node id="286">
+        <label>array</label>
+      </node>
+      <node id="298">
+        <label>sstream</label>
+      </node>
+      <node id="300">
+        <label>freertos/portmacro.h</label>
+      </node>
+      <node id="288">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="289" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="293" relation="include">
+        </childnode>
+        <childnode refid="295" relation="include">
+        </childnode>
+      </node>
+      <node id="284">
+        <label>GPIOPerif.hpp</label>
+        <link refid="GPIOPerif_8hpp"/>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+      </node>
+      <node id="293">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="294" relation="include">
+        </childnode>
+      </node>
+      <node id="283">
+        <label>thread</label>
+      </node>
+      <node id="296">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="304">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="305" relation="include">
+        </childnode>
+      </node>
+      <node id="303">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="304" relation="include">
+        </childnode>
+      </node>
+      <node id="305">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="301">
+        <label>main/devices/USDist/USDist.h</label>
+        <link refid="USDist_8h"/>
+        <childnode refid="302" relation="include">
+        </childnode>
+        <childnode refid="303" relation="include">
+        </childnode>
+      </node>
+      <node id="302">
+        <label>main/devices/USDist/USDist.cpp</label>
+        <link refid="USDist_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1USDist" prot="public">perif::USDist</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="USDist_8h_1ae73d78f8ad1955fc7efc65b109987632" prot="public" static="no">
+        <name>SOUND_SPEED</name>
+        <initializer>0.01715f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.h" line="23" column="9" bodyfile="main/devices/USDist/USDist.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8h_1a8eab89acd7dcb0e77e7b00d1749022a6" prot="public" static="no">
+        <name>TRIG_PIN</name>
+        <initializer>GPIO_NUM_17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.h" line="29" column="9" bodyfile="main/devices/USDist/USDist.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="USDist_8h_1acea96cea4a13b6cb38e57a86788adf90" prot="public" static="no">
+        <name>ECHO_PIN</name>
+        <initializer>GPIO_NUM_16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.h" line="30" column="9" bodyfile="main/devices/USDist/USDist.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>USDist class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/USDist/USDist.h"/>
+  </compounddef>
+</doxygen>

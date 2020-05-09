@@ -1,0 +1,548 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classSDFileIO" kind="class" language="C++" prot="public">
+    <compoundname>SDFileIO</compoundname>
+    <includes refid="SDFileIO_8hpp" local="no">SDFileIO.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSDFileIO_1a2c9cd8f77b65d3f2010e73620f9eb454" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SDFileIO::prefix</definition>
+        <argsstring></argsstring>
+        <name>prefix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The name of the mount point on the vfs. All file names must be prepended with this in order to be found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="47" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSDFileIO_1ae09ce1c99a9fdc5135dc9633ef1174e9" prot="private" static="no" mutable="no">
+        <type>sdmmc_host_t</type>
+        <definition>sdmmc_host_t SDFileIO::host</definition>
+        <argsstring></argsstring>
+        <name>host</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The SD/MMC driver configuration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="51" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSDFileIO_1a73bd30b4b13293d401e3a462379ee57c" prot="private" static="no" mutable="no">
+        <type>sdspi_slot_config_t</type>
+        <definition>sdspi_slot_config_t SDFileIO::slot_config</definition>
+        <argsstring></argsstring>
+        <name>slot_config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The SD SPI driver configuration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="55" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSDFileIO_1ae6f1d7ddb09667a14dc7fe1b7d65e318" prot="private" static="no" mutable="no">
+        <type>sdmmc_card_t *</type>
+        <definition>sdmmc_card_t* SDFileIO::card</definition>
+        <argsstring></argsstring>
+        <name>card</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The connected SD card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="59" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSDFileIO_1ad0c54e6c320dd98ee4c09b00dcbf6427" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDFileIO::ready</definition>
+        <argsstring></argsstring>
+        <name>ready</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the SD card is mounted and ready to perform IO operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="63" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSDFileIO_1aa278dc1e8f9e39a520b47c748fbfc254" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SDFileIO::SDFileIO</definition>
+        <argsstring>(const char *prefix=&quot;/sdcard&quot;)</argsstring>
+        <name>SDFileIO</name>
+        <param>
+          <type>const char *</type>
+          <declname>prefix</declname>
+          <defval>&quot;/sdcard&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Explicit value constructor to specify the mount point of the SD card.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the SD card mount point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="70" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="70" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a452951a64afa18614880d15e75b717db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SDFileIO::~SDFileIO</definition>
+        <argsstring>()</argsstring>
+        <name>~SDFileIO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. Unmounts the SD card and disables the driver since it&apos;s no longer needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="86" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a53a15061cca1e7a272fd606b88d43a2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::exists</definition>
+        <argsstring>(const string &amp;fileName)</argsstring>
+        <name>exists</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if the specified file exists on the SD card.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the file exists </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="96" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a7d46ac6a2a1e9de575035bcd5f7b485a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::isReady</definition>
+        <argsstring>()</argsstring>
+        <name>isReady</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the SD card is initialized and ready for file IO.</para>
+<para><simplesect kind="return"><para>the ready state of this SD card </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="106" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1af7e34f9012374dc9411cafa8a3ff4e50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::mount</definition>
+        <argsstring>()</argsstring>
+        <name>mount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mounts the SD card and virtual file systems to be accessed.</para>
+<para><simplesect kind="return"><para>whether mount succeeded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="114" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="114" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a7a2340367a4b95c94884be058ca0d063" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDFileIO::printCardInfo</definition>
+        <argsstring>()</argsstring>
+        <name>printCardInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Prints information about the SD card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="132" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a09eb67cb5d96201deaaefe38d04f17f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class FStream</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool SDFileIO::openFile</definition>
+        <argsstring>(const string &amp;fileName, ios_base::openmode mode, std::function&lt; bool(FStream &amp;)&gt; &amp;&amp;fileOp)</argsstring>
+        <name>openFile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>ios_base::openmode</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>std::function&lt; bool(FStream &amp;)&gt; &amp;&amp;</type>
+          <declname>fileOp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens a file with the specified file name and modes, then executes the provided operations on the file. After all operations are complete, the file gets closed safely to ensure all operations are synced with the virtual file system.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>FStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of stream for the file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the first open mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileOp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the operations to perform on the opened file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether all operations completed successfully </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="149" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="149" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a87a48c4dfedceff48a209e951f299ee9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::writeFile</definition>
+        <argsstring>(const string &amp;fileName, const vector&lt; string &gt; &amp;data)</argsstring>
+        <name>writeFile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const vector&lt; string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes the provided data to the file specified by file name. This method truncates the entire file upon opening so the only data that will be in the file is what was passed as a parameter here.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the data was successfully written </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="172" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="172" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a03ad22388a4c6f3f8265dbc204947cfd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::writeBinFile</definition>
+        <argsstring>(const string &amp;fileName, const string &amp;data)</argsstring>
+        <name>writeBinFile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes the provided binary data to the file specified by file name. This method truncates the entire file upon opening so the only data that will be in the file is what was passed as a parameter here.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the data was successfully written </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="198" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="198" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1ab01f1777f4670c9cd4c04a0b3c6c2867" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::appendFile</definition>
+        <argsstring>(const string &amp;fileName, const vector&lt; string &gt; &amp;data)</argsstring>
+        <name>appendFile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const vector&lt; string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Appends the provided data to the file specified by file name.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to append </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the data was successfully written </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="215" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="215" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1ad03e7421e12132dea157e3e3844233a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::appendBinFile</definition>
+        <argsstring>(const string &amp;fileName, const string &amp;data)</argsstring>
+        <name>appendBinFile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Appends the provided binary data to the file specified by file name.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the data was successfully written </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="239" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="239" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a572558952919c50968f9b0063220be6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::readFile</definition>
+        <argsstring>(const string &amp;fileName, string &amp;data)</argsstring>
+        <name>readFile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads content from the specified file into the data parameter.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the data was successfully read </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="256" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="256" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDFileIO_1a5a06abe7718fa74b84fadad7650bfdad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDFileIO::readBinFile</definition>
+        <argsstring>(const string &amp;fileName, string &amp;data)</argsstring>
+        <name>readBinFile</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads binary content from the specified file into the data parameter.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the data was successfully read </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/fs/SDFileIO.hpp" line="287" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="287" bodyend="310"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A utility for safely operating on an SD card asynchronously over the SPI interface. </para>
+    </detaileddescription>
+    <location file="main/fs/SDFileIO.hpp" line="41" column="1" bodyfile="main/fs/SDFileIO.hpp" bodystart="41" bodyend="311"/>
+    <listofallmembers>
+      <member refid="classSDFileIO_1ad03e7421e12132dea157e3e3844233a1" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>appendBinFile</name></member>
+      <member refid="classSDFileIO_1ab01f1777f4670c9cd4c04a0b3c6c2867" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>appendFile</name></member>
+      <member refid="classSDFileIO_1ae6f1d7ddb09667a14dc7fe1b7d65e318" prot="private" virt="non-virtual"><scope>SDFileIO</scope><name>card</name></member>
+      <member refid="classSDFileIO_1a53a15061cca1e7a272fd606b88d43a2e" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>exists</name></member>
+      <member refid="classSDFileIO_1ae09ce1c99a9fdc5135dc9633ef1174e9" prot="private" virt="non-virtual"><scope>SDFileIO</scope><name>host</name></member>
+      <member refid="classSDFileIO_1a7d46ac6a2a1e9de575035bcd5f7b485a" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>isReady</name></member>
+      <member refid="classSDFileIO_1af7e34f9012374dc9411cafa8a3ff4e50" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>mount</name></member>
+      <member refid="classSDFileIO_1a09eb67cb5d96201deaaefe38d04f17f3" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>openFile</name></member>
+      <member refid="classSDFileIO_1a2c9cd8f77b65d3f2010e73620f9eb454" prot="private" virt="non-virtual"><scope>SDFileIO</scope><name>prefix</name></member>
+      <member refid="classSDFileIO_1a7a2340367a4b95c94884be058ca0d063" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>printCardInfo</name></member>
+      <member refid="classSDFileIO_1a5a06abe7718fa74b84fadad7650bfdad" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>readBinFile</name></member>
+      <member refid="classSDFileIO_1a572558952919c50968f9b0063220be6b" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>readFile</name></member>
+      <member refid="classSDFileIO_1ad0c54e6c320dd98ee4c09b00dcbf6427" prot="private" virt="non-virtual"><scope>SDFileIO</scope><name>ready</name></member>
+      <member refid="classSDFileIO_1aa278dc1e8f9e39a520b47c748fbfc254" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>SDFileIO</name></member>
+      <member refid="classSDFileIO_1a73bd30b4b13293d401e3a462379ee57c" prot="private" virt="non-virtual"><scope>SDFileIO</scope><name>slot_config</name></member>
+      <member refid="classSDFileIO_1a03ad22388a4c6f3f8265dbc204947cfd" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>writeBinFile</name></member>
+      <member refid="classSDFileIO_1a87a48c4dfedceff48a209e951f299ee9" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>writeFile</name></member>
+      <member refid="classSDFileIO_1a452951a64afa18614880d15e75b717db" prot="public" virt="non-virtual"><scope>SDFileIO</scope><name>~SDFileIO</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

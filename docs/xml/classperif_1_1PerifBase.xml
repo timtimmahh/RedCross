@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classperif_1_1PerifBase" kind="class" language="C++" prot="public">
+    <compoundname>perif::PerifBase</compoundname>
+    <derivedcompoundref refid="classperif_1_1Perif" prot="public" virt="non-virtual">perif::Perif</derivedcompoundref>
+    <includes refid="Perif_8hpp" local="no">Perif.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classperif_1_1PerifBase_1a1a3afaa535fda17e9f97123fffe78765" prot="public" static="no" mutable="no">
+        <type><ref refid="Perif_8hpp_1a358ff4ee6d24694ee7661f0cce14377e" kindref="member">DevMap</ref></type>
+        <definition>DevMap perif::PerifBase::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The key-value mapping of peripheral data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="37" column="1" bodyfile="main/perif/Perif.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classperif_1_1PerifBase_1a98964e5ca8384df64881265e0aa6d7b6" prot="public" static="no" mutable="no">
+        <type>list&lt; function&lt; void(<ref refid="Perif_8hpp_1a358ff4ee6d24694ee7661f0cce14377e" kindref="member">DevMap</ref> &amp;)&gt; &gt;</type>
+        <definition>list&lt;function&lt;void(DevMap&amp;)&gt; &gt; perif::PerifBase::hooks</definition>
+        <argsstring></argsstring>
+        <name>hooks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hooks registered to this peripheral so observers can be notified of any necessary changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="42" column="1" bodyfile="main/perif/Perif.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classperif_1_1PerifBase_1a8ac4d4632fed61f15c375c6db4da3e77" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>perif::PerifBase::PerifBase</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>PerifBase</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Explicit Value Constructor.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the peripheral&apos;s name </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="48" column="1" bodyfile="main/perif/Perif.hpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classperif_1_1PerifBase_1a30553bdac90621e309a37628774a7a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>perif::PerifBase::PerifBase</definition>
+        <argsstring>(const PerifBase &amp;original)=default</argsstring>
+        <name>PerifBase</name>
+        <param>
+          <type>const <ref refid="classperif_1_1PerifBase" kindref="compound">PerifBase</ref> &amp;</type>
+          <declname>original</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy Constructor.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>original</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the original instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classperif_1_1PerifBase_1a2e8bcc221ee253b21b61c7c07307d931" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void perif::PerifBase::registerHook</definition>
+        <argsstring>(function&lt; void(DevMap &amp;)&gt; &amp;&amp;hook)</argsstring>
+        <name>registerHook</name>
+        <param>
+          <type>function&lt; void(<ref refid="Perif_8hpp_1a358ff4ee6d24694ee7661f0cce14377e" kindref="member">DevMap</ref> &amp;)&gt; &amp;&amp;</type>
+          <declname>hook</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers a hook for obtaining sensor data on update in Json format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hook</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the observer function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="63" column="1" bodyfile="main/perif/Perif.hpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Base class for peripherals. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="102">
+        <label>perif::PerifBase</label>
+        <link refid="classperif_1_1PerifBase"/>
+      </node>
+      <node id="111">
+        <label>perif::SPIPerif</label>
+        <link refid="classperif_1_1SPIPerif"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>perif::Perif</label>
+        <link refid="classperif_1_1Perif"/>
+        <childnode refid="102" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>perif::GPIOPerif</label>
+        <link refid="classperif_1_1GPIOPerif"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>perif::USDist</label>
+        <link refid="classperif_1_1USDist"/>
+        <childnode refid="108" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>perif::BarPAT</label>
+        <link refid="classperif_1_1BarPAT"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>perif::LidarMap</label>
+        <link refid="classperif_1_1LidarMap"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>perif::UARTPerif</label>
+        <link refid="classperif_1_1UARTPerif"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>perif::I2CPerif&lt;&gt;</label>
+        <link refid="classperif_1_1I2CPerif"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>perif::GPS</label>
+        <link refid="classperif_1_1GPS"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>perif::I2CPerif&lt; port, sdaPullup, sclPullup, frequency &gt;</label>
+        <link refid="classperif_1_1I2CPerif"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>perif::AccelGyro</label>
+        <link refid="classperif_1_1AccelGyro"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="main/perif/Perif.hpp" line="32" column="1" bodyfile="main/perif/Perif.hpp" bodystart="32" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classperif_1_1PerifBase_1a1a3afaa535fda17e9f97123fffe78765" prot="public" virt="non-virtual"><scope>perif::PerifBase</scope><name>data</name></member>
+      <member refid="classperif_1_1PerifBase_1a98964e5ca8384df64881265e0aa6d7b6" prot="public" virt="non-virtual"><scope>perif::PerifBase</scope><name>hooks</name></member>
+      <member refid="classperif_1_1PerifBase_1a8ac4d4632fed61f15c375c6db4da3e77" prot="public" virt="non-virtual"><scope>perif::PerifBase</scope><name>PerifBase</name></member>
+      <member refid="classperif_1_1PerifBase_1a30553bdac90621e309a37628774a7a51" prot="public" virt="non-virtual"><scope>perif::PerifBase</scope><name>PerifBase</name></member>
+      <member refid="classperif_1_1PerifBase_1a2e8bcc221ee253b21b61c7c07307d931" prot="public" virt="non-virtual"><scope>perif::PerifBase</scope><name>registerHook</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

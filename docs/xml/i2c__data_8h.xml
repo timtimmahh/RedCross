@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="i2c__data_8h" kind="file" language="C++">
+    <compoundname>i2c_data.h</compoundname>
+    <includes local="no">mutex</includes>
+    <includes local="no">driver/i2c.h</includes>
+    <includedby refid="I2Cdev_8cpp" local="yes">main/perif/i2c/I2Cdev.cpp</includedby>
+    <incdepgraph>
+      <node id="708">
+        <label>main/perif/i2c/i2c_data.h</label>
+        <link refid="i2c__data_8h"/>
+        <childnode refid="709" relation="include">
+        </childnode>
+        <childnode refid="710" relation="include">
+        </childnode>
+      </node>
+      <node id="710">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="709">
+        <label>mutex</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="712">
+        <label>main/perif/i2c/I2Cdev.cpp</label>
+        <link refid="I2Cdev_8cpp"/>
+      </node>
+      <node id="711">
+        <label>main/perif/i2c/i2c_data.h</label>
+        <link refid="i2c__data_8h"/>
+        <childnode refid="712" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacei2c">i2c</innernamespace>
+    <briefdescription>
+<para>i2c_data class definition. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/perif/i2c/i2c_data.h"/>
+  </compounddef>
+</doxygen>

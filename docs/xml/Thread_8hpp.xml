@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="Thread_8hpp" kind="file" language="C++">
+    <compoundname>Thread.hpp</compoundname>
+    <includes local="no">freertos/FreeRTOS.h</includes>
+    <includes local="no">freertos/task.h</includes>
+    <includes local="no">esp_pthread.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">condition_variable</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">utility</includes>
+    <includes local="yes">sdkconfig.h</includes>
+    <includedby refid="redcross_8h" local="yes">main/include/redcross.h</includedby>
+    <incdepgraph>
+      <node id="530">
+        <label>atomic</label>
+      </node>
+      <node id="523">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="522">
+        <label>main/ipc/Thread.hpp</label>
+        <link refid="Thread_8hpp"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+      </node>
+      <node id="525">
+        <label>esp_pthread.h</label>
+      </node>
+      <node id="526">
+        <label>string</label>
+      </node>
+      <node id="529">
+        <label>condition_variable</label>
+      </node>
+      <node id="532">
+        <label>sdkconfig.h</label>
+      </node>
+      <node id="531">
+        <label>utility</label>
+      </node>
+      <node id="528">
+        <label>mutex</label>
+      </node>
+      <node id="524">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="527">
+        <label>thread</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="533">
+        <label>main/ipc/Thread.hpp</label>
+        <link refid="Thread_8hpp"/>
+        <childnode refid="534" relation="include">
+        </childnode>
+      </node>
+      <node id="534">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="535" relation="include">
+        </childnode>
+      </node>
+      <node id="535">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classThread" prot="public">Thread</innerclass>
+    <briefdescription>
+<para><ref refid="classThread" kindref="compound">Thread</ref> class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/ipc/Thread.hpp"/>
+  </compounddef>
+</doxygen>

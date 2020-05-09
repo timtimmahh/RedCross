@@ -1,0 +1,76 @@
+\hypertarget{classEvent}{}\section{Event Class Reference}
+\label{classEvent}\index{Event@{Event}}
+
+
+{\ttfamily \#include $<$Event.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEvent_aad90826e5e8880a47978f1701a99722f}{Event}} (const char $\ast$base, const char $\ast$name)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unordered\+\_\+map$<$ string, \mbox{\hyperlink{classEvent}{Event}} $\ast$ $>$ \mbox{\hyperlink{classEvent_a00278e70937755acde8c5d749c035c29}{events}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An event instance to register for notifications. 
+
+Definition at line 39 of file Event.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEvent_aad90826e5e8880a47978f1701a99722f}\label{classEvent_aad90826e5e8880a47978f1701a99722f}} 
+\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\subsubsection{\texorpdfstring{Event()}{Event()}}
+{\footnotesize\ttfamily Event\+::\+Event (\begin{DoxyParamCaption}\item[{const char $\ast$}]{base,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an event type with the E\+SP base and ID values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base} & the E\+SP event base name \\
+\hline
+{\em name} & the E\+SP event base id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file Event.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66       : eventName(\textcolor{keywordtype}{string}(base) + \textcolor{stringliteral}{"\_"} + name) \{}
+\DoxyCodeLine{67     \mbox{\hyperlink{classEvent_a00278e70937755acde8c5d749c035c29}{events}}[eventName] = \textcolor{keyword}{this};}
+\DoxyCodeLine{68   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classEvent_a00278e70937755acde8c5d749c035c29}\label{classEvent_a00278e70937755acde8c5d749c035c29}} 
+\index{Event@{Event}!events@{events}}
+\index{events@{events}!Event@{Event}}
+\subsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily unordered\+\_\+map$<$ string, \mbox{\hyperlink{classEvent}{Event}} $\ast$ $>$ Event\+::events\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= unordered\_map<string, \mbox{\hyperlink{classEvent}{Event}} *}
+\DoxyCodeLine{>()}
+
+\end{DoxyCode}
+All initialized event instances to be notified. 
+
+Definition at line 58 of file Event.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/ipc/\mbox{\hyperlink{Event_8hpp}{Event.\+hpp}}\end{DoxyCompactItemize}

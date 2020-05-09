@@ -1,0 +1,163 @@
+\hypertarget{classWiFi}{}\section{Wi\+Fi Class Reference}
+\label{classWiFi}\index{WiFi@{WiFi}}
+
+
+{\ttfamily \#include $<$Wi\+Fi.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWiFi_ad2f9d73dfa338ebf49585e37f1c04cd6}{Wi\+Fi}} (\mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19c}{Wi\+Fi\+Mode}} mode=\mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e}{Wi\+Fi\+Mode\+::\+S\+TA}})
+\item 
+virtual \mbox{\hyperlink{classWiFi_aa70d86d4709954beb1f79e73715dfd5b}{$\sim$\+Wi\+Fi}} ()
+\item 
+void \mbox{\hyperlink{classWiFi_a14ed13a3074adbfe7c2dc986b17ffa0a}{connect}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classWiFi_a251a4d7fde9af75fb2fb305ad5c27a8e}{wifi\+\_\+event\+\_\+handler}} (void $\ast$arg, esp\+\_\+event\+\_\+base\+\_\+t event\+\_\+base, int32\+\_\+t event\+\_\+id, void $\ast$event\+\_\+data)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classWiFi_a05428adefb3ddb169b962a06b9ee4fe5}{connected}} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{classWiFi}{Wi\+Fi}} manager. 
+
+Definition at line 40 of file Wi\+Fi.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWiFi_ad2f9d73dfa338ebf49585e37f1c04cd6}\label{classWiFi_ad2f9d73dfa338ebf49585e37f1c04cd6}} 
+\index{WiFi@{WiFi}!WiFi@{WiFi}}
+\index{WiFi@{WiFi}!WiFi@{WiFi}}
+\subsubsection{\texorpdfstring{WiFi()}{WiFi()}}
+{\footnotesize\ttfamily Wi\+Fi\+::\+Wi\+Fi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19c}{Wi\+Fi\+Mode}}}]{mode = {\ttfamily \mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e}{Wi\+Fi\+Mode\+::\+S\+TA}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates the \mbox{\hyperlink{classWiFi}{Wi\+Fi}} instance with default mode Station.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & the \mbox{\hyperlink{classWiFi}{Wi\+Fi}} mode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file Wi\+Fi.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23     : mode(mode), \mbox{\hyperlink{classWiFi_a05428adefb3ddb169b962a06b9ee4fe5}{connected}}(\textcolor{keyword}{false}) \{}
+\DoxyCodeLine{24   esp\_netif\_init();}
+\DoxyCodeLine{25   esp\_event\_handler\_register(WIFI\_EVENT, ESP\_EVENT\_ANY\_ID,}
+\DoxyCodeLine{26                              \mbox{\hyperlink{classWiFi_a251a4d7fde9af75fb2fb305ad5c27a8e}{WiFi::wifi\_event\_handler}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{27   esp\_event\_handler\_register(IP\_EVENT, ESP\_EVENT\_ANY\_ID,}
+\DoxyCodeLine{28                              \mbox{\hyperlink{classWiFi_a251a4d7fde9af75fb2fb305ad5c27a8e}{WiFi::wifi\_event\_handler}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWiFi_aa70d86d4709954beb1f79e73715dfd5b}\label{classWiFi_aa70d86d4709954beb1f79e73715dfd5b}} 
+\index{WiFi@{WiFi}!````~WiFi@{$\sim$WiFi}}
+\index{````~WiFi@{$\sim$WiFi}!WiFi@{WiFi}}
+\subsubsection{\texorpdfstring{$\sim$WiFi()}{~WiFi()}}
+{\footnotesize\ttfamily Wi\+Fi\+::$\sim$\+Wi\+Fi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Free\textquotesingle{}s any resources and turns off the \mbox{\hyperlink{classWiFi}{Wi\+Fi}} card. 
+
+Definition at line 31 of file Wi\+Fi.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31             \{}
+\DoxyCodeLine{32   esp\_event\_handler\_unregister(IP\_EVENT, ESP\_EVENT\_ANY\_ID,}
+\DoxyCodeLine{33                                \&\mbox{\hyperlink{classWiFi_a251a4d7fde9af75fb2fb305ad5c27a8e}{WiFi::wifi\_event\_handler}});}
+\DoxyCodeLine{34   esp\_event\_handler\_unregister(WIFI\_EVENT, ESP\_EVENT\_ANY\_ID,}
+\DoxyCodeLine{35                                \&\mbox{\hyperlink{classWiFi_a251a4d7fde9af75fb2fb305ad5c27a8e}{WiFi::wifi\_event\_handler}});}
+\DoxyCodeLine{36   esp\_wifi\_disconnect();}
+\DoxyCodeLine{37   esp\_wifi\_stop();}
+\DoxyCodeLine{38   esp\_wifi\_deinit();}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classWiFi_a14ed13a3074adbfe7c2dc986b17ffa0a}\label{classWiFi_a14ed13a3074adbfe7c2dc986b17ffa0a}} 
+\index{WiFi@{WiFi}!connect@{connect}}
+\index{connect@{connect}!WiFi@{WiFi}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Wi\+Fi\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Attempts to make a connection to any configured devices. 
+
+Definition at line 74 of file Wi\+Fi.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74                    \{}
+\DoxyCodeLine{75   wifi\_init\_config\_t cfg = WIFI\_INIT\_CONFIG\_DEFAULT()}
+\DoxyCodeLine{76   esp\_wifi\_init(\&cfg);}
+\DoxyCodeLine{77   esp\_wifi\_set\_storage(WIFI\_STORAGE\_RAM);}
+\DoxyCodeLine{78   config\_connection();}
+\DoxyCodeLine{79   esp\_wifi\_start();}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWiFi_a251a4d7fde9af75fb2fb305ad5c27a8e}\label{classWiFi_a251a4d7fde9af75fb2fb305ad5c27a8e}} 
+\index{WiFi@{WiFi}!wifi\_event\_handler@{wifi\_event\_handler}}
+\index{wifi\_event\_handler@{wifi\_event\_handler}!WiFi@{WiFi}}
+\subsubsection{\texorpdfstring{wifi\_event\_handler()}{wifi\_event\_handler()}}
+{\footnotesize\ttfamily void Wi\+Fi\+::wifi\+\_\+event\+\_\+handler (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{esp\+\_\+event\+\_\+base\+\_\+t}]{event\+\_\+base,  }\item[{int32\+\_\+t}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Interrupt driven global \mbox{\hyperlink{classWiFi}{Wi\+Fi}} event handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & this \mbox{\hyperlink{classWiFi}{Wi\+Fi}} instance \\
+\hline
+{\em event\+\_\+base} & the E\+SP event base name \\
+\hline
+{\em event\+\_\+id} & the E\+SP event id \\
+\hline
+{\em event\+\_\+data} & any additional data for an event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Wi\+Fi.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15                                                 \{}
+\DoxyCodeLine{16   \mbox{\hyperlink{classWiFi}{WiFi}} *wifi = static\_cast<WiFi *>(arg);}
+\DoxyCodeLine{17   \textcolor{keywordflow}{if} (event\_base == WIFI\_EVENT)}
+\DoxyCodeLine{18     wifi\_event(*wifi, event\_id, event\_data);}
+\DoxyCodeLine{19   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event\_base == IP\_EVENT)}
+\DoxyCodeLine{20     ip\_event(*wifi, event\_id, event\_data);}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classWiFi_a05428adefb3ddb169b962a06b9ee4fe5}\label{classWiFi_a05428adefb3ddb169b962a06b9ee4fe5}} 
+\index{WiFi@{WiFi}!connected@{connected}}
+\index{connected@{connected}!WiFi@{WiFi}}
+\subsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily bool Wi\+Fi\+::connected = false}
+
+Whether the device has a network connection. 
+
+Definition at line 62 of file Wi\+Fi.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/net/\mbox{\hyperlink{WiFi_8hpp}{Wi\+Fi.\+hpp}}\item 
+main/net/\mbox{\hyperlink{WiFi_8cpp}{Wi\+Fi.\+cpp}}\end{DoxyCompactItemize}

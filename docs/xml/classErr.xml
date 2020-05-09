@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classErr" kind="class" language="C++" prot="public">
+    <compoundname>Err</compoundname>
+    <includes refid="ErrorLog_8hpp" local="no">ErrorLog.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classErr_1a5027803a04dbda5395326274137d63ff" prot="public" static="no" strong="no">
+        <type>unsigned</type>
+        <name>Flag</name>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e" prot="public">
+          <name>ErrFAIL</name>
+          <initializer>= 0x000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" prot="public">
+          <name>ErrOK</name>
+          <initializer>= 0x001</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffab2d4a266305d33b1c305334670541373" prot="public">
+          <name>NO_MEM</name>
+          <initializer>= 0x002</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa9909bdacaa42a25caa2adc563423e57d" prot="public">
+          <name>INVALID_ARG</name>
+          <initializer>= 0x004</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa0b81ca76e93aa0051a0de12e64804914" prot="public">
+          <name>INVALID_STATE</name>
+          <initializer>= 0x008</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa4dea150e0d23fb365dd16e5a986b5060" prot="public">
+          <name>INVALID_SIZE</name>
+          <initializer>= 0x010</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa62b13e56052367747eb1cc47d3bcfd12" prot="public">
+          <name>NOT_FOUND</name>
+          <initializer>= 0x020</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffabe39565ac12117b150d6e6de856fe5eb" prot="public">
+          <name>NOT_SUPPORTED</name>
+          <initializer>= 0x040</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa0982d1f6f8bd447638719c5c053c6ed5" prot="public">
+          <name>TIMEOUT</name>
+          <initializer>= 0x080</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa58abd400cf002ad1f2582e2a2005b8c9" prot="public">
+          <name>INVALID_RESPONSE</name>
+          <initializer>= 0x100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa43fa55c63a5824c877acefc37ea0ce04" prot="public">
+          <name>INVALID_CRC</name>
+          <initializer>= 0x200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffa278745e4a95f878f21405711be9b3da4" prot="public">
+          <name>INVALID_VERSION</name>
+          <initializer>= 0x400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classErr_1a5027803a04dbda5395326274137d63ffac080f44481ce779cf4e4208f4516eb3e" prot="public">
+          <name>INVALID_MAC</name>
+          <initializer>= 0x800</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The main error flags. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="31" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="31" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classErr_1a77c440d99b087263d7fe8b7bc996800c" prot="private" static="no" mutable="no">
+        <type><ref refid="classErr_1a5027803a04dbda5395326274137d63ff" kindref="member">Flag</ref></type>
+        <definition>Flag Err::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This error&apos;s flag value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="92" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classErr_1a24c3a115a0fe75d783de8a482ee41813" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Err::Err</definition>
+        <argsstring>(Flag value)</argsstring>
+        <name>Err</name>
+        <param>
+          <type><ref refid="classErr_1a5027803a04dbda5395326274137d63ff" kindref="member">Flag</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an error directly from a Flag.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Flag </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="52" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classErr_1a1c99df024167b504910fb3404e5496ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Err::Err</definition>
+        <argsstring>(esp_err_t err, Flag valid=ErrOK)</argsstring>
+        <name>Err</name>
+        <param>
+          <type>esp_err_t</type>
+          <declname>err</declname>
+        </param>
+        <param>
+          <type><ref refid="classErr_1a5027803a04dbda5395326274137d63ff" kindref="member">Flag</ref></type>
+          <declname>valid</declname>
+          <defval><ref refid="classErr_1a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" kindref="member">ErrOK</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an error from a C-style esp_err_t. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bitwise OR-ed Flags indicating a valid response </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="58" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classErr_1a9cc396112612083a8d9c2cea6fa6224a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Err::operator uint16_t</definition>
+        <argsstring>() const</argsstring>
+        <name>operator uint16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts this error to uint16_t.</para>
+<para><simplesect kind="return"><para>this value as uint16_t </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="65" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classErr_1ae06ae9da0fc2aeeab3d8fd5e709cab9e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Err::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts this error to a boolean for easy checking.</para>
+<para><simplesect kind="return"><para>whether this is an error or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="73" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="73" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classErr_1af320160955e90df0ddb4e84d99027562" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classErr_1a5027803a04dbda5395326274137d63ff" kindref="member">Flag</ref></type>
+        <definition>static Flag Err::convert</definition>
+        <argsstring>(esp_err_t err, Flag valid=ErrOK)</argsstring>
+        <name>convert</name>
+        <param>
+          <type>esp_err_t</type>
+          <declname>err</declname>
+        </param>
+        <param>
+          <type><ref refid="classErr_1a5027803a04dbda5395326274137d63ff" kindref="member">Flag</ref></type>
+          <declname>valid</declname>
+          <defval><ref refid="classErr_1a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" kindref="member">ErrOK</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts an esp_err_t to a Flag.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the original ESP error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bitwise OR-ed valid Flags </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the Flag representation of esp_err_t </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="83" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Wrapper around ESP_ERR to simplify usage and reduce boilerplate code. </para>
+    </detaileddescription>
+    <location file="main/include/ErrorLog.hpp" line="26" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="26" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classErr_1af320160955e90df0ddb4e84d99027562" prot="public" virt="non-virtual"><scope>Err</scope><name>convert</name></member>
+      <member refid="classErr_1a24c3a115a0fe75d783de8a482ee41813" prot="public" virt="non-virtual"><scope>Err</scope><name>Err</name></member>
+      <member refid="classErr_1a1c99df024167b504910fb3404e5496ee" prot="public" virt="non-virtual"><scope>Err</scope><name>Err</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e" prot="public" virt="non-virtual"><scope>Err</scope><name>ErrFAIL</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" prot="public" virt="non-virtual"><scope>Err</scope><name>ErrOK</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ff" prot="public" virt="non-virtual"><scope>Err</scope><name>Flag</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa9909bdacaa42a25caa2adc563423e57d" prot="public" virt="non-virtual"><scope>Err</scope><name>INVALID_ARG</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa43fa55c63a5824c877acefc37ea0ce04" prot="public" virt="non-virtual"><scope>Err</scope><name>INVALID_CRC</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffac080f44481ce779cf4e4208f4516eb3e" prot="public" virt="non-virtual"><scope>Err</scope><name>INVALID_MAC</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa58abd400cf002ad1f2582e2a2005b8c9" prot="public" virt="non-virtual"><scope>Err</scope><name>INVALID_RESPONSE</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa4dea150e0d23fb365dd16e5a986b5060" prot="public" virt="non-virtual"><scope>Err</scope><name>INVALID_SIZE</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa0b81ca76e93aa0051a0de12e64804914" prot="public" virt="non-virtual"><scope>Err</scope><name>INVALID_STATE</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa278745e4a95f878f21405711be9b3da4" prot="public" virt="non-virtual"><scope>Err</scope><name>INVALID_VERSION</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffab2d4a266305d33b1c305334670541373" prot="public" virt="non-virtual"><scope>Err</scope><name>NO_MEM</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa62b13e56052367747eb1cc47d3bcfd12" prot="public" virt="non-virtual"><scope>Err</scope><name>NOT_FOUND</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffabe39565ac12117b150d6e6de856fe5eb" prot="public" virt="non-virtual"><scope>Err</scope><name>NOT_SUPPORTED</name></member>
+      <member refid="classErr_1ae06ae9da0fc2aeeab3d8fd5e709cab9e" prot="public" virt="non-virtual"><scope>Err</scope><name>operator bool</name></member>
+      <member refid="classErr_1a9cc396112612083a8d9c2cea6fa6224a" prot="public" virt="non-virtual"><scope>Err</scope><name>operator uint16_t</name></member>
+      <member refid="classErr_1a5027803a04dbda5395326274137d63ffa0982d1f6f8bd447638719c5c053c6ed5" prot="public" virt="non-virtual"><scope>Err</scope><name>TIMEOUT</name></member>
+      <member refid="classErr_1a77c440d99b087263d7fe8b7bc996800c" prot="private" virt="non-virtual"><scope>Err</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

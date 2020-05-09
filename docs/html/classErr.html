@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Err class | Red Cross</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">Red Cross</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Err <span class="m-thin">class</span>
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Wrapper around ESP_ERR to simplify usage and reduce boilerplate code.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a>: unsigned { </span><span class="m-doc-wrap"><a href="#a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e" class="m-doc">ErrFAIL</a> = 0x000,
+              <a href="#a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" class="m-doc">ErrOK</a> = 0x001,
+              <a href="#a5027803a04dbda5395326274137d63ffab2d4a266305d33b1c305334670541373" class="m-doc">NO_MEM</a> = 0x002,
+              <a href="#a5027803a04dbda5395326274137d63ffa9909bdacaa42a25caa2adc563423e57d" class="m-doc">INVALID_ARG</a> = 0x004,
+              <a href="#a5027803a04dbda5395326274137d63ffa0b81ca76e93aa0051a0de12e64804914" class="m-doc">INVALID_STATE</a> = 0x008,
+              <a href="#a5027803a04dbda5395326274137d63ffa4dea150e0d23fb365dd16e5a986b5060" class="m-doc">INVALID_SIZE</a> = 0x010,
+              <a href="#a5027803a04dbda5395326274137d63ffa62b13e56052367747eb1cc47d3bcfd12" class="m-doc">NOT_FOUND</a> = 0x020,
+              <a href="#a5027803a04dbda5395326274137d63ffabe39565ac12117b150d6e6de856fe5eb" class="m-doc">NOT_SUPPORTED</a> = 0x040,
+              <a href="#a5027803a04dbda5395326274137d63ffa0982d1f6f8bd447638719c5c053c6ed5" class="m-doc">TIMEOUT</a> = 0x080,
+              <a href="#a5027803a04dbda5395326274137d63ffa58abd400cf002ad1f2582e2a2005b8c9" class="m-doc">INVALID_RESPONSE</a> = 0x100,
+              <a href="#a5027803a04dbda5395326274137d63ffa43fa55c63a5824c877acefc37ea0ce04" class="m-doc">INVALID_CRC</a> = 0x200,
+              <a href="#a5027803a04dbda5395326274137d63ffa278745e4a95f878f21405711be9b3da4" class="m-doc">INVALID_VERSION</a> = 0x400,
+              <a href="#a5027803a04dbda5395326274137d63ffac080f44481ce779cf4e4208f4516eb3e" class="m-doc">INVALID_MAC</a> = 0x800 }</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#af320160955e90df0ddb4e84d99027562" class="m-doc">convert</a>(</span><span class="m-doc-wrap">esp_err_t err,
+              <a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a> valid = <a href="classErr.html#a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" class="m-doc">ErrOK</a>) -&gt; <a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a24c3a115a0fe75d783de8a482ee41813" class="m-doc">Err</a>(</span><span class="m-doc-wrap"><a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a> value)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a1c99df024167b504910fb3404e5496ee" class="m-doc">Err</a>(</span><span class="m-doc-wrap">esp_err_t err,
+              <a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a> valid = <a href="classErr.html#a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" class="m-doc">ErrOK</a>)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a9cc396112612083a8d9c2cea6fa6224a" class="m-doc">operator uint16_t</a>(</span><span class="m-doc-wrap">) const</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae06ae9da0fc2aeeab3d8fd5e709cab9e" class="m-doc">operator bool</a>(</span><span class="m-doc-wrap">) const</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a5027803a04dbda5395326274137d63ff"><div>
+            <h3>
+              enum Err::<wbr /><a href="#a5027803a04dbda5395326274137d63ff" class="m-doc-self">Flag</a>: unsigned
+            </h3>
+<p>The main error flags.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="af320160955e90df0ddb4e84d99027562"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a> Err::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af320160955e90df0ddb4e84d99027562" class="m-doc-self">convert</a>(</span><span class="m-doc-wrap">esp_err_t err,
+              <a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a> valid = <a href="classErr.html#a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" class="m-doc">ErrOK</a>)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">err</td>
+                  <td>the original ESP error</td>
+                </tr>
+                <tr>
+                  <td>valid</td>
+                  <td>bitwise OR-ed valid Flags</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the Flag representation of esp_err_t</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Converts an esp_err_t to a Flag.</p>
+          </div></section>
+          <section class="m-doc-details" id="a24c3a115a0fe75d783de8a482ee41813"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Err::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a24c3a115a0fe75d783de8a482ee41813" class="m-doc-self">Err</a>(</span><span class="m-doc-wrap"><a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a> value)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>the Flag</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Creates an error directly from a Flag.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1c99df024167b504910fb3404e5496ee"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Err::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c99df024167b504910fb3404e5496ee" class="m-doc-self">Err</a>(</span><span class="m-doc-wrap">esp_err_t err,
+              <a href="classErr.html#a5027803a04dbda5395326274137d63ff" class="m-doc">Flag</a> valid = <a href="classErr.html#a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" class="m-doc">ErrOK</a>)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">err</td>
+                  <td>the ESP error</td>
+                </tr>
+                <tr>
+                  <td>valid</td>
+                  <td>bitwise OR-ed Flags indicating a valid response</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Creates an error from a C-style esp_err_t.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9cc396112612083a8d9c2cea6fa6224a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Err::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9cc396112612083a8d9c2cea6fa6224a" class="m-doc-self">operator uint16_t</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>this value as uint16_t</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Converts this error to uint16_t.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae06ae9da0fc2aeeab3d8fd5e709cab9e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Err::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae06ae9da0fc2aeeab3d8fd5e709cab9e" class="m-doc-self">operator bool</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>whether this is an error or not</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Converts this error to a boolean for easy checking.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Red Cross. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

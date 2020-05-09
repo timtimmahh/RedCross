@@ -1,0 +1,111 @@
+\hypertarget{WiFi_8hpp}{}\section{main/net/\+Wi\+Fi.hpp File Reference}
+\label{WiFi_8hpp}\index{main/net/WiFi.hpp@{main/net/WiFi.hpp}}
+
+
+\mbox{\hyperlink{classWiFi}{Wi\+Fi}} class declaration.  
+
+
+{\ttfamily \#include $<$esp\+\_\+event.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+wifi.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+netif.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classWiFi}{Wi\+Fi}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{WiFi_8hpp_aaf46549480a528db5ba7d78e7270b5a9}{S\+S\+ID}}~\char`\"{}You Can\textquotesingle{}t Connect\char`\"{}
+\item 
+\#define \mbox{\hyperlink{WiFi_8hpp_a9e8538fad4eee548302ad9f60e6d47ca}{P\+A\+S\+S\+W\+O\+RD}}~\char`\"{}unless\+Iwant\+U2\char`\"{}
+\item 
+\#define \mbox{\hyperlink{WiFi_8hpp_aacc322f4e4e6f06ede6a0b5d1c0f7ee6}{event}}(id, ...)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19c}{Wi\+Fi\+Mode}} \{ \mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e}{Wi\+Fi\+Mode\+::\+S\+TA}} = 1, 
+\mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca0fd3f8dd5edc33b28db1162e15e8fcbc}{Wi\+Fi\+Mode\+::\+AP}} = 2
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classWiFi}{Wi\+Fi}} class declaration. 
+
+\begin{DoxyAuthor}{Author}
+Timothy Logan \href{mailto:logantc@dukes.jmu.edu}{\texttt{ logantc@dukes.\+jmu.\+edu}} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{WiFi_8hpp_aacc322f4e4e6f06ede6a0b5d1c0f7ee6}\label{WiFi_8hpp_aacc322f4e4e6f06ede6a0b5d1c0f7ee6}} 
+\index{WiFi.hpp@{WiFi.hpp}!event@{event}}
+\index{event@{event}!WiFi.hpp@{WiFi.hpp}}
+\subsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily \#define event(\begin{DoxyParamCaption}\item[{}]{id,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{case} id: \(\backslash\)}
+\DoxyCodeLine{  LOG(\#\textcolor{keywordtype}{id}); \(\backslash\)}
+\DoxyCodeLine{  CONCAT2(\mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{LINE}}, \mbox{\hyperlink{utils_8h_adbcb2cf49651bf55398702c8e57b13fd}{COUNT}}(\_\_VA\_ARGS\_\_))(\_\_VA\_ARGS\_\_) \(\backslash\)}
+\DoxyCodeLine{  break}
+
+\end{DoxyCode}
+
+
+Definition at line 31 of file Wi\+Fi.\+hpp.
+
+\mbox{\Hypertarget{WiFi_8hpp_a9e8538fad4eee548302ad9f60e6d47ca}\label{WiFi_8hpp_a9e8538fad4eee548302ad9f60e6d47ca}} 
+\index{WiFi.hpp@{WiFi.hpp}!PASSWORD@{PASSWORD}}
+\index{PASSWORD@{PASSWORD}!WiFi.hpp@{WiFi.hpp}}
+\subsubsection{\texorpdfstring{PASSWORD}{PASSWORD}}
+{\footnotesize\ttfamily \#define P\+A\+S\+S\+W\+O\+RD~\char`\"{}unless\+Iwant\+U2\char`\"{}}
+
+
+
+Definition at line 29 of file Wi\+Fi.\+hpp.
+
+\mbox{\Hypertarget{WiFi_8hpp_aaf46549480a528db5ba7d78e7270b5a9}\label{WiFi_8hpp_aaf46549480a528db5ba7d78e7270b5a9}} 
+\index{WiFi.hpp@{WiFi.hpp}!SSID@{SSID}}
+\index{SSID@{SSID}!WiFi.hpp@{WiFi.hpp}}
+\subsubsection{\texorpdfstring{SSID}{SSID}}
+{\footnotesize\ttfamily \#define S\+S\+ID~\char`\"{}You Can\textquotesingle{}t Connect\char`\"{}}
+
+
+
+Definition at line 28 of file Wi\+Fi.\+hpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19c}\label{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19c}} 
+\index{WiFi.hpp@{WiFi.hpp}!WiFiMode@{WiFiMode}}
+\index{WiFiMode@{WiFiMode}!WiFi.hpp@{WiFi.hpp}}
+\subsubsection{\texorpdfstring{WiFiMode}{WiFiMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19c}{Wi\+Fi\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The \mbox{\hyperlink{classWiFi}{Wi\+Fi}} mode. Station or Access Point \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STA@{STA}!WiFi.hpp@{WiFi.hpp}}\index{WiFi.hpp@{WiFi.hpp}!STA@{STA}}}\mbox{\Hypertarget{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e}\label{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e}} 
+S\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AP@{AP}!WiFi.hpp@{WiFi.hpp}}\index{WiFi.hpp@{WiFi.hpp}!AP@{AP}}}\mbox{\Hypertarget{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca0fd3f8dd5edc33b28db1162e15e8fcbc}\label{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca0fd3f8dd5edc33b28db1162e15e8fcbc}} 
+AP&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 21 of file Wi\+Fi.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                     \{}
+\DoxyCodeLine{22   \mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e}{STA}} = 1, \mbox{\hyperlink{WiFi_8hpp_ae685142b922ea26aa869f6cb5e17a19ca0fd3f8dd5edc33b28db1162e15e8fcbc}{AP}} = 2}
+\DoxyCodeLine{23 \};}
+
+\end{DoxyCode}

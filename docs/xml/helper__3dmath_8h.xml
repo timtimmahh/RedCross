@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="helper__3dmath_8h" kind="file" language="C++">
+    <compoundname>helper_3dmath.h</compoundname>
+    <includes local="no">math.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="MPU6050_8h" local="yes">main/devices/AccelGyro/MPU6050.h</includedby>
+    <includedby refid="MPU6050__9Axis__MotionApps41_8h" local="yes">main/devices/AccelGyro/MPU6050_9Axis_MotionApps41.h</includedby>
+    <incdepgraph>
+      <node id="59">
+        <label>main/devices/AccelGyro/helper_3dmath.h</label>
+        <link refid="helper__3dmath_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>stdint.h</label>
+      </node>
+      <node id="60">
+        <label>math.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="70">
+        <label>main/devices/AccelGyro/MPU6050_6Axis_MotionApps20.h</label>
+        <link refid="MPU6050__6Axis__MotionApps20_8h"/>
+      </node>
+      <node id="69">
+        <label>main/devices/AccelGyro/MPU6050.cpp</label>
+        <link refid="MPU6050_8cpp"/>
+      </node>
+      <node id="62">
+        <label>main/devices/AccelGyro/helper_3dmath.h</label>
+        <link refid="helper__3dmath_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>main/devices/AccelGyro/AccelGyro.cpp</label>
+        <link refid="AccelGyro_8cpp"/>
+      </node>
+      <node id="67">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="71">
+        <label>main/devices/AccelGyro/MPU6050_9Axis_MotionApps41.h</label>
+        <link refid="MPU6050__9Axis__MotionApps41_8h"/>
+      </node>
+      <node id="63">
+        <label>main/devices/AccelGyro/MPU6050.h</label>
+        <link refid="MPU6050_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuaternion" prot="public">Quaternion</innerclass>
+    <innerclass refid="classVectorInt16" prot="public">VectorInt16</innerclass>
+    <innerclass refid="classVectorFloat" prot="public">VectorFloat</innerclass>
+    <briefdescription>
+<para>3D math helper </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/helper_3dmath.h"/>
+  </compounddef>
+</doxygen>

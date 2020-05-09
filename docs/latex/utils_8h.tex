@@ -1,0 +1,520 @@
+\hypertarget{utils_8h}{}\section{main/include/utils.h File Reference}
+\label{utils_8h}\index{main/include/utils.h@{main/include/utils.h}}
+
+
+Global utilities.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+log.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{utils_8h_a9e6fd2af2925e96973f905c5b5014526}{E\+L\+E\+V\+E\+N\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+NT}}(a1,  a2,  a3,  a4,  a5,  a6,  a7,  a8,  a9,  a10,  a11, ...)~a11
+\item 
+\#define \mbox{\hyperlink{utils_8h_adbcb2cf49651bf55398702c8e57b13fd}{C\+O\+U\+NT}}(...)~\mbox{\hyperlink{utils_8h_a9e6fd2af2925e96973f905c5b5014526}{E\+L\+E\+V\+E\+N\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+NT}}(dummy, \#\# \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+\item 
+\#define \mbox{\hyperlink{utils_8h_a88fa737059e67b4b17ec980e5877361e}{C\+O\+N\+C\+AT}}(a,  b)~a \#\# b
+\item 
+\#define \mbox{\hyperlink{utils_8h_a2fef427b1927dac8bf612d1384f00503}{C\+O\+N\+C\+A\+T2}}(a,  b)~\mbox{\hyperlink{utils_8h_a88fa737059e67b4b17ec980e5877361e}{C\+O\+N\+C\+AT}}(a, b)
+\item 
+\#define \mbox{\hyperlink{utils_8h_ac837e5332151b10488c58cd995005ed4}{L\+I\+N\+E0}}()
+\item 
+\#define \mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op)~op;
+\item 
+\#define \mbox{\hyperlink{utils_8h_a4af0d610f150738a6f6de59745a07d85}{L\+I\+N\+E1}}(op)~\mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op)
+\item 
+\#define \mbox{\hyperlink{utils_8h_a0aaa52de4fcb9a27d0b7e3dc25107800}{L\+I\+N\+E2}}(op,  op1)~\mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op) \mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op1)
+\item 
+\#define \mbox{\hyperlink{utils_8h_a71fadebbe7640d5b4ddbeb9fd77de4bf}{L\+I\+N\+E3}}(op,  op1,  op2)~\mbox{\hyperlink{utils_8h_a0aaa52de4fcb9a27d0b7e3dc25107800}{L\+I\+N\+E2}}(op, op1) \mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op2)
+\item 
+\#define \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{L\+OG}}(msgs...)~\mbox{\hyperlink{utils_8h_aa4140258737129d60d081916d28e2f98}{log}}(\mbox{\hyperlink{utils_8h_a32a530f565c9b2457739ef5f001e1a8b}{file\+To\+Tag}}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+), msgs)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{utils_8h_a32a530f565c9b2457739ef5f001e1a8b}{file\+To\+Tag}} (const char $\ast$file)
+\item 
+{\footnotesize template$<$typename Str\+Type $>$ }\\void \mbox{\hyperlink{utils_8h_a8cde36b3513dd1caa4961bf3ebcddc91}{log}} (const string \&tag, Str\+Type str)
+\item 
+{\footnotesize template$<$typename Str\+Type $>$ }\\void \mbox{\hyperlink{utils_8h_a911f0cfea1873a83d2ebfe250791cc1b}{apnd}} (const string \&tag, stringstream \&ss, Str\+Type str)
+\item 
+{\footnotesize template$<$typename Str\+Type , typename... Str\+Types$>$ }\\void \mbox{\hyperlink{utils_8h_a341b9dae607f39e879b115da1ee69ba9}{apnd}} (const string \&tag, stringstream \&ss, Str\+Type str, Str\+Types... msgs)
+\item 
+{\footnotesize template$<$typename Str\+Type , typename... Str\+Types$>$ }\\void \mbox{\hyperlink{utils_8h_aa4140258737129d60d081916d28e2f98}{log}} (const string \&tag, Str\+Type str, Str\+Types... msgs)
+\item 
+{\footnotesize template$<$typename Input\+It , typename Source\+Len , typename T , size\+\_\+t size$>$ }\\void \mbox{\hyperlink{utils_8h_aae161b96fc3e78ea8d14d3612225d3a0}{copy\+\_\+min\+\_\+to\+\_\+buffer}} (Input\+It source, Source\+Len source\+\_\+length, T(\&target)\mbox{[}size\mbox{]})
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t size$>$ }\\void \mbox{\hyperlink{utils_8h_a8788755a89b4eb94070cf88e499fba73}{copy\+\_\+min\+\_\+to\+\_\+buffer}} (string \&\&source, T(\&target)\mbox{[}size\mbox{]})
+\item 
+{\footnotesize template$<$typename FP , F\+P($\ast$)(\+F\+P) rnd$>$ }\\std\+::string \mbox{\hyperlink{utils_8h_ae56d9a10880d08c61ebabe4ded495845}{to\+\_\+string}} (FP fp, uint8\+\_\+t precision=2)
+\item 
+std\+::string \mbox{\hyperlink{utils_8h_ae6761f6fda6658d4e5e9cd4c9b971fc2}{to\+\_\+string}} (float fp, uint8\+\_\+t precision=2)
+\item 
+std\+::string \mbox{\hyperlink{utils_8h_a59afb5bd54104e2fb655d601627d6b8c}{to\+\_\+string}} (double fp, uint8\+\_\+t precision=2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global utilities. 
+
+\begin{DoxyAuthor}{Author}
+Timothy Logan \href{mailto:logantc@dukes.jmu.edu}{\texttt{ logantc@dukes.\+jmu.\+edu}} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{utils_8h_a88fa737059e67b4b17ec980e5877361e}\label{utils_8h_a88fa737059e67b4b17ec980e5877361e}} 
+\index{utils.h@{utils.h}!CONCAT@{CONCAT}}
+\index{CONCAT@{CONCAT}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{CONCAT}{CONCAT}}
+{\footnotesize\ttfamily \#define C\+O\+N\+C\+AT(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~a \#\# b}
+
+
+
+Definition at line 23 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_a2fef427b1927dac8bf612d1384f00503}\label{utils_8h_a2fef427b1927dac8bf612d1384f00503}} 
+\index{utils.h@{utils.h}!CONCAT2@{CONCAT2}}
+\index{CONCAT2@{CONCAT2}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{CONCAT2}{CONCAT2}}
+{\footnotesize\ttfamily \#define C\+O\+N\+C\+A\+T2(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~\mbox{\hyperlink{utils_8h_a88fa737059e67b4b17ec980e5877361e}{C\+O\+N\+C\+AT}}(a, b)}
+
+
+
+Definition at line 24 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_adbcb2cf49651bf55398702c8e57b13fd}\label{utils_8h_adbcb2cf49651bf55398702c8e57b13fd}} 
+\index{utils.h@{utils.h}!COUNT@{COUNT}}
+\index{COUNT@{COUNT}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{COUNT}{COUNT}}
+{\footnotesize\ttfamily \#define C\+O\+U\+NT(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{utils_8h_a9e6fd2af2925e96973f905c5b5014526}{E\+L\+E\+V\+E\+N\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+NT}}(dummy, \#\# \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)}
+
+
+
+Definition at line 22 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_a9e6fd2af2925e96973f905c5b5014526}\label{utils_8h_a9e6fd2af2925e96973f905c5b5014526}} 
+\index{utils.h@{utils.h}!ELEVENTH\_ARGUMENT@{ELEVENTH\_ARGUMENT}}
+\index{ELEVENTH\_ARGUMENT@{ELEVENTH\_ARGUMENT}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{ELEVENTH\_ARGUMENT}{ELEVENTH\_ARGUMENT}}
+{\footnotesize\ttfamily \#define E\+L\+E\+V\+E\+N\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+NT(\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a2,  }\item[{}]{a3,  }\item[{}]{a4,  }\item[{}]{a5,  }\item[{}]{a6,  }\item[{}]{a7,  }\item[{}]{a8,  }\item[{}]{a9,  }\item[{}]{a10,  }\item[{}]{a11,  }\item[{}]{... }\end{DoxyParamCaption})~a11}
+
+
+
+Definition at line 21 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}\label{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}} 
+\index{utils.h@{utils.h}!LINE@{LINE}}
+\index{LINE@{LINE}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{LINE}{LINE}}
+{\footnotesize\ttfamily \#define L\+I\+NE(\begin{DoxyParamCaption}\item[{}]{op }\end{DoxyParamCaption})~op;}
+
+
+
+Definition at line 27 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_ac837e5332151b10488c58cd995005ed4}\label{utils_8h_ac837e5332151b10488c58cd995005ed4}} 
+\index{utils.h@{utils.h}!LINE0@{LINE0}}
+\index{LINE0@{LINE0}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{LINE0}{LINE0}}
+{\footnotesize\ttfamily \#define L\+I\+N\+E0(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_a4af0d610f150738a6f6de59745a07d85}\label{utils_8h_a4af0d610f150738a6f6de59745a07d85}} 
+\index{utils.h@{utils.h}!LINE1@{LINE1}}
+\index{LINE1@{LINE1}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{LINE1}{LINE1}}
+{\footnotesize\ttfamily \#define L\+I\+N\+E1(\begin{DoxyParamCaption}\item[{}]{op }\end{DoxyParamCaption})~\mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op)}
+
+
+
+Definition at line 28 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_a0aaa52de4fcb9a27d0b7e3dc25107800}\label{utils_8h_a0aaa52de4fcb9a27d0b7e3dc25107800}} 
+\index{utils.h@{utils.h}!LINE2@{LINE2}}
+\index{LINE2@{LINE2}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{LINE2}{LINE2}}
+{\footnotesize\ttfamily \#define L\+I\+N\+E2(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{op1 }\end{DoxyParamCaption})~\mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op) \mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op1)}
+
+
+
+Definition at line 29 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_a71fadebbe7640d5b4ddbeb9fd77de4bf}\label{utils_8h_a71fadebbe7640d5b4ddbeb9fd77de4bf}} 
+\index{utils.h@{utils.h}!LINE3@{LINE3}}
+\index{LINE3@{LINE3}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{LINE3}{LINE3}}
+{\footnotesize\ttfamily \#define L\+I\+N\+E3(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{op1,  }\item[{}]{op2 }\end{DoxyParamCaption})~\mbox{\hyperlink{utils_8h_a0aaa52de4fcb9a27d0b7e3dc25107800}{L\+I\+N\+E2}}(op, op1) \mbox{\hyperlink{utils_8h_a4c3a5815caa5aa34729cd1182b1b569d}{L\+I\+NE}}(op2)}
+
+
+
+Definition at line 30 of file utils.\+h.
+
+\mbox{\Hypertarget{utils_8h_a854650de4931c643ca2d928b6432e1ca}\label{utils_8h_a854650de4931c643ca2d928b6432e1ca}} 
+\index{utils.h@{utils.h}!LOG@{LOG}}
+\index{LOG@{LOG}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{LOG}{LOG}}
+{\footnotesize\ttfamily \#define L\+OG(\begin{DoxyParamCaption}\item[{}]{msgs... }\end{DoxyParamCaption})~\mbox{\hyperlink{utils_8h_aa4140258737129d60d081916d28e2f98}{log}}(\mbox{\hyperlink{utils_8h_a32a530f565c9b2457739ef5f001e1a8b}{file\+To\+Tag}}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+), msgs)}
+
+
+
+Definition at line 32 of file utils.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a911f0cfea1873a83d2ebfe250791cc1b}\label{utils_8h_a911f0cfea1873a83d2ebfe250791cc1b}} 
+\index{utils.h@{utils.h}!apnd@{apnd}}
+\index{apnd@{apnd}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{apnd()}{apnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Str\+Type $>$ \\
+void apnd (\begin{DoxyParamCaption}\item[{const string \&}]{tag,  }\item[{stringstream \&}]{ss,  }\item[{Str\+Type}]{str }\end{DoxyParamCaption})}
+
+Logs a message with the specified tag.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Str\+Type} & type of string (C-\/style or C++ string) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & the tag for this message \\
+\hline
+{\em ss} & the string stream to combine strings into \\
+\hline
+{\em str} & the message to log \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71                                                             \{}
+\DoxyCodeLine{72   ss << str;}
+\DoxyCodeLine{73   ESP\_LOGI(tag.c\_str(), \textcolor{stringliteral}{"\%s"}, ss.str().c\_str());}
+\DoxyCodeLine{74 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_a341b9dae607f39e879b115da1ee69ba9}\label{utils_8h_a341b9dae607f39e879b115da1ee69ba9}} 
+\index{utils.h@{utils.h}!apnd@{apnd}}
+\index{apnd@{apnd}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{apnd()}{apnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Str\+Type , typename... Str\+Types$>$ \\
+void apnd (\begin{DoxyParamCaption}\item[{const string \&}]{tag,  }\item[{stringstream \&}]{ss,  }\item[{Str\+Type}]{str,  }\item[{Str\+Types...}]{msgs }\end{DoxyParamCaption})}
+
+Logs all messages with the specified tag as a single message.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Str\+Type} & type of string (C-\/style or C++ string) \\
+\hline
+{\em Str\+Types} & type of any additional strings \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & the tag for this message \\
+\hline
+{\em ss} & the string stream to combine strings into \\
+\hline
+{\em str} & the message to log \\
+\hline
+{\em msgs} & additional messages to log \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                                                                               \{}
+\DoxyCodeLine{88   ss << str;}
+\DoxyCodeLine{89   \mbox{\hyperlink{utils_8h_a911f0cfea1873a83d2ebfe250791cc1b}{apnd}}(tag, ss, msgs...);}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_aae161b96fc3e78ea8d14d3612225d3a0}\label{utils_8h_aae161b96fc3e78ea8d14d3612225d3a0}} 
+\index{utils.h@{utils.h}!copy\_min\_to\_buffer@{copy\_min\_to\_buffer}}
+\index{copy\_min\_to\_buffer@{copy\_min\_to\_buffer}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{copy\_min\_to\_buffer()}{copy\_min\_to\_buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Input\+It , typename Source\+Len , typename T , size\+\_\+t size$>$ \\
+void copy\+\_\+min\+\_\+to\+\_\+buffer (\begin{DoxyParamCaption}\item[{Input\+It}]{source,  }\item[{Source\+Len}]{source\+\_\+length,  }\item[{T(\&)}]{target\mbox{[}size\mbox{]} }\end{DoxyParamCaption})}
+
+Copies at min(\+Source\+Len, size) bytes from source to target buffer.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+It} & input iterator \\
+\hline
+{\em Source\+Len} & the source length \\
+\hline
+{\em T} & output iterator \\
+\hline
+{\em size} & size of source \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the source input \\
+\hline
+{\em source\+\_\+length} & the source length \\
+\hline
+{\em target} & output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123                                            \{}
+\DoxyCodeLine{124   copy\_n(source, min(static\_cast<size\_t>(source\_length), size), target);}
+\DoxyCodeLine{125 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_a8788755a89b4eb94070cf88e499fba73}\label{utils_8h_a8788755a89b4eb94070cf88e499fba73}} 
+\index{utils.h@{utils.h}!copy\_min\_to\_buffer@{copy\_min\_to\_buffer}}
+\index{copy\_min\_to\_buffer@{copy\_min\_to\_buffer}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{copy\_min\_to\_buffer()}{copy\_min\_to\_buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t size$>$ \\
+void copy\+\_\+min\+\_\+to\+\_\+buffer (\begin{DoxyParamCaption}\item[{string \&\&}]{source,  }\item[{T(\&)}]{target\mbox{[}size\mbox{]} }\end{DoxyParamCaption})}
+
+Copies at min(\+Source\+Len, size) bytes from source to target buffer.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & output type \\
+\hline
+{\em size} & size of bytes \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & input source \\
+\hline
+{\em target} & output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 136 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136                                                             \{}
+\DoxyCodeLine{137   copy\_n(source.begin(),}
+\DoxyCodeLine{138          min(static\_cast<size\_t>(source.length()), size), target);}
+\DoxyCodeLine{139 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_a32a530f565c9b2457739ef5f001e1a8b}\label{utils_8h_a32a530f565c9b2457739ef5f001e1a8b}} 
+\index{utils.h@{utils.h}!fileToTag@{fileToTag}}
+\index{fileToTag@{fileToTag}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{fileToTag()}{fileToTag()}}
+{\footnotesize\ttfamily string file\+To\+Tag (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Converts a file path to its basename.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & a file path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the file\textquotesingle{}s basename 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                                           \{}
+\DoxyCodeLine{41   \textcolor{keywordtype}{string} tagStr = file;}
+\DoxyCodeLine{42   \textcolor{keywordtype}{unsigned} index = tagStr.find\_last\_of(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{43   \textcolor{keywordflow}{if} (index != string::npos)}
+\DoxyCodeLine{44     tagStr = tagStr.substr(index + 1);}
+\DoxyCodeLine{45   \textcolor{keywordflow}{return} tagStr;}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_a8cde36b3513dd1caa4961bf3ebcddc91}\label{utils_8h_a8cde36b3513dd1caa4961bf3ebcddc91}} 
+\index{utils.h@{utils.h}!log@{log}}
+\index{log@{log}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Str\+Type $>$ \\
+void log (\begin{DoxyParamCaption}\item[{const string \&}]{tag,  }\item[{Str\+Type}]{str }\end{DoxyParamCaption})}
+
+Logs a message with the specified tag.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Str\+Type} & type of string (C-\/style or C++ string) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & the tag for this message \\
+\hline
+{\em str} & the message to log \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                                          \{}
+\DoxyCodeLine{57   stringstream ss;}
+\DoxyCodeLine{58   ss << str;}
+\DoxyCodeLine{59   ESP\_LOGI(tag.c\_str(), \textcolor{stringliteral}{"\%s"}, ss.str().c\_str());}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_aa4140258737129d60d081916d28e2f98}\label{utils_8h_aa4140258737129d60d081916d28e2f98}} 
+\index{utils.h@{utils.h}!log@{log}}
+\index{log@{log}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Str\+Type , typename... Str\+Types$>$ \\
+void log (\begin{DoxyParamCaption}\item[{const string \&}]{tag,  }\item[{Str\+Type}]{str,  }\item[{Str\+Types...}]{msgs }\end{DoxyParamCaption})}
+
+Logs all messages with the specified tag as a single message.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Str\+Type} & type of string (C-\/style or C++ string) \\
+\hline
+{\em Str\+Types} & type of any additional strings \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & the tag for this message \\
+\hline
+{\em str} & the message to log \\
+\hline
+{\em msgs} & additional messages to log \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104                                                            \{}
+\DoxyCodeLine{105   stringstream ss;}
+\DoxyCodeLine{106   \mbox{\hyperlink{utils_8h_a911f0cfea1873a83d2ebfe250791cc1b}{apnd}}(tag, ss, str, msgs...);}
+\DoxyCodeLine{107 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_ae56d9a10880d08c61ebabe4ded495845}\label{utils_8h_ae56d9a10880d08c61ebabe4ded495845}} 
+\index{utils.h@{utils.h}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{to\_string()}{to\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FP , F\+P($\ast$)(\+F\+P) rnd$>$ \\
+std\+::string to\+\_\+string (\begin{DoxyParamCaption}\item[{FP}]{fp,  }\item[{uint8\+\_\+t}]{precision = {\ttfamily 2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper to create a string representation of a floating point number with a certain number of decimal point precision.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FP} & the type of floating point number \\
+\hline
+{\em rnd} & the rounding function \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & the floating point number \\
+\hline
+{\em precision} & the number of decimal points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string representation 
+\end{DoxyReturn}
+
+
+Definition at line 152 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{152                                                          \{}
+\DoxyCodeLine{153   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} scalar = pow(10, precision);}
+\DoxyCodeLine{154   \textcolor{keywordtype}{string} val = \mbox{\hyperlink{utils_8h_ae56d9a10880d08c61ebabe4ded495845}{std::to\_string}}(rnd(fp * scalar) / scalar);}
+\DoxyCodeLine{155   \textcolor{keywordflow}{return} val.substr(0, val.find(\textcolor{charliteral}{'.'}) + precision + 1);}
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_ae6761f6fda6658d4e5e9cd4c9b971fc2}\label{utils_8h_ae6761f6fda6658d4e5e9cd4c9b971fc2}} 
+\index{utils.h@{utils.h}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{to\_string()}{to\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::string to\+\_\+string (\begin{DoxyParamCaption}\item[{float}]{fp,  }\item[{uint8\+\_\+t}]{precision = {\ttfamily 2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper to convert a float to a string with a certain number of decimal points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & the number \\
+\hline
+{\em precision} & the decimal points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the string representation 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{166                                                             \{}
+\DoxyCodeLine{167   \textcolor{keywordflow}{return} to\_string<float, roundf>(fp, precision);}
+\DoxyCodeLine{168 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utils_8h_a59afb5bd54104e2fb655d601627d6b8c}\label{utils_8h_a59afb5bd54104e2fb655d601627d6b8c}} 
+\index{utils.h@{utils.h}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!utils.h@{utils.h}}
+\subsubsection{\texorpdfstring{to\_string()}{to\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::string to\+\_\+string (\begin{DoxyParamCaption}\item[{double}]{fp,  }\item[{uint8\+\_\+t}]{precision = {\ttfamily 2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper to convert a double to a string with a certain number of decimal points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & the number \\
+\hline
+{\em precision} & the decimal points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the string representation 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{178                                                              \{}
+\DoxyCodeLine{179   \textcolor{keywordflow}{return} to\_string<double, round>(fp, precision);}
+\DoxyCodeLine{180 \}}
+
+\end{DoxyCode}

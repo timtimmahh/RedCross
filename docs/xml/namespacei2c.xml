@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="namespacei2c" kind="namespace" language="C++">
+    <compoundname>i2c</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacei2c_1acb24c3ffe9ba64f89c8094c63bc696cd" prot="public" static="yes" mutable="no">
+        <type>std::array&lt; std::mutex, I2C_NUM_MAX &gt;</type>
+        <definition>std::array&lt;std::mutex, I2C_NUM_MAX&gt; i2c::portLocks</definition>
+        <argsstring></argsstring>
+        <name>portLocks</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mutexes for each <ref refid="namespacei2c" kindref="compound">i2c</ref> bus port. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/i2c/i2c_data.h" line="21" column="1" bodyfile="main/perif/i2c/i2c_data.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacei2c_1a454a247a44f92a00c7dee9eaadceb961" prot="public" static="yes" mutable="no">
+        <type>std::array&lt; i2c_config_t, I2C_NUM_MAX &gt;</type>
+        <definition>std::array&lt;i2c_config_t, I2C_NUM_MAX&gt; i2c::configs</definition>
+        <argsstring></argsstring>
+        <name>configs</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configuration for each <ref refid="namespacei2c" kindref="compound">i2c</ref> bus port. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/i2c/i2c_data.h" line="25" column="1" bodyfile="main/perif/i2c/i2c_data.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacei2c_1a043ea6277c749f24628218cf858c551b" prot="public" static="yes" mutable="no">
+        <type>std::array&lt; bool, I2C_NUM_MAX &gt;</type>
+        <definition>std::array&lt;bool, I2C_NUM_MAX&gt; i2c::initializedPorts</definition>
+        <argsstring></argsstring>
+        <name>initializedPorts</name>
+        <initializer>{false, false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The initialized state of the <ref refid="namespacei2c" kindref="compound">i2c</ref> bus ports. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/i2c/i2c_data.h" line="29" column="1" bodyfile="main/perif/i2c/i2c_data.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacei2c_1adc20ecaf31e9d616500ba8584093793f" prot="public" static="yes" mutable="no">
+        <type>std::array&lt; unsigned, I2C_NUM_MAX &gt;</type>
+        <definition>std::array&lt;unsigned, I2C_NUM_MAX&gt; i2c::portRefs</definition>
+        <argsstring></argsstring>
+        <name>portRefs</name>
+        <initializer>{0, 0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of references to each <ref refid="namespacei2c" kindref="compound">i2c</ref> bus port. (To prevent mistakenly performing concurrent operations) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/i2c/i2c_data.h" line="34" column="1" bodyfile="main/perif/i2c/i2c_data.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/perif/i2c/i2c_data.h" line="16" column="1"/>
+  </compounddef>
+</doxygen>

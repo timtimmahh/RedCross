@@ -1,0 +1,252 @@
+\hypertarget{classperif_1_1Perif}{}\section{perif\+::Perif Class Reference}
+\label{classperif_1_1Perif}\index{perif::Perif@{perif::Perif}}
+
+
+{\ttfamily \#include $<$Perif.\+hpp$>$}
+
+Inheritance diagram for perif\+::Perif\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.958084cm]{classperif_1_1Perif}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classperif_1_1Perif_a8e0c30d9aeb9069e3c1a1aa2db672b62}{Perif}} (const char $\ast$name)
+\item 
+\mbox{\hyperlink{classperif_1_1Perif_a21a0ae2afadf66cffa487b4a033598d4}{Perif}} (const \mbox{\hyperlink{classperif_1_1Perif}{Perif}} \&original)=default
+\item 
+\mbox{\hyperlink{classperif_1_1Perif_a9b09771466ddb178c694eec670089fe1}{$\sim$\+Perif}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{classperif_1_1Perif_ae7f1d1a4e9cd2343d51abc4ee21000cf}{begin}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classperif_1_1Perif_ab9a17fad04e595f3ac0c78b9d3be4c9e}{is\+Connected}} ()=0
+\item 
+void \mbox{\hyperlink{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}{update}} ()
+\item 
+void \mbox{\hyperlink{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}{register\+Hook}} (function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&hook)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}}
+\item 
+list$<$ function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ $>$ \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}{update\+Data}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}{represent\+Data}} ()=0
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \& \mbox{\hyperlink{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}{get\+Timer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class for sensors. Used to manage all peripheral data and persistence. 
+
+Definition at line 73 of file Perif.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classperif_1_1Perif_a8e0c30d9aeb9069e3c1a1aa2db672b62}\label{classperif_1_1Perif_a8e0c30d9aeb9069e3c1a1aa2db672b62}} 
+\index{perif::Perif@{perif::Perif}!Perif@{Perif}}
+\index{Perif@{Perif}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{Perif()}{Perif()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily perif\+::\+Perif\+::\+Perif (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Explicit Value Constructor taking the name of this sensor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & this sensor\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102       : \mbox{\hyperlink{classperif_1_1PerifBase_a8ac4d4632fed61f15c375c6db4da3e77}{PerifBase}}(name), \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}() \{}
+\DoxyCodeLine{103   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a21a0ae2afadf66cffa487b4a033598d4}\label{classperif_1_1Perif_a21a0ae2afadf66cffa487b4a033598d4}} 
+\index{perif::Perif@{perif::Perif}!Perif@{Perif}}
+\index{Perif@{Perif}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{Perif()}{Perif()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily perif\+::\+Perif\+::\+Perif (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classperif_1_1Perif}{Perif}} \&}]{original }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Copy Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & the original instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classperif_1_1Perif_a9b09771466ddb178c694eec670089fe1}\label{classperif_1_1Perif_a9b09771466ddb178c694eec670089fe1}} 
+\index{perif::Perif@{perif::Perif}!````~Perif@{$\sim$Perif}}
+\index{````~Perif@{$\sim$Perif}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{$\sim$Perif()}{~Perif()}}
+{\footnotesize\ttfamily perif\+::\+Perif\+::$\sim$\+Perif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classperif_1_1Perif_ae7f1d1a4e9cd2343d51abc4ee21000cf}\label{classperif_1_1Perif_ae7f1d1a4e9cd2343d51abc4ee21000cf}} 
+\index{perif::Perif@{perif::Perif}!begin@{begin}}
+\index{begin@{begin}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily virtual bool perif\+::\+Perif\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Performs initialization of a peripheral. Necessary to avoid initialization in the constructor which causes many side effects.
+
+\begin{DoxyReturn}{Returns}
+whether the peripheral initialization succeeded 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classperif_1_1GPIOPerif_a3e94e58e8441b85256567c193164ea69}{perif\+::\+G\+P\+I\+O\+Perif}}, \mbox{\hyperlink{classperif_1_1BarPAT_a591d84e84cfd9ec251d1ff8322e23ebb}{perif\+::\+Bar\+P\+AT}}, \mbox{\hyperlink{classperif_1_1UARTPerif_ac060109ead3a8910fabe57304afe1dbb}{perif\+::\+U\+A\+R\+T\+Perif}}, \mbox{\hyperlink{classperif_1_1I2CPerif_aa91b8eca31223fddd191a50b8a0a526d}{perif\+::\+I2\+C\+Perif$<$ port, sda\+Pullup, scl\+Pullup, frequency $>$}}, \mbox{\hyperlink{classperif_1_1I2CPerif_aa91b8eca31223fddd191a50b8a0a526d}{perif\+::\+I2\+C\+Perif$<$$>$}}, \mbox{\hyperlink{classperif_1_1USDist_a0920535901e083c9832dcde3639ab569}{perif\+::\+U\+S\+Dist}}, \mbox{\hyperlink{classperif_1_1AccelGyro_aebbf13d39d889c298103f16a02b4cce4}{perif\+::\+Accel\+Gyro}}, \mbox{\hyperlink{classperif_1_1LidarMap_a1d0db064c7664aa8014cbd9fe42773ff}{perif\+::\+Lidar\+Map}}, and \mbox{\hyperlink{classperif_1_1GPS_add9ec977f37224c9f2e87c5a932a55bd}{perif\+::\+G\+PS}}.
+
+\mbox{\Hypertarget{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}\label{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}} 
+\index{perif::Perif@{perif::Perif}!getTimer@{getTimer}}
+\index{getTimer@{getTimer}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{getTimer()}{getTimer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}}\& perif\+::\+Perif\+::get\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Obtains a reference to this peripheral\textquotesingle{}s timer.
+
+\begin{DoxyReturn}{Returns}
+a timer reference 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_ab9a17fad04e595f3ac0c78b9d3be4c9e}\label{classperif_1_1Perif_ab9a17fad04e595f3ac0c78b9d3be4c9e}} 
+\index{perif::Perif@{perif::Perif}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily virtual bool perif\+::\+Perif\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns whether the sensor is connected or not.
+
+\begin{DoxyReturn}{Returns}
+if the sensor is connected 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classperif_1_1I2CPerif_aa8741297b2f5f9a0242806afa26b7361}{perif\+::\+I2\+C\+Perif$<$ port, sda\+Pullup, scl\+Pullup, frequency $>$}}, \mbox{\hyperlink{classperif_1_1I2CPerif_aa8741297b2f5f9a0242806afa26b7361}{perif\+::\+I2\+C\+Perif$<$$>$}}, \mbox{\hyperlink{classperif_1_1GPIOPerif_ae7c93b409fd4d4d49f9f8eddae612b3e}{perif\+::\+G\+P\+I\+O\+Perif}}, and \mbox{\hyperlink{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}{perif\+::\+U\+A\+R\+T\+Perif}}.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}\label{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}} 
+\index{perif::Perif@{perif::Perif}!registerHook@{registerHook}}
+\index{registerHook@{registerHook}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{registerHook()}{registerHook()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+Base\+::register\+Hook (\begin{DoxyParamCaption}\item[{function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&}]{hook }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Registers a hook for obtaining sensor data on update in Json format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hook} & the observer function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                     \{}
+\DoxyCodeLine{64     \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}.push\_back(hook);}
+\DoxyCodeLine{65   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}\label{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}} 
+\index{perif::Perif@{perif::Perif}!representData@{representData}}
+\index{representData@{representData}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{representData()}{representData()}}
+{\footnotesize\ttfamily virtual void perif\+::\+Perif\+::represent\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+The representation of this peripheral\textquotesingle{}s data in a meaningful way for debugging, caching, and database operations. \mbox{\Hypertarget{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}\label{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}} 
+\index{perif::Perif@{perif::Perif}!update@{update}}
+\index{update@{update}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a manual update of peripheral data and notifies observers. 
+
+Definition at line 130 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{130                 \{}
+\DoxyCodeLine{131     \textcolor{comment}{// performs a manual data retrieval}}
+\DoxyCodeLine{132     \mbox{\hyperlink{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}{updateData}}();}
+\DoxyCodeLine{133     \textcolor{comment}{// update the data mapping so hooks can process it}}
+\DoxyCodeLine{134     \mbox{\hyperlink{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}{representData}}();}
+\DoxyCodeLine{135     \textcolor{comment}{// notify all observers}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& hook : \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}})}
+\DoxyCodeLine{137       hook(\mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}});}
+\DoxyCodeLine{138   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}\label{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}} 
+\index{perif::Perif@{perif::Perif}!updateData@{updateData}}
+\index{updateData@{updateData}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily virtual void perif\+::\+Perif\+::update\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Updates sensor data. Subclasses should maintain a reference to the data obtained from this function so it can be provided to observers. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}\label{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}} 
+\index{perif::Perif@{perif::Perif}!data@{data}}
+\index{data@{data}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} perif\+::\+Perif\+Base\+::data\hspace{0.3cm}{\ttfamily [inherited]}}
+
+The key-\/value mapping of peripheral data. 
+
+Definition at line 37 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}\label{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}} 
+\index{perif::Perif@{perif::Perif}!hooks@{hooks}}
+\index{hooks@{hooks}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{hooks}{hooks}}
+{\footnotesize\ttfamily list$<$function$<$void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}}\&)$>$ $>$ perif\+::\+Perif\+Base\+::hooks\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Hooks registered to this peripheral so observers can be notified of any necessary changes. 
+
+Definition at line 42 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}\label{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}} 
+\index{perif::Perif@{perif::Perif}!timer@{timer}}
+\index{timer@{timer}!perif::Perif@{perif::Perif}}
+\subsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}} perif\+::\+Perif\+::timer\hspace{0.3cm}{\ttfamily [protected]}}
+
+A timer for managing peripheral updates. 
+
+Definition at line 78 of file Perif.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/perif/\mbox{\hyperlink{Perif_8hpp}{Perif.\+hpp}}\end{DoxyCompactItemize}

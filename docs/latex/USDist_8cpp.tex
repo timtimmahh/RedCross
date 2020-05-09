@@ -1,0 +1,137 @@
+\hypertarget{USDist_8cpp}{}\section{main/devices/\+U\+S\+Dist/\+U\+S\+Dist.cpp File Reference}
+\label{USDist_8cpp}\index{main/devices/USDist/USDist.cpp@{main/devices/USDist/USDist.cpp}}
+
+
+U\+S\+Dist class definition.  
+
+
+{\ttfamily \#include \char`\"{}U\+S\+Dist.\+h\char`\"{}}\newline
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceperif}{perif}}
+\begin{DoxyCompactList}\small\item\em The peripheral library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_a554a057a6ae89a7e1a296bd2084d6ab7}{T\+R\+I\+G\+G\+E\+R\+\_\+\+L\+O\+W\+\_\+\+D\+E\+L\+AY}}~4
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_aa6c7f14fb7b0419ac4f7ef1464f6ec36}{T\+R\+I\+G\+G\+E\+R\+\_\+\+H\+I\+G\+H\+\_\+\+D\+E\+L\+AY}}~10
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_a733f0d1225f97d8acbd3388e0c0d320f}{P\+I\+N\+G\+\_\+\+T\+I\+M\+E\+O\+UT}}~6000
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_acf72f416bc52cff1c75d7d7bb4cfbde4}{R\+O\+U\+N\+D\+T\+R\+IP}}~58
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_a94dd15401a1de72b5e5cf498bc29bd23}{check\+\_\+timeout}}(len)
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_a763ffd798508592c5092ac77daa5a659}{C\+H\+E\+CK}}(x)~x == E\+S\+P\+\_\+\+OK
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_a5a8df5d9d70802651d76cca48c0fc728}{N\+C\+H\+E\+CK}}(x)~if (x != E\+S\+P\+\_\+\+OK) \mbox{\hyperlink{USDist_8cpp_ac9af8102edc35380cf74867be412d5f2}{R\+E\+T\+U\+R\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}()
+\item 
+\#define \mbox{\hyperlink{USDist_8cpp_ac9af8102edc35380cf74867be412d5f2}{R\+E\+T\+U\+R\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}(R\+ES)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\+S\+Dist class definition. 
+
+\begin{DoxyAuthor}{Author}
+Timothy Logan \href{mailto:logantc@dukes.jmu.edu}{\texttt{ logantc@dukes.\+jmu.\+edu}} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{USDist_8cpp_a763ffd798508592c5092ac77daa5a659}\label{USDist_8cpp_a763ffd798508592c5092ac77daa5a659}} 
+\index{USDist.cpp@{USDist.cpp}!CHECK@{CHECK}}
+\index{CHECK@{CHECK}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{CHECK}{CHECK}}
+{\footnotesize\ttfamily \#define C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x == E\+S\+P\+\_\+\+OK}
+
+
+
+Definition at line 24 of file U\+S\+Dist.\+cpp.
+
+\mbox{\Hypertarget{USDist_8cpp_a94dd15401a1de72b5e5cf498bc29bd23}\label{USDist_8cpp_a94dd15401a1de72b5e5cf498bc29bd23}} 
+\index{USDist.cpp@{USDist.cpp}!check\_timeout@{check\_timeout}}
+\index{check\_timeout@{check\_timeout}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{check\_timeout}{check\_timeout}}
+{\footnotesize\ttfamily \#define check\+\_\+timeout(\begin{DoxyParamCaption}\item[{}]{len }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (timer.elapsedTime() >= (len)) \(\backslash\)}
+\DoxyCodeLine{    RETURN\_CRITICAL()}
+
+\end{DoxyCode}
+
+
+Definition at line 21 of file U\+S\+Dist.\+cpp.
+
+\mbox{\Hypertarget{USDist_8cpp_a5a8df5d9d70802651d76cca48c0fc728}\label{USDist_8cpp_a5a8df5d9d70802651d76cca48c0fc728}} 
+\index{USDist.cpp@{USDist.cpp}!NCHECK@{NCHECK}}
+\index{NCHECK@{NCHECK}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{NCHECK}{NCHECK}}
+{\footnotesize\ttfamily \#define N\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~if (x != E\+S\+P\+\_\+\+OK) \mbox{\hyperlink{USDist_8cpp_ac9af8102edc35380cf74867be412d5f2}{R\+E\+T\+U\+R\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}()}
+
+
+
+Definition at line 25 of file U\+S\+Dist.\+cpp.
+
+\mbox{\Hypertarget{USDist_8cpp_a733f0d1225f97d8acbd3388e0c0d320f}\label{USDist_8cpp_a733f0d1225f97d8acbd3388e0c0d320f}} 
+\index{USDist.cpp@{USDist.cpp}!PING\_TIMEOUT@{PING\_TIMEOUT}}
+\index{PING\_TIMEOUT@{PING\_TIMEOUT}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{PING\_TIMEOUT}{PING\_TIMEOUT}}
+{\footnotesize\ttfamily \#define P\+I\+N\+G\+\_\+\+T\+I\+M\+E\+O\+UT~6000}
+
+
+
+Definition at line 16 of file U\+S\+Dist.\+cpp.
+
+\mbox{\Hypertarget{USDist_8cpp_ac9af8102edc35380cf74867be412d5f2}\label{USDist_8cpp_ac9af8102edc35380cf74867be412d5f2}} 
+\index{USDist.cpp@{USDist.cpp}!RETURN\_CRITICAL@{RETURN\_CRITICAL}}
+\index{RETURN\_CRITICAL@{RETURN\_CRITICAL}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{RETURN\_CRITICAL}{RETURN\_CRITICAL}}
+{\footnotesize\ttfamily \#define R\+E\+T\+U\+R\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL(\begin{DoxyParamCaption}\item[{}]{R\+ES }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    portEXIT\_CRITICAL(\&mux); \(\backslash\)}
+\DoxyCodeLine{    return RES; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 26 of file U\+S\+Dist.\+cpp.
+
+\mbox{\Hypertarget{USDist_8cpp_acf72f416bc52cff1c75d7d7bb4cfbde4}\label{USDist_8cpp_acf72f416bc52cff1c75d7d7bb4cfbde4}} 
+\index{USDist.cpp@{USDist.cpp}!ROUNDTRIP@{ROUNDTRIP}}
+\index{ROUNDTRIP@{ROUNDTRIP}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{ROUNDTRIP}{ROUNDTRIP}}
+{\footnotesize\ttfamily \#define R\+O\+U\+N\+D\+T\+R\+IP~58}
+
+
+
+Definition at line 17 of file U\+S\+Dist.\+cpp.
+
+\mbox{\Hypertarget{USDist_8cpp_aa6c7f14fb7b0419ac4f7ef1464f6ec36}\label{USDist_8cpp_aa6c7f14fb7b0419ac4f7ef1464f6ec36}} 
+\index{USDist.cpp@{USDist.cpp}!TRIGGER\_HIGH\_DELAY@{TRIGGER\_HIGH\_DELAY}}
+\index{TRIGGER\_HIGH\_DELAY@{TRIGGER\_HIGH\_DELAY}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{TRIGGER\_HIGH\_DELAY}{TRIGGER\_HIGH\_DELAY}}
+{\footnotesize\ttfamily \#define T\+R\+I\+G\+G\+E\+R\+\_\+\+H\+I\+G\+H\+\_\+\+D\+E\+L\+AY~10}
+
+
+
+Definition at line 15 of file U\+S\+Dist.\+cpp.
+
+\mbox{\Hypertarget{USDist_8cpp_a554a057a6ae89a7e1a296bd2084d6ab7}\label{USDist_8cpp_a554a057a6ae89a7e1a296bd2084d6ab7}} 
+\index{USDist.cpp@{USDist.cpp}!TRIGGER\_LOW\_DELAY@{TRIGGER\_LOW\_DELAY}}
+\index{TRIGGER\_LOW\_DELAY@{TRIGGER\_LOW\_DELAY}!USDist.cpp@{USDist.cpp}}
+\subsubsection{\texorpdfstring{TRIGGER\_LOW\_DELAY}{TRIGGER\_LOW\_DELAY}}
+{\footnotesize\ttfamily \#define T\+R\+I\+G\+G\+E\+R\+\_\+\+L\+O\+W\+\_\+\+D\+E\+L\+AY~4}
+
+
+
+Definition at line 14 of file U\+S\+Dist.\+cpp.
+

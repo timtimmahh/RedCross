@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="AccelGyro_8h" kind="file" language="C++">
+    <compoundname>AccelGyro.h</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">thread</includes>
+    <includes refid="I2CPerif_8hpp" local="yes">I2CPerif.hpp</includes>
+    <includes refid="MPU6050_8h" local="yes">MPU6050.h</includes>
+    <includedby refid="AccelGyro_8cpp" local="yes">main/devices/AccelGyro/AccelGyro.cpp</includedby>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <incdepgraph>
+      <node id="41">
+        <label>list</label>
+      </node>
+      <node id="39">
+        <label>functional</label>
+      </node>
+      <node id="32">
+        <label>I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>helper_3dmath.h</label>
+        <link refid="helper__3dmath_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>cstdint</label>
+      </node>
+      <node id="35">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="53">
+        <label>stdint.h</label>
+      </node>
+      <node id="47">
+        <label>cmath</label>
+      </node>
+      <node id="42">
+        <label>string</label>
+      </node>
+      <node id="40">
+        <label>map</label>
+      </node>
+      <node id="45">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="49">
+        <label>esp_log.h</label>
+      </node>
+      <node id="33">
+        <label>i2c/I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>MPU6050.h</label>
+        <link refid="MPU6050_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>sstream</label>
+      </node>
+      <node id="52">
+        <label>math.h</label>
+      </node>
+      <node id="29">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="37">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>mutex</label>
+      </node>
+      <node id="30">
+        <label>chrono</label>
+      </node>
+      <node id="31">
+        <label>thread</label>
+      </node>
+      <node id="46">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="55">
+        <label>main/devices/AccelGyro/AccelGyro.cpp</label>
+        <link refid="AccelGyro_8cpp"/>
+      </node>
+      <node id="57">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="54">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1AccelGyro" prot="public">perif::AccelGyro</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="AccelGyro_8h_1a6e92c59b79dc481cabb791d7499b1955" prot="public" static="no">
+        <name>US_DELAY</name>
+        <initializer>3150</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/AccelGyro.h" line="20" column="9" bodyfile="main/devices/AccelGyro/AccelGyro.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Accelerometer and gyroscope wrapper around <ref refid="classMPU6050" kindref="compound">MPU6050</ref> library by Jeff Rowberg. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/AccelGyro.h"/>
+  </compounddef>
+</doxygen>

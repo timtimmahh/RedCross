@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_ffaa149ebc1c74aa617d124598aa2a07" kind="dir">
+    <compoundname>ipc/timer</compoundname>
+    <innerfile refid="Timer_8hpp">Timer.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ipc/timer/"/>
+  </compounddef>
+</doxygen>

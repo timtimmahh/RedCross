@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/GPS/
+ *
  * @file GPS.h
  *
  * @brief GPS class declaration.

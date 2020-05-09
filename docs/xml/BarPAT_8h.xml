@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="BarPAT_8h" kind="file" language="C++">
+    <compoundname>BarPAT.h</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">thread</includes>
+    <includes refid="I2CPerif_8hpp" local="yes">I2CPerif.hpp</includes>
+    <includedby refid="BarPAT_8cpp" local="yes">main/devices/BarPAT/BarPAT.cpp</includedby>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <incdepgraph>
+      <node id="161">
+        <label>list</label>
+      </node>
+      <node id="159">
+        <label>functional</label>
+      </node>
+      <node id="152">
+        <label>I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>main/devices/BarPAT/BarPAT.h</label>
+        <link refid="BarPAT_8h"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>cstdint</label>
+      </node>
+      <node id="155">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="167">
+        <label>cmath</label>
+      </node>
+      <node id="162">
+        <label>string</label>
+      </node>
+      <node id="160">
+        <label>map</label>
+      </node>
+      <node id="165">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="164">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="169">
+        <label>esp_log.h</label>
+      </node>
+      <node id="153">
+        <label>i2c/I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>sstream</label>
+      </node>
+      <node id="156">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="157">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>mutex</label>
+      </node>
+      <node id="150">
+        <label>chrono</label>
+      </node>
+      <node id="151">
+        <label>thread</label>
+      </node>
+      <node id="166">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="170">
+        <label>main/devices/BarPAT/BarPAT.h</label>
+        <link refid="BarPAT_8h"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>main/devices/BarPAT/BarPAT.cpp</label>
+        <link refid="BarPAT_8cpp"/>
+      </node>
+      <node id="174">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1BarPAT" prot="public">perif::BarPAT</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+    <innernamespace refid="namespacestd">std</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="BarPAT_8h_1aadb871dbb53c49ebcfb4c8956f68c01c" prot="public" static="no">
+        <name>MPL115A2_DEFAULT_ADDRESS</name>
+        <initializer>(0x60)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2C address 10-bit Pressure ADC output value MSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="22" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a4eb0c6233fbd2225c53041b354778af4" prot="public" static="no">
+        <name>MPL115A2_REGISTER_PRESSURE_MSB</name>
+        <initializer>(0x00)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>10-bit Pressure ADC output value LSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="25" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a1cb025611307841b48f534864c177ebf" prot="public" static="no">
+        <name>MPL115A2_REGISTER_PRESSURE_LSB</name>
+        <initializer>(0x01)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>10-bit Temperature ADC output value MSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="27" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a84fb0e296b8e4f4b05c0c9fa2e555a0a" prot="public" static="no">
+        <name>MPL115A2_REGISTER_TEMP_MSB</name>
+        <initializer>(0x02)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>10-bit Temperature ADC output value LSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="29" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a7e7ac15910c681175f326656169047f6" prot="public" static="no">
+        <name>MPL115A2_REGISTER_TEMP_LSB</name>
+        <initializer>(0x03)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="31" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a84a5ba9936d07ef5b512e8f5de7456db" prot="public" static="no">
+        <name>MPL115A2_REGISTER_A0_COEFF_MSB</name>
+        <initializer>(0x04)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>a0 coefficient MSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="32" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1ababefab7f12225f3fa0dd8e4bb7cd8b4" prot="public" static="no">
+        <name>MPL115A2_REGISTER_A0_COEFF_LSB</name>
+        <initializer>(0x05)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>a0 coefficient LSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="33" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a682eca47f6b1130331dbb5b572e4baeb" prot="public" static="no">
+        <name>MPL115A2_REGISTER_B1_COEFF_MSB</name>
+        <initializer>(0x06)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>b1 coefficient MSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="34" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a4b720d1a7c24617aa41ef17bc4b08778" prot="public" static="no">
+        <name>MPL115A2_REGISTER_B1_COEFF_LSB</name>
+        <initializer>(0x07)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>b1 coefficient LSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="35" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a6ceb23b805c6fad83ec02fc25e09b245" prot="public" static="no">
+        <name>MPL115A2_REGISTER_B2_COEFF_MSB</name>
+        <initializer>(0x08)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>b2 coefficient MSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="36" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a74a884f93330a93d337fad62376f0e05" prot="public" static="no">
+        <name>MPL115A2_REGISTER_B2_COEFF_LSB</name>
+        <initializer>(0x09)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>b2 coefficient LSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="37" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1adf90d338657e4e6d949b4d86ce692419" prot="public" static="no">
+        <name>MPL115A2_REGISTER_C12_COEFF_MSB</name>
+        <initializer>(0x0A)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>c12 coefficient MSB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="38" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1ac08232c825b8c8363a59395ff8f5427c" prot="public" static="no">
+        <name>MPL115A2_REGISTER_C12_COEFF_LSB</name>
+        <initializer>(0x0B)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>c12 coefficient LSB Start Pressure and Temperature Conversion </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="39" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="BarPAT_8h_1a30a322bbf3f515a2199853112182b8fb" prot="public" static="no">
+        <name>MPL115A2_REGISTER_STARTCONVERSION</name>
+        <initializer>(0x12)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/BarPAT/BarPAT.h" line="41" column="9" bodyfile="main/devices/BarPAT/BarPAT.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BarPAT class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/BarPAT/BarPAT.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classErrorHandler" kind="class" language="C++" prot="public">
+    <compoundname>ErrorHandler</compoundname>
+    <includes refid="ErrorLog_8hpp" local="no">ErrorLog.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="classErr_1a5027803a04dbda5395326274137d63ff" kindref="member">Err::Flag</ref></type>
+        <declname>valid</declname>
+        <defname>valid</defname>
+        <defval><ref refid="classErr_1a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059" kindref="member">Err::ErrOK</ref></defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classErrorHandler_1a814a320f33838f17883d6538b817156e" prot="private" static="no" mutable="no">
+        <type>list&lt; pair&lt; const string, function&lt; esp_err_t()&gt; &gt; &gt;</type>
+        <definition>list&lt;pair&lt;const string, function&lt;esp_err_t()&gt; &gt; &gt; ErrorHandler&lt; valid &gt;::espFuncs</definition>
+        <argsstring></argsstring>
+        <name>espFuncs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A list of ESP function to run. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="123" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classErrorHandler_1aecac344a347bd57910b392111cee1b71" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ErrorHandler&lt; valid &gt;::callerName</definition>
+        <argsstring></argsstring>
+        <name>callerName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Used for logging to determine the source of the function call. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="127" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classErrorHandler_1a23f60b613dbd494178fd22b91f33d9bf" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* ErrorHandler&lt; valid &gt;::gLabel</definition>
+        <argsstring></argsstring>
+        <name>gLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An optional label to log the function call name. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="131" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classErrorHandler_1a55988085f59d92baccc0ebebf74876f1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ErrorHandler&lt; valid &gt;::ranCheck</definition>
+        <argsstring></argsstring>
+        <name>ranCheck</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the functions have been run and checked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="135" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classErrorHandler_1a2fb21215e61a07ab1ef590ec98629039" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ErrorHandler&lt; valid &gt;::runCheck</definition>
+        <argsstring>()</argsstring>
+        <name>runCheck</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs the operations and ensures all have valid results.</para>
+<para><simplesect kind="return"><para>whether all functions ran successfully </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="108" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="108" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classErrorHandler_1a1496a1ea2a04ad3333ceb74b7e3948c8" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ErrorHandler&lt; valid &gt;::ErrorHandler</definition>
+        <argsstring>(string &amp;&amp;caller, const char *globalLabel=nullptr)</argsstring>
+        <name>ErrorHandler</name>
+        <param>
+          <type>string &amp;&amp;</type>
+          <declname>caller</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>globalLabel</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an instance this handler to perform ESP operations safely.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>caller</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the calling function (for debugging) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>globalLabel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a default label to use if a function doesn&apos;t have one </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="158" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="158" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classErrorHandler_1a0be34c542953af71ff23efa474ddd2bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classErrorHandler" kindref="compound">ErrorHandler</ref>&lt; valid &gt; &amp;</type>
+        <definition>ErrorHandler&lt;valid&gt;&amp; ErrorHandler&lt; valid &gt;::operator()</definition>
+        <argsstring>(esp_err_t espFunc(Args...), string label, Args... args)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>esp_err_t </type>
+          <declname>espFunc</declname>
+          <array>Args...</array>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function call operator to pass an ESP function, it&apos;s name and any arguments.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP function args </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>espFunc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the function label (for debugging) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP function argument values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>this handler for call chaining </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="172" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="172" bodyend="181"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classErrorHandler_1ac44224f707d00f911163951c62441392" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ErrorHandler&lt; valid &gt;::logE</definition>
+        <argsstring>(const string &amp;label, Err &amp;&amp;error)</argsstring>
+        <name>logE</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type><ref refid="classErr" kindref="compound">Err</ref> &amp;&amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Logs ESP functions if its result is invalid.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the logging tag </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether there was an error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/ErrorLog.hpp" line="143" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="143" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Performs error checking on C-style ESP operations.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>valid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>valid error flags </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="main/include/ErrorLog.hpp" line="101" column="1" bodyfile="main/include/ErrorLog.hpp" bodystart="101" bodyend="182"/>
+    <listofallmembers>
+      <member refid="classErrorHandler_1aecac344a347bd57910b392111cee1b71" prot="private" virt="non-virtual"><scope>ErrorHandler</scope><name>callerName</name></member>
+      <member refid="classErrorHandler_1a1496a1ea2a04ad3333ceb74b7e3948c8" prot="public" virt="non-virtual"><scope>ErrorHandler</scope><name>ErrorHandler</name></member>
+      <member refid="classErrorHandler_1a814a320f33838f17883d6538b817156e" prot="private" virt="non-virtual"><scope>ErrorHandler</scope><name>espFuncs</name></member>
+      <member refid="classErrorHandler_1a23f60b613dbd494178fd22b91f33d9bf" prot="private" virt="non-virtual"><scope>ErrorHandler</scope><name>gLabel</name></member>
+      <member refid="classErrorHandler_1ac44224f707d00f911163951c62441392" prot="private" virt="non-virtual"><scope>ErrorHandler</scope><name>logE</name></member>
+      <member refid="classErrorHandler_1a0be34c542953af71ff23efa474ddd2bb" prot="public" virt="non-virtual"><scope>ErrorHandler</scope><name>operator()</name></member>
+      <member refid="classErrorHandler_1a55988085f59d92baccc0ebebf74876f1" prot="private" virt="non-virtual"><scope>ErrorHandler</scope><name>ranCheck</name></member>
+      <member refid="classErrorHandler_1a2fb21215e61a07ab1ef590ec98629039" prot="public" virt="non-virtual"><scope>ErrorHandler</scope><name>runCheck</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

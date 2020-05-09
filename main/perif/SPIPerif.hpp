@@ -1,7 +1,9 @@
 /**
- * @file SPISensor.hpp
+ * @dir main/perif/
  *
- * @brief SPISensor class declaration.
+ * @file SPIPerif.hpp
+ *
+ * @brief SPIPerif class declaration.
  *
  * @author Timothy Logan <logantc@dukes.jmu.edu>
  */
@@ -13,7 +15,10 @@
 
 
 namespace perif {
-class SPISensor : public Perif {
+/**
+ * A peripheral for SPI connections.
+ */
+class SPIPerif : public Perif {
   // TODO
 };
 }

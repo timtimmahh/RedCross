@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_ab999e2221d1569dc696ba38217b3359" kind="dir">
+    <compoundname>main/net/server</compoundname>
+    <innerfile refid="HttpUploader_8cpp">HttpUploader.cpp</innerfile>
+    <innerfile refid="HttpUploader_8h">HttpUploader.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/net/server/"/>
+  </compounddef>
+</doxygen>

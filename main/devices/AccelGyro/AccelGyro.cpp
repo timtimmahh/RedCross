@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/AccelGyro/
+ *
  * @file AccelGyro.cpp
  *
  * @brief AccelGyro class definition.

@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/USDist/
+ *
  * @file USDist.h
  *
  * @brief USDist class declaration.

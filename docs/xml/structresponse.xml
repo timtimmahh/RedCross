@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="structresponse" kind="struct" language="C++" prot="public">
+    <compoundname>response</compoundname>
+    <includes refid="HttpUploader_8h" local="no">HttpUploader.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structresponse_1aaa39845f9866322d6627a038992a32e8" prot="public" static="no" mutable="no">
+        <type>esp_err_t</type>
+        <definition>esp_err_t response::err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ESP error value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="30" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structresponse_1afe8bcb416d3c9071b2341046fa9ccfc4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int response::statusCode</definition>
+        <argsstring></argsstring>
+        <name>statusCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>HTTP response code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="34" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structresponse_1a0dec17408457022995abff935a1607ef" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int response::contentLength</definition>
+        <argsstring></argsstring>
+        <name>contentLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>HTTP content length. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="38" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A basic data structure representing a network response. </para>
+    </detaileddescription>
+    <location file="main/net/server/HttpUploader.h" line="26" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="26" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structresponse_1a0dec17408457022995abff935a1607ef" prot="public" virt="non-virtual"><scope>response</scope><name>contentLength</name></member>
+      <member refid="structresponse_1aaa39845f9866322d6627a038992a32e8" prot="public" virt="non-virtual"><scope>response</scope><name>err</name></member>
+      <member refid="structresponse_1afe8bcb416d3c9071b2341046fa9ccfc4" prot="public" virt="non-virtual"><scope>response</scope><name>statusCode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

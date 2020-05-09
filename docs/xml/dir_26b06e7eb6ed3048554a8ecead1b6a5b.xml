@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_26b06e7eb6ed3048554a8ecead1b6a5b" kind="dir">
+    <compoundname>devices/BarPAT</compoundname>
+    <innerfile refid="BarPAT_8cpp">BarPAT.cpp</innerfile>
+    <innerfile refid="BarPAT_8h">BarPAT.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="devices/BarPAT/"/>
+  </compounddef>
+</doxygen>

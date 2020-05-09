@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classWiFi" kind="class" language="C++" prot="public">
+    <compoundname>WiFi</compoundname>
+    <includes refid="WiFi_8hpp" local="no">WiFi.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classWiFi_1a05caefaab198d15bfe104217bf8c1538" prot="private" static="no" mutable="no">
+        <type><ref refid="WiFi_8hpp_1ae685142b922ea26aa869f6cb5e17a19c" kindref="member">WiFiMode</ref></type>
+        <definition>WiFiMode WiFi::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="classWiFi" kindref="compound">WiFi</ref> mode specified during creation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="45" column="1" bodyfile="main/net/WiFi.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classWiFi_1a05428adefb3ddb169b962a06b9ee4fe5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool WiFi::connected</definition>
+        <argsstring></argsstring>
+        <name>connected</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the device has a network connection. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="62" column="1" bodyfile="main/net/WiFi.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classWiFi_1a771995cac21ae988f347cc8d57ba63e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WiFi::config_connection</definition>
+        <argsstring>()</argsstring>
+        <name>config_connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configures the <ref refid="classWiFi" kindref="compound">WiFi</ref> connection for the specified mode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="49" column="1" bodyfile="main/net/WiFi.cpp" bodystart="40" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classWiFi_1a998d1840fb01520000cdeebb3b252a65" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WiFi::config_connection_ap</definition>
+        <argsstring>()</argsstring>
+        <name>config_connection_ap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configures the <ref refid="classWiFi" kindref="compound">WiFi</ref> connection as an access point. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="53" column="1" bodyfile="main/net/WiFi.cpp" bodystart="47" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classWiFi_1a0dee3644a991f42c2d0f178aa0a2db0b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WiFi::config_connection_sta</definition>
+        <argsstring>()</argsstring>
+        <name>config_connection_sta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configures the <ref refid="classWiFi" kindref="compound">WiFi</ref> connection as a station. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="57" column="1" bodyfile="main/net/WiFi.cpp" bodystart="59" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWiFi_1ad2f9d73dfa338ebf49585e37f1c04cd6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WiFi::WiFi</definition>
+        <argsstring>(WiFiMode mode=WiFiMode::STA)</argsstring>
+        <name>WiFi</name>
+        <param>
+          <type><ref refid="WiFi_8hpp_1ae685142b922ea26aa869f6cb5e17a19c" kindref="member">WiFiMode</ref></type>
+          <declname>mode</declname>
+          <defval><ref refid="WiFi_8hpp_1ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e" kindref="member">WiFiMode::STA</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the <ref refid="classWiFi" kindref="compound">WiFi</ref> instance with default mode Station.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classWiFi" kindref="compound">WiFi</ref> mode </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="68" column="1" bodyfile="main/net/WiFi.cpp" bodystart="22" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classWiFi_1aa70d86d4709954beb1f79e73715dfd5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>WiFi::~WiFi</definition>
+        <argsstring>()</argsstring>
+        <name>~WiFi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Free&apos;s any resources and turns off the <ref refid="classWiFi" kindref="compound">WiFi</ref> card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="72" column="1" bodyfile="main/net/WiFi.cpp" bodystart="31" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classWiFi_1a14ed13a3074adbfe7c2dc986b17ffa0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WiFi::connect</definition>
+        <argsstring>()</argsstring>
+        <name>connect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Attempts to make a connection to any configured devices. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="89" column="1" bodyfile="main/net/WiFi.cpp" bodystart="74" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classWiFi_1a251a4d7fde9af75fb2fb305ad5c27a8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WiFi::wifi_event_handler</definition>
+        <argsstring>(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data)</argsstring>
+        <name>wifi_event_handler</name>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <param>
+          <type>esp_event_base_t</type>
+          <declname>event_base</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>event_id</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>event_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt driven global <ref refid="classWiFi" kindref="compound">WiFi</ref> event handler.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>this <ref refid="classWiFi" kindref="compound">WiFi</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP event base name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP event id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>any additional data for an event </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="82" column="1" bodyfile="main/net/WiFi.cpp" bodystart="12" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classWiFi" kindref="compound">WiFi</ref> manager. </para>
+    </detaileddescription>
+    <location file="main/net/WiFi.hpp" line="40" column="1" bodyfile="main/net/WiFi.hpp" bodystart="40" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classWiFi_1a771995cac21ae988f347cc8d57ba63e6" prot="private" virt="non-virtual"><scope>WiFi</scope><name>config_connection</name></member>
+      <member refid="classWiFi_1a998d1840fb01520000cdeebb3b252a65" prot="private" virt="non-virtual"><scope>WiFi</scope><name>config_connection_ap</name></member>
+      <member refid="classWiFi_1a0dee3644a991f42c2d0f178aa0a2db0b" prot="private" virt="non-virtual"><scope>WiFi</scope><name>config_connection_sta</name></member>
+      <member refid="classWiFi_1a14ed13a3074adbfe7c2dc986b17ffa0a" prot="public" virt="non-virtual"><scope>WiFi</scope><name>connect</name></member>
+      <member refid="classWiFi_1a05428adefb3ddb169b962a06b9ee4fe5" prot="public" virt="non-virtual"><scope>WiFi</scope><name>connected</name></member>
+      <member refid="classWiFi_1a05caefaab198d15bfe104217bf8c1538" prot="private" virt="non-virtual"><scope>WiFi</scope><name>mode</name></member>
+      <member refid="classWiFi_1ad2f9d73dfa338ebf49585e37f1c04cd6" prot="public" virt="non-virtual"><scope>WiFi</scope><name>WiFi</name></member>
+      <member refid="classWiFi_1a251a4d7fde9af75fb2fb305ad5c27a8e" prot="public" virt="non-virtual"><scope>WiFi</scope><name>wifi_event_handler</name></member>
+      <member refid="classWiFi_1aa70d86d4709954beb1f79e73715dfd5b" prot="public" virt="virtual"><scope>WiFi</scope><name>~WiFi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

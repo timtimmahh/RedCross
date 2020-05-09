@@ -33,7 +33,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ===============================================
 */
-
+/**
+ * @dir main/devices/AccelGyro/
+ *
+ * @file MPU6050.cpp
+ *
+ * @brief MPU6050 I2C device class
+ */
 #include "MPU6050.h"
 #include <string.h>
 

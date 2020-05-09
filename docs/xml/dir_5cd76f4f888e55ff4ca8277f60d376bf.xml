@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_5cd76f4f888e55ff4ca8277f60d376bf" kind="dir">
+    <compoundname>devices/USDist</compoundname>
+    <innerfile refid="USDist_8cpp">USDist.cpp</innerfile>
+    <innerfile refid="USDist_8h">USDist.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="devices/USDist/"/>
+  </compounddef>
+</doxygen>

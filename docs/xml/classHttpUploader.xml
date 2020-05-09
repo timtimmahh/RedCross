@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classHttpUploader" kind="class" language="C++" prot="public">
+    <compoundname>HttpUploader</compoundname>
+    <includes refid="HttpUploader_8h" local="no">HttpUploader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classHttpUploader_1aced42c77316bfc155af48fbe76002820" prot="private" static="no" mutable="no">
+        <type>esp_http_client_config_t</type>
+        <definition>esp_http_client_config_t HttpUploader::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The ESP HTTP client configuration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="51" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classHttpUploader_1a2757f498bdfa29c3b5dc6b21e348c0e1" prot="private" static="no" mutable="no">
+        <type><ref refid="classQueue" kindref="compound">Queue</ref>&lt; string &gt; &amp;</type>
+        <definition>Queue&lt;string&gt;&amp; HttpUploader::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The data to upload. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="55" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classHttpUploader_1aab617d11fda6bc3ad241fbeb94dc725f" prot="private" static="no" mutable="no">
+        <type>esp_err_t(*</type>
+        <definition>esp_err_t(* HttpUploader::_http_event_handler) (esp_http_client_event_t *)</definition>
+        <argsstring>)(esp_http_client_event_t *)</argsstring>
+        <name>_http_event_handler</name>
+        <initializer>=
+  [](esp_http_client_event_t *evt) -&gt; esp_err_t {
+	return ESP_OK;
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An event handler to use for HTTP callbacks.</para>
+<para><simplesect kind="return"><para>ESP error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="61" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classHttpUploader_1a5e96c4b8c9188611600a3f867e21a1de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>list&lt; <ref refid="structresponse" kindref="compound">response</ref> &gt;</type>
+        <definition>list&lt; response &gt; HttpUploader::batchRequest</definition>
+        <argsstring>()</argsstring>
+        <name>batchRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Uploads all data that is currently in the data queue.</para>
+<para><simplesect kind="return"><para>the results of the batch request </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="70" column="1" bodyfile="main/net/server/HttpUploader.cpp" bodystart="21" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classHttpUploader_1a2da9afd75a9023fd1af8f8c6cf9b69b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structresponse" kindref="compound">response</ref></type>
+        <definition>response HttpUploader::perform</definition>
+        <argsstring>(esp_http_client_handle_t &amp;client)</argsstring>
+        <name>perform</name>
+        <param>
+          <type>esp_http_client_handle_t &amp;</type>
+          <declname>client</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs the actual HTTP request.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP HTTP client </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the HTTP response </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="77" column="1" bodyfile="main/net/server/HttpUploader.cpp" bodystart="44" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classHttpUploader_1ae324f02fb96a992a6fc93c1fcf077f78" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HttpUploader::HttpUploader</definition>
+        <argsstring>(Queue&lt; string &gt; &amp;data)</argsstring>
+        <name>HttpUploader</name>
+        <param>
+          <type><ref refid="classQueue" kindref="compound">Queue</ref>&lt; string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an HTTP uploader with a thread-safe data queue.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data queue to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="84" column="1" bodyfile="main/net/server/HttpUploader.cpp" bodystart="12" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classHttpUploader_1ad97b880d70d66d826b832d1273a73ab1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>list&lt; <ref refid="structresponse" kindref="compound">response</ref> &gt;</type>
+        <definition>list&lt; response &gt; HttpUploader::upload</definition>
+        <argsstring>()</argsstring>
+        <name>upload</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Uploads a all data from the queue.</para>
+<para><simplesect kind="return"><para>the HTTP responses </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/server/HttpUploader.h" line="90" column="1" bodyfile="main/net/server/HttpUploader.cpp" bodystart="55" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Performs uploading to a remote receiver. This is thread-safe and can send data packets whenever data is available, or it can send sequences as a batch request. </para>
+    </detaileddescription>
+    <location file="main/net/server/HttpUploader.h" line="46" column="1" bodyfile="main/net/server/HttpUploader.h" bodystart="46" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classHttpUploader_1aab617d11fda6bc3ad241fbeb94dc725f" prot="private" virt="non-virtual"><scope>HttpUploader</scope><name>_http_event_handler</name></member>
+      <member refid="classHttpUploader_1a5e96c4b8c9188611600a3f867e21a1de" prot="private" virt="non-virtual"><scope>HttpUploader</scope><name>batchRequest</name></member>
+      <member refid="classHttpUploader_1aced42c77316bfc155af48fbe76002820" prot="private" virt="non-virtual"><scope>HttpUploader</scope><name>config</name></member>
+      <member refid="classHttpUploader_1a2757f498bdfa29c3b5dc6b21e348c0e1" prot="private" virt="non-virtual"><scope>HttpUploader</scope><name>data</name></member>
+      <member refid="classHttpUploader_1ae324f02fb96a992a6fc93c1fcf077f78" prot="public" virt="non-virtual"><scope>HttpUploader</scope><name>HttpUploader</name></member>
+      <member refid="classHttpUploader_1a2da9afd75a9023fd1af8f8c6cf9b69b8" prot="private" virt="non-virtual"><scope>HttpUploader</scope><name>perform</name></member>
+      <member refid="classHttpUploader_1ad97b880d70d66d826b832d1273a73ab1" prot="public" virt="non-virtual"><scope>HttpUploader</scope><name>upload</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,4 +1,6 @@
 /**
+ * @dir main/include/
+ *
  * @file utils.h
  *
  * @brief Global utilities.
@@ -29,6 +31,12 @@ using namespace std;
 
 #define LOG(msgs...) log(fileToTag(__FILE__), msgs)
 
+/**
+ * Converts a file path to its basename.
+ *
+ * @param file a file path
+ * @return the file's basename
+ */
 inline string fileToTag(const char *file) {
   string tagStr = file;
   unsigned index = tagStr.find_last_of('/');
@@ -37,6 +45,13 @@ inline string fileToTag(const char *file) {
   return tagStr;
 }
 
+/**
+ * Logs a message with the specified tag.
+ *
+ * @tparam StrType type of string (C-style or C++ string)
+ * @param tag the tag for this message
+ * @param str the message to log
+ */
 template<typename StrType>
 void log(const string &tag, StrType str) {
   stringstream ss;
@@ -44,27 +59,63 @@ void log(const string &tag, StrType str) {
   ESP_LOGI(tag.c_str(), "%s", ss.str().c_str());
 }
 
+/**
+ * Logs a message with the specified tag.
+ *
+ * @tparam StrType type of string (C-style or C++ string)
+ * @param tag the tag for this message
+ * @param ss the string stream to combine strings into
+ * @param str the message to log
+ */
 template<typename StrType>
 void apnd(const string &tag, stringstream &ss, StrType str) {
   ss << str;
   ESP_LOGI(tag.c_str(), "%s", ss.str().c_str());
 }
 
+/**
+ * Logs all messages with the specified tag as a single message.
+ *
+ * @tparam StrType type of string (C-style or C++ string)
+ * @tparam StrTypes type of any additional strings
+ * @param tag the tag for this message
+ * @param ss the string stream to combine strings into
+ * @param str the message to log
+ * @param msgs additional messages to log
+ */
 template<typename StrType, typename... StrTypes>
 void apnd(const string &tag, stringstream &ss, StrType str, StrTypes... msgs) {
   ss << str;
   apnd(tag, ss, msgs...);
 }
 
+
+
+/**
+ * Logs all messages with the specified tag as a single message.
+ *
+ * @tparam StrType type of string (C-style or C++ string)
+ * @tparam StrTypes type of any additional strings
+ * @param tag the tag for this message
+ * @param str the message to log
+ * @param msgs additional messages to log
+ */
 template<typename StrType, typename... StrTypes>
-void log(const string &tag, StrType str, StrTypes... msg) {
+void log(const string &tag, StrType str, StrTypes... msgs) {
   stringstream ss;
-  apnd(tag, ss, str, msg...);
+  apnd(tag, ss, str, msgs...);
 }
 
 /**
  * Copies at min(SourceLen, size) bytes from source to target buffer.
  *
+ * @tparam InputIt input iterator
+ * @tparam SourceLen the source length
+ * @tparam T output iterator
+ * @tparam size size of source
+ * @param source the source input
+ * @param source_length the source length
+ * @param target output
  */
 template<typename InputIt, typename SourceLen, typename T, size_t size>
 void copy_min_to_buffer(InputIt source,
@@ -73,6 +124,14 @@ void copy_min_to_buffer(InputIt source,
   copy_n(source, min(static_cast<size_t>(source_length), size), target);
 }
 
+/**
+ * Copies at min(SourceLen, size) bytes from source to target buffer.
+ *
+ * @tparam T output type
+ * @tparam size size of bytes
+ * @param source input source
+ * @param target output
+ */
 template<typename T, size_t size>
 void copy_min_to_buffer(string &&source, T (&target)[size]) {
   copy_n(source.begin(),

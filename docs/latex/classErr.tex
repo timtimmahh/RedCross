@@ -1,0 +1,267 @@
+\hypertarget{classErr}{}\section{Err Class Reference}
+\label{classErr}\index{Err@{Err}}
+
+
+{\ttfamily \#include $<$Error\+Log.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}} \+: unsigned \{ \newline
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e}{Err\+F\+A\+IL}} = 0x000, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{Err\+OK}} = 0x001, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffab2d4a266305d33b1c305334670541373}{N\+O\+\_\+\+M\+EM}} = 0x002, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa9909bdacaa42a25caa2adc563423e57d}{I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+RG}} = 0x004, 
+\newline
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa0b81ca76e93aa0051a0de12e64804914}{I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+TE}} = 0x008, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa4dea150e0d23fb365dd16e5a986b5060}{I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+I\+ZE}} = 0x010, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa62b13e56052367747eb1cc47d3bcfd12}{N\+O\+T\+\_\+\+F\+O\+U\+ND}} = 0x020, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffabe39565ac12117b150d6e6de856fe5eb}{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}} = 0x040, 
+\newline
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa0982d1f6f8bd447638719c5c053c6ed5}{T\+I\+M\+E\+O\+UT}} = 0x080, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa58abd400cf002ad1f2582e2a2005b8c9}{I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE}} = 0x100, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa43fa55c63a5824c877acefc37ea0ce04}{I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+RC}} = 0x200, 
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa278745e4a95f878f21405711be9b3da4}{I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+E\+R\+S\+I\+ON}} = 0x400, 
+\newline
+\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffac080f44481ce779cf4e4208f4516eb3e}{I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+AC}} = 0x800
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classErr_a24c3a115a0fe75d783de8a482ee41813}{Err}} (\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}} value)
+\item 
+\mbox{\hyperlink{classErr_a1c99df024167b504910fb3404e5496ee}{Err}} (esp\+\_\+err\+\_\+t err, \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}} valid=\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{Err\+OK}})
+\item 
+\mbox{\hyperlink{classErr_a9cc396112612083a8d9c2cea6fa6224a}{operator uint16\+\_\+t}} () const
+\item 
+\mbox{\hyperlink{classErr_ae06ae9da0fc2aeeab3d8fd5e709cab9e}{operator bool}} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}} \mbox{\hyperlink{classErr_af320160955e90df0ddb4e84d99027562}{convert}} (esp\+\_\+err\+\_\+t err, \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}} valid=\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{Err\+OK}})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper around E\+S\+P\+\_\+\+E\+RR to simplify usage and reduce boilerplate code. 
+
+Definition at line 26 of file Error\+Log.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ff}\label{classErr_a5027803a04dbda5395326274137d63ff}} 
+\index{Err@{Err}!Flag@{Flag}}
+\index{Flag@{Flag}!Err@{Err}}
+\subsubsection{\texorpdfstring{Flag}{Flag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Err\+::\+Flag}} \+: unsigned}
+
+The main error flags. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ErrFAIL@{ErrFAIL}!Err@{Err}}\index{Err@{Err}!ErrFAIL@{ErrFAIL}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e}\label{classErr_a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e}} 
+Err\+F\+A\+IL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ErrOK@{ErrOK}!Err@{Err}}\index{Err@{Err}!ErrOK@{ErrOK}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}\label{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}} 
+Err\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_MEM@{NO\_MEM}!Err@{Err}}\index{Err@{Err}!NO\_MEM@{NO\_MEM}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffab2d4a266305d33b1c305334670541373}\label{classErr_a5027803a04dbda5395326274137d63ffab2d4a266305d33b1c305334670541373}} 
+N\+O\+\_\+\+M\+EM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ARG@{INVALID\_ARG}!Err@{Err}}\index{Err@{Err}!INVALID\_ARG@{INVALID\_ARG}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa9909bdacaa42a25caa2adc563423e57d}\label{classErr_a5027803a04dbda5395326274137d63ffa9909bdacaa42a25caa2adc563423e57d}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+RG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_STATE@{INVALID\_STATE}!Err@{Err}}\index{Err@{Err}!INVALID\_STATE@{INVALID\_STATE}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa0b81ca76e93aa0051a0de12e64804914}\label{classErr_a5027803a04dbda5395326274137d63ffa0b81ca76e93aa0051a0de12e64804914}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Err@{Err}}\index{Err@{Err}!INVALID\_SIZE@{INVALID\_SIZE}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa4dea150e0d23fb365dd16e5a986b5060}\label{classErr_a5027803a04dbda5395326274137d63ffa4dea150e0d23fb365dd16e5a986b5060}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+I\+ZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_FOUND@{NOT\_FOUND}!Err@{Err}}\index{Err@{Err}!NOT\_FOUND@{NOT\_FOUND}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa62b13e56052367747eb1cc47d3bcfd12}\label{classErr_a5027803a04dbda5395326274137d63ffa62b13e56052367747eb1cc47d3bcfd12}} 
+N\+O\+T\+\_\+\+F\+O\+U\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_SUPPORTED@{NOT\_SUPPORTED}!Err@{Err}}\index{Err@{Err}!NOT\_SUPPORTED@{NOT\_SUPPORTED}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffabe39565ac12117b150d6e6de856fe5eb}\label{classErr_a5027803a04dbda5395326274137d63ffabe39565ac12117b150d6e6de856fe5eb}} 
+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIMEOUT@{TIMEOUT}!Err@{Err}}\index{Err@{Err}!TIMEOUT@{TIMEOUT}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa0982d1f6f8bd447638719c5c053c6ed5}\label{classErr_a5027803a04dbda5395326274137d63ffa0982d1f6f8bd447638719c5c053c6ed5}} 
+T\+I\+M\+E\+O\+UT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_RESPONSE@{INVALID\_RESPONSE}!Err@{Err}}\index{Err@{Err}!INVALID\_RESPONSE@{INVALID\_RESPONSE}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa58abd400cf002ad1f2582e2a2005b8c9}\label{classErr_a5027803a04dbda5395326274137d63ffa58abd400cf002ad1f2582e2a2005b8c9}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_CRC@{INVALID\_CRC}!Err@{Err}}\index{Err@{Err}!INVALID\_CRC@{INVALID\_CRC}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa43fa55c63a5824c877acefc37ea0ce04}\label{classErr_a5027803a04dbda5395326274137d63ffa43fa55c63a5824c877acefc37ea0ce04}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+RC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_VERSION@{INVALID\_VERSION}!Err@{Err}}\index{Err@{Err}!INVALID\_VERSION@{INVALID\_VERSION}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffa278745e4a95f878f21405711be9b3da4}\label{classErr_a5027803a04dbda5395326274137d63ffa278745e4a95f878f21405711be9b3da4}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+E\+R\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_MAC@{INVALID\_MAC}!Err@{Err}}\index{Err@{Err}!INVALID\_MAC@{INVALID\_MAC}}}\mbox{\Hypertarget{classErr_a5027803a04dbda5395326274137d63ffac080f44481ce779cf4e4208f4516eb3e}\label{classErr_a5027803a04dbda5395326274137d63ffac080f44481ce779cf4e4208f4516eb3e}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+AC&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 31 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31             : \textcolor{keywordtype}{unsigned} \{}
+\DoxyCodeLine{32     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e}{ErrFAIL}} = 0x000,         \textcolor{comment}{// ESP Failure}}
+\DoxyCodeLine{33     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{ErrOK}} = 0x001,             \textcolor{comment}{// ESP Success}}
+\DoxyCodeLine{34     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffab2d4a266305d33b1c305334670541373}{NO\_MEM}} = 0x002,               \textcolor{comment}{// ESP non memory}}
+\DoxyCodeLine{35     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa9909bdacaa42a25caa2adc563423e57d}{INVALID\_ARG}} = 0x004,     \textcolor{comment}{// ESP bad argument passeed}}
+\DoxyCodeLine{36     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa0b81ca76e93aa0051a0de12e64804914}{INVALID\_STATE}} = 0x008,     \textcolor{comment}{// ESP bad state}}
+\DoxyCodeLine{37     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa4dea150e0d23fb365dd16e5a986b5060}{INVALID\_SIZE}} = 0x010,       \textcolor{comment}{// ESP wrong array size}}
+\DoxyCodeLine{38     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa62b13e56052367747eb1cc47d3bcfd12}{NOT\_FOUND}} = 0x020,         \textcolor{comment}{// ESP not found}}
+\DoxyCodeLine{39     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffabe39565ac12117b150d6e6de856fe5eb}{NOT\_SUPPORTED}} = 0x040,     \textcolor{comment}{// ESP operation not supported}}
+\DoxyCodeLine{40     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa0982d1f6f8bd447638719c5c053c6ed5}{TIMEOUT}} = 0x080,         \textcolor{comment}{// ESP timeout}}
+\DoxyCodeLine{41     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa58abd400cf002ad1f2582e2a2005b8c9}{INVALID\_RESPONSE}} = 0x100,   \textcolor{comment}{// ESP bad response}}
+\DoxyCodeLine{42     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa43fa55c63a5824c877acefc37ea0ce04}{INVALID\_CRC}} = 0x200,     \textcolor{comment}{// ESP bad CRC}}
+\DoxyCodeLine{43     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa278745e4a95f878f21405711be9b3da4}{INVALID\_VERSION}} = 0x400, \textcolor{comment}{// ESP wrong version}}
+\DoxyCodeLine{44     \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffac080f44481ce779cf4e4208f4516eb3e}{INVALID\_MAC}} = 0x800          \textcolor{comment}{// ESP bad MAC}}
+\DoxyCodeLine{45   \};}
+
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classErr_a24c3a115a0fe75d783de8a482ee41813}\label{classErr_a24c3a115a0fe75d783de8a482ee41813}} 
+\index{Err@{Err}!Err@{Err}}
+\index{Err@{Err}!Err@{Err}}
+\subsubsection{\texorpdfstring{Err()}{Err()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Err\+::\+Err (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an error directly from a Flag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the Flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 : value(value) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classErr_a1c99df024167b504910fb3404e5496ee}\label{classErr_a1c99df024167b504910fb3404e5496ee}} 
+\index{Err@{Err}!Err@{Err}}
+\index{Err@{Err}!Err@{Err}}
+\subsubsection{\texorpdfstring{Err()}{Err()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Err\+::\+Err (\begin{DoxyParamCaption}\item[{esp\+\_\+err\+\_\+t}]{err,  }\item[{\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}}}]{valid = {\ttfamily \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{Err\+OK}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an error from a C-\/style esp\+\_\+err\+\_\+t. 
+\begin{DoxyParams}{Parameters}
+{\em err} & the E\+SP error \\
+\hline
+{\em valid} & bitwise O\+R-\/ed Flags indicating a valid response \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58 : \mbox{\hyperlink{classErr_a24c3a115a0fe75d783de8a482ee41813}{Err}}(\mbox{\hyperlink{classErr_af320160955e90df0ddb4e84d99027562}{convert}}(err, valid)) \{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classErr_af320160955e90df0ddb4e84d99027562}\label{classErr_af320160955e90df0ddb4e84d99027562}} 
+\index{Err@{Err}!convert@{convert}}
+\index{convert@{convert}!Err@{Err}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}} Err\+::convert (\begin{DoxyParamCaption}\item[{esp\+\_\+err\+\_\+t}]{err,  }\item[{\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Flag}}}]{valid = {\ttfamily \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{Err\+OK}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Converts an esp\+\_\+err\+\_\+t to a Flag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & the original E\+SP error \\
+\hline
+{\em valid} & bitwise O\+R-\/ed valid Flags \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Flag representation of esp\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83                                                                 \{}
+\DoxyCodeLine{84     \textcolor{keywordflow}{return} static\_cast<Flag>((err != ESP\_FAIL}
+\DoxyCodeLine{85                               ? 0x1u << (static\_cast<unsigned>(err) \& 0xFu)}
+\DoxyCodeLine{86                               : \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa01cd85e9f6f86f1f70356d8909cd492e}{Err::ErrFAIL}}) \& valid);}
+\DoxyCodeLine{87   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classErr_ae06ae9da0fc2aeeab3d8fd5e709cab9e}\label{classErr_ae06ae9da0fc2aeeab3d8fd5e709cab9e}} 
+\index{Err@{Err}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!Err@{Err}}
+\subsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily Err\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Converts this error to a boolean for easy checking.
+
+\begin{DoxyReturn}{Returns}
+whether this is an error or not 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73                                \{}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} static\_cast<bool>(value);}
+\DoxyCodeLine{75   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classErr_a9cc396112612083a8d9c2cea6fa6224a}\label{classErr_a9cc396112612083a8d9c2cea6fa6224a}} 
+\index{Err@{Err}!operator uint16\_t@{operator uint16\_t}}
+\index{operator uint16\_t@{operator uint16\_t}!Err@{Err}}
+\subsubsection{\texorpdfstring{operator uint16\_t()}{operator uint16\_t()}}
+{\footnotesize\ttfamily Err\+::operator uint16\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Converts this error to uint16\+\_\+t.
+
+\begin{DoxyReturn}{Returns}
+this value as uint16\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                    \{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{67   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/include/\mbox{\hyperlink{ErrorLog_8hpp}{Error\+Log.\+hpp}}\end{DoxyCompactItemize}

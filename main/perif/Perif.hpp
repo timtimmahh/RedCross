@@ -1,4 +1,5 @@
 /**
+ * @dir main/perif/
  * @file Perif.hpp
  *
  * @brief PerifBase and Perif class definitions.
@@ -18,6 +19,9 @@
 
 using namespace std;
 
+/**
+ * Basic type alias for device mappings.
+ */
 using DevMap = std::map<std::string, std::string>;
 
 namespace perif {
@@ -30,7 +34,6 @@ class PerifBase {
   /**
    * The key-value mapping of peripheral data.
    */
-  // TODO stop using Arduino Strings, they're evil!
   DevMap data;
   /**
    * Hooks registered to this peripheral so observers can be notified of any
@@ -69,6 +72,9 @@ class PerifBase {
  */
 class Perif : public PerifBase {
  protected:
+  /**
+   * A timer for managing peripheral updates.
+   */
   Timer timer;
   /**
    * Updates sensor data. Subclasses should maintain a reference to the data
@@ -80,7 +86,11 @@ class Perif : public PerifBase {
    * debugging, caching, and database operations.
    */
   virtual void representData() = 0;
-
+  /**
+   * Obtains a reference to this peripheral's timer.
+   *
+   * @return a timer reference
+   */
   Timer &getTimer() { return timer; }
  public:
   /**

@@ -1,4 +1,6 @@
 /**
+ * @dir main/devices/BarPAT/
+ *
  * @file BarPAT.h
  *
  * @brief BarPAT class declaration.
@@ -11,7 +13,6 @@
 #include <chrono>
 #include <thread>
 #include "I2CPerif.hpp"
-//#include <Adafruit_MPL115A2.h>
 
 namespace perif {
 
@@ -53,7 +54,19 @@ class BarPAT : public I2CPerif<> {
   float temp;
   void updateData() override;
   void representData() override;
+  /**
+   * Read the manufacturer coefficients from the device register.
+   *
+   * @return if coefficients were valid
+   */
   bool readCoefficients();
+  /**
+   * Reads the pressure and temperature data.
+   *
+   * @param prssr the pressure target
+   * @param tmp the temperature target
+   * @return is reading succeeded
+   */
   bool getPT(float &prssr, float &tmp);
  public:
   /**

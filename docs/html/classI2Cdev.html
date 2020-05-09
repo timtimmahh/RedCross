@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I2Cdev class | Red Cross</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">Red Cross</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          I2Cdev <span class="m-thin">class</span>
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-methods">Protected functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>The I2C bus operator.</p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;i2c_port_t port = I2C_NUM_0, bool sdaPullup = false, bool sclPullup = false, uint32_t frequency = 100000UL&gt;</div>
+              class <a href="classperif_1_1I2CPerif.html" class="m-doc">perif::I2CPerif</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;i2c_port_t port = I2C_NUM_0, bool sdaPullup = false, bool sclPullup = false, uint32_t frequency = 100000UL&gt;</div>
+              class <a href="classperif_1_1I2CPerif.html" class="m-doc">perif::I2CPerif</a>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afd73def195a0441baf3e4dd774de606f" class="m-doc">I2Cdev</a>(</span><span class="m-doc-wrap">const i2c_port_t port) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af9aa307995256fd1ea40e25c956e76fd" class="m-doc">~I2Cdev</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a3be31bf7d3f40bb215d8854aac945db3" class="m-doc">SelectRegister</a>(</span><span class="m-doc-wrap">uint8_t dev,
+              uint8_t reg)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab028a4f330f4f31dc8af9890431a2a63" class="m-doc">readBit</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitNum,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) -&gt; int8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a362d1d9bf44d01f0dfd7db94df8a61e5" class="m-doc">readBits</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitStart,
+              uint8_t length,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) -&gt; int8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a80bf7daa6a6c34df95de78ac54d01b1f" class="m-doc">readByte</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) -&gt; int8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af62cd3a62562c704c6f183ea7a42064d" class="m-doc">readWord</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint16_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) -&gt; int8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab1ba3954fcc16341aa6e04e0a569c0ea" class="m-doc">readBytes</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) -&gt; int8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa68890af87de5471d32e583ebbd91acb" class="m-doc">writeBit</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitNum,
+              uint8_t data) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a913371251b6a41520c080115650e1b59" class="m-doc">writeBits</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitStart,
+              uint8_t length,
+              uint8_t data) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeb297637ef985cd562da465ba61b7042" class="m-doc">writeByte</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t data) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa4e39cac6c0eac5112f9132084bcc93e" class="m-doc">writeBytes</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acbe68a802d6a177301736e60bedd1def" class="m-doc">writeWord</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint16_t data) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-methods">
+          <h2><a href="#pro-methods">Protected functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a794a92b925f7970399f8b148caa5eef8" class="m-doc">initialize</a>(</span><span class="m-doc-wrap">gpio_num_t sda,
+              gpio_num_t scl,
+              bool sdaPullUp = false,
+              bool sclPullUp = false,
+              uint32_t frequency = 100000UL) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a74447cfadf4d5054ba29b726afcdecd0" class="m-doc">readByte_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) -&gt; int8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3fae6b1ae9e9398b682eb7bdf6b43561" class="m-doc">readBytes_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) -&gt; int8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a97645c5d6a3e295bb72b9ee5ab810d12" class="m-doc">writeByte_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t data) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2f9176cd44c3163ca3929ac1c2ff601b" class="m-doc">writeBytes_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              const i2c_port_t <a href="#a1d1e63732aa9f50369172b27a034129c" class="m-doc">port</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              bool <a href="#a94b914bfcbd0fe1f6fdd7b9c6f4ab921" class="m-doc">initialized</a>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="afd73def195a0441baf3e4dd774de606f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afd73def195a0441baf3e4dd774de606f" class="m-doc-self">I2Cdev</a>(</span><span class="m-doc-wrap">const i2c_port_t port) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">port</td>
+                  <td>the I2C port</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Creates an instance to an I2C device on the specified port.</p>
+          </div></section>
+          <section class="m-doc-details" id="af9aa307995256fd1ea40e25c956e76fd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af9aa307995256fd1ea40e25c956e76fd" class="m-doc-self">~I2Cdev</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+<p>Performs I2C bus cleanup on this port, if necessary.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3be31bf7d3f40bb215d8854aac945db3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3be31bf7d3f40bb215d8854aac945db3" class="m-doc-self">SelectRegister</a>(</span><span class="m-doc-wrap">uint8_t dev,
+              uint8_t reg)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dev</td>
+                  <td>the device</td>
+                </tr>
+                <tr>
+                  <td>reg</td>
+                  <td>the register</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Selects a device register.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab028a4f330f4f31dc8af9890431a2a63"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab028a4f330f4f31dc8af9890431a2a63" class="m-doc-self">readBit</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitNum,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>bitNum</td>
+                  <td>the bit number in the register</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>read timeout</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the length of data read</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Reads a single bit with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="a362d1d9bf44d01f0dfd7db94df8a61e5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a362d1d9bf44d01f0dfd7db94df8a61e5" class="m-doc-self">readBits</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitStart,
+              uint8_t length,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>bitStart</td>
+                  <td>the register bit to start</td>
+                </tr>
+                <tr>
+                  <td>length</td>
+                  <td>the number of bytes to read</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>read timeout</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the length of data read</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Reads multiple bits with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="a80bf7daa6a6c34df95de78ac54d01b1f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a80bf7daa6a6c34df95de78ac54d01b1f" class="m-doc-self">readByte</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>read timeout</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the number of bytes read.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Reads a single byte with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="af62cd3a62562c704c6f183ea7a42064d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af62cd3a62562c704c6f183ea7a42064d" class="m-doc-self">readWord</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint16_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>read timeout</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the number of bytes read.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Reads a single word with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab1ba3954fcc16341aa6e04e0a569c0ea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab1ba3954fcc16341aa6e04e0a569c0ea" class="m-doc-self">readBytes</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>length</td>
+                  <td>the number of bytes to read</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>read timeout</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the number of bytes read.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Reads multiple words with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa68890af87de5471d32e583ebbd91acb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa68890af87de5471d32e583ebbd91acb" class="m-doc-self">writeBit</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitNum,
+              uint8_t data)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>bitNum</td>
+                  <td>the register bit to write</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the data to write</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>if write succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes a single bit with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="a913371251b6a41520c080115650e1b59"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a913371251b6a41520c080115650e1b59" class="m-doc-self">writeBits</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t bitStart,
+              uint8_t length,
+              uint8_t data)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>bitStart</td>
+                  <td>the register bit to start</td>
+                </tr>
+                <tr>
+                  <td>length</td>
+                  <td>the number of bytes to write</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the data to write</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>if write succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes multiple bits with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="aeb297637ef985cd562da465ba61b7042"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb297637ef985cd562da465ba61b7042" class="m-doc-self">writeByte</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t data)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the data to write</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>if write succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes a single byte with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa4e39cac6c0eac5112f9132084bcc93e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa4e39cac6c0eac5112f9132084bcc93e" class="m-doc-self">writeBytes</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>length</td>
+                  <td>the number of bytes to write</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the data to write</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>if write succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes multiple bytes with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="acbe68a802d6a177301736e60bedd1def"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acbe68a802d6a177301736e60bedd1def" class="m-doc-self">writeWord</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint16_t data)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>if write succeeded.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes a single word with a mutex lock for thread-safety.</p>
+          </div></section>
+          <section class="m-doc-details" id="a794a92b925f7970399f8b148caa5eef8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a794a92b925f7970399f8b148caa5eef8" class="m-doc-self">initialize</a>(</span><span class="m-doc-wrap">gpio_num_t sda,
+              gpio_num_t scl,
+              bool sdaPullUp = false,
+              bool sclPullUp = false,
+              uint32_t frequency = 100000UL) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">sda</td>
+                  <td>the SDA pin</td>
+                </tr>
+                <tr>
+                  <td>scl</td>
+                  <td>the SCL pin</td>
+                </tr>
+                <tr>
+                  <td>sdaPullUp</td>
+                  <td>whether SDA is a pullup</td>
+                </tr>
+                <tr>
+                  <td>sclPullUp</td>
+                  <td>whether SCL is a pullup</td>
+                </tr>
+                <tr>
+                  <td>frequency</td>
+                  <td>the bus frequency</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>whether initialization was successfull</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Initializes the I2C port if not already and verifies this device is there.</p>
+          </div></section>
+          <section class="m-doc-details" id="a74447cfadf4d5054ba29b726afcdecd0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a74447cfadf4d5054ba29b726afcdecd0" class="m-doc-self">readByte_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>read timeout</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the number of bytes read.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Reads a single byte.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3fae6b1ae9e9398b682eb7bdf6b43561"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3fae6b1ae9e9398b682eb7bdf6b43561" class="m-doc-self">readBytes_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data,
+              uint16_t timeout = <a href="I2Cdev_8h.html#ad9726bb02451bb8f59d3d2729e4cd20e" class="m-doc">I2CDEV_<wbr />DEFAULT_<wbr />READ_<wbr />TIMEOUT</a>) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>length</td>
+                  <td>the number of bytes to read</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the destination to read into</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>read timeout</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>the number of bytes read.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Reads multiple bytes.</p>
+          </div></section>
+          <section class="m-doc-details" id="a97645c5d6a3e295bb72b9ee5ab810d12"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97645c5d6a3e295bb72b9ee5ab810d12" class="m-doc-self">writeByte_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t data) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the data to write</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>if write succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes a single byte.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2f9176cd44c3163ca3929ac1c2ff601b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool I2Cdev::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2f9176cd44c3163ca3929ac1c2ff601b" class="m-doc-self">writeBytes_</a>(</span><span class="m-doc-wrap">uint8_t devAddr,
+              uint8_t regAddr,
+              uint8_t length,
+              uint8_t* data) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">devAddr</td>
+                  <td>the device address</td>
+                </tr>
+                <tr>
+                  <td>regAddr</td>
+                  <td>the register address</td>
+                </tr>
+                <tr>
+                  <td>length</td>
+                  <td>the number of bytes to write</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>the data to write</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>if write succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes multiple bytes.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="a1d1e63732aa9f50369172b27a034129c"><div>
+            <h3>
+              const i2c_port_t I2Cdev::<wbr /><a href="#a1d1e63732aa9f50369172b27a034129c" class="m-doc-self">port</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>The I2C port for this device.</p>
+          </div></section>
+          <section class="m-doc-details" id="a94b914bfcbd0fe1f6fdd7b9c6f4ab921"><div>
+            <h3>
+              bool I2Cdev::<wbr /><a href="#a94b914bfcbd0fe1f6fdd7b9c6f4ab921" class="m-doc-self">initialized</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>Whether the device is initialized.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Red Cross. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

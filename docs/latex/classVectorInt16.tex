@@ -1,0 +1,234 @@
+\hypertarget{classVectorInt16}{}\section{Vector\+Int16 Class Reference}
+\label{classVectorInt16}\index{VectorInt16@{VectorInt16}}
+
+
+{\ttfamily \#include $<$helper\+\_\+3dmath.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVectorInt16_a314bffb747999af26026f734c43d61a2}{Vector\+Int16}} ()
+\item 
+\mbox{\hyperlink{classVectorInt16_acce45f37b3f90df1d5aff6edbf12f02b}{Vector\+Int16}} (int16\+\_\+t nx, int16\+\_\+t ny, int16\+\_\+t nz)
+\item 
+float \mbox{\hyperlink{classVectorInt16_aeb8087ac5732450bc18ac944a16d0694}{get\+Magnitude}} ()
+\item 
+void \mbox{\hyperlink{classVectorInt16_aefdadb30fbc20b564bbbf0b1a885e349}{normalize}} ()
+\item 
+\mbox{\hyperlink{classVectorInt16}{Vector\+Int16}} \mbox{\hyperlink{classVectorInt16_a1f2c17ac660f1e90a095f9e7914200c5}{get\+Normalized}} ()
+\item 
+void \mbox{\hyperlink{classVectorInt16_ac7bf149db0a2b66d7683b87ebeb2dfc5}{rotate}} (\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$q)
+\item 
+\mbox{\hyperlink{classVectorInt16}{Vector\+Int16}} \mbox{\hyperlink{classVectorInt16_a9e1d9f4553b069bf353e807f130a285b}{get\+Rotated}} (\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$q)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 100 of file helper\+\_\+3dmath.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVectorInt16_a314bffb747999af26026f734c43d61a2}\label{classVectorInt16_a314bffb747999af26026f734c43d61a2}} 
+\index{VectorInt16@{VectorInt16}!VectorInt16@{VectorInt16}}
+\index{VectorInt16@{VectorInt16}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{VectorInt16()}{VectorInt16()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vector\+Int16\+::\+Vector\+Int16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 106 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106                 \{}
+\DoxyCodeLine{107     \mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}} = 0;}
+\DoxyCodeLine{108     \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}} = 0;}
+\DoxyCodeLine{109     \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}} = 0;}
+\DoxyCodeLine{110   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorInt16_acce45f37b3f90df1d5aff6edbf12f02b}\label{classVectorInt16_acce45f37b3f90df1d5aff6edbf12f02b}} 
+\index{VectorInt16@{VectorInt16}!VectorInt16@{VectorInt16}}
+\index{VectorInt16@{VectorInt16}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{VectorInt16()}{VectorInt16()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Int16\+::\+Vector\+Int16 (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{nx,  }\item[{int16\+\_\+t}]{ny,  }\item[{int16\+\_\+t}]{nz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 112 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                                                   \{}
+\DoxyCodeLine{113     \mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}} = nx;}
+\DoxyCodeLine{114     \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}} = ny;}
+\DoxyCodeLine{115     \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}} = nz;}
+\DoxyCodeLine{116   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVectorInt16_aeb8087ac5732450bc18ac944a16d0694}\label{classVectorInt16_aeb8087ac5732450bc18ac944a16d0694}} 
+\index{VectorInt16@{VectorInt16}!getMagnitude@{getMagnitude}}
+\index{getMagnitude@{getMagnitude}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{getMagnitude()}{getMagnitude()}}
+{\footnotesize\ttfamily float Vector\+Int16\+::get\+Magnitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 118 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{118                        \{}
+\DoxyCodeLine{119     \textcolor{keywordflow}{return} sqrt(\mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}} * \mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}} + \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}} * \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}} + \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}} * \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}});}
+\DoxyCodeLine{120   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorInt16_a1f2c17ac660f1e90a095f9e7914200c5}\label{classVectorInt16_a1f2c17ac660f1e90a095f9e7914200c5}} 
+\index{VectorInt16@{VectorInt16}!getNormalized@{getNormalized}}
+\index{getNormalized@{getNormalized}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{getNormalized()}{getNormalized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVectorInt16}{Vector\+Int16}} Vector\+Int16\+::get\+Normalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 129 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129                               \{}
+\DoxyCodeLine{130     \mbox{\hyperlink{classVectorInt16}{VectorInt16}} r(\mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}}, \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}}, \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}});}
+\DoxyCodeLine{131     r.normalize();}
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{133   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorInt16_a9e1d9f4553b069bf353e807f130a285b}\label{classVectorInt16_a9e1d9f4553b069bf353e807f130a285b}} 
+\index{VectorInt16@{VectorInt16}!getRotated@{getRotated}}
+\index{getRotated@{getRotated}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{getRotated()}{getRotated()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVectorInt16}{Vector\+Int16}} Vector\+Int16\+::get\+Rotated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 160 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{160                                         \{}
+\DoxyCodeLine{161     \mbox{\hyperlink{classVectorInt16}{VectorInt16}} r(\mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}}, \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}}, \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}});}
+\DoxyCodeLine{162     r.rotate(q);}
+\DoxyCodeLine{163     \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{164   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorInt16_aefdadb30fbc20b564bbbf0b1a885e349}\label{classVectorInt16_aefdadb30fbc20b564bbbf0b1a885e349}} 
+\index{VectorInt16@{VectorInt16}!normalize@{normalize}}
+\index{normalize@{normalize}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Vector\+Int16\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 122 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122                    \{}
+\DoxyCodeLine{123     \textcolor{keywordtype}{float} m = \mbox{\hyperlink{classVectorInt16_aeb8087ac5732450bc18ac944a16d0694}{getMagnitude}}();}
+\DoxyCodeLine{124     \mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}} /= m;}
+\DoxyCodeLine{125     \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}} /= m;}
+\DoxyCodeLine{126     \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}} /= m;}
+\DoxyCodeLine{127   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVectorInt16_ac7bf149db0a2b66d7683b87ebeb2dfc5}\label{classVectorInt16_ac7bf149db0a2b66d7683b87ebeb2dfc5}} 
+\index{VectorInt16@{VectorInt16}!rotate@{rotate}}
+\index{rotate@{rotate}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Vector\+Int16\+::rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQuaternion}{Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 135 of file helper\+\_\+3dmath.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135                              \{}
+\DoxyCodeLine{136     \textcolor{comment}{// http://www.cprogramming.com/tutorial/3d/quaternions.html}}
+\DoxyCodeLine{137     \textcolor{comment}{// http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/transforms/index.htm}}
+\DoxyCodeLine{138     \textcolor{comment}{// http://content.gpwiki.org/index.php/OpenGL:Tutorials:Using\_Quaternions\_to\_represent\_rotation}}
+\DoxyCodeLine{139     \textcolor{comment}{// \string^ or: http://webcache.googleusercontent.com/search?q=cache:xgJAp3bDNhQJ:content.gpwiki.org/index.php/OpenGL:Tutorials:Using\_Quaternions\_to\_represent\_rotation\&hl=en\&gl=us\&strip=1}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{comment}{// P\_out = q * P\_in * conj(q)}}
+\DoxyCodeLine{142     \textcolor{comment}{// - P\_out is the output vector}}
+\DoxyCodeLine{143     \textcolor{comment}{// - q is the orientation quaternion}}
+\DoxyCodeLine{144     \textcolor{comment}{// - P\_in is the input vector (a*aReal)}}
+\DoxyCodeLine{145     \textcolor{comment}{// - conj(q) is the conjugate of the orientation quaternion (q=[w,x,y,z], q*=[w,-x,-y,-z])}}
+\DoxyCodeLine{146     \mbox{\hyperlink{classQuaternion}{Quaternion}} p(0, \mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}}, \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}}, \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}});}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// quaternion multiplication: q * p, stored back in p}}
+\DoxyCodeLine{149     p = q->\mbox{\hyperlink{classQuaternion_a3ff8405ed92a3ca16de656e6c83b4028}{getProduct}}(p);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{comment}{// quaternion multiplication: p * conj(q), stored back in p}}
+\DoxyCodeLine{152     p = p.\mbox{\hyperlink{classQuaternion_a3ff8405ed92a3ca16de656e6c83b4028}{getProduct}}(q->\mbox{\hyperlink{classQuaternion_a079a5673188a8a7d608e8495de0dd119}{getConjugate}}());}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{comment}{// p quaternion is now [0, x', y', z']}}
+\DoxyCodeLine{155     \mbox{\hyperlink{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}{x}} = p.x;}
+\DoxyCodeLine{156     \mbox{\hyperlink{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}{y}} = p.y;}
+\DoxyCodeLine{157     \mbox{\hyperlink{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}{z}} = p.z;}
+\DoxyCodeLine{158   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}\label{classVectorInt16_a648435b4c99e9da9c95549ac344beaec}} 
+\index{VectorInt16@{VectorInt16}!x@{x}}
+\index{x@{x}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int16\+\_\+t Vector\+Int16\+::x}
+
+
+
+Definition at line 102 of file helper\+\_\+3dmath.\+h.
+
+\mbox{\Hypertarget{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}\label{classVectorInt16_a5d340e1f1bcbc064e5084ca609a6a6a3}} 
+\index{VectorInt16@{VectorInt16}!y@{y}}
+\index{y@{y}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int16\+\_\+t Vector\+Int16\+::y}
+
+
+
+Definition at line 103 of file helper\+\_\+3dmath.\+h.
+
+\mbox{\Hypertarget{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}\label{classVectorInt16_af1b5c4c297bdd32751ab4519480b919f}} 
+\index{VectorInt16@{VectorInt16}!z@{z}}
+\index{z@{z}!VectorInt16@{VectorInt16}}
+\subsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily int16\+\_\+t Vector\+Int16\+::z}
+
+
+
+Definition at line 104 of file helper\+\_\+3dmath.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/devices/\+Accel\+Gyro/\mbox{\hyperlink{helper__3dmath_8h}{helper\+\_\+3dmath.\+h}}\end{DoxyCompactItemize}

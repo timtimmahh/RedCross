@@ -1,0 +1,202 @@
+\hypertarget{BarPAT_8h}{}\section{main/devices/\+Bar\+P\+A\+T/\+Bar\+P\+AT.h File Reference}
+\label{BarPAT_8h}\index{main/devices/BarPAT/BarPAT.h@{main/devices/BarPAT/BarPAT.h}}
+
+
+Bar\+P\+AT class declaration.  
+
+
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}I2\+C\+Perif.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classperif_1_1BarPAT}{perif\+::\+Bar\+P\+AT}}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceperif}{perif}}
+\begin{DoxyCompactList}\small\item\em The peripheral library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_aadb871dbb53c49ebcfb4c8956f68c01c}{M\+P\+L115\+A2\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+D\+D\+R\+E\+SS}}~(0x60)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a4eb0c6233fbd2225c53041b354778af4}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+M\+SB}}~(0x00)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a1cb025611307841b48f534864c177ebf}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+L\+SB}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a84fb0e296b8e4f4b05c0c9fa2e555a0a}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+T\+E\+M\+P\+\_\+\+M\+SB}}~(0x02)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a7e7ac15910c681175f326656169047f6}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+T\+E\+M\+P\+\_\+\+L\+SB}}~(0x03)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a84a5ba9936d07ef5b512e8f5de7456db}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A0\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB}}~(0x04)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_ababefab7f12225f3fa0dd8e4bb7cd8b4}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A0\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB}}~(0x05)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a682eca47f6b1130331dbb5b572e4baeb}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B1\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB}}~(0x06)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a4b720d1a7c24617aa41ef17bc4b08778}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B1\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB}}~(0x07)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a6ceb23b805c6fad83ec02fc25e09b245}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B2\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB}}~(0x08)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a74a884f93330a93d337fad62376f0e05}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B2\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB}}~(0x09)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_adf90d338657e4e6d949b4d86ce692419}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+C12\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB}}~(0x0\+A)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_ac08232c825b8c8363a59395ff8f5427c}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+C12\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB}}~(0x0\+B)
+\item 
+\#define \mbox{\hyperlink{BarPAT_8h_a30a322bbf3f515a2199853112182b8fb}{M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+T\+A\+R\+T\+C\+O\+N\+V\+E\+R\+S\+I\+ON}}~(0x12)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bar\+P\+AT class declaration. 
+
+\begin{DoxyAuthor}{Author}
+Timothy Logan \href{mailto:logantc@dukes.jmu.edu}{\texttt{ logantc@dukes.\+jmu.\+edu}} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{BarPAT_8h_aadb871dbb53c49ebcfb4c8956f68c01c}\label{BarPAT_8h_aadb871dbb53c49ebcfb4c8956f68c01c}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_DEFAULT\_ADDRESS@{MPL115A2\_DEFAULT\_ADDRESS}}
+\index{MPL115A2\_DEFAULT\_ADDRESS@{MPL115A2\_DEFAULT\_ADDRESS}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_DEFAULT\_ADDRESS}{MPL115A2\_DEFAULT\_ADDRESS}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+D\+D\+R\+E\+SS~(0x60)}
+
+I2C address 10-\/bit Pressure A\+DC output value M\+SB 
+
+Definition at line 22 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_ababefab7f12225f3fa0dd8e4bb7cd8b4}\label{BarPAT_8h_ababefab7f12225f3fa0dd8e4bb7cd8b4}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_A0\_COEFF\_LSB@{MPL115A2\_REGISTER\_A0\_COEFF\_LSB}}
+\index{MPL115A2\_REGISTER\_A0\_COEFF\_LSB@{MPL115A2\_REGISTER\_A0\_COEFF\_LSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_A0\_COEFF\_LSB}{MPL115A2\_REGISTER\_A0\_COEFF\_LSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A0\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB~(0x05)}
+
+a0 coefficient L\+SB 
+
+Definition at line 33 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a84a5ba9936d07ef5b512e8f5de7456db}\label{BarPAT_8h_a84a5ba9936d07ef5b512e8f5de7456db}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_A0\_COEFF\_MSB@{MPL115A2\_REGISTER\_A0\_COEFF\_MSB}}
+\index{MPL115A2\_REGISTER\_A0\_COEFF\_MSB@{MPL115A2\_REGISTER\_A0\_COEFF\_MSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_A0\_COEFF\_MSB}{MPL115A2\_REGISTER\_A0\_COEFF\_MSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+A0\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB~(0x04)}
+
+a0 coefficient M\+SB 
+
+Definition at line 32 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a4b720d1a7c24617aa41ef17bc4b08778}\label{BarPAT_8h_a4b720d1a7c24617aa41ef17bc4b08778}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_B1\_COEFF\_LSB@{MPL115A2\_REGISTER\_B1\_COEFF\_LSB}}
+\index{MPL115A2\_REGISTER\_B1\_COEFF\_LSB@{MPL115A2\_REGISTER\_B1\_COEFF\_LSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_B1\_COEFF\_LSB}{MPL115A2\_REGISTER\_B1\_COEFF\_LSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B1\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB~(0x07)}
+
+b1 coefficient L\+SB 
+
+Definition at line 35 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a682eca47f6b1130331dbb5b572e4baeb}\label{BarPAT_8h_a682eca47f6b1130331dbb5b572e4baeb}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_B1\_COEFF\_MSB@{MPL115A2\_REGISTER\_B1\_COEFF\_MSB}}
+\index{MPL115A2\_REGISTER\_B1\_COEFF\_MSB@{MPL115A2\_REGISTER\_B1\_COEFF\_MSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_B1\_COEFF\_MSB}{MPL115A2\_REGISTER\_B1\_COEFF\_MSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B1\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB~(0x06)}
+
+b1 coefficient M\+SB 
+
+Definition at line 34 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a74a884f93330a93d337fad62376f0e05}\label{BarPAT_8h_a74a884f93330a93d337fad62376f0e05}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_B2\_COEFF\_LSB@{MPL115A2\_REGISTER\_B2\_COEFF\_LSB}}
+\index{MPL115A2\_REGISTER\_B2\_COEFF\_LSB@{MPL115A2\_REGISTER\_B2\_COEFF\_LSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_B2\_COEFF\_LSB}{MPL115A2\_REGISTER\_B2\_COEFF\_LSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B2\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB~(0x09)}
+
+b2 coefficient L\+SB 
+
+Definition at line 37 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a6ceb23b805c6fad83ec02fc25e09b245}\label{BarPAT_8h_a6ceb23b805c6fad83ec02fc25e09b245}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_B2\_COEFF\_MSB@{MPL115A2\_REGISTER\_B2\_COEFF\_MSB}}
+\index{MPL115A2\_REGISTER\_B2\_COEFF\_MSB@{MPL115A2\_REGISTER\_B2\_COEFF\_MSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_B2\_COEFF\_MSB}{MPL115A2\_REGISTER\_B2\_COEFF\_MSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+B2\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB~(0x08)}
+
+b2 coefficient M\+SB 
+
+Definition at line 36 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_ac08232c825b8c8363a59395ff8f5427c}\label{BarPAT_8h_ac08232c825b8c8363a59395ff8f5427c}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_C12\_COEFF\_LSB@{MPL115A2\_REGISTER\_C12\_COEFF\_LSB}}
+\index{MPL115A2\_REGISTER\_C12\_COEFF\_LSB@{MPL115A2\_REGISTER\_C12\_COEFF\_LSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_C12\_COEFF\_LSB}{MPL115A2\_REGISTER\_C12\_COEFF\_LSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+C12\+\_\+\+C\+O\+E\+F\+F\+\_\+\+L\+SB~(0x0\+B)}
+
+c12 coefficient L\+SB Start Pressure and Temperature Conversion 
+
+Definition at line 39 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_adf90d338657e4e6d949b4d86ce692419}\label{BarPAT_8h_adf90d338657e4e6d949b4d86ce692419}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_C12\_COEFF\_MSB@{MPL115A2\_REGISTER\_C12\_COEFF\_MSB}}
+\index{MPL115A2\_REGISTER\_C12\_COEFF\_MSB@{MPL115A2\_REGISTER\_C12\_COEFF\_MSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_C12\_COEFF\_MSB}{MPL115A2\_REGISTER\_C12\_COEFF\_MSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+C12\+\_\+\+C\+O\+E\+F\+F\+\_\+\+M\+SB~(0x0\+A)}
+
+c12 coefficient M\+SB 
+
+Definition at line 38 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a1cb025611307841b48f534864c177ebf}\label{BarPAT_8h_a1cb025611307841b48f534864c177ebf}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_PRESSURE\_LSB@{MPL115A2\_REGISTER\_PRESSURE\_LSB}}
+\index{MPL115A2\_REGISTER\_PRESSURE\_LSB@{MPL115A2\_REGISTER\_PRESSURE\_LSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_PRESSURE\_LSB}{MPL115A2\_REGISTER\_PRESSURE\_LSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+L\+SB~(0x01)}
+
+10-\/bit Temperature A\+DC output value M\+SB 
+
+Definition at line 27 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a4eb0c6233fbd2225c53041b354778af4}\label{BarPAT_8h_a4eb0c6233fbd2225c53041b354778af4}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_PRESSURE\_MSB@{MPL115A2\_REGISTER\_PRESSURE\_MSB}}
+\index{MPL115A2\_REGISTER\_PRESSURE\_MSB@{MPL115A2\_REGISTER\_PRESSURE\_MSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_PRESSURE\_MSB}{MPL115A2\_REGISTER\_PRESSURE\_MSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+M\+SB~(0x00)}
+
+10-\/bit Pressure A\+DC output value L\+SB 
+
+Definition at line 25 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a30a322bbf3f515a2199853112182b8fb}\label{BarPAT_8h_a30a322bbf3f515a2199853112182b8fb}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_STARTCONVERSION@{MPL115A2\_REGISTER\_STARTCONVERSION}}
+\index{MPL115A2\_REGISTER\_STARTCONVERSION@{MPL115A2\_REGISTER\_STARTCONVERSION}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_STARTCONVERSION}{MPL115A2\_REGISTER\_STARTCONVERSION}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+T\+A\+R\+T\+C\+O\+N\+V\+E\+R\+S\+I\+ON~(0x12)}
+
+
+
+Definition at line 41 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a7e7ac15910c681175f326656169047f6}\label{BarPAT_8h_a7e7ac15910c681175f326656169047f6}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_TEMP\_LSB@{MPL115A2\_REGISTER\_TEMP\_LSB}}
+\index{MPL115A2\_REGISTER\_TEMP\_LSB@{MPL115A2\_REGISTER\_TEMP\_LSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_TEMP\_LSB}{MPL115A2\_REGISTER\_TEMP\_LSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+T\+E\+M\+P\+\_\+\+L\+SB~(0x03)}
+
+
+
+Definition at line 31 of file Bar\+P\+A\+T.\+h.
+
+\mbox{\Hypertarget{BarPAT_8h_a84fb0e296b8e4f4b05c0c9fa2e555a0a}\label{BarPAT_8h_a84fb0e296b8e4f4b05c0c9fa2e555a0a}} 
+\index{BarPAT.h@{BarPAT.h}!MPL115A2\_REGISTER\_TEMP\_MSB@{MPL115A2\_REGISTER\_TEMP\_MSB}}
+\index{MPL115A2\_REGISTER\_TEMP\_MSB@{MPL115A2\_REGISTER\_TEMP\_MSB}!BarPAT.h@{BarPAT.h}}
+\subsubsection{\texorpdfstring{MPL115A2\_REGISTER\_TEMP\_MSB}{MPL115A2\_REGISTER\_TEMP\_MSB}}
+{\footnotesize\ttfamily \#define M\+P\+L115\+A2\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+T\+E\+M\+P\+\_\+\+M\+SB~(0x02)}
+
+10-\/bit Temperature A\+DC output value L\+SB 
+
+Definition at line 29 of file Bar\+P\+A\+T.\+h.
+

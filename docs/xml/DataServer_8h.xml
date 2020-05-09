@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="DataServer_8h" kind="file" language="C++">
+    <compoundname>DataServer.h</compoundname>
+    <includes local="no">freertos/FreeRTOS.h</includes>
+    <includes local="no">freertos/task.h</includes>
+    <includes local="no">esp_wifi.h</includes>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <incdepgraph>
+      <node id="628">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="630">
+        <label>esp_wifi.h</label>
+      </node>
+      <node id="627">
+        <label>main/net/DataServer.h</label>
+        <link refid="DataServer_8h"/>
+        <childnode refid="628" relation="include">
+        </childnode>
+        <childnode refid="629" relation="include">
+        </childnode>
+        <childnode refid="630" relation="include">
+        </childnode>
+      </node>
+      <node id="629">
+        <label>freertos/task.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="633">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="634" relation="include">
+        </childnode>
+      </node>
+      <node id="632">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+      </node>
+      <node id="634">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="631">
+        <label>main/net/DataServer.h</label>
+        <link refid="DataServer_8h"/>
+        <childnode refid="632" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDataServer" prot="public">DataServer</innerclass>
+    <briefdescription>
+<para>A WebServer on ESP32 to display perif data. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/net/DataServer.h"/>
+  </compounddef>
+</doxygen>

@@ -1,5 +1,7 @@
 /**
- * @file SDFileIO.h
+ * @dir main/fs/
+ *
+ * @file SDFileIO.hpp
  *
  * @brief SDFileIO class declaration.
  *
@@ -96,6 +98,11 @@ class SDFileIO {
 	struct stat st;
 	return stat(absolute(fileName).c_str(), &st) == 0;
   }
+  /**
+   * Whether the SD card is initialized and ready for file IO.
+   *
+   * @return the ready state of this SD card
+   */
   bool isReady() {
 	return ready;
   }
@@ -133,9 +140,8 @@ class SDFileIO {
    * virtual file system.
    *
    * @tparam FStream the type of stream for the file
-   * @tparam mode the first open mode
-   * @tparam modes any additional open modes
    * @param fileName the name of the file
+   * @param mode the first open mode
    * @param fileOp the operations to perform on the opened file
    * @return whether all operations completed successfully
    */
@@ -159,7 +165,6 @@ class SDFileIO {
    * truncates the entire file upon opening so the only data that will be in
    * the file is what was passed as a parameter here.
    *
-   * @tparam modes file open modes, excl. ios::out | ios::trunc
    * @param fileName the name of the file
    * @param data the data to write
    * @return whether the data was successfully written
@@ -186,7 +191,6 @@ class SDFileIO {
    * method truncates the entire file upon opening so the only data that will
    * be in the file is what was passed as a parameter here.
    *
-   * @tparam modes file open modes, excl. ios::out | ios::trunc | ios::binary
    * @param fileName the name of the file
    * @param data the data to write
    * @return whether the data was successfully written
@@ -204,7 +208,6 @@ class SDFileIO {
   /**
    * Appends the provided data to the file specified by file name.
    *
-   * @tparam modes file open modes, excl. ios::out | ios::app
    * @param fileName the name of the file
    * @param data the data to append
    * @return whether the data was successfully written
@@ -229,7 +232,6 @@ class SDFileIO {
   /**
    * Appends the provided binary data to the file specified by file name.
    *
-   * @tparam modes file open modes, excl. ios::out | ios::app | ios::binary
    * @param fileName the name of the file
    * @param data the data to write
    * @return whether the data was successfully written
@@ -247,7 +249,6 @@ class SDFileIO {
   /**
    * Reads content from the specified file into the data parameter.
    *
-   * @tparam modes file open modes, excl. ios::in | ios::ate
    * @param fileName the name of the file
    * @param data the destination
    * @return whether the data was successfully read
@@ -279,7 +280,6 @@ class SDFileIO {
   /**
    * Reads binary content from the specified file into the data parameter.
    *
-   * @tparam modes file open modes, excl. ios::in | ios::ate | ios::binary
    * @param fileName the name of the file
    * @param data the destination
    * @return whether the data was successfully read

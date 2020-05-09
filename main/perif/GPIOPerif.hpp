@@ -1,7 +1,13 @@
 /**
+ * @dir main/perif/
+ *
  * @file GPIOPerif.hpp
  *
  * @brief GPIOPerif class declaration.
+ *
+ * @namespace perif
+ *
+ * @brief The peripheral library.
  *
  * @author Timothy Logan <logantc@dukes.jmu.edu>
  */
@@ -15,27 +21,44 @@
 
 namespace perif {
 
-class GPIOConfig {
-
-};
 
 /**
  * A peripheral that interfaces with GPIO pins directly.
  */
 class GPIOPerif : public Perif {
  private:
+  /**
+   * A function to call for GPIO interrupts.
+   */
   using gpioFunc = function<void(uint8_t)>;
+  /**
+   * All registered GPIO interrupt handlers.
+   */
   static array<gpioFunc, GPIO_PIN_COUNT> isrHandlers;
+  /**
+   * The global GPIO interrupt handler.
+   *
+   * @param arg
+   */
   static void isrHandler(void *arg) {
 	uint32_t pin = reinterpret_cast<long>(arg);
 	isrHandlers[pin](pin);
   };
+  /**
+   * Sets up a pin for GPIO operations.
+   *
+   * @param pin the GPIO pin number
+   * @param mode the GPIO pin mode
+   * @param pullUp whether the pin is a pullup
+   * @param pullDown whether the pin is a pulldown
+   * @param intrType if this pin should be used with interrupts
+   * @return if the pin was setup successfully
+   */
   static inline bool _setPin(uint8_t pin,
 							 gpio_mode_t mode = GPIO_MODE_INPUT_OUTPUT,
 							 bool pullUp = false,
 							 bool pullDown = false,
 							 gpio_int_type_t intrType = GPIO_INTR_DISABLE) {
-
 	bool res;
 	if ((mode & GPIO_MODE_OUTPUT) != GPIO_MODE_OUTPUT)
 	  res = GPIO_IS_VALID_OUTPUT_GPIO(pin);
@@ -64,12 +87,33 @@ class GPIOPerif : public Perif {
 	// no way to tell if GPIO is connected or not
 	return true;
   }
+  /**
+   * Sets up a pin for GPIO operations with interrupts disabled.
+   *
+   * @param pin the GPIO pin number
+   * @param mode the GPIO pin mode
+   * @param pullUp whether the pin is a pullup
+   * @param pullDown whether the pin is a pulldown
+   * @return if the pin was setup successfully
+   */
   bool setPin(uint8_t pin,
 			  gpio_mode_t mode = GPIO_MODE_INPUT_OUTPUT,
 			  bool pullUp = false,
 			  bool pullDown = false) {
 	return _setPin(pin, mode, pullUp, pullDown);
   }
+  /**
+   * Specify a pin to use as an interrupt.
+   *
+   * @param pin the pin number
+   * @param handler the interrupt handler
+   * @param isrFlags any interrupt configuration flags
+   * @param intrType the interrupt type
+   * @param mode the GPIO pin mode
+   * @param pullUp whether the pin is a pullup
+   * @param pullDown whether the pin is a pulldown
+   * @return if the interrupt pin was setup successfully
+   */
   bool setIntrPin(uint8_t pin,
 				  gpioFunc &&handler,
 				  uint8_t isrFlags = 0,

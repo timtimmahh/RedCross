@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="I2Cdev_8cpp" kind="file" language="C++">
+    <compoundname>I2Cdev.cpp</compoundname>
+    <includes refid="ErrorLog_8hpp" local="yes">ErrorLog.hpp</includes>
+    <includes refid="i2c__data_8h" local="yes">i2c_data.h</includes>
+    <includes local="no">freertos/FreeRTOS.h</includes>
+    <includes local="no">freertos/task.h</includes>
+    <includes local="yes">sdkconfig.h</includes>
+    <includes refid="I2Cdev_8h" local="yes">I2Cdev.h</includes>
+    <incdepgraph>
+      <node id="723">
+        <label>list</label>
+      </node>
+      <node id="724">
+        <label>functional</label>
+      </node>
+      <node id="713">
+        <label>main/perif/i2c/I2Cdev.cpp</label>
+        <link refid="I2Cdev_8cpp"/>
+        <childnode refid="714" relation="include">
+        </childnode>
+        <childnode refid="725" relation="include">
+        </childnode>
+        <childnode refid="728" relation="include">
+        </childnode>
+        <childnode refid="729" relation="include">
+        </childnode>
+        <childnode refid="730" relation="include">
+        </childnode>
+        <childnode refid="731" relation="include">
+        </childnode>
+      </node>
+      <node id="732">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="728">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="717">
+        <label>cmath</label>
+      </node>
+      <node id="718">
+        <label>string</label>
+      </node>
+      <node id="715">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="717" relation="include">
+        </childnode>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+        <childnode refid="720" relation="include">
+        </childnode>
+      </node>
+      <node id="721">
+        <label>esp_err.h</label>
+      </node>
+      <node id="720">
+        <label>esp_log.h</label>
+      </node>
+      <node id="722">
+        <label>cstdio</label>
+      </node>
+      <node id="725">
+        <label>i2c_data.h</label>
+        <link refid="i2c__data_8h"/>
+        <childnode refid="726" relation="include">
+        </childnode>
+        <childnode refid="727" relation="include">
+        </childnode>
+      </node>
+      <node id="730">
+        <label>sdkconfig.h</label>
+      </node>
+      <node id="731">
+        <label>I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="726" relation="include">
+        </childnode>
+        <childnode refid="732" relation="include">
+        </childnode>
+        <childnode refid="727" relation="include">
+        </childnode>
+      </node>
+      <node id="719">
+        <label>sstream</label>
+      </node>
+      <node id="727">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="726">
+        <label>mutex</label>
+      </node>
+      <node id="729">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="714">
+        <label>ErrorLog.hpp</label>
+        <link refid="ErrorLog_8hpp"/>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="720" relation="include">
+        </childnode>
+        <childnode refid="721" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="723" relation="include">
+        </childnode>
+        <childnode refid="724" relation="include">
+        </childnode>
+      </node>
+      <node id="716">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>I2C device driver definition. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/perif/i2c/I2Cdev.cpp"/>
+  </compounddef>
+</doxygen>

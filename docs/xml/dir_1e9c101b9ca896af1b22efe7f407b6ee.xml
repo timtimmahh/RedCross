@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_1e9c101b9ca896af1b22efe7f407b6ee" kind="dir">
+    <compoundname>main/devices/AccelGyro</compoundname>
+    <innerfile refid="AccelGyro_8cpp">AccelGyro.cpp</innerfile>
+    <innerfile refid="AccelGyro_8h">AccelGyro.h</innerfile>
+    <innerfile refid="helper__3dmath_8h">helper_3dmath.h</innerfile>
+    <innerfile refid="MPU6050_8cpp">MPU6050.cpp</innerfile>
+    <innerfile refid="MPU6050_8h">MPU6050.h</innerfile>
+    <innerfile refid="MPU6050__6Axis__MotionApps20_8h">MPU6050_6Axis_MotionApps20.h</innerfile>
+    <innerfile refid="MPU6050__9Axis__MotionApps41_8h">MPU6050_9Axis_MotionApps41.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/"/>
+  </compounddef>
+</doxygen>

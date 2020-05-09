@@ -1,0 +1,130 @@
+\hypertarget{classperif_1_1PerifBase}{}\section{perif\+::Perif\+Base Class Reference}
+\label{classperif_1_1PerifBase}\index{perif::PerifBase@{perif::PerifBase}}
+
+
+{\ttfamily \#include $<$Perif.\+hpp$>$}
+
+Inheritance diagram for perif\+::Perif\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.958084cm]{classperif_1_1PerifBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classperif_1_1PerifBase_a8ac4d4632fed61f15c375c6db4da3e77}{Perif\+Base}} (const char $\ast$name)
+\item 
+\mbox{\hyperlink{classperif_1_1PerifBase_a30553bdac90621e309a37628774a7a51}{Perif\+Base}} (const \mbox{\hyperlink{classperif_1_1PerifBase}{Perif\+Base}} \&original)=default
+\item 
+void \mbox{\hyperlink{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}{register\+Hook}} (function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&hook)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}}
+\item 
+list$<$ function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ $>$ \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for peripherals. 
+
+Definition at line 32 of file Perif.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a8ac4d4632fed61f15c375c6db4da3e77}\label{classperif_1_1PerifBase_a8ac4d4632fed61f15c375c6db4da3e77}} 
+\index{perif::PerifBase@{perif::PerifBase}!PerifBase@{PerifBase}}
+\index{PerifBase@{PerifBase}!perif::PerifBase@{perif::PerifBase}}
+\subsubsection{\texorpdfstring{PerifBase()}{PerifBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily perif\+::\+Perif\+Base\+::\+Perif\+Base (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Explicit Value Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the peripheral\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49       : \mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}}(), \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}() \{}
+\DoxyCodeLine{50     \mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}}[\textcolor{stringliteral}{"name"}] = name;}
+\DoxyCodeLine{51   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a30553bdac90621e309a37628774a7a51}\label{classperif_1_1PerifBase_a30553bdac90621e309a37628774a7a51}} 
+\index{perif::PerifBase@{perif::PerifBase}!PerifBase@{PerifBase}}
+\index{PerifBase@{PerifBase}!perif::PerifBase@{perif::PerifBase}}
+\subsubsection{\texorpdfstring{PerifBase()}{PerifBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily perif\+::\+Perif\+Base\+::\+Perif\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classperif_1_1PerifBase}{Perif\+Base}} \&}]{original }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Copy Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & the original instance \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}\label{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}} 
+\index{perif::PerifBase@{perif::PerifBase}!registerHook@{registerHook}}
+\index{registerHook@{registerHook}!perif::PerifBase@{perif::PerifBase}}
+\subsubsection{\texorpdfstring{registerHook()}{registerHook()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+Base\+::register\+Hook (\begin{DoxyParamCaption}\item[{function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&}]{hook }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Registers a hook for obtaining sensor data on update in Json format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hook} & the observer function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                     \{}
+\DoxyCodeLine{64     \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}.push\_back(hook);}
+\DoxyCodeLine{65   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}\label{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}} 
+\index{perif::PerifBase@{perif::PerifBase}!data@{data}}
+\index{data@{data}!perif::PerifBase@{perif::PerifBase}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} perif\+::\+Perif\+Base\+::data}
+
+The key-\/value mapping of peripheral data. 
+
+Definition at line 37 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}\label{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}} 
+\index{perif::PerifBase@{perif::PerifBase}!hooks@{hooks}}
+\index{hooks@{hooks}!perif::PerifBase@{perif::PerifBase}}
+\subsubsection{\texorpdfstring{hooks}{hooks}}
+{\footnotesize\ttfamily list$<$function$<$void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}}\&)$>$ $>$ perif\+::\+Perif\+Base\+::hooks}
+
+Hooks registered to this peripheral so observers can be notified of any necessary changes. 
+
+Definition at line 42 of file Perif.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/perif/\mbox{\hyperlink{Perif_8hpp}{Perif.\+hpp}}\end{DoxyCompactItemize}

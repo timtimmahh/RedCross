@@ -1,0 +1,78 @@
+\hypertarget{ErrorLog_8hpp}{}\section{main/include/\+Error\+Log.hpp File Reference}
+\label{ErrorLog_8hpp}\index{main/include/ErrorLog.hpp@{main/include/ErrorLog.hpp}}
+
+
+Error\+Log class definition.  
+
+
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$esp\+\_\+log.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+err.\+h$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classErr}{Err}}
+\item 
+class \mbox{\hyperlink{classErrorHandler}{Error\+Handler$<$ valid $>$}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Ret , typename... Args, template$<$ Ret($\ast$)(\+Args...), Args... $>$ class... func$>$ }\\function$<$ bool(Args...)$>$ \mbox{\hyperlink{ErrorLog_8hpp_af80fb2bfb08c8776e58d199d2f644a61}{\+\_\+}} (esp\+\_\+err\+\_\+t \mbox{\hyperlink{cppEspI2C_8hpp_a5ba520ee90ad4c690c3d95c1502168fd}{idf\+Func}}(Args...), \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Err\+::\+Flag}} valid=\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{Err\+::\+Err\+OK}})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Error\+Log class definition. 
+
+\begin{DoxyAuthor}{Author}
+Timothy Logan \href{mailto:logantc@dukes.jmu.edu}{\texttt{ logantc@dukes.\+jmu.\+edu}} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ErrorLog_8hpp_af80fb2bfb08c8776e58d199d2f644a61}\label{ErrorLog_8hpp_af80fb2bfb08c8776e58d199d2f644a61}} 
+\index{ErrorLog.hpp@{ErrorLog.hpp}!\_@{\_}}
+\index{\_@{\_}!ErrorLog.hpp@{ErrorLog.hpp}}
+\subsubsection{\texorpdfstring{\_()}{\_()}}
+{\footnotesize\ttfamily template$<$typename Ret , typename... Args, template$<$ Ret($\ast$)(\+Args...), Args... $>$ class... func$>$ \\
+function$<$bool(Args...)$>$ \+\_\+ (\begin{DoxyParamCaption}\item[{esp\+\_\+err\+\_\+t }]{idf\+FuncArgs...,  }\item[{\mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ff}{Err\+::\+Flag}}}]{valid = {\ttfamily \mbox{\hyperlink{classErr_a5027803a04dbda5395326274137d63ffa32bb3ca49d660fa0525cba5aeb786059}{Err\+::\+Err\+OK}}} }\end{DoxyParamCaption})}
+
+Function call operator to pass an E\+SP function, it\textquotesingle{}s name and any arguments.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Ret} & the E\+SP function return type \\
+\hline
+{\em Args} & the E\+SP function args \\
+\hline
+{\em func} & the E\+SP function signature \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em idf\+Func} & the E\+SP function \\
+\hline
+{\em valid} & the function label (for debugging) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a wrapper around the E\+SP function with error checking 
+\end{DoxyReturn}
+
+
+Definition at line 197 of file Error\+Log.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{198                                                     \{}
+\DoxyCodeLine{199   \textcolor{keywordflow}{return} [\&\mbox{\hyperlink{cppEspI2C_8hpp_a5ba520ee90ad4c690c3d95c1502168fd}{idfFunc}}, \&valid](Args... args) -> \textcolor{keywordtype}{bool} \{}
+\DoxyCodeLine{200     \textcolor{keywordflow}{return} \mbox{\hyperlink{classErr_af320160955e90df0ddb4e84d99027562}{Err::convert}}(\mbox{\hyperlink{cppEspI2C_8hpp_a5ba520ee90ad4c690c3d95c1502168fd}{idfFunc}}(args...), valid);}
+\DoxyCodeLine{201   \};}
+\DoxyCodeLine{202 \}}
+
+\end{DoxyCode}

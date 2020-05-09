@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_4baf240b03da655657c2fd5774184b9a" kind="dir">
+    <compoundname>main/perif/i2c</compoundname>
+    <innerfile refid="cppEspI2C_8hpp">cppEspI2C.hpp</innerfile>
+    <innerfile refid="i2c__data_8h">i2c_data.h</innerfile>
+    <innerfile refid="I2Cdev_8cpp">I2Cdev.cpp</innerfile>
+    <innerfile refid="I2Cdev_8h">I2Cdev.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/perif/i2c/"/>
+  </compounddef>
+</doxygen>

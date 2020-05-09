@@ -1,0 +1,330 @@
+\hypertarget{classperif_1_1UARTPerif}{}\section{perif\+::U\+A\+R\+T\+Perif Class Reference}
+\label{classperif_1_1UARTPerif}\index{perif::UARTPerif@{perif::UARTPerif}}
+
+
+{\ttfamily \#include $<$U\+A\+R\+T\+Perif.\+hpp$>$}
+
+Inheritance diagram for perif\+::U\+A\+R\+T\+Perif\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classperif_1_1UARTPerif}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classperif_1_1UARTPerif_a51d653db806b884f36cc0e9136355e3b}{U\+A\+R\+T\+Perif}} (const char $\ast$name, uint8\+\_\+t uart\+\_\+num, uint8\+\_\+t \mbox{\hyperlink{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}{tx\+Pin}}, uint8\+\_\+t \mbox{\hyperlink{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}{rx\+Pin}}, int \mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}=\mbox{\hyperlink{UARTPerif_8hpp_ae9dc3b6e28948a9d8788412ce6a603cb}{D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+A\+UD}})
+\item 
+\mbox{\hyperlink{classperif_1_1UARTPerif_af85b7a0dd0877182024266ad631cd39b}{U\+A\+R\+T\+Perif}} (const char $\ast$name, int \mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}=\mbox{\hyperlink{UARTPerif_8hpp_ae9dc3b6e28948a9d8788412ce6a603cb}{D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+A\+UD}})
+\item 
+bool \mbox{\hyperlink{classperif_1_1UARTPerif_ac060109ead3a8910fabe57304afe1dbb}{begin}} () override
+\item 
+bool \mbox{\hyperlink{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}{is\+Connected}} () override
+\item 
+void \mbox{\hyperlink{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}{update}} ()
+\item 
+void \mbox{\hyperlink{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}{register\+Hook}} (function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&hook)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}}
+\item 
+list$<$ function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ $>$ \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}{update\+Data}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}{represent\+Data}} ()=0
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \& \mbox{\hyperlink{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}{get\+Timer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}{tx\+Pin}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}{rx\+Pin}}
+\item 
+\mbox{\hyperlink{classTimer}{Timer}} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A peripheral that operates over serial U\+A\+RT. E\+S\+P32 has 3 U\+A\+RT bus\textquotesingle{}s, one being the serial used for logging. Most devices using U\+A\+RT on the E\+S\+P32 will probably use U\+A\+R\+T2. 
+
+Definition at line 32 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a51d653db806b884f36cc0e9136355e3b}\label{classperif_1_1UARTPerif_a51d653db806b884f36cc0e9136355e3b}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!UARTPerif@{UARTPerif}}
+\index{UARTPerif@{UARTPerif}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{UARTPerif()}{UARTPerif()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily perif\+::\+U\+A\+R\+T\+Perif\+::\+U\+A\+R\+T\+Perif (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{uint8\+\_\+t}]{uart\+\_\+num,  }\item[{uint8\+\_\+t}]{tx\+Pin,  }\item[{uint8\+\_\+t}]{rx\+Pin,  }\item[{int}]{baud = {\ttfamily \mbox{\hyperlink{UARTPerif_8hpp_ae9dc3b6e28948a9d8788412ce6a603cb}{D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+A\+UD}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Explicit value constructor for U\+A\+RT devices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the peripheral \\
+\hline
+{\em uart\+\_\+num} & the U\+A\+RT bus number \\
+\hline
+{\em tx\+Pin} & the G\+P\+IO transmit pin \\
+\hline
+{\em rx\+Pin} & the G\+P\+IO receive pin \\
+\hline
+{\em baud} & the baud rate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61       : \mbox{\hyperlink{classperif_1_1Perif_a8e0c30d9aeb9069e3c1a1aa2db672b62}{Perif}}(name),}
+\DoxyCodeLine{62         \mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}(\mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}),}
+\DoxyCodeLine{63         \mbox{\hyperlink{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}{txPin}}(\mbox{\hyperlink{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}{txPin}}), \mbox{\hyperlink{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}{rxPin}}(\mbox{\hyperlink{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}{rxPin}}) \{}
+\DoxyCodeLine{64 \textcolor{comment}{//      MySerial(uart\_num == 0 ? Serial : (uart\_num == 1 ? Serial1 : Serial2)) \{}}
+\DoxyCodeLine{65   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1UARTPerif_af85b7a0dd0877182024266ad631cd39b}\label{classperif_1_1UARTPerif_af85b7a0dd0877182024266ad631cd39b}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!UARTPerif@{UARTPerif}}
+\index{UARTPerif@{UARTPerif}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{UARTPerif()}{UARTPerif()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily perif\+::\+U\+A\+R\+T\+Perif\+::\+U\+A\+R\+T\+Perif (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{baud = {\ttfamily \mbox{\hyperlink{UARTPerif_8hpp_ae9dc3b6e28948a9d8788412ce6a603cb}{D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+A\+UD}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Explicit value constructor for a preconfigured Hardware\+Serial instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the peripheral \\
+\hline
+{\em baud} & the baud rate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73       : \mbox{\hyperlink{classperif_1_1Perif_a8e0c30d9aeb9069e3c1a1aa2db672b62}{Perif}}(name),}
+\DoxyCodeLine{74         \mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}(\mbox{\hyperlink{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}{baud}}),}
+\DoxyCodeLine{75         \mbox{\hyperlink{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}{txPin}}(-1), \mbox{\hyperlink{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}{rxPin}}(-1) \{}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classperif_1_1UARTPerif_ac060109ead3a8910fabe57304afe1dbb}\label{classperif_1_1UARTPerif_ac060109ead3a8910fabe57304afe1dbb}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!begin@{begin}}
+\index{begin@{begin}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool perif\+::\+U\+A\+R\+T\+Perif\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Performs initialization of a peripheral. Necessary to avoid initialization in the constructor which causes many side effects.
+
+\begin{DoxyReturn}{Returns}
+whether the peripheral initialization succeeded 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classperif_1_1Perif_ae7f1d1a4e9cd2343d51abc4ee21000cf}{perif\+::\+Perif}}.
+
+
+
+Definition at line 78 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78                         \{}
+\DoxyCodeLine{79 \textcolor{comment}{//  MySerial.begin(baud, SERIAL\_8N1, rxPin, txPin);}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{return} \mbox{\hyperlink{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}{isConnected}}();}
+\DoxyCodeLine{81   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}\label{classperif_1_1Perif_a29c48598a861d85256c30e28af67f864}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!getTimer@{getTimer}}
+\index{getTimer@{getTimer}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{getTimer()}{getTimer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}}\& perif\+::\+Perif\+::get\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+Obtains a reference to this peripheral\textquotesingle{}s timer.
+
+\begin{DoxyReturn}{Returns}
+a timer reference 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}{timer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}\label{classperif_1_1UARTPerif_a14c1fdcd81cd9a5eac9d4c0ac9863b66}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily bool perif\+::\+U\+A\+R\+T\+Perif\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the sensor is connected or not.
+
+\begin{DoxyReturn}{Returns}
+if the sensor is connected 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classperif_1_1Perif_ab9a17fad04e595f3ac0c78b9d3be4c9e}{perif\+::\+Perif}}.
+
+
+
+Definition at line 82 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                               \{}
+\DoxyCodeLine{83 \textcolor{comment}{//  return MySerial.available() || MySerial.availableForWrite();}}
+\DoxyCodeLine{84     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{85   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}\label{classperif_1_1PerifBase_a2e8bcc221ee253b21b61c7c07307d931}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!registerHook@{registerHook}}
+\index{registerHook@{registerHook}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{registerHook()}{registerHook()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+Base\+::register\+Hook (\begin{DoxyParamCaption}\item[{function$<$ void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} \&)$>$ \&\&}]{hook }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Registers a hook for obtaining sensor data on update in Json format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hook} & the observer function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                     \{}
+\DoxyCodeLine{64     \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}}.push\_back(hook);}
+\DoxyCodeLine{65   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}\label{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!representData@{representData}}
+\index{representData@{representData}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{representData()}{representData()}}
+{\footnotesize\ttfamily virtual void perif\+::\+Perif\+::represent\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+The representation of this peripheral\textquotesingle{}s data in a meaningful way for debugging, caching, and database operations. \mbox{\Hypertarget{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}\label{classperif_1_1Perif_ad6fe1a13354bba4af4cc2751399ed93c}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!update@{update}}
+\index{update@{update}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void perif\+::\+Perif\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Performs a manual update of peripheral data and notifies observers. 
+
+Definition at line 130 of file Perif.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{130                 \{}
+\DoxyCodeLine{131     \textcolor{comment}{// performs a manual data retrieval}}
+\DoxyCodeLine{132     \mbox{\hyperlink{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}{updateData}}();}
+\DoxyCodeLine{133     \textcolor{comment}{// update the data mapping so hooks can process it}}
+\DoxyCodeLine{134     \mbox{\hyperlink{classperif_1_1Perif_a556c780e9e4623aa6b7c3d167ef23e6b}{representData}}();}
+\DoxyCodeLine{135     \textcolor{comment}{// notify all observers}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& hook : \mbox{\hyperlink{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}{hooks}})}
+\DoxyCodeLine{137       hook(\mbox{\hyperlink{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}{data}});}
+\DoxyCodeLine{138   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}\label{classperif_1_1Perif_a7c9b9c1af5300dc5c007f9559fefbffe}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!updateData@{updateData}}
+\index{updateData@{updateData}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily virtual void perif\+::\+Perif\+::update\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+Updates sensor data. Subclasses should maintain a reference to the data obtained from this function so it can be provided to observers. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}\label{classperif_1_1UARTPerif_a8d5c1c0ce1f1758392dc0145f0caade8}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!baud@{baud}}
+\index{baud@{baud}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{baud}{baud}}
+{\footnotesize\ttfamily int perif\+::\+U\+A\+R\+T\+Perif\+::baud\hspace{0.3cm}{\ttfamily [protected]}}
+
+The baud rate. 
+
+Definition at line 37 of file U\+A\+R\+T\+Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}\label{classperif_1_1PerifBase_a1a3afaa535fda17e9f97123fffe78765}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!data@{data}}
+\index{data@{data}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}} perif\+::\+Perif\+Base\+::data\hspace{0.3cm}{\ttfamily [inherited]}}
+
+The key-\/value mapping of peripheral data. 
+
+Definition at line 37 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}\label{classperif_1_1PerifBase_a98964e5ca8384df64881265e0aa6d7b6}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!hooks@{hooks}}
+\index{hooks@{hooks}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{hooks}{hooks}}
+{\footnotesize\ttfamily list$<$function$<$void(\mbox{\hyperlink{Perif_8hpp_a358ff4ee6d24694ee7661f0cce14377e}{Dev\+Map}}\&)$>$ $>$ perif\+::\+Perif\+Base\+::hooks\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Hooks registered to this peripheral so observers can be notified of any necessary changes. 
+
+Definition at line 42 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}\label{classperif_1_1UARTPerif_a68a86b1e2ca06e42ef72fb4ca0792110}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!rxPin@{rxPin}}
+\index{rxPin@{rxPin}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{rxPin}{rxPin}}
+{\footnotesize\ttfamily uint8\+\_\+t perif\+::\+U\+A\+R\+T\+Perif\+::rx\+Pin\hspace{0.3cm}{\ttfamily [protected]}}
+
+The receive G\+P\+IO pins. 
+
+Definition at line 45 of file U\+A\+R\+T\+Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}\label{classperif_1_1Perif_acfa1256201bead82ccce1a0a8bcc24e1}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!timer@{timer}}
+\index{timer@{timer}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTimer}{Timer}} perif\+::\+Perif\+::timer\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+A timer for managing peripheral updates. 
+
+Definition at line 78 of file Perif.\+hpp.
+
+\mbox{\Hypertarget{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}\label{classperif_1_1UARTPerif_a338fb2e5db8bd91213b13524ac9d89aa}} 
+\index{perif::UARTPerif@{perif::UARTPerif}!txPin@{txPin}}
+\index{txPin@{txPin}!perif::UARTPerif@{perif::UARTPerif}}
+\subsubsection{\texorpdfstring{txPin}{txPin}}
+{\footnotesize\ttfamily uint8\+\_\+t perif\+::\+U\+A\+R\+T\+Perif\+::tx\+Pin\hspace{0.3cm}{\ttfamily [protected]}}
+
+The transmit G\+P\+IO pins. 
+
+Definition at line 41 of file U\+A\+R\+T\+Perif.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/perif/\mbox{\hyperlink{UARTPerif_8hpp}{U\+A\+R\+T\+Perif.\+hpp}}\end{DoxyCompactItemize}

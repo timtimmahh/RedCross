@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>devices/AccelGyro/MPU6050_9Axis_MotionApps41.h file | Red Cross</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">Red Cross</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="dir_07b86ffc266b39efa5bbdc0e9fdb330a.html">devices</a>/</span><span class="m-breadcrumb"><a href="dir_78a7e9d447af8271017172bd46104ef7.html">AccelGyro</a>/</span>MPU6050_9Axis_MotionApps41.h <span class="m-thin">file</span>
+        </h1>
+        <p><a href="classMPU6050.html" class="m-doc">MPU6050</a> I2C device class, 9-axis MotionApps 4.1 implementation.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#var-members">Variables</a></li>
+                <li><a href="#define-members">Defines</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt id="a132cade895232da163e344f296267817">
+              using <a href="#a132cade895232da163e344f296267817" class="m-doc-self">prog_void</a> = void
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8c58c1a4bc98cdbf19a2a070cf889524">
+              using <a href="#a8c58c1a4bc98cdbf19a2a070cf889524" class="m-doc-self">prog_char</a> = char
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2aefb42a042fa5cb20e06f7fcfa327e">
+              using <a href="#ae2aefb42a042fa5cb20e06f7fcfa327e" class="m-doc-self">prog_int8_t</a> = int8_t
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1292f2f164a1997206e9cf714f2372fe">
+              using <a href="#a1292f2f164a1997206e9cf714f2372fe" class="m-doc-self">prog_uint8_t</a> = uint8_t
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8a3c5c6e2c14ced6f6bb5c68ffc70082">
+              using <a href="#a8a3c5c6e2c14ced6f6bb5c68ffc70082" class="m-doc-self">prog_int16_t</a> = int16_t
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a05ca2f20b55933ad782917161d54287d">
+              using <a href="#a05ca2f20b55933ad782917161d54287d" class="m-doc-self">prog_uint16_t</a> = uint16_t
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9d67538d7ddfd038ce8b0068d03dd679">
+              using <a href="#a9d67538d7ddfd038ce8b0068d03dd679" class="m-doc-self">prog_int32_t</a> = int32_t
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0756e93e3e7d572f24952cbd8e35b158">
+              using <a href="#a0756e93e3e7d572f24952cbd8e35b158" class="m-doc-self">prog_uint32_t</a> = uint32_t
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a9ef67ec0ac01c37764f8e0f73b1e4b81">
+              const unsigned char <a href="MPU6050__6Axis__MotionApps20_8h.html#a5661b3605bb4f654dccc59e0f78af217" class="m-doc">dmpMemory</a> [<a href="MPU6050__9Axis__MotionApps41_8h.html#a46b28dbcdbf39e66ec0ecc073a7345d4" class="m-doc">MPU6050_<wbr />DMP_<wbr />CODE_<wbr />SIZE</a>] <a href="#a9ef67ec0ac01c37764f8e0f73b1e4b81" class="m-doc-self">PROGMEM</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="define-members">
+          <h2><a href="#define-members">Defines</a></h2>
+          <dl class="m-doc">
+            <dt id="a920ecc1b08bdb8173f4790774000ab6f">
+              <span class="m-doc-wrap-bumper">#define <a href="#a920ecc1b08bdb8173f4790774000ab6f" class="m-doc-self">MPU6050_INCLUDE_DMP_MOTIONAPPS41</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e19ec020621f8b99268a81a85d29f57">
+              <span class="m-doc-wrap-bumper">#define <a href="#a3e19ec020621f8b99268a81a85d29f57" class="m-doc-self">__PGMSPACE_H_</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a75acaba9e781937468d0911423bc0c35">
+              <span class="m-doc-wrap-bumper">#define <a href="#a75acaba9e781937468d0911423bc0c35" class="m-doc-self">PROGMEM</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a963f816fc88a5d8479c285ed4c630229">
+              <span class="m-doc-wrap-bumper">#define <a href="#a963f816fc88a5d8479c285ed4c630229" class="m-doc-self">PGM_P</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a73809107539df84eaf01f6a4dea4fbff">
+              <span class="m-doc-wrap-bumper">#define <a href="#a73809107539df84eaf01f6a4dea4fbff" class="m-doc-self">PSTR</a>(</span><span class="m-doc-wrap">str)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a203d5b93e4077aa273c7013964a31f9e">
+              <span class="m-doc-wrap-bumper">#define <a href="#a203d5b93e4077aa273c7013964a31f9e" class="m-doc-self">F</a>(</span><span class="m-doc-wrap">x)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae74941b597bdd8ffb5c35f45b636946b">
+              <span class="m-doc-wrap-bumper">#define <a href="#ae74941b597bdd8ffb5c35f45b636946b" class="m-doc-self">strcpy_P</a>(</span><span class="m-doc-wrap">dest,
+              src)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ca9304dda7dc2472812baa9e9ede965">
+              <span class="m-doc-wrap-bumper">#define <a href="#a2ca9304dda7dc2472812baa9e9ede965" class="m-doc-self">strcat_P</a>(</span><span class="m-doc-wrap">dest,
+              src)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abbb2cd396dde2d1575948bb16ce2853a">
+              <span class="m-doc-wrap-bumper">#define <a href="#abbb2cd396dde2d1575948bb16ce2853a" class="m-doc-self">strcmp_P</a>(</span><span class="m-doc-wrap">a,
+              b)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a48c60b057902adf805797f183286728d">
+              <span class="m-doc-wrap-bumper">#define <a href="#a48c60b057902adf805797f183286728d" class="m-doc-self">pgm_read_byte</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a910fb5f01313d339d3b835d45e1e5ad0">
+              <span class="m-doc-wrap-bumper">#define <a href="#a910fb5f01313d339d3b835d45e1e5ad0" class="m-doc-self">pgm_read_word</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a73cf3e57e32321cb193b3cc4b041cc6c">
+              <span class="m-doc-wrap-bumper">#define <a href="#a73cf3e57e32321cb193b3cc4b041cc6c" class="m-doc-self">pgm_read_dword</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a334426a3824fc08cee3a557ded696128">
+              <span class="m-doc-wrap-bumper">#define <a href="#a334426a3824fc08cee3a557ded696128" class="m-doc-self">pgm_read_float</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad2b71a6faa0583b51569b531a443cb0a">
+              <span class="m-doc-wrap-bumper">#define <a href="#ad2b71a6faa0583b51569b531a443cb0a" class="m-doc-self">pgm_read_byte_near</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a515a845ea5139d8cf1c7f09ad6dad243">
+              <span class="m-doc-wrap-bumper">#define <a href="#a515a845ea5139d8cf1c7f09ad6dad243" class="m-doc-self">pgm_read_word_near</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a27619bf0e01033f6049a11a6d5d754f3">
+              <span class="m-doc-wrap-bumper">#define <a href="#a27619bf0e01033f6049a11a6d5d754f3" class="m-doc-self">pgm_read_dword_near</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a93b33ee6ceaf1dd3ebcfa6f4c96f8b27">
+              <span class="m-doc-wrap-bumper">#define <a href="#a93b33ee6ceaf1dd3ebcfa6f4c96f8b27" class="m-doc-self">pgm_read_float_near</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a96c2bf865e6b08ed5f881ad25f5d47d4">
+              <span class="m-doc-wrap-bumper">#define <a href="#a96c2bf865e6b08ed5f881ad25f5d47d4" class="m-doc-self">pgm_read_byte_far</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3aaf70e2e58f5749ccbcd36032b1d1b3">
+              <span class="m-doc-wrap-bumper">#define <a href="#a3aaf70e2e58f5749ccbcd36032b1d1b3" class="m-doc-self">pgm_read_word_far</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2829b030e67c660d451045dd1ee6b1e9">
+              <span class="m-doc-wrap-bumper">#define <a href="#a2829b030e67c660d451045dd1ee6b1e9" class="m-doc-self">pgm_read_dword_far</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac9201560d03a0cfa240d0421a22c74d1">
+              <span class="m-doc-wrap-bumper">#define <a href="#ac9201560d03a0cfa240d0421a22c74d1" class="m-doc-self">pgm_read_float_far</a>(</span><span class="m-doc-wrap">addr)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af6551f0b4c3964c3128f808e7bf987c7">
+              <span class="m-doc-wrap-bumper">#define <a href="#af6551f0b4c3964c3128f808e7bf987c7" class="m-doc-self">DEBUG_PRINT</a>(</span><span class="m-doc-wrap">x)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a40c71ee610c953dd0e914ece23dde8a5">
+              <span class="m-doc-wrap-bumper">#define <a href="#a40c71ee610c953dd0e914ece23dde8a5" class="m-doc-self">DEBUG_PRINTF</a>(</span><span class="m-doc-wrap">x,
+              y)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8e30ff0704664fcb13dabf0c4dc5c8f5">
+              <span class="m-doc-wrap-bumper">#define <a href="#a8e30ff0704664fcb13dabf0c4dc5c8f5" class="m-doc-self">DEBUG_PRINTLN</a>(</span><span class="m-doc-wrap">x)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad1937eefa9a7b6d3c9034dd9e62ab114">
+              <span class="m-doc-wrap-bumper">#define <a href="#ad1937eefa9a7b6d3c9034dd9e62ab114" class="m-doc-self">DEBUG_PRINTLNF</a>(</span><span class="m-doc-wrap">x,
+              y)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a46b28dbcdbf39e66ec0ecc073a7345d4">
+              <span class="m-doc-wrap-bumper">#define <a href="#a46b28dbcdbf39e66ec0ecc073a7345d4" class="m-doc-self">MPU6050_DMP_CODE_SIZE</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afa62d211d77172f56da13321845e8410">
+              <span class="m-doc-wrap-bumper">#define <a href="#afa62d211d77172f56da13321845e8410" class="m-doc-self">MPU6050_DMP_CONFIG_SIZE</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aef1d5979e111bf2da69c882ac9d5c704">
+              <span class="m-doc-wrap-bumper">#define <a href="#aef1d5979e111bf2da69c882ac9d5c704" class="m-doc-self">MPU6050_DMP_UPDATES_SIZE</a></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Red Cross. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

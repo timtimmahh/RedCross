@@ -1,0 +1,100 @@
+\hypertarget{SDFileIO_8hpp}{}\section{main/fs/\+S\+D\+File\+IO.hpp File Reference}
+\label{SDFileIO_8hpp}\index{main/fs/SDFileIO.hpp@{main/fs/SDFileIO.hpp}}
+
+
+\mbox{\hyperlink{classSDFileIO}{S\+D\+File\+IO}} class declaration.  
+
+
+{\ttfamily \#include $<$esp\+\_\+vfs\+\_\+fat.\+h$>$}\newline
+{\ttfamily \#include $<$driver/sdspi\+\_\+host.\+h$>$}\newline
+{\ttfamily \#include $<$sdmmc\+\_\+cmd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSDFileIO}{S\+D\+File\+IO}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{SDFileIO_8hpp_a46bdd417480dec5cb9cf196af3c7489c}{P\+I\+N\+\_\+\+M\+I\+SO}}~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+2
+\item 
+\#define \mbox{\hyperlink{SDFileIO_8hpp_abaeddda4b992af7165ed898ab8b2b4ac}{P\+I\+N\+\_\+\+M\+O\+SI}}~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+15
+\item 
+\#define \mbox{\hyperlink{SDFileIO_8hpp_a29e4cd8304fdcdd2e715189dfaaf31c2}{P\+I\+N\+\_\+\+C\+LK}}~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+14
+\item 
+\#define \mbox{\hyperlink{SDFileIO_8hpp_afa592f8fcb7a301edfe97aa121fd28ce}{P\+I\+N\+\_\+\+CS}}~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+13
+\item 
+\#define \mbox{\hyperlink{SDFileIO_8hpp_aac40f1408cb073b2eaa91ad212707b98}{absolute}}(f\+Name)~(prefix + \char`\"{}/\char`\"{} + f\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classSDFileIO}{S\+D\+File\+IO}} class declaration. 
+
+This work complies with the J\+MU honor code.
+
+\begin{DoxyAuthor}{Author}
+Timothy Logan \href{mailto:logantc@dukes.jmu.edu}{\texttt{ logantc@dukes.\+jmu.\+edu}} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{SDFileIO_8hpp_aac40f1408cb073b2eaa91ad212707b98}\label{SDFileIO_8hpp_aac40f1408cb073b2eaa91ad212707b98}} 
+\index{SDFileIO.hpp@{SDFileIO.hpp}!absolute@{absolute}}
+\index{absolute@{absolute}!SDFileIO.hpp@{SDFileIO.hpp}}
+\subsubsection{\texorpdfstring{absolute}{absolute}}
+{\footnotesize\ttfamily \#define absolute(\begin{DoxyParamCaption}\item[{}]{f\+Name }\end{DoxyParamCaption})~(prefix + \char`\"{}/\char`\"{} + f\+Name)}
+
+
+
+Definition at line 33 of file S\+D\+File\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{SDFileIO_8hpp_a29e4cd8304fdcdd2e715189dfaaf31c2}\label{SDFileIO_8hpp_a29e4cd8304fdcdd2e715189dfaaf31c2}} 
+\index{SDFileIO.hpp@{SDFileIO.hpp}!PIN\_CLK@{PIN\_CLK}}
+\index{PIN\_CLK@{PIN\_CLK}!SDFileIO.hpp@{SDFileIO.hpp}}
+\subsubsection{\texorpdfstring{PIN\_CLK}{PIN\_CLK}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+C\+LK~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+14}
+
+
+
+Definition at line 30 of file S\+D\+File\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{SDFileIO_8hpp_afa592f8fcb7a301edfe97aa121fd28ce}\label{SDFileIO_8hpp_afa592f8fcb7a301edfe97aa121fd28ce}} 
+\index{SDFileIO.hpp@{SDFileIO.hpp}!PIN\_CS@{PIN\_CS}}
+\index{PIN\_CS@{PIN\_CS}!SDFileIO.hpp@{SDFileIO.hpp}}
+\subsubsection{\texorpdfstring{PIN\_CS}{PIN\_CS}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+CS~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+13}
+
+
+
+Definition at line 31 of file S\+D\+File\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{SDFileIO_8hpp_a46bdd417480dec5cb9cf196af3c7489c}\label{SDFileIO_8hpp_a46bdd417480dec5cb9cf196af3c7489c}} 
+\index{SDFileIO.hpp@{SDFileIO.hpp}!PIN\_MISO@{PIN\_MISO}}
+\index{PIN\_MISO@{PIN\_MISO}!SDFileIO.hpp@{SDFileIO.hpp}}
+\subsubsection{\texorpdfstring{PIN\_MISO}{PIN\_MISO}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+M\+I\+SO~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+2}
+
+
+
+Definition at line 28 of file S\+D\+File\+I\+O.\+hpp.
+
+\mbox{\Hypertarget{SDFileIO_8hpp_abaeddda4b992af7165ed898ab8b2b4ac}\label{SDFileIO_8hpp_abaeddda4b992af7165ed898ab8b2b4ac}} 
+\index{SDFileIO.hpp@{SDFileIO.hpp}!PIN\_MOSI@{PIN\_MOSI}}
+\index{PIN\_MOSI@{PIN\_MOSI}!SDFileIO.hpp@{SDFileIO.hpp}}
+\subsubsection{\texorpdfstring{PIN\_MOSI}{PIN\_MOSI}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+M\+O\+SI~G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+15}
+
+
+
+Definition at line 29 of file S\+D\+File\+I\+O.\+hpp.
+

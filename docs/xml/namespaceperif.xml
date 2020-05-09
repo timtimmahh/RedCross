@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="namespaceperif" kind="namespace" language="C++">
+    <compoundname>perif</compoundname>
+    <innerclass refid="classperif_1_1AccelGyro" prot="public">perif::AccelGyro</innerclass>
+    <innerclass refid="classperif_1_1BarPAT" prot="public">perif::BarPAT</innerclass>
+    <innerclass refid="classperif_1_1GPIOPerif" prot="public">perif::GPIOPerif</innerclass>
+    <innerclass refid="classperif_1_1GPS" prot="public">perif::GPS</innerclass>
+    <innerclass refid="classperif_1_1I2CPerif" prot="public">perif::I2CPerif</innerclass>
+    <innerclass refid="classperif_1_1LidarMap" prot="public">perif::LidarMap</innerclass>
+    <innerclass refid="classperif_1_1Perif" prot="public">perif::Perif</innerclass>
+    <innerclass refid="classperif_1_1PerifBase" prot="public">perif::PerifBase</innerclass>
+    <innerclass refid="classperif_1_1SPIPerif" prot="public">perif::SPIPerif</innerclass>
+    <innerclass refid="classperif_1_1UARTPerif" prot="public">perif::UARTPerif</innerclass>
+    <innerclass refid="classperif_1_1USDist" prot="public">perif::USDist</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceperif_1a724d326926eb65991b0f0906a8f5d0c2" prot="public" static="yes" mutable="no">
+        <type>portMUX_TYPE</type>
+        <definition>portMUX_TYPE perif::mux</definition>
+        <argsstring></argsstring>
+        <name>mux</name>
+        <initializer>= portMUX_INITIALIZER_UNLOCKED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/USDist/USDist.cpp" line="19" column="1" bodyfile="main/devices/USDist/USDist.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The peripheral library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/AccelGyro.cpp" line="12" column="1"/>
+  </compounddef>
+</doxygen>

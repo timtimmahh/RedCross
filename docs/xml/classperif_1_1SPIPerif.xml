@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classperif_1_1SPIPerif" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>perif::SPIPerif</compoundname>
+    <basecompoundref refid="classperif_1_1Perif" prot="public" virt="non-virtual">perif::Perif</basecompoundref>
+    <includes refid="SPIPerif_8hpp" local="no">SPIPerif.hpp</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classperif_1_1Perif_1acfa1256201bead82ccce1a0a8bcc24e1" prot="protected" static="no" mutable="no">
+        <type><ref refid="classTimer" kindref="compound">Timer</ref></type>
+        <definition>Timer perif::Perif::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A timer for managing peripheral updates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="78" column="1" bodyfile="main/perif/Perif.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classperif_1_1Perif_1a7c9b9c1af5300dc5c007f9559fefbffe" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void perif::Perif::updateData</definition>
+        <argsstring>()=0</argsstring>
+        <name>updateData</name>
+        <reimplementedby refid="classperif_1_1GPS_1a7ab6969badea019cca62aa68d440b948">updateData</reimplementedby>
+        <reimplementedby refid="classperif_1_1AccelGyro_1afa20b763b6725d3fc18cfa4bc0291df4">updateData</reimplementedby>
+        <reimplementedby refid="classperif_1_1USDist_1a81772dc47655567c734d124d38c7aac0">updateData</reimplementedby>
+        <reimplementedby refid="classperif_1_1BarPAT_1a0d72dc2d553886776f8656140d1b945a">updateData</reimplementedby>
+        <reimplementedby refid="classperif_1_1LidarMap_1a420005d3a49a29c32f26eb8bbe77afd9">updateData</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates sensor data. Subclasses should maintain a reference to the data obtained from this function so it can be provided to observers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classperif_1_1Perif_1a556c780e9e4623aa6b7c3d167ef23e6b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void perif::Perif::representData</definition>
+        <argsstring>()=0</argsstring>
+        <name>representData</name>
+        <reimplementedby refid="classperif_1_1GPS_1af70a23423ab6cb7230f7e3062d226b67">representData</reimplementedby>
+        <reimplementedby refid="classperif_1_1AccelGyro_1a8e0648c0522349bf10773a2073024f5d">representData</reimplementedby>
+        <reimplementedby refid="classperif_1_1USDist_1aabec8b21377dadc1cb42078fe7f3bf73">representData</reimplementedby>
+        <reimplementedby refid="classperif_1_1BarPAT_1a387d0127e85b8f75b24581fd91c7cfac">representData</reimplementedby>
+        <reimplementedby refid="classperif_1_1LidarMap_1aa4799e71b54de2d246a664dd2c6b75f2">representData</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The representation of this peripheral&apos;s data in a meaningful way for debugging, caching, and database operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classperif_1_1Perif_1a29c48598a861d85256c30e28af67f864" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classTimer" kindref="compound">Timer</ref> &amp;</type>
+        <definition>Timer&amp; perif::Perif::getTimer</definition>
+        <argsstring>()</argsstring>
+        <name>getTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtains a reference to this peripheral&apos;s timer.</para>
+<para><simplesect kind="return"><para>a timer reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="94" column="1" bodyfile="main/perif/Perif.hpp" bodystart="94" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classperif_1_1Perif_1ae7f1d1a4e9cd2343d51abc4ee21000cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool perif::Perif::begin</definition>
+        <argsstring>()=0</argsstring>
+        <name>begin</name>
+        <reimplementedby refid="classperif_1_1GPS_1add9ec977f37224c9f2e87c5a932a55bd">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1LidarMap_1a1d0db064c7664aa8014cbd9fe42773ff">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1AccelGyro_1aebbf13d39d889c298103f16a02b4cce4">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1USDist_1a0920535901e083c9832dcde3639ab569">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1I2CPerif_1aa91b8eca31223fddd191a50b8a0a526d">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1I2CPerif_1aa91b8eca31223fddd191a50b8a0a526d">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1UARTPerif_1ac060109ead3a8910fabe57304afe1dbb">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1BarPAT_1a591d84e84cfd9ec251d1ff8322e23ebb">begin</reimplementedby>
+        <reimplementedby refid="classperif_1_1GPIOPerif_1a3e94e58e8441b85256567c193164ea69">begin</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs initialization of a peripheral. Necessary to avoid initialization in the constructor which causes many side effects.</para>
+<para><simplesect kind="return"><para>whether the peripheral initialization succeeded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="120" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classperif_1_1Perif_1ab9a17fad04e595f3ac0c78b9d3be4c9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool perif::Perif::isConnected</definition>
+        <argsstring>()=0</argsstring>
+        <name>isConnected</name>
+        <reimplementedby refid="classperif_1_1UARTPerif_1a14c1fdcd81cd9a5eac9d4c0ac9863b66">isConnected</reimplementedby>
+        <reimplementedby refid="classperif_1_1GPIOPerif_1ae7c93b409fd4d4d49f9f8eddae612b3e">isConnected</reimplementedby>
+        <reimplementedby refid="classperif_1_1I2CPerif_1aa8741297b2f5f9a0242806afa26b7361">isConnected</reimplementedby>
+        <reimplementedby refid="classperif_1_1I2CPerif_1aa8741297b2f5f9a0242806afa26b7361">isConnected</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether the sensor is connected or not.</para>
+<para><simplesect kind="return"><para>if the sensor is connected </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classperif_1_1Perif_1ad6fe1a13354bba4af4cc2751399ed93c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void perif::Perif::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs a manual update of peripheral data and notifies observers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="130" column="1" bodyfile="main/perif/Perif.hpp" bodystart="130" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classperif_1_1PerifBase_1a2e8bcc221ee253b21b61c7c07307d931" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void perif::PerifBase::registerHook</definition>
+        <argsstring>(function&lt; void(DevMap &amp;)&gt; &amp;&amp;hook)</argsstring>
+        <name>registerHook</name>
+        <param>
+          <type>function&lt; void(<ref refid="Perif_8hpp_1a358ff4ee6d24694ee7661f0cce14377e" kindref="member">DevMap</ref> &amp;)&gt; &amp;&amp;</type>
+          <declname>hook</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers a hook for obtaining sensor data on update in Json format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hook</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the observer function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="63" column="1" bodyfile="main/perif/Perif.hpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classperif_1_1PerifBase_1a1a3afaa535fda17e9f97123fffe78765" prot="public" static="no" mutable="no">
+        <type><ref refid="Perif_8hpp_1a358ff4ee6d24694ee7661f0cce14377e" kindref="member">DevMap</ref></type>
+        <definition>DevMap perif::PerifBase::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The key-value mapping of peripheral data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="37" column="1" bodyfile="main/perif/Perif.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classperif_1_1PerifBase_1a98964e5ca8384df64881265e0aa6d7b6" prot="public" static="no" mutable="no">
+        <type>list&lt; function&lt; void(<ref refid="Perif_8hpp_1a358ff4ee6d24694ee7661f0cce14377e" kindref="member">DevMap</ref> &amp;)&gt; &gt;</type>
+        <definition>list&lt;function&lt;void(DevMap&amp;)&gt; &gt; perif::PerifBase::hooks</definition>
+        <argsstring></argsstring>
+        <name>hooks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hooks registered to this peripheral so observers can be notified of any necessary changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="42" column="1" bodyfile="main/perif/Perif.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A peripheral for SPI connections. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="125">
+        <label>perif::PerifBase</label>
+        <link refid="classperif_1_1PerifBase"/>
+      </node>
+      <node id="123">
+        <label>perif::SPIPerif</label>
+        <link refid="classperif_1_1SPIPerif"/>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>perif::Perif</label>
+        <link refid="classperif_1_1Perif"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="128">
+        <label>perif::PerifBase</label>
+        <link refid="classperif_1_1PerifBase"/>
+      </node>
+      <node id="126">
+        <label>perif::SPIPerif</label>
+        <link refid="classperif_1_1SPIPerif"/>
+        <childnode refid="127" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>perif::Perif</label>
+        <link refid="classperif_1_1Perif"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+        <childnode refid="129" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+      </node>
+      <node id="129">
+        <label>Timer</label>
+        <link refid="classTimer"/>
+      </node>
+    </collaborationgraph>
+    <location file="main/perif/SPIPerif.hpp" line="21" column="1" bodyfile="main/perif/SPIPerif.hpp" bodystart="21" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classperif_1_1Perif_1ae7f1d1a4e9cd2343d51abc4ee21000cf" prot="public" virt="pure-virtual"><scope>perif::SPIPerif</scope><name>begin</name></member>
+      <member refid="classperif_1_1PerifBase_1a1a3afaa535fda17e9f97123fffe78765" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>data</name></member>
+      <member refid="classperif_1_1Perif_1a29c48598a861d85256c30e28af67f864" prot="protected" virt="non-virtual"><scope>perif::SPIPerif</scope><name>getTimer</name></member>
+      <member refid="classperif_1_1PerifBase_1a98964e5ca8384df64881265e0aa6d7b6" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>hooks</name></member>
+      <member refid="classperif_1_1Perif_1ab9a17fad04e595f3ac0c78b9d3be4c9e" prot="public" virt="pure-virtual"><scope>perif::SPIPerif</scope><name>isConnected</name></member>
+      <member refid="classperif_1_1Perif_1a8e0c30d9aeb9069e3c1a1aa2db672b62" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>Perif</name></member>
+      <member refid="classperif_1_1Perif_1a21a0ae2afadf66cffa487b4a033598d4" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>Perif</name></member>
+      <member refid="classperif_1_1PerifBase_1a8ac4d4632fed61f15c375c6db4da3e77" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>PerifBase</name></member>
+      <member refid="classperif_1_1PerifBase_1a30553bdac90621e309a37628774a7a51" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>PerifBase</name></member>
+      <member refid="classperif_1_1PerifBase_1a2e8bcc221ee253b21b61c7c07307d931" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>registerHook</name></member>
+      <member refid="classperif_1_1Perif_1a556c780e9e4623aa6b7c3d167ef23e6b" prot="protected" virt="pure-virtual"><scope>perif::SPIPerif</scope><name>representData</name></member>
+      <member refid="classperif_1_1Perif_1acfa1256201bead82ccce1a0a8bcc24e1" prot="protected" virt="non-virtual"><scope>perif::SPIPerif</scope><name>timer</name></member>
+      <member refid="classperif_1_1Perif_1ad6fe1a13354bba4af4cc2751399ed93c" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>update</name></member>
+      <member refid="classperif_1_1Perif_1a7c9b9c1af5300dc5c007f9559fefbffe" prot="protected" virt="pure-virtual"><scope>perif::SPIPerif</scope><name>updateData</name></member>
+      <member refid="classperif_1_1Perif_1a9b09771466ddb178c694eec670089fe1" prot="public" virt="non-virtual"><scope>perif::SPIPerif</scope><name>~Perif</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

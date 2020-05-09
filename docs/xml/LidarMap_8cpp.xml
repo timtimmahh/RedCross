@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="LidarMap_8cpp" kind="file" language="C++">
+    <compoundname>LidarMap.cpp</compoundname>
+    <includes refid="LidarMap_8h" local="yes">LidarMap.h</includes>
+    <incdepgraph>
+      <node id="223">
+        <label>list</label>
+      </node>
+      <node id="221">
+        <label>functional</label>
+      </node>
+      <node id="214">
+        <label>I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+      <node id="220">
+        <label>cstdint</label>
+      </node>
+      <node id="217">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="229">
+        <label>cmath</label>
+      </node>
+      <node id="224">
+        <label>string</label>
+      </node>
+      <node id="222">
+        <label>map</label>
+      </node>
+      <node id="227">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="228" relation="include">
+        </childnode>
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+      </node>
+      <node id="226">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="231">
+        <label>esp_log.h</label>
+      </node>
+      <node id="212">
+        <label>main/devices/LidarMap/LidarMap.cpp</label>
+        <link refid="LidarMap_8cpp"/>
+        <childnode refid="213" relation="include">
+        </childnode>
+      </node>
+      <node id="215">
+        <label>i2c/I2Cdev.h</label>
+        <link refid="I2Cdev_8h"/>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+      </node>
+      <node id="230">
+        <label>sstream</label>
+      </node>
+      <node id="218">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="219">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="216">
+        <label>mutex</label>
+      </node>
+      <node id="228">
+        <label>algorithm</label>
+      </node>
+      <node id="213">
+        <label>LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+    <briefdescription>
+<para>LidarMap class definition. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/devices/LidarMap/LidarMap.cpp"/>
+  </compounddef>
+</doxygen>

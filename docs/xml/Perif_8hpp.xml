@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="Perif_8hpp" kind="file" language="C++">
+    <compoundname>Perif.hpp</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">map</includes>
+    <includes local="no">list</includes>
+    <includes local="no">string</includes>
+    <includes refid="Timer_8hpp" local="yes">timer/Timer.hpp</includes>
+    <includes refid="utils_8h" local="yes">utils.h</includes>
+    <includedby refid="DeviceManager_8h" local="yes">main/include/DeviceManager.h</includedby>
+    <includedby refid="GPIOPerif_8hpp" local="yes">main/perif/GPIOPerif.hpp</includedby>
+    <includedby refid="I2CPerif_8hpp" local="yes">main/perif/I2CPerif.hpp</includedby>
+    <includedby refid="SPIPerif_8hpp" local="yes">main/perif/SPIPerif.hpp</includedby>
+    <includedby refid="UARTPerif_8hpp" local="yes">main/perif/UARTPerif.hpp</includedby>
+    <incdepgraph>
+      <node id="786">
+        <label>list</label>
+      </node>
+      <node id="784">
+        <label>functional</label>
+      </node>
+      <node id="783">
+        <label>cstdint</label>
+      </node>
+      <node id="792">
+        <label>cmath</label>
+      </node>
+      <node id="787">
+        <label>string</label>
+      </node>
+      <node id="785">
+        <label>map</label>
+      </node>
+      <node id="790">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="791" relation="include">
+        </childnode>
+        <childnode refid="792" relation="include">
+        </childnode>
+        <childnode refid="787" relation="include">
+        </childnode>
+        <childnode refid="793" relation="include">
+        </childnode>
+        <childnode refid="794" relation="include">
+        </childnode>
+      </node>
+      <node id="789">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="794">
+        <label>esp_log.h</label>
+      </node>
+      <node id="793">
+        <label>sstream</label>
+      </node>
+      <node id="782">
+        <label>main/perif/Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="783" relation="include">
+        </childnode>
+        <childnode refid="784" relation="include">
+        </childnode>
+        <childnode refid="785" relation="include">
+        </childnode>
+        <childnode refid="786" relation="include">
+        </childnode>
+        <childnode refid="787" relation="include">
+        </childnode>
+        <childnode refid="788" relation="include">
+        </childnode>
+        <childnode refid="790" relation="include">
+        </childnode>
+      </node>
+      <node id="788">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="789" relation="include">
+        </childnode>
+      </node>
+      <node id="791">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="802">
+        <label>main/perif/I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="803" relation="include">
+        </childnode>
+        <childnode refid="805" relation="include">
+        </childnode>
+        <childnode refid="807" relation="include">
+        </childnode>
+      </node>
+      <node id="805">
+        <label>main/devices/BarPAT/BarPAT.h</label>
+        <link refid="BarPAT_8h"/>
+        <childnode refid="806" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+      </node>
+      <node id="811">
+        <label>main/devices/GPS/GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="812" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+      </node>
+      <node id="804">
+        <label>main/devices/AccelGyro/AccelGyro.cpp</label>
+        <link refid="AccelGyro_8cpp"/>
+      </node>
+      <node id="797">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="798" relation="include">
+        </childnode>
+      </node>
+      <node id="796">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="797" relation="include">
+        </childnode>
+      </node>
+      <node id="806">
+        <label>main/devices/BarPAT/BarPAT.cpp</label>
+        <link refid="BarPAT_8cpp"/>
+      </node>
+      <node id="798">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="810">
+        <label>main/perif/UARTPerif.hpp</label>
+        <link refid="UARTPerif_8hpp"/>
+        <childnode refid="811" relation="include">
+        </childnode>
+      </node>
+      <node id="808">
+        <label>main/devices/LidarMap/LidarMap.cpp</label>
+        <link refid="LidarMap_8cpp"/>
+      </node>
+      <node id="809">
+        <label>main/perif/SPIPerif.hpp</label>
+        <link refid="SPIPerif_8hpp"/>
+      </node>
+      <node id="800">
+        <label>main/devices/USDist/USDist.h</label>
+        <link refid="USDist_8h"/>
+        <childnode refid="801" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+      </node>
+      <node id="812">
+        <label>main/devices/GPS/GPS.cpp</label>
+        <link refid="GPS_8cpp"/>
+      </node>
+      <node id="803">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="804" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+      </node>
+      <node id="801">
+        <label>main/devices/USDist/USDist.cpp</label>
+        <link refid="USDist_8cpp"/>
+      </node>
+      <node id="795">
+        <label>main/perif/Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="796" relation="include">
+        </childnode>
+        <childnode refid="799" relation="include">
+        </childnode>
+        <childnode refid="802" relation="include">
+        </childnode>
+        <childnode refid="809" relation="include">
+        </childnode>
+        <childnode refid="810" relation="include">
+        </childnode>
+      </node>
+      <node id="799">
+        <label>main/perif/GPIOPerif.hpp</label>
+        <link refid="GPIOPerif_8hpp"/>
+        <childnode refid="800" relation="include">
+        </childnode>
+      </node>
+      <node id="807">
+        <label>main/devices/LidarMap/LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="808" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1PerifBase" prot="public">perif::PerifBase</innerclass>
+    <innerclass refid="classperif_1_1Perif" prot="public">perif::Perif</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="Perif_8hpp_1a358ff4ee6d24694ee7661f0cce14377e" prot="public" static="no">
+        <type><ref refid="MPU6050_8cpp_1a2f74937e7a5585cf42247c051032c313" kindref="member">std::map</ref>&lt; std::string, std::string &gt;</type>
+        <definition>using DevMap =  std::map&lt;std::string, std::string&gt;</definition>
+        <argsstring></argsstring>
+        <name>DevMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Basic type alias for device mappings. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/perif/Perif.hpp" line="25" column="1" bodyfile="main/perif/Perif.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PerifBase and Perif class definitions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/perif/Perif.hpp"/>
+  </compounddef>
+</doxygen>

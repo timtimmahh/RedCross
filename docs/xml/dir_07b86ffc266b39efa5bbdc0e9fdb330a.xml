@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_07b86ffc266b39efa5bbdc0e9fdb330a" kind="dir">
+    <compoundname>devices</compoundname>
+    <innerdir refid="dir_78a7e9d447af8271017172bd46104ef7">devices/AccelGyro</innerdir>
+    <innerdir refid="dir_26b06e7eb6ed3048554a8ecead1b6a5b">devices/BarPAT</innerdir>
+    <innerdir refid="dir_ace247e6ff3fb663838c83d17e6b8667">devices/GPS</innerdir>
+    <innerdir refid="dir_6459d6578b7b9b1eb4c14a8a35e0ec2f">devices/LidarMap</innerdir>
+    <innerdir refid="dir_5cd76f4f888e55ff4ca8277f60d376bf">devices/USDist</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="devices/"/>
+  </compounddef>
+</doxygen>

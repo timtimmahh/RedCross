@@ -1,0 +1,166 @@
+\hypertarget{classTimer}{}\section{Timer Class Reference}
+\label{classTimer}\index{Timer@{Timer}}
+
+
+{\ttfamily \#include $<$Timer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}} ()
+\item 
+virtual void \mbox{\hyperlink{classTimer_ad56fbc8001f1dc6a0585290a46af8a92}{start}} ()
+\item 
+void \mbox{\hyperlink{classTimer_ac293413e966e4505b0cc20d47d5f1888}{start\+Time\+Lapse}} ()
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classTimer_a6b30feb3bdee579e8458cb4eb098fdfa}{get\+Latest\+Update}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classTimer_a8aa7e2c2d1a2321508f6b96a53cddcef}{get\+Runtime}} ()
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classTimer_aafb10e82384de08110059720281c4030}{elapsed\+Time}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A timer for asynchronous operations and thread communication. 
+
+Definition at line 18 of file Timer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTimer_a5f16e8da27d2a5a5242dead46de05d97}\label{classTimer_a5f16e8da27d2a5a5242dead46de05d97}} 
+\index{Timer@{Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!Timer@{Timer}}
+\subsubsection{\texorpdfstring{Timer()}{Timer()}}
+{\footnotesize\ttfamily Timer\+::\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates and initializes a timer instance. 
+
+Definition at line 41 of file Timer.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41           : latest(0), timer() \{}
+\DoxyCodeLine{42     esp\_timer\_create\_args\_t args = \{}
+\DoxyCodeLine{43         .callback = timer\_cb,}
+\DoxyCodeLine{44         .arg = \&latest,}
+\DoxyCodeLine{45         .dispatch\_method = ESP\_TIMER\_TASK,}
+\DoxyCodeLine{46         .name = \textcolor{stringliteral}{"default"},}
+\DoxyCodeLine{47     \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keywordflow}{if} (esp\_timer\_create(\&args, \&timer) == ESP\_OK)}
+\DoxyCodeLine{50       latest = esp\_timer\_get\_time();}
+\DoxyCodeLine{51   \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTimer_aafb10e82384de08110059720281c4030}\label{classTimer_aafb10e82384de08110059720281c4030}} 
+\index{Timer@{Timer}!elapsedTime@{elapsedTime}}
+\index{elapsedTime@{elapsedTime}!Timer@{Timer}}
+\subsubsection{\texorpdfstring{elapsedTime()}{elapsedTime()}}
+{\footnotesize\ttfamily uint64\+\_\+t Timer\+::elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Obtains the elapsed time since \mbox{\hyperlink{classTimer_ac293413e966e4505b0cc20d47d5f1888}{start\+Time\+Lapse()}} was called.
+
+\begin{DoxyReturn}{Returns}
+the elapsed time. 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file Timer.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89                          \{}
+\DoxyCodeLine{90     uint64\_t oldStart = latest;}
+\DoxyCodeLine{91     latest = esp\_timer\_get\_time();}
+\DoxyCodeLine{92     \textcolor{keywordflow}{return} latest - oldStart;}
+\DoxyCodeLine{93   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTimer_a6b30feb3bdee579e8458cb4eb098fdfa}\label{classTimer_a6b30feb3bdee579e8458cb4eb098fdfa}} 
+\index{Timer@{Timer}!getLatestUpdate@{getLatestUpdate}}
+\index{getLatestUpdate@{getLatestUpdate}!Timer@{Timer}}
+\subsubsection{\texorpdfstring{getLatestUpdate()}{getLatestUpdate()}}
+{\footnotesize\ttfamily uint64\+\_\+t Timer\+::get\+Latest\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the most recent update time without refreshing.
+
+\begin{DoxyReturn}{Returns}
+the most recent time 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Timer.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71                                    \{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{return} latest;}
+\DoxyCodeLine{73   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTimer_a8aa7e2c2d1a2321508f6b96a53cddcef}\label{classTimer_a8aa7e2c2d1a2321508f6b96a53cddcef}} 
+\index{Timer@{Timer}!getRuntime@{getRuntime}}
+\index{getRuntime@{getRuntime}!Timer@{Timer}}
+\subsubsection{\texorpdfstring{getRuntime()}{getRuntime()}}
+{\footnotesize\ttfamily uint64\+\_\+t Timer\+::get\+Runtime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the total time since the system started.
+
+\begin{DoxyReturn}{Returns}
+the total system runtime 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file Timer.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80                         \{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{return} esp\_timer\_get\_time();}
+\DoxyCodeLine{82   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTimer_ad56fbc8001f1dc6a0585290a46af8a92}\label{classTimer_ad56fbc8001f1dc6a0585290a46af8a92}} 
+\index{Timer@{Timer}!start@{start}}
+\index{start@{start}!Timer@{Timer}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily virtual void Timer\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Start the timer (if not already). 
+
+Definition at line 55 of file Timer.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                        \{}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTimer_ac293413e966e4505b0cc20d47d5f1888}\label{classTimer_ac293413e966e4505b0cc20d47d5f1888}} 
+\index{Timer@{Timer}!startTimeLapse@{startTimeLapse}}
+\index{startTimeLapse@{startTimeLapse}!Timer@{Timer}}
+\subsubsection{\texorpdfstring{startTimeLapse()}{startTimeLapse()}}
+{\footnotesize\ttfamily void Timer\+::start\+Time\+Lapse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts tracking elapsed time. 
+
+Definition at line 62 of file Timer.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62                         \{}
+\DoxyCodeLine{63     latest = esp\_timer\_get\_time();}
+\DoxyCodeLine{64   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/ipc/timer/\mbox{\hyperlink{Timer_8hpp}{Timer.\+hpp}}\end{DoxyCompactItemize}

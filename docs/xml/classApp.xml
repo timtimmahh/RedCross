@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classApp" kind="class" language="C++" prot="public">
+    <compoundname>App</compoundname>
+    <basecompoundref refid="classThread" prot="public" virt="non-virtual">Thread</basecompoundref>
+    <includes refid="App_8hpp" local="no">App.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classApp_1a845f345176a82a4a2283a4c3722654b4" prot="private" static="no" mutable="no">
+        <type>const nanoseconds</type>
+        <definition>const nanoseconds App::sleep_time</definition>
+        <argsstring></argsstring>
+        <name>sleep_time</name>
+        <initializer>= nanoseconds{1000}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time to sleep in the main loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="30" column="1" bodyfile="main/include/App.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApp_1a2f454e273f9bca4fdabc0239ed531180" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool App::nvsAvailable</definition>
+        <argsstring></argsstring>
+        <name>nvsAvailable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether non-volatile flash system is available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="34" column="1" bodyfile="main/include/App.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApp_1abe76336a2ec084df6111487d24f4873e" prot="private" static="no" mutable="no">
+        <type><ref refid="classWiFi" kindref="compound">WiFi</ref></type>
+        <definition>WiFi App::wifi</definition>
+        <argsstring></argsstring>
+        <name>wifi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="classWiFi" kindref="compound">WiFi</ref> instance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="38" column="1" bodyfile="main/include/App.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApp_1a50a6947e854e25c3da7e924a37c343b7" prot="private" static="no" mutable="no">
+        <type><ref refid="classDeviceManager" kindref="compound">DeviceManager</ref>&lt; <ref refid="redcross_8h_1a2da408bb35596ca31d84811e60fbf7c2" kindref="member">PERIF_NAMES</ref> &gt; *</type>
+        <definition>DeviceManager&lt;PERIF_NAMES&gt;* App::manager</definition>
+        <argsstring></argsstring>
+        <name>manager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Device manager for handling sensor peripherals. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="42" column="1" bodyfile="main/include/App.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classApp_1a41e96d6a7c70feebe0cbc233c96e8cda" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool App::initNVS</definition>
+        <argsstring>()</argsstring>
+        <name>initNVS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes non-volatile storage.</para>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="48" column="1" bodyfile="main/include/App.hpp" bodystart="48" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classApp_1acb8cbf3e285b91d0170ffe87df5989c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>App::App</definition>
+        <argsstring>()</argsstring>
+        <name>App</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the application and initializes resources such as event loops. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="61" column="1" bodyfile="main/include/App.hpp" bodystart="61" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classApp_1a34f1f253b1cef5f4ecbac66eaf6964ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>App::~App</definition>
+        <argsstring>()</argsstring>
+        <name>~App</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frees allocated resources on shutdown or sleep. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="71" column="1" bodyfile="main/include/App.hpp" bodystart="71" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classThread_1a1f53ee62bd30a7924186ef26150ce262" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Thread::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the thread and wait until it has started and initialized. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="117" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="117" bodyend="147"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classApp_1a72d6ce9cfb7966c9e61de5e2ecae16ce" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void App::init</definition>
+        <argsstring>() override</argsstring>
+        <name>init</name>
+        <reimplements refid="classThread_1a47884e3db0706dede4379b68e6d845b6">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize the app to run on the main thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="80" column="1" bodyfile="main/include/App.hpp" bodystart="80" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classApp_1a743d0b0456b0557e1659ea950e6f17cd" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void App::loop</definition>
+        <argsstring>() override</argsstring>
+        <name>loop</name>
+        <reimplements refid="classThread_1ab1a2613851db5be41e35aaf3d7dd6ab1">loop</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform any necessary updates. (Most are through interrupts) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/include/App.hpp" line="92" column="1" bodyfile="main/include/App.hpp" bodystart="92" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The main app, only one instance of this can run. Initializes <ref refid="classWiFi" kindref="compound">WiFi</ref>, SD card, and non-volatile flash on startup. It then sets up threads for sensors to be handled on interrupts or at a timer interval. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="11">
+        <label>App</label>
+        <link refid="classApp"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Thread</label>
+        <link refid="classThread"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>App</label>
+        <link refid="classApp"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Thread</label>
+        <link refid="classThread"/>
+      </node>
+    </collaborationgraph>
+    <location file="main/include/App.hpp" line="25" column="1" bodyfile="main/include/App.hpp" bodystart="25" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classApp_1acb8cbf3e285b91d0170ffe87df5989c5" prot="public" virt="non-virtual"><scope>App</scope><name>App</name></member>
+      <member refid="classApp_1a72d6ce9cfb7966c9e61de5e2ecae16ce" prot="protected" virt="virtual"><scope>App</scope><name>init</name></member>
+      <member refid="classApp_1a41e96d6a7c70feebe0cbc233c96e8cda" prot="private" virt="non-virtual"><scope>App</scope><name>initNVS</name></member>
+      <member refid="classApp_1a743d0b0456b0557e1659ea950e6f17cd" prot="protected" virt="virtual"><scope>App</scope><name>loop</name></member>
+      <member refid="classApp_1a50a6947e854e25c3da7e924a37c343b7" prot="private" virt="non-virtual"><scope>App</scope><name>manager</name></member>
+      <member refid="classApp_1a2f454e273f9bca4fdabc0239ed531180" prot="private" virt="non-virtual"><scope>App</scope><name>nvsAvailable</name></member>
+      <member refid="classApp_1a845f345176a82a4a2283a4c3722654b4" prot="private" virt="non-virtual"><scope>App</scope><name>sleep_time</name></member>
+      <member refid="classThread_1a1f53ee62bd30a7924186ef26150ce262" prot="public" virt="non-virtual"><scope>App</scope><name>start</name></member>
+      <member refid="classThread_1ab01de64e2e0ee9418b344036d4600cd3" prot="public" virt="non-virtual"><scope>App</scope><name>Thread</name></member>
+      <member refid="classApp_1abe76336a2ec084df6111487d24f4873e" prot="private" virt="non-virtual"><scope>App</scope><name>wifi</name></member>
+      <member refid="classApp_1a34f1f253b1cef5f4ecbac66eaf6964ec" prot="public" virt="non-virtual"><scope>App</scope><name>~App</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,161 @@
+\hypertarget{classThread}{}\section{Thread Class Reference}
+\label{classThread}\index{Thread@{Thread}}
+
+
+{\ttfamily \#include $<$Thread.\+hpp$>$}
+
+Inheritance diagram for Thread\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classThread}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThread_ab01de64e2e0ee9418b344036d4600cd3}{Thread}} (string task\+Name=C\+O\+N\+F\+I\+G\+\_\+\+P\+T\+H\+R\+E\+A\+D\+\_\+\+T\+A\+S\+K\+\_\+\+N\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+LT, uint32\+\_\+t stack\+Size=C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+I\+N\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uint32\+\_\+t priority=C\+O\+N\+F\+I\+G\+\_\+\+P\+T\+H\+R\+E\+A\+D\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+\_\+\+D\+E\+F\+A\+U\+LT, int app\+Core=C\+O\+N\+F\+I\+G\+\_\+\+P\+T\+H\+R\+E\+A\+D\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+R\+E\+\_\+\+D\+E\+F\+A\+U\+LT, bool attach=false)
+\item 
+void \mbox{\hyperlink{classThread_a1f53ee62bd30a7924186ef26150ce262}{start}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classThread_a47884e3db0706dede4379b68e6d845b6}{init}} ()
+\item 
+virtual void \mbox{\hyperlink{classThread_ab1a2613851db5be41e35aaf3d7dd6ab1}{loop}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper around std\+::thread to simplify thread creation and destruction as well as manage events through interrupts with thread-\/safety. 
+
+Definition at line 30 of file Thread.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classThread_ab01de64e2e0ee9418b344036d4600cd3}\label{classThread_ab01de64e2e0ee9418b344036d4600cd3}} 
+\index{Thread@{Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{Thread()}{Thread()}}
+{\footnotesize\ttfamily Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{string}]{task\+Name = {\ttfamily CONFIG\+\_\+PTHREAD\+\_\+TASK\+\_\+NAME\+\_\+DEFAULT},  }\item[{uint32\+\_\+t}]{stack\+Size = {\ttfamily CONFIG\+\_\+MAIN\+\_\+TASK\+\_\+STACK\+\_\+SIZE},  }\item[{uint32\+\_\+t}]{priority = {\ttfamily CONFIG\+\_\+PTHREAD\+\_\+TASK\+\_\+PRIO\+\_\+DEFAULT},  }\item[{int}]{app\+Core = {\ttfamily CONFIG\+\_\+PTHREAD\+\_\+TASK\+\_\+CORE\+\_\+DEFAULT},  }\item[{bool}]{attach = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Initializes a thread with the initialization function, task name, stack size, priority, and core to pin to.
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Name} & the task name \\
+\hline
+{\em stack\+Size} & the stack size \\
+\hline
+{\em priority} & the priority \\
+\hline
+{\em app\+Core} & the core to pin to \\
+\hline
+{\em attach} & if this thread should attach to caller \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file Thread.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108       : taskName(move(taskName)),}
+\DoxyCodeLine{109         stackSize(stackSize),}
+\DoxyCodeLine{110         priority(priority),}
+\DoxyCodeLine{111         affinity(appCore),}
+\DoxyCodeLine{112         attached(attach) \{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classThread_a47884e3db0706dede4379b68e6d845b6}\label{classThread_a47884e3db0706dede4379b68e6d845b6}} 
+\index{Thread@{Thread}!init@{init}}
+\index{init@{init}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void Thread\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Performs any initialization once the new thread starts running. 
+
+Reimplemented in \mbox{\hyperlink{classApp_a72d6ce9cfb7966c9e61de5e2ecae16ce}{App}}.
+
+
+
+Definition at line 87 of file Thread.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classThread_ab1a2613851db5be41e35aaf3d7dd6ab1}\label{classThread_ab1a2613851db5be41e35aaf3d7dd6ab1}} 
+\index{Thread@{Thread}!loop@{loop}}
+\index{loop@{loop}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily virtual void Thread\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Performs a task in a loop. 
+
+Reimplemented in \mbox{\hyperlink{classApp_a743d0b0456b0557e1659ea950e6f17cd}{App}}.
+
+
+
+Definition at line 91 of file Thread.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classThread_a1f53ee62bd30a7924186ef26150ce262}\label{classThread_a1f53ee62bd30a7924186ef26150ce262}} 
+\index{Thread@{Thread}!start@{start}}
+\index{start@{start}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Thread\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Start the thread and wait until it has started and initialized. 
+
+Definition at line 117 of file Thread.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{117                \{}
+\DoxyCodeLine{118     \textcolor{comment}{// prevent starting multiple times}}
+\DoxyCodeLine{119     \textcolor{keywordflow}{if} (started \&\& !attached)}
+\DoxyCodeLine{120       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keywordflow}{if} (attached) exec();}
+\DoxyCodeLine{123     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{124 \textcolor{comment}{//  unique\_lock<mutex> startGuard(startMutex);}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126       \textcolor{comment}{// setup the esp pthread configuration for this thread}}
+\DoxyCodeLine{127       esp\_pthread\_cfg\_t cfg = esp\_pthread\_get\_default\_config();}
+\DoxyCodeLine{128       cfg.stack\_size = stackSize;}
+\DoxyCodeLine{129       cfg.prio = priority;}
+\DoxyCodeLine{130       cfg.thread\_name = taskName.c\_str();}
+\DoxyCodeLine{131       cfg.pin\_to\_core = affinity;}
+\DoxyCodeLine{132       esp\_pthread\_set\_cfg(\&cfg);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134       \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136         \textcolor{comment}{// create the actual thread}}
+\DoxyCodeLine{137         \_thread = thread([\textcolor{keyword}{this}]() \{ exec(); \});}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{comment}{// wait until the thread has started successfully}}
+\DoxyCodeLine{140 \textcolor{comment}{//    startCond.wait(startGuard, [this]() \{}}
+\DoxyCodeLine{141 \textcolor{comment}{//      return started.load();}}
+\DoxyCodeLine{142 \textcolor{comment}{//    \});}}
+\DoxyCodeLine{143       \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} runtime\_error \&e) \{}
+\DoxyCodeLine{144         \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(\textcolor{stringliteral}{"Exception caught: "}, e.what());}
+\DoxyCodeLine{145       \}}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/ipc/\mbox{\hyperlink{Thread_8hpp}{Thread.\+hpp}}\end{DoxyCompactItemize}

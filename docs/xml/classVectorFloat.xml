@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classVectorFloat" kind="class" language="C++" prot="public">
+    <compoundname>VectorFloat</compoundname>
+    <includes refid="helper__3dmath_8h" local="no">helper_3dmath.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classVectorFloat_1a2d8e5159f045ca977769d168af75320c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float VectorFloat::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="169" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classVectorFloat_1a4affe2a9de97600b3d8df98586679e14" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float VectorFloat::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="170" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classVectorFloat_1a54b8e4234e3b48e106d090570755f107" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float VectorFloat::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="171" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classVectorFloat_1a8b54ec5c117ca7101cff478b3cfaa0cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>VectorFloat::VectorFloat</definition>
+        <argsstring>()</argsstring>
+        <name>VectorFloat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="173" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="173" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorFloat_1a3b12ed03e28bded4316275882433e5aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>VectorFloat::VectorFloat</definition>
+        <argsstring>(float nx, float ny, float nz)</argsstring>
+        <name>VectorFloat</name>
+        <param>
+          <type>float</type>
+          <declname>nx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ny</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>nz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="179" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="179" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorFloat_1abe0c3954d8da8829a053125df1ce63d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float VectorFloat::getMagnitude</definition>
+        <argsstring>()</argsstring>
+        <name>getMagnitude</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="185" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="185" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorFloat_1a112eaf8758a6f51b96ed1ccb71700495" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorFloat::normalize</definition>
+        <argsstring>()</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="189" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="189" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorFloat_1aacb5e7ca59563c47dd066d8b1264ec4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classVectorFloat" kindref="compound">VectorFloat</ref></type>
+        <definition>VectorFloat VectorFloat::getNormalized</definition>
+        <argsstring>()</argsstring>
+        <name>getNormalized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="196" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="196" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorFloat_1afef0e6d631fb1eb67b6913e90730aa9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorFloat::rotate</definition>
+        <argsstring>(Quaternion *q)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref> *</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="202" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="202" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classVectorFloat_1ab4093d50e98baf0d98b437a2b3ee7c2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classVectorFloat" kindref="compound">VectorFloat</ref></type>
+        <definition>VectorFloat VectorFloat::getRotated</definition>
+        <argsstring>(Quaternion *q)</argsstring>
+        <name>getRotated</name>
+        <param>
+          <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref> *</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="217" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="217" bodyend="221"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/helper_3dmath.h" line="167" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="167" bodyend="222"/>
+    <listofallmembers>
+      <member refid="classVectorFloat_1abe0c3954d8da8829a053125df1ce63d5" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>getMagnitude</name></member>
+      <member refid="classVectorFloat_1aacb5e7ca59563c47dd066d8b1264ec4b" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>getNormalized</name></member>
+      <member refid="classVectorFloat_1ab4093d50e98baf0d98b437a2b3ee7c2e" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>getRotated</name></member>
+      <member refid="classVectorFloat_1a112eaf8758a6f51b96ed1ccb71700495" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>normalize</name></member>
+      <member refid="classVectorFloat_1afef0e6d631fb1eb67b6913e90730aa9e" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>rotate</name></member>
+      <member refid="classVectorFloat_1a8b54ec5c117ca7101cff478b3cfaa0cc" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>VectorFloat</name></member>
+      <member refid="classVectorFloat_1a3b12ed03e28bded4316275882433e5aa" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>VectorFloat</name></member>
+      <member refid="classVectorFloat_1a2d8e5159f045ca977769d168af75320c" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>x</name></member>
+      <member refid="classVectorFloat_1a4affe2a9de97600b3d8df98586679e14" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>y</name></member>
+      <member refid="classVectorFloat_1a54b8e4234e3b48e106d090570755f107" prot="public" virt="non-virtual"><scope>VectorFloat</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

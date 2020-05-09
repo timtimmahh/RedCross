@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classThread" kind="class" language="C++" prot="public">
+    <compoundname>Thread</compoundname>
+    <derivedcompoundref refid="classApp" prot="public" virt="non-virtual">App</derivedcompoundref>
+    <includes refid="Thread_8hpp" local="no">Thread.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classThread_1a2d1ccd750d72002c2c823f93757f9a09" prot="private" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string Thread::taskName</definition>
+        <argsstring></argsstring>
+        <name>taskName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The name of this thread task. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="35" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classThread_1a7fd882fee2c4b20411cca3f626a8ec99" prot="private" static="no" mutable="no">
+        <type>thread</type>
+        <definition>thread Thread::_thread</definition>
+        <argsstring></argsstring>
+        <name>_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The actual std::thread behind this. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="39" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classThread_1af3c1ff36e90d10f6c127a32f383c4ef3" prot="private" static="no" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t Thread::stackSize</definition>
+        <argsstring></argsstring>
+        <name>stackSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The stack size of the thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="43" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classThread_1a87b3692a6651ff1c31185b0ad203ba44" prot="private" static="no" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t Thread::priority</definition>
+        <argsstring></argsstring>
+        <name>priority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The thread priority. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="47" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classThread_1ae269705d779d8c8c81ebf1efef5bfb04" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Thread::affinity</definition>
+        <argsstring></argsstring>
+        <name>affinity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Which CPU to run on. (PRO, APP, or both) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="51" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classThread_1a02fbc18c5fde43a29cd11555b9e39633" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool Thread::attached</definition>
+        <argsstring></argsstring>
+        <name>attached</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether this thread should be attached to its calling thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="55" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classThread_1a18a0bbc197a2cb15ea5180ed911de496" prot="private" static="no" mutable="no">
+        <type>atomic_bool</type>
+        <definition>atomic_bool Thread::started</definition>
+        <argsstring></argsstring>
+        <name>started</name>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether this thread has started. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="59" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classThread_1a5ad8e3f4aadb52cdfeb7863d78edc456" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Thread::exec</definition>
+        <argsstring>()</argsstring>
+        <name>exec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The thread&apos;s callable. Notifies calling thread that this thread has started so caller can continue, then runs the main task in a loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="67" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="67" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classThread_1a47884e3db0706dede4379b68e6d845b6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Thread::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplementedby refid="classApp_1a72d6ce9cfb7966c9e61de5e2ecae16ce">init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs any initialization once the new thread starts running. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="87" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classThread_1ab1a2613851db5be41e35aaf3d7dd6ab1" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Thread::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <reimplementedby refid="classApp_1a743d0b0456b0557e1659ea950e6f17cd">loop</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs a task in a loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="91" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="91" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classThread_1ab01de64e2e0ee9418b344036d4600cd3" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Thread::Thread</definition>
+        <argsstring>(string taskName=CONFIG_PTHREAD_TASK_NAME_DEFAULT, uint32_t stackSize=CONFIG_MAIN_TASK_STACK_SIZE, uint32_t priority=CONFIG_PTHREAD_TASK_PRIO_DEFAULT, int appCore=CONFIG_PTHREAD_TASK_CORE_DEFAULT, bool attach=false)</argsstring>
+        <name>Thread</name>
+        <param>
+          <type>string</type>
+          <declname>taskName</declname>
+          <defval>CONFIG_PTHREAD_TASK_NAME_DEFAULT</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>stackSize</declname>
+          <defval>CONFIG_MAIN_TASK_STACK_SIZE</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>priority</declname>
+          <defval>CONFIG_PTHREAD_TASK_PRIO_DEFAULT</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>appCore</declname>
+          <defval>CONFIG_PTHREAD_TASK_CORE_DEFAULT</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>attach</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes a thread with the initialization function, task name, stack size, priority, and core to pin to.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>taskName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the task name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stackSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stack size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the priority </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>appCore</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the core to pin to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>attach</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if this thread should attach to caller </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="103" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="103" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classThread_1a1f53ee62bd30a7924186ef26150ce262" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Thread::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the thread and wait until it has started and initialized. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Thread.hpp" line="117" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="117" bodyend="147"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A wrapper around std::thread to simplify thread creation and destruction as well as manage events through interrupts with thread-safety. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="131">
+        <label>App</label>
+        <link refid="classApp"/>
+        <childnode refid="130" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>Thread</label>
+        <link refid="classThread"/>
+      </node>
+    </inheritancegraph>
+    <location file="main/ipc/Thread.hpp" line="30" column="1" bodyfile="main/ipc/Thread.hpp" bodystart="30" bodyend="148"/>
+    <listofallmembers>
+      <member refid="classThread_1a7fd882fee2c4b20411cca3f626a8ec99" prot="private" virt="non-virtual"><scope>Thread</scope><name>_thread</name></member>
+      <member refid="classThread_1ae269705d779d8c8c81ebf1efef5bfb04" prot="private" virt="non-virtual"><scope>Thread</scope><name>affinity</name></member>
+      <member refid="classThread_1a02fbc18c5fde43a29cd11555b9e39633" prot="private" virt="non-virtual"><scope>Thread</scope><name>attached</name></member>
+      <member refid="classThread_1a5ad8e3f4aadb52cdfeb7863d78edc456" prot="private" virt="non-virtual"><scope>Thread</scope><name>exec</name></member>
+      <member refid="classThread_1a47884e3db0706dede4379b68e6d845b6" prot="protected" virt="virtual"><scope>Thread</scope><name>init</name></member>
+      <member refid="classThread_1ab1a2613851db5be41e35aaf3d7dd6ab1" prot="protected" virt="virtual"><scope>Thread</scope><name>loop</name></member>
+      <member refid="classThread_1a87b3692a6651ff1c31185b0ad203ba44" prot="private" virt="non-virtual"><scope>Thread</scope><name>priority</name></member>
+      <member refid="classThread_1af3c1ff36e90d10f6c127a32f383c4ef3" prot="private" virt="non-virtual"><scope>Thread</scope><name>stackSize</name></member>
+      <member refid="classThread_1a1f53ee62bd30a7924186ef26150ce262" prot="public" virt="non-virtual"><scope>Thread</scope><name>start</name></member>
+      <member refid="classThread_1a18a0bbc197a2cb15ea5180ed911de496" prot="private" virt="non-virtual"><scope>Thread</scope><name>started</name></member>
+      <member refid="classThread_1a2d1ccd750d72002c2c823f93757f9a09" prot="private" virt="non-virtual"><scope>Thread</scope><name>taskName</name></member>
+      <member refid="classThread_1ab01de64e2e0ee9418b344036d4600cd3" prot="public" virt="non-virtual"><scope>Thread</scope><name>Thread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

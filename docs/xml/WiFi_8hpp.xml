@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="WiFi_8hpp" kind="file" language="C++">
+    <compoundname>WiFi.hpp</compoundname>
+    <includes local="no">esp_event.h</includes>
+    <includes local="no">esp_wifi.h</includes>
+    <includes local="no">esp_netif.h</includes>
+    <includes refid="utils_8h" local="yes">utils.h</includes>
+    <includedby refid="redcross_8h" local="yes">main/include/redcross.h</includedby>
+    <includedby refid="WiFi_8cpp" local="yes">main/net/WiFi.cpp</includedby>
+    <incdepgraph>
+      <node id="674">
+        <label>cmath</label>
+      </node>
+      <node id="675">
+        <label>string</label>
+      </node>
+      <node id="672">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="673" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+        <childnode refid="677" relation="include">
+        </childnode>
+      </node>
+      <node id="671">
+        <label>esp_netif.h</label>
+      </node>
+      <node id="670">
+        <label>esp_wifi.h</label>
+      </node>
+      <node id="677">
+        <label>esp_log.h</label>
+      </node>
+      <node id="668">
+        <label>main/net/WiFi.hpp</label>
+        <link refid="WiFi_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+        <childnode refid="670" relation="include">
+        </childnode>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+      </node>
+      <node id="676">
+        <label>sstream</label>
+      </node>
+      <node id="669">
+        <label>esp_event.h</label>
+      </node>
+      <node id="673">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="679">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="680" relation="include">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="678">
+        <label>main/net/WiFi.hpp</label>
+        <link refid="WiFi_8hpp"/>
+        <childnode refid="679" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+      </node>
+      <node id="681">
+        <label>main/net/WiFi.cpp</label>
+        <link refid="WiFi_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classWiFi" prot="public">WiFi</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="WiFi_8hpp_1aaf46549480a528db5ba7d78e7270b5a9" prot="public" static="no">
+        <name>SSID</name>
+        <initializer>&quot;You Can&apos;t Connect&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="28" column="9" bodyfile="main/net/WiFi.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="WiFi_8hpp_1a9e8538fad4eee548302ad9f60e6d47ca" prot="public" static="no">
+        <name>PASSWORD</name>
+        <initializer>&quot;unlessIwantU2&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="29" column="9" bodyfile="main/net/WiFi.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="WiFi_8hpp_1aacc322f4e4e6f06ede6a0b5d1c0f7ee6" prot="public" static="no">
+        <name>event</name>
+        <param><defname>id</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>case id: \
+  <ref refid="utils_8h_1a854650de4931c643ca2d928b6432e1ca" kindref="member">LOG</ref>(#id); \
+  <ref refid="utils_8h_1a2fef427b1927dac8bf612d1384f00503" kindref="member">CONCAT2</ref>(<ref refid="utils_8h_1a4c3a5815caa5aa34729cd1182b1b569d" kindref="member">LINE</ref>, <ref refid="utils_8h_1adbcb2cf49651bf55398702c8e57b13fd" kindref="member">COUNT</ref>(__VA_ARGS__))(__VA_ARGS__) \
+  break</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="31" column="9" bodyfile="main/net/WiFi.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="WiFi_8hpp_1ae685142b922ea26aa869f6cb5e17a19c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WiFiMode</name>
+        <enumvalue id="WiFi_8hpp_1ae685142b922ea26aa869f6cb5e17a19ca971ab16c6e59a04d070cb8d8da13418e" prot="public">
+          <name>STA</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="WiFi_8hpp_1ae685142b922ea26aa869f6cb5e17a19ca0fd3f8dd5edc33b28db1162e15e8fcbc" prot="public">
+          <name>AP</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="classWiFi" kindref="compound">WiFi</ref> mode. Station or Access Point </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="21" column="1" bodyfile="main/net/WiFi.hpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="WiFi_8hpp_1aba74f8a1845cf8adb691df446dd95d67" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void wifi_event</definition>
+        <argsstring>(WiFi &amp;wifi, int32_t event_id, void *event_data)</argsstring>
+        <name>wifi_event</name>
+        <param>
+          <type><ref refid="classWiFi" kindref="compound">WiFi</ref> &amp;</type>
+          <declname>wifi</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>event_id</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>event_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Processes events related to <ref refid="classWiFi" kindref="compound">WiFi</ref> operations.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wifi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classWiFi" kindref="compound">WiFi</ref> manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classWiFi" kindref="compound">WiFi</ref> event id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>any additional event data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="99" column="1" bodyfile="main/net/WiFi.hpp" bodystart="99" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="WiFi_8hpp_1a1d4b70897c70834a81332ff4b773e0e5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ip_event</definition>
+        <argsstring>(WiFi &amp;wifi, int32_t event_id, void *event_data)</argsstring>
+        <name>ip_event</name>
+        <param>
+          <type><ref refid="classWiFi" kindref="compound">WiFi</ref> &amp;</type>
+          <declname>wifi</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>event_id</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>event_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Processes events related to IP operations.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wifi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classWiFi" kindref="compound">WiFi</ref> manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the IP event id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>any additional event data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/net/WiFi.hpp" line="132" column="1" bodyfile="main/net/WiFi.hpp" bodystart="132" bodyend="143"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classWiFi" kindref="compound">WiFi</ref> class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/net/WiFi.hpp"/>
+  </compounddef>
+</doxygen>

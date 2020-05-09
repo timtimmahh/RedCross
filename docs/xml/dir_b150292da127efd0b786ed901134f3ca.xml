@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_b150292da127efd0b786ed901134f3ca" kind="dir">
+    <compoundname>main/devices/LidarMap</compoundname>
+    <innerfile refid="LidarMap_8cpp">LidarMap.cpp</innerfile>
+    <innerfile refid="LidarMap_8h">LidarMap.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>/ </para>
+    </detaileddescription>
+    <location file="main/devices/LidarMap/"/>
+  </compounddef>
+</doxygen>

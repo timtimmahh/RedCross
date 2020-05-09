@@ -28,7 +28,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ===============================================
 */
-
+/**
+ * @dir main/devices/AccelGyro/
+ *
+ * @file helper_3dmath.h
+ *
+ * @brief 3D math helper
+ */
 #ifndef _HELPER_3DMATH_H_
 #define _HELPER_3DMATH_H_
 #include <math.h>

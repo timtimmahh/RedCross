@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classTimer" kind="class" language="C++" prot="public">
+    <compoundname>Timer</compoundname>
+    <includes refid="Timer_8hpp" local="no">Timer.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTimer_1ac84928a5c0ac6ec0bb2ab2915fdd35a4" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Timer::latest</definition>
+        <argsstring></argsstring>
+        <name>latest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The most recent time. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="23" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTimer_1aa2c65b978ee632c785ff35671616c1f8" prot="private" static="no" mutable="no">
+        <type>esp_timer_handle_t</type>
+        <definition>esp_timer_handle_t Timer::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The ESP timer handle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="27" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classTimer_1abd2fd013b256b8f23fe597c0d6d52a41" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Timer::timer_cb</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>timer_cb</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classTimer" kindref="compound">Timer</ref> callback function for interrupt driven timer implementations.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>any callback arguments </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="33" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTimer_1a5f16e8da27d2a5a5242dead46de05d97" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Timer::Timer</definition>
+        <argsstring>()</argsstring>
+        <name>Timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates and initializes a timer instance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="41" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="41" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classTimer_1ad56fbc8001f1dc6a0585290a46af8a92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Timer::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the timer (if not already). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="55" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classTimer_1ac293413e966e4505b0cc20d47d5f1888" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Timer::startTimeLapse</definition>
+        <argsstring>()</argsstring>
+        <name>startTimeLapse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts tracking elapsed time. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="62" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classTimer_1a6b30feb3bdee579e8458cb4eb098fdfa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t Timer::getLatestUpdate</definition>
+        <argsstring>() const</argsstring>
+        <name>getLatestUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the most recent update time without refreshing.</para>
+<para><simplesect kind="return"><para>the most recent time </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="71" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classTimer_1a8aa7e2c2d1a2321508f6b96a53cddcef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t Timer::getRuntime</definition>
+        <argsstring>()</argsstring>
+        <name>getRuntime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the total time since the system started.</para>
+<para><simplesect kind="return"><para>the total system runtime </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="80" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classTimer_1aafb10e82384de08110059720281c4030" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t Timer::elapsedTime</definition>
+        <argsstring>()</argsstring>
+        <name>elapsedTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtains the elapsed time since <ref refid="classTimer_1ac293413e966e4505b0cc20d47d5f1888" kindref="member">startTimeLapse()</ref> was called.</para>
+<para><simplesect kind="return"><para>the elapsed time. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/timer/Timer.hpp" line="89" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="89" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A timer for asynchronous operations and thread communication. </para>
+    </detaileddescription>
+    <location file="main/ipc/timer/Timer.hpp" line="18" column="1" bodyfile="main/ipc/timer/Timer.hpp" bodystart="18" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classTimer_1aafb10e82384de08110059720281c4030" prot="public" virt="non-virtual"><scope>Timer</scope><name>elapsedTime</name></member>
+      <member refid="classTimer_1a6b30feb3bdee579e8458cb4eb098fdfa" prot="public" virt="non-virtual"><scope>Timer</scope><name>getLatestUpdate</name></member>
+      <member refid="classTimer_1a8aa7e2c2d1a2321508f6b96a53cddcef" prot="public" virt="non-virtual"><scope>Timer</scope><name>getRuntime</name></member>
+      <member refid="classTimer_1ac84928a5c0ac6ec0bb2ab2915fdd35a4" prot="private" virt="non-virtual"><scope>Timer</scope><name>latest</name></member>
+      <member refid="classTimer_1ad56fbc8001f1dc6a0585290a46af8a92" prot="public" virt="virtual"><scope>Timer</scope><name>start</name></member>
+      <member refid="classTimer_1ac293413e966e4505b0cc20d47d5f1888" prot="public" virt="non-virtual"><scope>Timer</scope><name>startTimeLapse</name></member>
+      <member refid="classTimer_1a5f16e8da27d2a5a5242dead46de05d97" prot="public" virt="non-virtual"><scope>Timer</scope><name>Timer</name></member>
+      <member refid="classTimer_1aa2c65b978ee632c785ff35671616c1f8" prot="private" virt="non-virtual"><scope>Timer</scope><name>timer</name></member>
+      <member refid="classTimer_1abd2fd013b256b8f23fe597c0d6d52a41" prot="private" virt="non-virtual"><scope>Timer</scope><name>timer_cb</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

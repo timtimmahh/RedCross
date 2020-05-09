@@ -1,5 +1,7 @@
 /**
- * @file DeviceManager.hpp
+ * @dir main/include/
+ *
+ * @file DeviceManager.h
  *
  * @brief DeviceManager class definition.
  *
@@ -26,24 +28,39 @@
 using namespace std;
 using namespace perif;
 
+/**
+ * The device manager for handling necessary sensor peripherals.
+ *
+ * @tparam Sensors the sensor types to manage
+ */
 template<class... Sensors>
 class DeviceManager {
  private:
-  // Use pointers to manually manage storage
+  /**
+   * The sensors being managed.
+   */
   array<Perif*, sizeof...(Sensors)> devices;
+  /**
+   * The SD card instance to enable offline storage.
+   */
   SDFileIO sdFile;
-//  DataServer server;
 
   /**
    * Pass the sensor instances to the devices array and register server and
    * IO hooks.
    *
+   * @tparam Sensor one sensor type
+   * @tparam Others other sensor types
+   * @param sensor one created sensor
    * @param senses the created sensors
    */
   template<class Sensor, class... Others>
   explicit DeviceManager(Sensor* sensor, Others* ... senses)
       : devices{sensor, senses...}, sdFile() { init(); }
 
+  /**
+   * Initialize the device manager and mount the SD card.
+   */
   void init() {
     if (sdFile.mount())
 	  sdFile.printCardInfo();
@@ -123,19 +140,13 @@ class DeviceManager {
 	LOG(ss.str());
   }
 
+  /**
+   * Perform updates on all active devices.
+   */
   void update() {
     for (Perif* item : devices)
       item->update();
   }
-
-  /**
-   * Getter for the DataServer to be accessible globally.
-   *
-   * @return the DataServer
-   */
-//  DataServer &getServer() const {
-//	return const_cast<DataServer &>(server);
-//  }
 };
 
 #endif // REDCROSS_LIB_SENSOR_SRC_SENSORMANAGER_H

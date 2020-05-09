@@ -1,0 +1,73 @@
+\hypertarget{MPU6050_8cpp}{}\section{main/devices/\+Accel\+Gyro/\+M\+P\+U6050.cpp File Reference}
+\label{MPU6050_8cpp}\index{main/devices/AccelGyro/MPU6050.cpp@{main/devices/AccelGyro/MPU6050.cpp}}
+
+
+\mbox{\hyperlink{classMPU6050}{M\+P\+U6050}} I2C device class.  
+
+
+{\ttfamily \#include \char`\"{}M\+P\+U6050.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{MPU6050_8cpp_ad4a5ae6760ae60ffc730f60541657628}{I2\+C\+\_\+\+N\+UM}}~I2\+C\+\_\+\+N\+U\+M\+\_\+0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{MPU6050_8cpp_a2f74937e7a5585cf42247c051032c313}{map}} (float val, float I\+\_\+\+Min, float I\+\_\+\+Max, float O\+\_\+\+Min, float O\+\_\+\+Max)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classMPU6050}{M\+P\+U6050}} I2C device class. 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{MPU6050_8cpp_ad4a5ae6760ae60ffc730f60541657628}\label{MPU6050_8cpp_ad4a5ae6760ae60ffc730f60541657628}} 
+\index{MPU6050.cpp@{MPU6050.cpp}!I2C\_NUM@{I2C\_NUM}}
+\index{I2C\_NUM@{I2C\_NUM}!MPU6050.cpp@{MPU6050.cpp}}
+\subsubsection{\texorpdfstring{I2C\_NUM}{I2C\_NUM}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+N\+UM~I2\+C\+\_\+\+N\+U\+M\+\_\+0}
+
+
+
+Definition at line 46 of file M\+P\+U6050.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{MPU6050_8cpp_a2f74937e7a5585cf42247c051032c313}\label{MPU6050_8cpp_a2f74937e7a5585cf42247c051032c313}} 
+\index{MPU6050.cpp@{MPU6050.cpp}!map@{map}}
+\index{map@{map}!MPU6050.cpp@{MPU6050.cpp}}
+\subsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily float map (\begin{DoxyParamCaption}\item[{float}]{val,  }\item[{float}]{I\+\_\+\+Min,  }\item[{float}]{I\+\_\+\+Max,  }\item[{float}]{O\+\_\+\+Min,  }\item[{float}]{O\+\_\+\+Max }\end{DoxyParamCaption})}
+
+calibration
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+{\em I\+\_\+\+Min} & \\
+\hline
+{\em I\+\_\+\+Max} & \\
+\hline
+{\em O\+\_\+\+Min} & \\
+\hline
+{\em O\+\_\+\+Max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 3833 of file M\+P\+U6050.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3833                                                                          \{}
+\DoxyCodeLine{3834   \textcolor{keywordflow}{return} (val / (I\_Max - I\_Min) * (O\_Max - O\_Min) + O\_Min);}
+\DoxyCodeLine{3835 \}}
+
+\end{DoxyCode}

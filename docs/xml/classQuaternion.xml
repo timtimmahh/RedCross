@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classQuaternion" kind="class" language="C++" prot="public">
+    <compoundname>Quaternion</compoundname>
+    <includes refid="helper__3dmath_8h" local="no">helper_3dmath.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classQuaternion_1aa44a65ab99e36f6ab8771030eed8a7ad" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quaternion::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="45" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuaternion_1a8b80f191a3155cc0158d2b4f4d50b2cb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quaternion::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="46" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuaternion_1a3bd3f270462944423611f44e19d2511b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quaternion::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="47" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuaternion_1a625cb732d8ff3083e7852b86b736ab29" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quaternion::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="48" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuaternion_1abcc01358aada56ea5f0db4da18aaf77d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Quaternion::Quaternion</definition>
+        <argsstring>()</argsstring>
+        <name>Quaternion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="50" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="50" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuaternion_1ad8158a59767dc3d42ebf0324b82ba95a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Quaternion::Quaternion</definition>
+        <argsstring>(float nw, float nx, float ny, float nz)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>float</type>
+          <declname>nw</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>nx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ny</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>nz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="57" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="57" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuaternion_1a3ff8405ed92a3ca16de656e6c83b4028" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion Quaternion::getProduct</definition>
+        <argsstring>(Quaternion q)</argsstring>
+        <name>getProduct</name>
+        <param>
+          <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref></type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="64" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="64" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuaternion_1a079a5673188a8a7d608e8495de0dd119" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion Quaternion::getConjugate</definition>
+        <argsstring>()</argsstring>
+        <name>getConjugate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="77" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuaternion_1a6d0f82bd29fcbe29f784e848ec2eb8f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Quaternion::getMagnitude</definition>
+        <argsstring>()</argsstring>
+        <name>getMagnitude</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="81" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuaternion_1a48e6bafb249c895ed25f29dc9170e11e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Quaternion::normalize</definition>
+        <argsstring>()</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="85" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="85" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuaternion_1a61f5f7cb9b248aa259292c3c1960a1f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion Quaternion::getNormalized</definition>
+        <argsstring>()</argsstring>
+        <name>getNormalized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/devices/AccelGyro/helper_3dmath.h" line="93" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="93" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/devices/AccelGyro/helper_3dmath.h" line="43" column="1" bodyfile="main/devices/AccelGyro/helper_3dmath.h" bodystart="43" bodyend="98"/>
+    <listofallmembers>
+      <member refid="classQuaternion_1a079a5673188a8a7d608e8495de0dd119" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>getConjugate</name></member>
+      <member refid="classQuaternion_1a6d0f82bd29fcbe29f784e848ec2eb8f1" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>getMagnitude</name></member>
+      <member refid="classQuaternion_1a61f5f7cb9b248aa259292c3c1960a1f0" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>getNormalized</name></member>
+      <member refid="classQuaternion_1a3ff8405ed92a3ca16de656e6c83b4028" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>getProduct</name></member>
+      <member refid="classQuaternion_1a48e6bafb249c895ed25f29dc9170e11e" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>normalize</name></member>
+      <member refid="classQuaternion_1abcc01358aada56ea5f0db4da18aaf77d" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classQuaternion_1ad8158a59767dc3d42ebf0324b82ba95a" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classQuaternion_1aa44a65ab99e36f6ab8771030eed8a7ad" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>w</name></member>
+      <member refid="classQuaternion_1a8b80f191a3155cc0158d2b4f4d50b2cb" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>x</name></member>
+      <member refid="classQuaternion_1a3bd3f270462944423611f44e19d2511b" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>y</name></member>
+      <member refid="classQuaternion_1a625cb732d8ff3083e7852b86b736ab29" prot="public" virt="non-virtual"><scope>Quaternion</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

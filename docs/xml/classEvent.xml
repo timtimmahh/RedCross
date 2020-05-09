@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classEvent" kind="class" language="C++" prot="public">
+    <compoundname>Event</compoundname>
+    <includes refid="Event_8hpp" local="no">Event.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classEvent_1acf8fc6215a0eeaa049e2aca9a347f4b0" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Event::eventName</definition>
+        <argsstring></argsstring>
+        <name>eventName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The identifier for this event. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Event.hpp" line="44" column="1" bodyfile="main/ipc/Event.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classEvent_1a1fdab818f35a11ccf701620a2c2420ca" prot="private" static="no" mutable="no">
+        <type><ref refid="classQueue" kindref="compound">Queue</ref>&lt; uint32_t &gt;</type>
+        <definition>Queue&lt;uint32_t&gt; Event::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Any necessary event data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Event.hpp" line="48" column="1" bodyfile="main/ipc/Event.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classEvent_1a51a857c32a60bef28e5933cece439f9c" prot="private" static="no" mutable="no">
+        <type><ref refid="classQueue" kindref="compound">Queue</ref>&lt; pair&lt; thread *, function&lt; void()&gt; &gt; &gt;</type>
+        <definition>Queue&lt;pair&lt;thread *, function&lt;void()&gt; &gt; &gt; Event::observers</definition>
+        <argsstring></argsstring>
+        <name>observers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registered event callbacks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Event.hpp" line="52" column="1" bodyfile="main/ipc/Event.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classEvent_1a00278e70937755acde8c5d749c035c29" prot="public" static="yes" mutable="no">
+        <type>unordered_map&lt; string, <ref refid="classEvent" kindref="compound">Event</ref> * &gt;</type>
+        <definition>unordered_map&lt; string, Event * &gt; Event::events</definition>
+        <argsstring></argsstring>
+        <name>events</name>
+        <initializer>= unordered_map&lt;string, <ref refid="classEvent" kindref="compound">Event</ref> *
+&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>All initialized event instances to be notified. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Event.hpp" line="58" column="1" bodyfile="main/ipc/Event.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classEvent_1aad90826e5e8880a47978f1701a99722f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Event::Event</definition>
+        <argsstring>(const char *base, const char *name)</argsstring>
+        <name>Event</name>
+        <param>
+          <type>const char *</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an event type with the ESP base and ID values.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP event base name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ESP event base id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main/ipc/Event.hpp" line="65" column="1" bodyfile="main/ipc/Event.hpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An event instance to register for notifications. </para>
+    </detaileddescription>
+    <location file="main/ipc/Event.hpp" line="39" column="1" bodyfile="main/ipc/Event.hpp" bodystart="39" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classEvent_1a1fdab818f35a11ccf701620a2c2420ca" prot="private" virt="non-virtual"><scope>Event</scope><name>data</name></member>
+      <member refid="classEvent_1aad90826e5e8880a47978f1701a99722f" prot="public" virt="non-virtual"><scope>Event</scope><name>Event</name></member>
+      <member refid="classEvent_1acf8fc6215a0eeaa049e2aca9a347f4b0" prot="private" virt="non-virtual"><scope>Event</scope><name>eventName</name></member>
+      <member refid="classEvent_1a00278e70937755acde8c5d749c035c29" prot="public" virt="non-virtual"><scope>Event</scope><name>events</name></member>
+      <member refid="classEvent_1a51a857c32a60bef28e5933cece439f9c" prot="private" virt="non-virtual"><scope>Event</scope><name>observers</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="GPIOPerif_8hpp" kind="file" language="C++">
+    <compoundname>GPIOPerif.hpp</compoundname>
+    <includes local="no">functional</includes>
+    <includes local="no">array</includes>
+    <includes local="no">driver/gpio.h</includes>
+    <includes refid="Perif_8hpp" local="yes">Perif.hpp</includes>
+    <includedby refid="USDist_8h" local="yes">main/devices/USDist/USDist.h</includedby>
+    <incdepgraph>
+      <node id="689">
+        <label>list</label>
+      </node>
+      <node id="683">
+        <label>functional</label>
+      </node>
+      <node id="687">
+        <label>cstdint</label>
+      </node>
+      <node id="685">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="695">
+        <label>cmath</label>
+      </node>
+      <node id="690">
+        <label>string</label>
+      </node>
+      <node id="688">
+        <label>map</label>
+      </node>
+      <node id="693">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="694" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+        <childnode refid="697" relation="include">
+        </childnode>
+      </node>
+      <node id="692">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="697">
+        <label>esp_log.h</label>
+      </node>
+      <node id="684">
+        <label>array</label>
+      </node>
+      <node id="696">
+        <label>sstream</label>
+      </node>
+      <node id="686">
+        <label>Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="687" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+      </node>
+      <node id="682">
+        <label>main/perif/GPIOPerif.hpp</label>
+        <link refid="GPIOPerif_8hpp"/>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="684" relation="include">
+        </childnode>
+        <childnode refid="685" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
+      </node>
+      <node id="691">
+        <label>timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="692" relation="include">
+        </childnode>
+      </node>
+      <node id="694">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="702">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="703" relation="include">
+        </childnode>
+      </node>
+      <node id="701">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="702" relation="include">
+        </childnode>
+      </node>
+      <node id="703">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="699">
+        <label>main/devices/USDist/USDist.h</label>
+        <link refid="USDist_8h"/>
+        <childnode refid="700" relation="include">
+        </childnode>
+        <childnode refid="701" relation="include">
+        </childnode>
+      </node>
+      <node id="700">
+        <label>main/devices/USDist/USDist.cpp</label>
+        <link refid="USDist_8cpp"/>
+      </node>
+      <node id="698">
+        <label>main/perif/GPIOPerif.hpp</label>
+        <link refid="GPIOPerif_8hpp"/>
+        <childnode refid="699" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classperif_1_1GPIOPerif" prot="public">perif::GPIOPerif</innerclass>
+    <innernamespace refid="namespaceperif">perif</innernamespace>
+    <briefdescription>
+<para>GPIOPerif class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="main/perif/GPIOPerif.hpp"/>
+  </compounddef>
+</doxygen>

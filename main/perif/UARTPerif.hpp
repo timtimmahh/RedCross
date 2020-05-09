@@ -1,4 +1,6 @@
 /**
+ * @dir main/perif/
+ *
  * @file UARTPerif.hpp
  *
  * @brief UARTPerif class declaration.
@@ -8,11 +10,18 @@
 #ifndef REDCROSS_LIB_DEVICE_SRC_PERIPHERAL_UARTSENSOR_HPP_
 #define REDCROSS_LIB_DEVICE_SRC_PERIPHERAL_UARTSENSOR_HPP_
 
-//#include <HardwareSerial.h>
 #include "Perif.hpp"
 
+/**
+ * Default baud rate
+ */
 #define DEFAULT_BAUD        9600
 
+/**
+ * @namespace perif
+ *
+ * @brief The peripheral library.
+ */
 namespace perif {
 
 /**
@@ -22,12 +31,18 @@ namespace perif {
  */
 class UARTPerif : public Perif {
  protected:
-  // the baud rate
+  /**
+   * The baud rate.
+   */
   int baud;
-  // the transmit and receive GPIO pins
-  uint8_t txPin, rxPin;
-  // a reference to an existing HardwareSerial instance
-//  HardwareSerial &MySerial;
+  /**
+   * The transmit GPIO pins.
+   */
+  uint8_t txPin;
+  /**
+   * The receive GPIO pins.
+   */
+  uint8_t rxPin;
  public:
   /**
    * Explicit value constructor for UART devices.
@@ -52,7 +67,7 @@ class UARTPerif : public Perif {
    * Explicit value constructor for a preconfigured HardwareSerial instance.
    *
    * @param name the name of the peripheral
-   * @param serial a reference to the UART bus
+   * @param baud the baud rate
    */
   explicit UARTPerif(const char *name, int baud = DEFAULT_BAUD)
 	  : Perif(name),

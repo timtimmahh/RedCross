@@ -1,0 +1,46 @@
+\hypertarget{main_8cpp}{}\section{main/main.cpp File Reference}
+\label{main_8cpp}\index{main/main.cpp@{main/main.cpp}}
+
+
+program entry file.  
+
+
+{\ttfamily \#include \char`\"{}redcross.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_abce06be17fc37d675118a678a8100a36}{app\+\_\+main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+program entry file. 
+
+\begin{DoxyAuthor}{Author}
+Timothy Logan \href{mailto:logantc@dukes.jmu.edu}{\texttt{ logantc@dukes.\+jmu.\+edu}} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_abce06be17fc37d675118a678a8100a36}\label{main_8cpp_abce06be17fc37d675118a678a8100a36}} 
+\index{main.cpp@{main.cpp}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!main.cpp@{main.cpp}}
+\subsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily void app\+\_\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Entry function for E\+S\+P32 framework. 
+
+Definition at line 17 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                            \{}
+\DoxyCodeLine{18   \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{19     \mbox{\hyperlink{classApp}{App}}().\mbox{\hyperlink{classThread_a1f53ee62bd30a7924186ef26150ce262}{start}}();}
+\DoxyCodeLine{20   \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} runtime\_error \&e) \{}
+\DoxyCodeLine{21     \mbox{\hyperlink{utils_8h_a854650de4931c643ca2d928b6432e1ca}{LOG}}(\textcolor{stringliteral}{"Exception caught: "}, e.what());}
+\DoxyCodeLine{22   \}}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}

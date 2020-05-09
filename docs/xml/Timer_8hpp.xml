@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="Timer_8hpp" kind="file" language="C++">
+    <compoundname>Timer.hpp</compoundname>
+    <includes local="no">esp_timer.h</includes>
+    <includedby refid="redcross_8h" local="yes">main/include/redcross.h</includedby>
+    <includedby refid="Perif_8hpp" local="yes">main/perif/Perif.hpp</includedby>
+    <incdepgraph>
+      <node id="537">
+        <label>esp_timer.h</label>
+      </node>
+      <node id="536">
+        <label>main/ipc/timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="537" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="546">
+        <label>main/perif/I2CPerif.hpp</label>
+        <link refid="I2CPerif_8hpp"/>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+      </node>
+      <node id="549">
+        <label>main/devices/BarPAT/BarPAT.h</label>
+        <link refid="BarPAT_8h"/>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+      <node id="555">
+        <label>main/devices/GPS/GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+      <node id="548">
+        <label>main/devices/AccelGyro/AccelGyro.cpp</label>
+        <link refid="AccelGyro_8cpp"/>
+      </node>
+      <node id="539">
+        <label>main/include/redcross.h</label>
+        <link refid="redcross_8h"/>
+        <childnode refid="540" relation="include">
+        </childnode>
+      </node>
+      <node id="542">
+        <label>main/include/DeviceManager.h</label>
+        <link refid="DeviceManager_8h"/>
+        <childnode refid="539" relation="include">
+        </childnode>
+      </node>
+      <node id="550">
+        <label>main/devices/BarPAT/BarPAT.cpp</label>
+        <link refid="BarPAT_8cpp"/>
+      </node>
+      <node id="540">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="554">
+        <label>main/perif/UARTPerif.hpp</label>
+        <link refid="UARTPerif_8hpp"/>
+        <childnode refid="555" relation="include">
+        </childnode>
+      </node>
+      <node id="552">
+        <label>main/devices/LidarMap/LidarMap.cpp</label>
+        <link refid="LidarMap_8cpp"/>
+      </node>
+      <node id="553">
+        <label>main/perif/SPIPerif.hpp</label>
+        <link refid="SPIPerif_8hpp"/>
+      </node>
+      <node id="544">
+        <label>main/devices/USDist/USDist.h</label>
+        <link refid="USDist_8h"/>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+      <node id="556">
+        <label>main/devices/GPS/GPS.cpp</label>
+        <link refid="GPS_8cpp"/>
+      </node>
+      <node id="547">
+        <label>main/devices/AccelGyro/AccelGyro.h</label>
+        <link refid="AccelGyro_8h"/>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+      <node id="545">
+        <label>main/devices/USDist/USDist.cpp</label>
+        <link refid="USDist_8cpp"/>
+      </node>
+      <node id="541">
+        <label>main/perif/Perif.hpp</label>
+        <link refid="Perif_8hpp"/>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+      </node>
+      <node id="543">
+        <label>main/perif/GPIOPerif.hpp</label>
+        <link refid="GPIOPerif_8hpp"/>
+        <childnode refid="544" relation="include">
+        </childnode>
+      </node>
+      <node id="538">
+        <label>main/ipc/timer/Timer.hpp</label>
+        <link refid="Timer_8hpp"/>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+      </node>
+      <node id="551">
+        <label>main/devices/LidarMap/LidarMap.h</label>
+        <link refid="LidarMap_8h"/>
+        <childnode refid="552" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classTimer" prot="public">Timer</innerclass>
+    <briefdescription>
+<para><ref refid="classTimer" kindref="compound">Timer</ref> class declaration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Timothy Logan <ulink url="mailto:logantc@dukes.jmu.edu">logantc@dukes.jmu.edu</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="main/ipc/timer/Timer.hpp"/>
+  </compounddef>
+</doxygen>
